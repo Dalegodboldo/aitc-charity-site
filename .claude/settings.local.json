@@ -43,7 +43,10 @@
       "Bash(npm install *)",
       "Bash(curl -sS http://localhost:3000/robots.txt)",
       "Bash(curl -sS http://localhost:3000/sitemap.xml)",
-      "Bash(curl -sS http://localhost:3000/)"
+      "Bash(curl -sS http://localhost:3000/)",
+      "Bash(gh api *)",
+      "Bash(curl -sS -A \"Mozilla/5.0\" \"https://aitc-charity-site-ajcucv9uz-dnice-s-projects.vercel.app/\" -o /tmp/aitc-prod-home.html)",
+      "Bash(curl -sS -A \"Mozilla/5.0\" \"https://aitc-charity-site-ajcucv9uz-dnice-s-projects.vercel.app/sitemap.xml\")"
     ]
   }
 }

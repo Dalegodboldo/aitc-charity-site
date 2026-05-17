@@ -4,48 +4,52 @@
 @plugin "@tailwindcss/typography";
 
 /* ---------------------------------------------------------------
-   Heartfelt & Editorial — brand tokens (Tailwind v4)
-   Exposes utilities like bg-cream, text-ink, border-border, etc.
+   Editorial Mono — brand tokens (Tailwind v4)
+   Deep black + shades of light gray, with red kept as the accent.
+   Token NAMES are kept from the original Heartfelt palette
+   (cream, warm-white, ink, warm-gray, gold, border) so the rest of
+   the codebase doesn't need to be touched — they're now semantic
+   names ("the page bg", "the eyebrow accent") rather than literal.
 --------------------------------------------------------------- */
 @theme {
-  --color-red: #ab0707;
-  --color-red-deep: #8a0606;
-  --color-gold: #c8922a;
-  --color-cream: #f7f2e8;
-  --color-warm-white: #fbf7ef;
-  --color-ink: #20140f;
-  --color-warm-gray: #6f6253;
-  --color-border: #e4dac6;
+  --color-red: #ab0707;         /* primary CTAs, links */
+  --color-red-deep: #8a0606;    /* hover */
+  --color-gold: #c8922a;        /* eyebrows + small accents (warm) */
+  --color-cream: #f4f4f5;       /* page background (light gray) */
+  --color-warm-white: #ffffff;  /* card / alternating section bg (white) */
+  --color-ink: #0a0a0a;         /* headings, primary text (near-black) */
+  --color-warm-gray: #52525b;   /* body text, muted UI */
+  --color-border: #e4e4e7;      /* hairlines, soft borders */
 
   --font-display: var(--font-fraunces);
   --font-sans: var(--font-inter);
 
-  --shadow-soft: 0 18px 44px rgba(35, 25, 19, 0.12);
-  --shadow-soft-sm: 0 8px 20px rgba(35, 25, 19, 0.08);
+  --shadow-soft: 0 18px 44px rgba(0, 0, 0, 0.10);
+  --shadow-soft-sm: 0 8px 20px rgba(0, 0, 0, 0.06);
 }
 
 /* ---------------------------------------------------------------
-   shadcn/ui semantic tokens — remapped to brand palette
-   so any shadcn component blends with Heartfelt & Editorial.
+   shadcn/ui semantic tokens — mapped to brand palette so any
+   shadcn component blends in with no extra work.
 --------------------------------------------------------------- */
 :root {
-  --background: #f7f2e8; /* cream */
-  --foreground: #20140f; /* ink */
-  --card: #fbf7ef; /* warm-white */
-  --card-foreground: #20140f;
-  --popover: #fbf7ef;
-  --popover-foreground: #20140f;
+  --background: #f4f4f5; /* cream / page bg */
+  --foreground: #0a0a0a; /* ink */
+  --card: #ffffff;
+  --card-foreground: #0a0a0a;
+  --popover: #ffffff;
+  --popover-foreground: #0a0a0a;
   --primary: #ab0707; /* red */
-  --primary-foreground: #f7f2e8;
-  --secondary: #fbf7ef;
-  --secondary-foreground: #20140f;
-  --muted: #f1e9d6;
-  --muted-foreground: #6f6253; /* warm-gray */
-  --accent: #c8922a; /* gold */
-  --accent-foreground: #20140f;
+  --primary-foreground: #f4f4f5;
+  --secondary: #ffffff;
+  --secondary-foreground: #0a0a0a;
+  --muted: #e4e4e7;
+  --muted-foreground: #52525b;
+  --accent: #71717a; /* medium gray accent (was gold) */
+  --accent-foreground: #0a0a0a;
   --destructive: #ab0707;
-  --border: #e4dac6;
-  --input: #e4dac6;
+  --border: #e4e4e7;
+  --input: #e4e4e7;
   --ring: #ab0707;
   --radius: 1rem;
 }

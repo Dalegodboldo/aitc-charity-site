@@ -8,7 +8,7 @@ export function Hero() {
       {/* Soft gold-to-cream wash behind the headline */}
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_55%_at_20%_0%,rgba(200,146,42,0.10),transparent_70%)]"
+        className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_60%_55%_at_20%_0%,rgba(171,7,7,0.06),transparent_70%)]"
       />
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[1.05fr_1fr] lg:gap-16">
         <Reveal>

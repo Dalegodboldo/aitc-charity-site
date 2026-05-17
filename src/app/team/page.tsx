@@ -175,7 +175,7 @@ function PersonCard({ person, index }: { person: Person; index: number }) {
             className="object-cover"
           />
         ) : (
-          <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(200,146,42,0.18),rgba(247,242,232,0)_70%)]">
+          <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(171,7,7,0.08),rgba(255,255,255,0)_70%)]">
             <span className="font-display text-5xl font-medium text-ink/25">
               {initials(person.name)}
             </span>
