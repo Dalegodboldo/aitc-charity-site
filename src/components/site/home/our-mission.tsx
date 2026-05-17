@@ -28,10 +28,8 @@ const pillars: {
     imageBack: {
       src: "/images/disney-shot-on-stage.webp",
       alt: "Students with Mouseketeers on stage at Disney Imagination Campus",
-      // Anchor to the left edge and zoom slightly so the
-      // "Always in the Club" watermark on the right gets cropped off
-      objectPosition: "left center",
-      imgStyle: { transform: "scale(1.18)", transformOrigin: "left center" },
+      // Anchor to the right so the "Always in the Club" logo on the right is fully visible
+      objectPosition: "right center",
     },
   },
   {
@@ -43,8 +41,8 @@ const pillars: {
       objectPosition: "center 25%",
     },
     imageBack: {
-      src: "/images/f9b5d6df-506a-4373-9441-b879908472df.jpg",
-      alt: "Mouseketeers reunited on the Christmas Con red carpet",
+      src: "/images/4-0003.png",
+      alt: "A Cast Member Pantry volunteer in the food bank, supporting cast members in need",
     },
   },
 ];
