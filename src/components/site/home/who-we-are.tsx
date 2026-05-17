@@ -23,8 +23,8 @@ export function WhoWeAre() {
             academy, it trained some of the biggest stars in the world,
             including Keri Russell, Ryan Gosling, Justin Timberlake, Christina
             Aguilera, Britney Spears, Hallmark Channel&rsquo;s Nikki DeLoach,
-            NSYNC&rsquo;s JC Chasez, and En Vogue&rsquo;s Rhona Bennett, among
-            many others.
+            NSYNC&rsquo;s JC Chasez, and Rhona Bennett (formerly of En Vogue),
+            among many others.
           </p>
         </Reveal>
 

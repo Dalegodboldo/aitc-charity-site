@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/site/reveal";
@@ -6,10 +7,18 @@ const pillars = [
   {
     title: "Mentorship & Youth Arts Education",
     body: "We provide mentoring, workshops, coaching sessions and Experiential Learning opportunities with professional creatives and innovative companies across a wide range of industries. Our coaches’ students have gone on to sign with Disney, Epitaph Records, Capitol, Sony Red, Universal Music Group, and been seen all over the world in festivals and on stages such as Coachella, Lollapalooza, GMA, Jimmy Kimmel, iHeart Music Awards, and many more.",
+    image: {
+      src: "/images/dale-coaching.png",
+      alt: "A Mouseketeer leading a coaching session with a group of young students",
+    },
   },
   {
     title: "MMC’89 Social Impact Initiative",
     body: "Through our programs and campaigns, we address global challenges related to education, hunger, mental health, poverty, inequality and climate change. We also provide marketing and business management services to nonprofit organizations and socially conscious entrepreneurs who want to create impact — guided by all 17 of the United Nations Global Goals for a better world by 2030.",
+    image: {
+      src: "/images/mmc89_mmc30.png",
+      alt: "Mouseketeers reunited on stage with Mickey Mouse under the MMC'89 logo",
+    },
   },
 ];
 
@@ -22,24 +31,35 @@ export function OurMission() {
             Our Mission
           </p>
           <h2 className="mt-4 font-display text-4xl font-medium leading-tight tracking-tight sm:text-5xl">
-            Mentoring & Youth Arts Education
+            Mentorship & Social Impact
           </h2>
         </Reveal>
 
-        <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:gap-12">
+        <div className="mt-14 grid gap-8 lg:grid-cols-2 lg:gap-10">
           {pillars.map((p, i) => (
             <Reveal
               as="article"
               key={p.title}
               delay={i * 100}
-              className="flex flex-col rounded-2xl border border-border bg-cream p-8 shadow-soft-sm sm:p-10"
+              className="flex flex-col overflow-hidden rounded-2xl border border-border bg-cream shadow-soft-sm"
             >
-              <h3 className="font-display text-2xl font-medium leading-snug text-ink sm:text-[28px]">
-                {p.title}
-              </h3>
-              <p className="mt-5 text-[17px] leading-relaxed text-warm-gray">
-                {p.body}
-              </p>
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-warm-white">
+                <Image
+                  src={p.image.src}
+                  alt={p.image.alt}
+                  fill
+                  sizes="(min-width: 1024px) 560px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="flex flex-1 flex-col p-8 sm:p-10">
+                <h3 className="font-display text-2xl font-medium leading-snug text-ink sm:text-[28px]">
+                  {p.title}
+                </h3>
+                <p className="mt-5 text-[17px] leading-relaxed text-warm-gray">
+                  {p.body}
+                </p>
+              </div>
             </Reveal>
           ))}
         </div>
