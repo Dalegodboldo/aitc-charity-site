@@ -14,7 +14,31 @@
       "Bash(lsof -ti:3000)",
       "Bash(curl -sS -o /tmp/aitc-home.html -w \"HTTP %{http_code} | bytes %{size_download}\\\\n\" http://localhost:3000/)",
       "Bash(kill 16930)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(git -c commit.gpgsign=false commit -m ' *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(command -v gh)",
+      "Bash(gh auth *)",
+      "Bash(echo \"exit=$?\")",
+      "Read(//Users/dalegodboldosmac/**)",
+      "Bash(command -v brew)",
+      "Bash(brew --version)",
+      "Bash(if ! grep -q '.local/bin' ~/.zshrc 2>/dev/null; then *)",
+      "Bash(export PATH=\"$HOME/.local/bin:$PATH\")",
+      "Bash(echo \"auth process PID: $!\")",
+      "Bash(break)",
+      "Bash(git config *)",
+      "Bash(gh repo *)",
+      "Bash(curl -fsSL -o /tmp/aitc-home-live.html -w \"HTTP %{http_code} | %{size_download} bytes\\\\n\" -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/605.1.15 \\(KHTML, like Gecko\\) Version/17.0 Safari/605.1.15\" \"https://www.alwaysintheclub.org/\")",
+      "Bash(curl -fsSL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/605.1.15 \\(KHTML, like Gecko\\) Version/17.0 Safari/605.1.15\" \"https://www.alwaysintheclub.org/programs\" -o /tmp/aitc-harvest/page-programs.html)",
+      "Bash(curl -fsSL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/605.1.15 \\(KHTML, like Gecko\\) Version/17.0 Safari/605.1.15\" \"https://www.alwaysintheclub.org/impact\" -o /tmp/aitc-harvest/page-impact.html)",
+      "Bash(curl -fsSL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/605.1.15 \\(KHTML, like Gecko\\) Version/17.0 Safari/605.1.15\" \"https://www.alwaysintheclub.org/team\" -o /tmp/aitc-harvest/page-team.html)",
+      "Bash(curl -fsSL -A \"Mozilla/5.0 \\(Macintosh; Intel Mac OS X 10_15_7\\) AppleWebKit/605.1.15 \\(KHTML, like Gecko\\) Version/17.0 Safari/605.1.15\" \"https://www.alwaysintheclub.org/blog\" -o /tmp/aitc-harvest/page-blog.html)",
+      "Bash(python3 /tmp/aitc-harvest/download.py)",
+      "Bash(python3 /tmp/aitc-harvest/retry-failures.py)",
+      "Bash(file *)",
+      "Bash(file /Users/dalegodboldosmac/Documents/aitc-charity-site/public/downloads/*)"
     ]
   }
 }
