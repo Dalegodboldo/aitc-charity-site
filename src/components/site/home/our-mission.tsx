@@ -18,6 +18,8 @@ const pillars = [
     image: {
       src: "/images/mmc89_mmc30.png",
       alt: "Mouseketeers reunited on stage with Mickey Mouse under the MMC'89 logo",
+      // Shift focus toward top of source so the mouse ears on the MMC'89 logo aren't clipped
+      objectPosition: "center 25%",
     },
   },
 ];
@@ -49,6 +51,11 @@ export function OurMission() {
                   alt={p.image.alt}
                   fill
                   sizes="(min-width: 1024px) 560px, 100vw"
+                  style={
+                    "objectPosition" in p.image
+                      ? { objectPosition: p.image.objectPosition }
+                      : undefined
+                  }
                   className="object-cover"
                 />
               </div>
