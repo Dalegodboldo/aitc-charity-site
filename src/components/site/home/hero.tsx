@@ -46,8 +46,8 @@ export function Hero() {
           <HeroVideo
             vimeoId="1013461750"
             title="Always In The Club Foundation — our story"
-            posterSrc="/images/teers-concert-cropped.jpg"
-            posterAlt="Mouseketeers performing together on stage"
+            posterSrc="/images/disney-campus.png"
+            posterAlt="Students cheering with Mouseketeers at Walt Disney World"
           />
           {/* Decorative gold corner tab */}
           <div
