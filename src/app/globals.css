@@ -21,8 +21,8 @@
   --color-warm-gray: #52525b;   /* body text, muted UI */
   --color-border: #e4e4e7;      /* hairlines, soft borders */
 
-  --font-display: var(--font-fraunces);
-  --font-sans: var(--font-inter);
+  --font-display: var(--font-newsreader);
+  --font-sans: var(--font-public-sans);
 
   --shadow-soft: 0 18px 44px rgba(0, 0, 0, 0.10);
   --shadow-soft-sm: 0 8px 20px rgba(0, 0, 0, 0.06);

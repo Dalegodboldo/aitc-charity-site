@@ -1,20 +1,20 @@
 import type { Metadata, Viewport } from "next";
-import { Fraunces, Inter } from "next/font/google";
+import { Newsreader, Public_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import "./globals.css";
 
-const fraunces = Fraunces({
-  variable: "--font-fraunces",
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin"],
   axes: ["opsz"],
   style: ["normal", "italic"],
   display: "swap",
 });
 
-const inter = Inter({
-  variable: "--font-inter",
+const publicSans = Public_Sans({
+  variable: "--font-public-sans",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
@@ -93,8 +93,8 @@ export default function RootLayout({
       lang="en"
       className={cn(
         "h-full antialiased",
-        fraunces.variable,
-        inter.variable,
+        newsreader.variable,
+        publicSans.variable,
         "font-sans"
       )}
     >

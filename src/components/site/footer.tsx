@@ -83,7 +83,7 @@ export function Footer() {
                 Foundation
               </span>
             </Link>
-            <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-warm-gray">
+            <p className="mt-4 max-w-xs font-display text-[15px] italic leading-relaxed text-warm-gray">
               {siteConfig.tagline}
             </p>
           </div>

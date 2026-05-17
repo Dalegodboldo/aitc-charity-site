@@ -19,7 +19,7 @@ export function Hero() {
             Education, Arts, Resources…{" "}
             <em className="italic text-red">Social Impact</em>
           </h1>
-          <p className="mt-6 max-w-xl text-lg text-warm-gray sm:text-xl">
+          <p className="mt-6 max-w-xl font-display text-lg italic leading-snug text-warm-gray sm:text-xl">
             Using our E.A.R.S. to make a difference.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
