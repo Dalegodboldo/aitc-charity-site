@@ -129,14 +129,29 @@ export function OurMission() {
           />
         </Reveal>
 
-        <Reveal delay={280} className="mt-12">
+        <Reveal
+          delay={280}
+          className="mt-12 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-8"
+        >
           <Link
             href="/programs"
-            className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ink px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-ink/90"
+            className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-ink px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-ink/90"
           >
             Our Programs & Initiatives
             <ArrowRight className="h-4 w-4" aria-hidden />
           </Link>
+          <p className="max-w-md text-[15px] leading-relaxed text-warm-gray">
+            Stream the{" "}
+            <a
+              href="https://mmcreunion.com/products/15-day-rental"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-display italic text-red transition-colors hover:text-red-deep"
+            >
+              Why? Because It&rsquo;s Christmas in Nashville Concert
+            </a>{" "}
+            supporting music people in need.
+          </p>
         </Reveal>
       </div>
     </section>
