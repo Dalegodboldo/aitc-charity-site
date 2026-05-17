@@ -51,12 +51,12 @@ export function Hero() {
             posterAlt="Students cheering with Mouseketeers at Walt Disney World"
           />
           {/* Foundation seal — circular AITC logo tucked into the video corner */}
-          <div className="absolute -bottom-4 -left-4 hidden h-24 w-24 overflow-hidden rounded-full ring-4 ring-cream shadow-soft-sm sm:block">
+          <div className="absolute -bottom-5 -left-5 hidden h-36 w-36 overflow-hidden rounded-full ring-4 ring-cream shadow-soft-sm sm:block">
             <Image
               src="/images/AITCF-CREATE%20IMPACT%20NOW%20-%202.png"
               alt=""
               fill
-              sizes="96px"
+              sizes="144px"
               className="object-cover"
             />
           </div>
