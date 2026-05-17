@@ -3,15 +3,29 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/site/reveal";
 
-const pillars = [
+type ImageData = {
+  src: string;
+  alt: string;
+  objectPosition?: string;
+};
+
+const pillars: {
+  title: string;
+  body: string;
+  image: ImageData;
+  imageBack: ImageData;
+}[] = [
   {
     title: "Mentorship & Youth Arts Education",
     body: "We provide mentoring, workshops, coaching sessions and Experiential Learning opportunities with professional creatives and innovative companies across a wide range of industries. Our coaches’ students have gone on to sign with Disney, Epitaph Records, Capitol, Sony Red, Universal Music Group, and been seen all over the world in festivals and on stages such as Coachella, Lollapalooza, GMA, Jimmy Kimmel, iHeart Music Awards, and many more.",
     image: {
       src: "/images/dale-coaching.png",
       alt: "A Mouseketeer leading a coaching session with a group of young students",
-      // Shift the image left within the frame (reveals more of the right side of source)
       objectPosition: "70% center",
+    },
+    imageBack: {
+      src: "/images/disney-shot-on-stage.webp",
+      alt: "Students with Mouseketeers on stage at Disney Imagination Campus",
     },
   },
   {
@@ -20,11 +34,49 @@ const pillars = [
     image: {
       src: "/images/mmc89_mmc30.png",
       alt: "Mouseketeers reunited on stage with Mickey Mouse under the MMC'89 logo",
-      // Shift focus toward top of source so the mouse ears on the MMC'89 logo aren't clipped
       objectPosition: "center 25%",
+    },
+    imageBack: {
+      src: "/images/teers-concert-cropped.jpg",
+      alt: "Mouseketeers performing together on stage",
     },
   },
 ];
+
+function FlipImage({ front, back }: { front: ImageData; back: ImageData }) {
+  return (
+    <div className="group/flip relative aspect-[16/10] w-full overflow-hidden bg-warm-white [perspective:1400px]">
+      <div className="relative h-full w-full transition-transform duration-700 ease-in-out [transform-style:preserve-3d] group-hover/flip:[transform:rotateY(180deg)] motion-reduce:transition-none motion-reduce:group-hover/flip:[transform:none]">
+        {/* Front face */}
+        <div className="absolute inset-0 [backface-visibility:hidden]">
+          <Image
+            src={front.src}
+            alt={front.alt}
+            fill
+            sizes="(min-width: 1024px) 560px, 100vw"
+            style={
+              front.objectPosition ? { objectPosition: front.objectPosition } : undefined
+            }
+            className="object-cover"
+          />
+        </div>
+        {/* Back face */}
+        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+          <Image
+            src={back.src}
+            alt={back.alt}
+            fill
+            sizes="(min-width: 1024px) 560px, 100vw"
+            style={
+              back.objectPosition ? { objectPosition: back.objectPosition } : undefined
+            }
+            className="object-cover"
+          />
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export function OurMission() {
   return (
@@ -47,20 +99,7 @@ export function OurMission() {
               delay={i * 100}
               className="flex flex-col overflow-hidden rounded-2xl border border-border bg-cream shadow-soft-sm"
             >
-              <div className="relative aspect-[16/10] w-full overflow-hidden bg-warm-white">
-                <Image
-                  src={p.image.src}
-                  alt={p.image.alt}
-                  fill
-                  sizes="(min-width: 1024px) 560px, 100vw"
-                  style={
-                    "objectPosition" in p.image
-                      ? { objectPosition: p.image.objectPosition }
-                      : undefined
-                  }
-                  className="object-cover"
-                />
-              </div>
+              <FlipImage front={p.image} back={p.imageBack} />
               <div className="flex flex-1 flex-col p-8 sm:p-10">
                 <h3 className="font-display text-2xl font-medium leading-snug text-ink sm:text-[28px]">
                   {p.title}
