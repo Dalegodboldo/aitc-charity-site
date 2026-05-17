@@ -4,7 +4,17 @@
       "Bash(npm --version)",
       "Bash(npx --version)",
       "Bash(npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --turbopack --yes)",
-      "Bash(mv aitc-build-brief.md /tmp/aitc-build-brief.md && npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --turbopack --yes 2>&1 | tail -40)"
+      "Bash(mv aitc-build-brief.md /tmp/aitc-build-brief.md && npx --yes create-next-app@latest . --typescript --tailwind --eslint --app --src-dir --import-alias \"@/*\" --use-npm --turbopack --yes 2>&1 | tail -40)",
+      "Bash(npx --yes shadcn@latest init --base-color neutral --yes --silent)",
+      "Bash(npx --yes shadcn@latest init --help)",
+      "Bash(npx --yes shadcn@latest init --base radix --yes --no-monorepo --silent)",
+      "Bash(npx --yes shadcn@latest init --defaults --base radix --no-monorepo --silent)",
+      "Bash(npm run *)",
+      "Bash(echo \"started PID $!\")",
+      "Bash(lsof -ti:3000)",
+      "Bash(curl -sS -o /tmp/aitc-home.html -w \"HTTP %{http_code} | bytes %{size_download}\\\\n\" http://localhost:3000/)",
+      "Bash(kill 16930)",
+      "Bash(git add *)"
     ]
   }
 }
