@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/site/reveal";
+import { YouTubeEmbed } from "@/components/site/youtube-embed";
 
 type ImageData = {
   src: string;
@@ -41,8 +42,8 @@ const pillars: {
       objectPosition: "center 25%",
     },
     imageBack: {
-      src: "/images/4-0003.png",
-      alt: "A Cast Member Pantry volunteer in the food bank, supporting cast members in need",
+      src: "/images/Second%20Harvest-logo.png",
+      alt: "Mouseketeers at Second Harvest Food Bank: sorted 4,000 pounds of food = more than 3,000 meals for people in need",
     },
   },
 ];
@@ -118,7 +119,17 @@ export function OurMission() {
           ))}
         </div>
 
-        <Reveal delay={220} className="mt-12">
+        <Reveal delay={200} className="mt-16">
+          <YouTubeEmbed
+            videoId="Cm3cnYSAV-w"
+            title="Why? Because It's Christmas — Always In The Club Foundation × MusiCares"
+            posterSrc="/images/mmc-holidays-musicares-facebook-event-cover.jpg"
+            posterAlt="Why Because It's Christmas — Now Streaming, benefiting MusiCares"
+            ctaLabel="Watch our story"
+          />
+        </Reveal>
+
+        <Reveal delay={280} className="mt-12">
           <Link
             href="/programs"
             className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ink px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-ink/90"
