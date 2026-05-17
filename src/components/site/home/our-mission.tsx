@@ -48,39 +48,50 @@ const pillars: {
   },
 ];
 
+/**
+ * Cinematic crossfade reveal: on hover, the front photo slowly fades
+ * out while zooming in slightly, and the back photo fades in while
+ * settling from a slight zoom — like a slow-motion photographic
+ * transition. Reads as editorial rather than gimmicky.
+ */
 function FlipImage({ front, back }: { front: ImageData; back: ImageData }) {
   return (
-    <div className="group/flip relative aspect-[16/10] w-full overflow-hidden bg-warm-white [perspective:1400px]">
-      <div className="relative h-full w-full transition-transform duration-700 ease-in-out [transform-style:preserve-3d] group-hover/flip:[transform:rotateY(180deg)] motion-reduce:transition-none motion-reduce:group-hover/flip:[transform:none]">
-        {/* Front face */}
-        <div className="absolute inset-0 overflow-hidden [backface-visibility:hidden]">
-          <Image
-            src={front.src}
-            alt={front.alt}
-            fill
-            sizes="(min-width: 1024px) 560px, 100vw"
-            style={{
-              ...(front.objectPosition ? { objectPosition: front.objectPosition } : {}),
-              ...(front.imgStyle ?? {}),
-            }}
-            className="object-cover"
-          />
-        </div>
-        {/* Back face */}
-        <div className="absolute inset-0 overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)]">
-          <Image
-            src={back.src}
-            alt={back.alt}
-            fill
-            sizes="(min-width: 1024px) 560px, 100vw"
-            style={{
-              ...(back.objectPosition ? { objectPosition: back.objectPosition } : {}),
-              ...(back.imgStyle ?? {}),
-            }}
-            className="object-cover"
-          />
-        </div>
+    <div className="group/flip relative aspect-[16/10] w-full overflow-hidden bg-warm-white">
+      {/* Back face (revealed underneath) */}
+      <div className="absolute inset-0 origin-center scale-[1.08] opacity-0 transition-[opacity,transform] duration-[900ms] ease-out group-hover/flip:scale-100 group-hover/flip:opacity-100 motion-reduce:transition-none motion-reduce:duration-0">
+        <Image
+          src={back.src}
+          alt={back.alt}
+          fill
+          sizes="(min-width: 1024px) 560px, 100vw"
+          style={{
+            ...(back.objectPosition ? { objectPosition: back.objectPosition } : {}),
+            ...(back.imgStyle ?? {}),
+          }}
+          className="object-cover"
+        />
       </div>
+      {/* Front face (sits on top until hover) */}
+      <div className="absolute inset-0 origin-center scale-100 opacity-100 transition-[opacity,transform] duration-[900ms] ease-out group-hover/flip:scale-[1.06] group-hover/flip:opacity-0 motion-reduce:transition-none motion-reduce:duration-0">
+        <Image
+          src={front.src}
+          alt={front.alt}
+          fill
+          sizes="(min-width: 1024px) 560px, 100vw"
+          style={{
+            ...(front.objectPosition ? { objectPosition: front.objectPosition } : {}),
+            ...(front.imgStyle ?? {}),
+          }}
+          className="object-cover"
+        />
+      </div>
+      {/* Subtle hint that there's a second image — only visible until first hover */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-ink/55 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cream backdrop-blur-sm opacity-100 transition-opacity duration-500 group-hover/flip:opacity-0"
+      >
+        Hover
+      </span>
     </div>
   );
 }
@@ -125,7 +136,6 @@ export function OurMission() {
             title="Why? Because It's Christmas — Always In The Club Foundation × MusiCares"
             posterSrc="/images/mmc-holidays-musicares-facebook-event-cover.jpg"
             posterAlt="Why Because It's Christmas — Now Streaming, benefiting MusiCares"
-            ctaLabel="Watch our story"
           />
         </Reveal>
 

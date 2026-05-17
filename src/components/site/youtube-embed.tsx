@@ -12,7 +12,7 @@ type Props = {
   /** Poster image (shown until visitor presses play). */
   posterSrc: string;
   posterAlt: string;
-  /** Short label rendered under the play button (e.g. "Watch"). */
+  /** Optional small label rendered under the play button. Omit for a clean poster. */
   ctaLabel?: string;
 };
 
@@ -26,7 +26,7 @@ export function YouTubeEmbed({
   title,
   posterSrc,
   posterAlt,
-  ctaLabel = "Watch",
+  ctaLabel,
 }: Props) {
   const [playing, setPlaying] = useState(false);
 
@@ -62,9 +62,11 @@ export function YouTubeEmbed({
             <span className="flex h-20 w-20 items-center justify-center rounded-full bg-cream/95 text-ink shadow-soft transition-transform duration-300 ease-out group-hover:scale-105 group-focus-visible:scale-105">
               <Play className="ml-1 h-7 w-7" fill="currentColor" aria-hidden />
             </span>
-            <span className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-ink/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream backdrop-blur-sm">
-              {ctaLabel}
-            </span>
+            {ctaLabel && (
+              <span className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-ink/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream backdrop-blur-sm">
+                {ctaLabel}
+              </span>
+            )}
           </button>
         </>
       )}
