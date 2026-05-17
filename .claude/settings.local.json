@@ -62,7 +62,8 @@
       "Bash(curl -sS -o /tmp/aitc-prod-home.html -w \"HOME %{http_code} bytes %{size_download}\\\\n\" \"http://localhost:3000/\")",
       "Bash(curl -sS -o /dev/null -w \"LOGO-LONG %{http_code} %{time_total}s\\\\n\" \"http://localhost:3000/_next/image?url=%2Fimages%2Faitc-logo-long.png&w=640&q=75\")",
       "Bash(grep -oE 'aitc-logo-long[^\"]{0,80}' /tmp/aitc-prod-home.html)",
-      "Bash(xargs kill)"
+      "Bash(xargs kill)",
+      "Bash(git -c commit.gpgsign=false commit -m \"Who We Are: 'All New' → '90's Mickey Mouse Club\")"
     ]
   }
 }

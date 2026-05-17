@@ -10,7 +10,7 @@ export function WhoWeAre() {
             Who We Are
           </p>
           <h2 className="mt-4 font-display text-4xl font-medium leading-tight tracking-tight sm:text-5xl">
-            Inspired by the &ldquo;All New&rdquo; Mickey Mouse Club
+            Inspired by the &rsquo;90&rsquo;s Mickey Mouse Club
           </h2>
         </Reveal>
 
