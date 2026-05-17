@@ -11,7 +11,7 @@ export function WhoWeAre() {
           </p>
           <h2 className="mt-4 font-display text-4xl font-medium leading-tight tracking-tight sm:text-5xl">
             Inspired by the{" "}
-            <span className="text-red">&rsquo;90s Mickey Mouse Club</span>
+            <span className="text-red">&apos;90s Mickey Mouse Club</span>
           </h2>
         </Reveal>
 
