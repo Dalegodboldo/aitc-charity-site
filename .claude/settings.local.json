@@ -48,7 +48,21 @@
       "Bash(curl -sS -A \"Mozilla/5.0\" \"https://aitc-charity-site-ajcucv9uz-dnice-s-projects.vercel.app/\" -o /tmp/aitc-prod-home.html)",
       "Bash(curl -sS -A \"Mozilla/5.0\" \"https://aitc-charity-site-ajcucv9uz-dnice-s-projects.vercel.app/sitemap.xml\")",
       "Bash(git -c commit.gpgsign=false commit -m \"Add public/images/disney-campus.png \\(hero poster asset\\)\")",
-      "Bash(git -c commit.gpgsign=false commit -m \"Hero seal: 96px → 144px so the ring text is legible\")"
+      "Bash(git -c commit.gpgsign=false commit -m \"Hero seal: 96px → 144px so the ring text is legible\")",
+      "Bash(chmod 644 public/images/aitc-logo-long.png)",
+      "Bash(grep -aoE 'aitc-logo-long[^\"]{0,80}' /Users/dalegodboldosmac/.claude/projects/-Users-dalegodboldosmac-Documents-aitc-charity-site/80de7bca-16ed-4d24-adc8-05fcb73572e0/tool-results/bw0yxbf1x.txt)",
+      "Bash(grep -aoE '\\\\[[0-9.]+\\\\] GET http://localhost:3000/_next/image\\\\?url=%2Fimages%2Faitc-logo-long[^\"]{0,30}' /Users/dalegodboldosmac/.claude/projects/-Users-dalegodboldosmac-Documents-aitc-charity-site/80de7bca-16ed-4d24-adc8-05fcb73572e0/tool-results/bw0yxbf1x.txt)",
+      "Bash(grep -aoE '_next/image\\\\?url=%2Fimages%2Faitc-logo-long[^→]+→ [^\"]{0,40}' /Users/dalegodboldosmac/.claude/projects/-Users-dalegodboldosmac-Documents-aitc-charity-site/80de7bca-16ed-4d24-adc8-05fcb73572e0/tool-results/bw0yxbf1x.txt)",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(curl -sS -o /dev/null -w \"disney %{http_code} %{time_total}s\\\\n\" \"http://localhost:3000/_next/image?url=%2Fimages%2Fdisney-campus.png&w=640&q=75\" --max-time 8)",
+      "Bash(curl -sS -o /dev/null -w \"long %{http_code} %{time_total}s\\\\n\" \"http://localhost:3000/_next/image?url=%2Fimages%2Faitc-logo-long.png&w=640&q=75\" --max-time 8)",
+      "Bash(wait)",
+      "Bash(echo \"PID $!\")",
+      "Bash(curl -sSf -o /dev/null --max-time 1 \"http://localhost:3000/\")",
+      "Bash(curl -sS -o /tmp/aitc-prod-home.html -w \"HOME %{http_code} bytes %{size_download}\\\\n\" \"http://localhost:3000/\")",
+      "Bash(curl -sS -o /dev/null -w \"LOGO-LONG %{http_code} %{time_total}s\\\\n\" \"http://localhost:3000/_next/image?url=%2Fimages%2Faitc-logo-long.png&w=640&q=75\")",
+      "Bash(grep -oE 'aitc-logo-long[^\"]{0,80}' /tmp/aitc-prod-home.html)",
+      "Bash(xargs kill)"
     ]
   }
 }

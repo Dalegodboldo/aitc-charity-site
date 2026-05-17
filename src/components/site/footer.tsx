@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { primaryNav, siteConfig } from "@/lib/site-config";
 
@@ -76,10 +77,17 @@ export function Footer() {
           <div>
             <Link
               href="/"
-              className="font-display text-2xl font-medium leading-tight tracking-tight text-ink no-underline"
+              aria-label="Always In The Club Foundation — home"
+              className="inline-block no-underline"
             >
-              Always In The Club
-              <span className="block text-[11px] font-medium uppercase tracking-[0.2em] text-gold">
+              <Image
+                src="/images/aitc-logo-long.png"
+                alt="Always In The Club"
+                width={310}
+                height={57}
+                className="h-9 w-auto"
+              />
+              <span className="mt-1 block text-[11px] font-medium uppercase tracking-[0.2em] text-gold">
                 Foundation
               </span>
             </Link>

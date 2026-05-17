@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
@@ -8,11 +9,23 @@ import { primaryNav, siteConfig } from "@/lib/site-config";
 
 function Wordmark({ className }: { className?: string }) {
   return (
-    <Link href="/" className={cn("group inline-flex items-baseline gap-2 no-underline", className)}>
-      <span className="whitespace-nowrap font-display text-[19px] font-medium leading-none tracking-tight text-ink transition-colors group-hover:text-red sm:text-[24px] lg:text-[26px]">
-        Always In The Club
-      </span>
-      <span className="hidden text-[11px] font-medium uppercase tracking-[0.18em] text-gold sm:inline">
+    <Link
+      href="/"
+      aria-label="Always In The Club Foundation — home"
+      className={cn(
+        "group inline-flex items-end gap-2.5 no-underline",
+        className
+      )}
+    >
+      <Image
+        src="/images/aitc-logo-long.png"
+        alt="Always In The Club"
+        width={310}
+        height={57}
+        priority
+        className="h-6 w-auto transition-opacity group-hover:opacity-75 sm:h-7 lg:h-[30px]"
+      />
+      <span className="hidden -translate-y-[3px] text-[10px] font-medium uppercase tracking-[0.18em] text-gold sm:inline">
         Foundation
       </span>
     </Link>
