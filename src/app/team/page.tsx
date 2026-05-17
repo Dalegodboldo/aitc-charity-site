@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
+import { ContactForm } from "@/components/site/contact-form";
 import { PageIntro } from "@/components/site/page-intro";
 import { Reveal } from "@/components/site/reveal";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "Our Team — Always In The Club Foundation",
+  title: "Our Team",
   description:
     "Meet the artists, educators, and entrepreneurs leading Always In The Club Foundation.",
 };
@@ -304,26 +305,7 @@ export default function TeamPage() {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="rounded-2xl border border-border bg-cream p-8 shadow-soft-sm sm:p-10">
-              <p className="text-sm font-semibold uppercase tracking-[0.16em] text-warm-gray">
-                Contact form
-              </p>
-              <p className="mt-3 font-display text-2xl font-medium leading-snug text-ink">
-                Coming in the next build phase
-              </p>
-              <p className="mt-4 text-[15px] leading-relaxed text-warm-gray">
-                We&rsquo;re wiring a Formspree-backed contact form here as part
-                of Phase 6. In the meantime, please use the contact details to
-                the left and we&rsquo;ll get right back to you.
-              </p>
-              <a
-                href={`mailto:${siteConfig.contact.email}`}
-                className="mt-7 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-red px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-red-deep hover:text-cream"
-              >
-                Email us now
-                <ArrowUpRight className="h-4 w-4" aria-hidden />
-              </a>
-            </div>
+            <ContactForm />
           </Reveal>
         </div>
       </section>

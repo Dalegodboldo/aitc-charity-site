@@ -40,7 +40,10 @@
       "Bash(file *)",
       "Bash(file /Users/dalegodboldosmac/Documents/aitc-charity-site/public/downloads/*)",
       "Bash(node -p \"JSON.stringify\\(require\\('./package.json'\\).scripts, null, 2\\)\")",
-      "Bash(npm install *)"
+      "Bash(npm install *)",
+      "Bash(curl -sS http://localhost:3000/robots.txt)",
+      "Bash(curl -sS http://localhost:3000/sitemap.xml)",
+      "Bash(curl -sS http://localhost:3000/)"
     ]
   }
 }

@@ -7,7 +7,7 @@ import { Reveal } from "@/components/site/reveal";
 import { formatPostDate, getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — Always In The Club Foundation",
+  title: "Blog",
   description:
     "Discover the magic of youth empowerment through arts and mentorship with the Always In The Club Foundation.",
 };

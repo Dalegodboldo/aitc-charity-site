@@ -21,7 +21,7 @@ export async function generateMetadata({
   const post = await getPost(slug);
   if (!post) return { title: "Post not found" };
   return {
-    title: `${post.title} — Always In The Club Foundation`,
+    title: post.title,
     description: post.excerpt,
     openGraph: {
       title: post.title,

@@ -4,7 +4,7 @@ import { PageIntro } from "@/components/site/page-intro";
 import { Reveal } from "@/components/site/reveal";
 
 export const metadata: Metadata = {
-  title: "Programs & Initiatives — Always In The Club Foundation",
+  title: "Programs & Initiatives",
   description:
     "Mentoring, Experiential Learning, Workshops & Coaching, and the MMC'89 Social Impact Initiative.",
 };

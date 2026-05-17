@@ -3,7 +3,7 @@ import { PageIntro } from "@/components/site/page-intro";
 import { Reveal } from "@/components/site/reveal";
 
 export const metadata: Metadata = {
-  title: "Our Impact — Always In The Club Foundation",
+  title: "Our Impact",
   description:
     "Mouseketeers have helped raise more than $4.5 million in support of youth education, mentoring, critically ill children, and many other causes.",
 };

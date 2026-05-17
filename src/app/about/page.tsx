@@ -5,7 +5,7 @@ import { Reveal } from "@/components/site/reveal";
 import { siteConfig } from "@/lib/site-config";
 
 export const metadata: Metadata = {
-  title: "About — Always In The Club Foundation",
+  title: "About",
   description:
     "Inspired by the 'All New' Mickey Mouse Club and built by reunited cast members. Learn how Always In The Club Foundation began.",
 };
