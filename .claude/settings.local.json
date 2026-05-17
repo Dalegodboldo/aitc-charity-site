@@ -38,7 +38,9 @@
       "Bash(python3 /tmp/aitc-harvest/download.py)",
       "Bash(python3 /tmp/aitc-harvest/retry-failures.py)",
       "Bash(file *)",
-      "Bash(file /Users/dalegodboldosmac/Documents/aitc-charity-site/public/downloads/*)"
+      "Bash(file /Users/dalegodboldosmac/Documents/aitc-charity-site/public/downloads/*)",
+      "Bash(node -p \"JSON.stringify\\(require\\('./package.json'\\).scripts, null, 2\\)\")",
+      "Bash(npm install *)"
     ]
   }
 }
