@@ -53,7 +53,7 @@ export function Hero() {
           {/* Foundation seal — circular AITC logo tucked into the video corner */}
           <div className="absolute -bottom-4 -left-4 hidden h-24 w-24 overflow-hidden rounded-full ring-4 ring-cream shadow-soft-sm sm:block">
             <Image
-              src="/images/1-0001.png"
+              src="/images/AITCF-CREATE%20IMPACT%20NOW%20-%202.png"
               alt=""
               fill
               sizes="96px"
