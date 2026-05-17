@@ -49,17 +49,18 @@ export function Hero() {
             title="Always In The Club Foundation — our story"
             posterSrc="/images/disney-campus.png"
             posterAlt="Students cheering with Mouseketeers at Walt Disney World"
+            seal={
+              <div className="relative h-36 w-36 overflow-hidden rounded-full ring-4 ring-cream shadow-soft-sm">
+                <Image
+                  src="/images/AITCF-CREATE%20IMPACT%20NOW%20-%202.png"
+                  alt=""
+                  fill
+                  sizes="144px"
+                  className="object-cover"
+                />
+              </div>
+            }
           />
-          {/* Foundation seal — circular AITC logo tucked into the video corner */}
-          <div className="absolute -bottom-5 -left-5 hidden h-36 w-36 overflow-hidden rounded-full ring-4 ring-cream shadow-soft-sm sm:block">
-            <Image
-              src="/images/AITCF-CREATE%20IMPACT%20NOW%20-%202.png"
-              alt=""
-              fill
-              sizes="144px"
-              className="object-cover"
-            />
-          </div>
         </Reveal>
       </div>
     </section>
