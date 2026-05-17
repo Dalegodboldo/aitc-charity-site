@@ -7,6 +7,8 @@ type ImageData = {
   src: string;
   alt: string;
   objectPosition?: string;
+  /** Extra inline style applied to the <Image>, e.g. for scale/origin. */
+  imgStyle?: React.CSSProperties;
 };
 
 const pillars: {
@@ -26,6 +28,10 @@ const pillars: {
     imageBack: {
       src: "/images/disney-shot-on-stage.webp",
       alt: "Students with Mouseketeers on stage at Disney Imagination Campus",
+      // Anchor to the left edge and zoom slightly so the
+      // "Always in the Club" watermark on the right gets cropped off
+      objectPosition: "left center",
+      imgStyle: { transform: "scale(1.18)", transformOrigin: "left center" },
     },
   },
   {
@@ -37,8 +43,8 @@ const pillars: {
       objectPosition: "center 25%",
     },
     imageBack: {
-      src: "/images/teers-concert-cropped.jpg",
-      alt: "Mouseketeers performing together on stage",
+      src: "/images/f9b5d6df-506a-4373-9441-b879908472df.jpg",
+      alt: "Mouseketeers reunited on the Christmas Con red carpet",
     },
   },
 ];
@@ -48,28 +54,30 @@ function FlipImage({ front, back }: { front: ImageData; back: ImageData }) {
     <div className="group/flip relative aspect-[16/10] w-full overflow-hidden bg-warm-white [perspective:1400px]">
       <div className="relative h-full w-full transition-transform duration-700 ease-in-out [transform-style:preserve-3d] group-hover/flip:[transform:rotateY(180deg)] motion-reduce:transition-none motion-reduce:group-hover/flip:[transform:none]">
         {/* Front face */}
-        <div className="absolute inset-0 [backface-visibility:hidden]">
+        <div className="absolute inset-0 overflow-hidden [backface-visibility:hidden]">
           <Image
             src={front.src}
             alt={front.alt}
             fill
             sizes="(min-width: 1024px) 560px, 100vw"
-            style={
-              front.objectPosition ? { objectPosition: front.objectPosition } : undefined
-            }
+            style={{
+              ...(front.objectPosition ? { objectPosition: front.objectPosition } : {}),
+              ...(front.imgStyle ?? {}),
+            }}
             className="object-cover"
           />
         </div>
         {/* Back face */}
-        <div className="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+        <div className="absolute inset-0 overflow-hidden [backface-visibility:hidden] [transform:rotateY(180deg)]">
           <Image
             src={back.src}
             alt={back.alt}
             fill
             sizes="(min-width: 1024px) 560px, 100vw"
-            style={
-              back.objectPosition ? { objectPosition: back.objectPosition } : undefined
-            }
+            style={{
+              ...(back.objectPosition ? { objectPosition: back.objectPosition } : {}),
+              ...(back.imgStyle ?? {}),
+            }}
             className="object-cover"
           />
         </div>
