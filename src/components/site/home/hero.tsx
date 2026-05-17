@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { HeroVideo } from "@/components/site/hero-video";
 import { Reveal } from "@/components/site/reveal";
 import { siteConfig } from "@/lib/site-config";
 
@@ -43,20 +43,12 @@ export function Hero() {
         </Reveal>
 
         <Reveal delay={120} className="relative">
-          <div className="relative aspect-[5/4] overflow-hidden rounded-2xl shadow-soft ring-1 ring-ink/[0.04]">
-            <Image
-              src="/images/teers-concert-cropped.jpg"
-              alt="Mouseketeers performing together on stage"
-              fill
-              priority
-              sizes="(min-width: 1024px) 540px, 100vw"
-              className="object-cover"
-            />
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-ink/30 via-transparent to-transparent"
-            />
-          </div>
+          <HeroVideo
+            vimeoId="1013461750"
+            title="Always In The Club Foundation — our story"
+            posterSrc="/images/teers-concert-cropped.jpg"
+            posterAlt="Mouseketeers performing together on stage"
+          />
           {/* Decorative gold corner tab */}
           <div
             aria-hidden
