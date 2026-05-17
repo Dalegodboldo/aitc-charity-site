@@ -66,7 +66,8 @@
       "Bash(git -c commit.gpgsign=false commit -m \"Who We Are: 'All New' → '90's Mickey Mouse Club\")",
       "Bash(git -c commit.gpgsign=false commit -m \"Who We Are heading: '90s \\(no extra 's\\) + red accent on the show name\")",
       "Bash(git -c commit.gpgsign=false commit -m \"Who We Are heading: use straight \\(ASCII\\) apostrophe before 90s\")",
-      "Bash(git -c commit.gpgsign=false commit -m \"Mission: nudge MMC'89 image down so the mouse ears clear the frame\")"
+      "Bash(git -c commit.gpgsign=false commit -m \"Mission: nudge MMC'89 image down so the mouse ears clear the frame\")",
+      "Bash(git -c commit.gpgsign=false commit -m \"Mission: slide Mentorship image left within its frame \\(objectPosition 70%\\)\")"
     ]
   }
 }

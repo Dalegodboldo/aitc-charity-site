@@ -10,6 +10,8 @@ const pillars = [
     image: {
       src: "/images/dale-coaching.png",
       alt: "A Mouseketeer leading a coaching session with a group of young students",
+      // Shift the image left within the frame (reveals more of the right side of source)
+      objectPosition: "70% center",
     },
   },
   {
