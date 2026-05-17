@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { HeroVideo } from "@/components/site/hero-video";
 import { Reveal } from "@/components/site/reveal";
 import { siteConfig } from "@/lib/site-config";
@@ -49,11 +50,16 @@ export function Hero() {
             posterSrc="/images/disney-campus.png"
             posterAlt="Students cheering with Mouseketeers at Walt Disney World"
           />
-          {/* Decorative gold corner tab */}
-          <div
-            aria-hidden
-            className="absolute -bottom-3 -left-3 hidden h-20 w-20 rounded-2xl border border-gold/40 bg-cream/80 backdrop-blur sm:block"
-          />
+          {/* Foundation seal — circular AITC logo tucked into the video corner */}
+          <div className="absolute -bottom-4 -left-4 hidden h-24 w-24 overflow-hidden rounded-full ring-4 ring-cream shadow-soft-sm sm:block">
+            <Image
+              src="/images/1-0001.png"
+              alt=""
+              fill
+              sizes="96px"
+              className="object-cover"
+            />
+          </div>
         </Reveal>
       </div>
     </section>
