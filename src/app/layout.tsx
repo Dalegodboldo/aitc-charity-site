@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Newsreader, Public_Sans } from "next/font/google";
 import { cn } from "@/lib/utils";
+import { BookModal } from "@/components/site/book-modal";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import "./globals.css";
@@ -110,6 +111,7 @@ export default function RootLayout({
           {children}
         </main>
         <Footer />
+        <BookModal />
       </body>
     </html>
   );
