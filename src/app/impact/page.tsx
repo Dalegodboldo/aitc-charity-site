@@ -44,17 +44,17 @@ type ImpactCard = {
 const cards: ImpactCard[] = [
   {
     title: "Youth Education & Mentorship",
-    body: "We are particularly proud of our livestream from Walt Disney World Resort to more than 2,000 youth delegates around the world, featuring in-depth discussions with Disney icons, humanitarians, and business leaders.",
+    body: "We are particularly proud of our livestream from Walt Disney World Resort to more than 2,000 youth delegates around the world, featuring in-depth discussions with Disney icons, humanitarians, and business leaders — including Lee Cockerell (former EVP, Walt Disney World), Pamela Landwirth (CEO, Give Kids The World) and Jodi Benson (the voice of Ariel in The Little Mermaid).",
     image: {
-      src: "/images/mmc_kellen_mmc-panel.png",
-      alt: "Mouseketeer panel discussion at Walt Disney World",
+      src: "/images/disney-campus-kids-only.webp",
+      alt: "Youth delegates at Walt Disney World",
     },
     Icon: GraduationCap,
     stat: { label: "youth delegates reached", value: 2000, suffix: "+", thousands: true },
   },
   {
     title: "Cast Member Pantry",
-    body: "We teamed with Cast Member Pantry to help the startup raise almost $300,000 and serve over 10,000 cast members.",
+    body: "We teamed with Cast Member Pantry, founded by Emily Lartigue, to help the startup raise almost $300,000 and serve over 10,000 cast members.",
     image: {
       src: "/images/4-0003.png",
       alt: "A Cast Member Pantry volunteer in the food bank",
@@ -64,7 +64,7 @@ const cards: ImpactCard[] = [
   },
   {
     title: "90s Con / Alzheimer’s Association",
-    body: "We facilitated the reunion of Mouseketeers at the first-ever 90s Con, where more than $10,000 was raised for the Alzheimer’s Association and an additional $30,000 for Always In The Club Foundation.",
+    body: "We facilitated the reunion of Mouseketeers at the first-ever 90s Con, where more than $10,000 was raised for the Alzheimer’s Association and an additional $30,000 for Always In The Club Foundation. Mouseketeer Nikki DeLoach helped present a $5,000 donation from After-Party sponsor Tito’s Handmade Vodka.",
     image: {
       src: "/images/donation_titos_90scon-a46df53.png",
       alt: "Donation moment at 90s Con featuring Tito’s",
@@ -106,31 +106,41 @@ const cards: ImpactCard[] = [
     title: "DIS Family Reunion",
     body: "We drove direct contributions of more than $7,000 to Give Kids The World, plus thousands in ticket sales, and activated 2,000 youth delegates worldwide alongside The Party Reunion Concert and the Be Great! Humanitarian Awards.",
     image: {
-      src: "/images/received_1214446556013120.jpeg",
-      alt: "DIS Family Reunion event",
+      src: "/images/mmc_kellen_mmc-panel.png",
+      alt: "Mouseketeers on the DIS Family Reunion panel with a young guest",
     },
     Icon: Users,
     stat: { label: "direct contributions + 2,000 delegates", value: 7000, prefix: "$", thousands: true },
   },
   {
     title: "2022 Humanitarian Awards",
-    body: "We helped raise more than $60,000, with $12,500 donated to Rose of Sharon, Cast Member Pantry, Canine Companions, and Entertainment For Change. The event launched the Use Your Bottle, Change Our World campaign with the United Nations Development Program.",
+    body: "We helped raise more than $60,000, with $12,500 donated to Rose of Sharon, Cast Member Pantry, Canine Companions, and Entertainment For Change. The evening honored 15 humanitarians — including Nika King (HBO’s Euphoria) — and launched the Use Your Bottle, Change Our World campaign with the United Nations Development Programme.",
     image: {
-      src: "/images/img_2683.jpg",
-      alt: "2022 Humanitarian Awards event",
+      src: "/images/received_1214446556013120.jpeg",
+      alt: "Honorees at the Be Great! 2022 Humanitarian Awards red carpet",
     },
     Icon: Award,
     stat: { label: "raised; $12,500 to four nonprofits", value: 60000, prefix: "$", thousands: true },
   },
   {
     title: "Day of Hope with Jenesse Center",
-    body: "We teamed with the Jenesse Center, Create Impact, and Spice Salon to treat victims of domestic abuse with a special Day of Hope — pampering, sponsored gifts, lunch, and more.",
+    body: "We teamed with the Jenesse Center, Create Impact, and Spice Salon to treat survivors of domestic abuse with a special Day of Hope — pampering, sponsored gifts, lunch, make-up, manicures, pedicures, and new clothes.",
     image: {
-      src: "/images/rhona_doh.png",
-      alt: "Rhona Bennett with women supported by Day of Hope",
+      src: "/images/img_2683.jpg",
+      alt: "Day of Hope team at Spice Salon",
     },
     Icon: Sun,
     stat: { label: "survivors of domestic abuse honored", value: 1, suffix: " Day of Hope" },
+  },
+  {
+    title: "Evening of Hope with Rhona Bennett",
+    body: "En Vogue’s Rhona Bennett hosted a Day + Evening of Hope with AITC, Valley Family Center and Create Impact — featuring sponsored gifts, lunch, make-up, manicures and pedicures for the women, and signed copies of Rhona’s book Saving Your Soul.",
+    image: {
+      src: "/images/rhona_doh.png",
+      alt: "Rhona Bennett at the Evening of Hope, gifting signed copies of Saving Your Soul",
+    },
+    Icon: Sun,
+    stat: { label: "host + book gifted to every guest", value: 1, suffix: " Evening of Hope" },
   },
   {
     title: "unite4:humanity",
