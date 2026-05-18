@@ -29,7 +29,13 @@ export const metadata: Metadata = {
 type ImpactCard = {
   title: string;
   body: string;
-  image: { src: string; alt: string; objectPosition?: string };
+  image: {
+    src: string;
+    alt: string;
+    objectPosition?: string;
+    /** "cover" (default) crops to fill; "contain" mattes the whole image. */
+    fit?: "cover" | "contain";
+  };
   Icon: LucideIcon;
   /** Big anchor number rendered as a CountUp at the top of the card. */
   stat: {
@@ -51,6 +57,7 @@ const cards: ImpactCard[] = [
     image: {
       src: "/images/DIS-famility-2000-delegates.png",
       alt: "2,000 youth delegates broadcast from Walt Disney World",
+      fit: "contain",
     },
     Icon: GraduationCap,
     stat: { label: "youth delegates reached", value: 2000, suffix: "+", thousands: true },
@@ -319,7 +326,13 @@ export default function ImpactPage() {
                   delay={(i % 2) * 90}
                   className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-cream shadow-soft-sm transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-soft motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                 >
-                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-warm-white">
+                  <div
+                    className={
+                      c.image.fit === "contain"
+                        ? "relative aspect-[16/10] w-full overflow-hidden bg-cream p-4 ring-1 ring-inset ring-ink/[0.06] sm:p-6"
+                        : "relative aspect-[16/10] w-full overflow-hidden bg-warm-white"
+                    }
+                  >
                     <Image
                       src={c.image.src}
                       alt={c.image.alt}
@@ -330,13 +343,19 @@ export default function ImpactPage() {
                           ? { objectPosition: c.image.objectPosition }
                           : undefined
                       }
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                      className={
+                        c.image.fit === "contain"
+                          ? "object-contain p-4 sm:p-6"
+                          : "object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                      }
                     />
-                    {/* Soft warm overlay so text below sits on a quieter image */}
-                    <div
-                      aria-hidden
-                      className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/30 via-ink/0 to-transparent"
-                    />
+                    {/* Soft warm overlay so text below sits on a quieter image — skip for matted (contain) images */}
+                    {c.image.fit !== "contain" && (
+                      <div
+                        aria-hidden
+                        className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/30 via-ink/0 to-transparent"
+                      />
+                    )}
                     {/* Icon badge — top-left of the image */}
                     <span className="absolute left-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-cream/95 text-red shadow-soft-sm backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-red group-hover:text-cream motion-reduce:transition-none motion-reduce:group-hover:scale-100">
                       <Icon className="h-5 w-5" aria-hidden />
