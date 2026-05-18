@@ -18,19 +18,13 @@
       "html": "After our <a target=\"_blank\" href=\"https://www.createimpact.org/dayofhope\" rel=\"noopener\"><strong>Day of Hope</strong></a> event earlier in the day that pampered and empowered survivors of domestic abuse, Rhona joined the women for an Evening of Impact and gifted them signed copies of her book '<a target=\"_top\" href=\"https://www.rhonabennett.com/savingyoursoul\" rel=\"noopener\">Saving Your Soul</a>.' Thanks Rhona!! 💜"
     },
     {
-      "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_8b175b7bd78c4b1cb78aaf2778489486~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": "",
-      "placement": "inline"
+      "type": "video",
+      "kind": "youtube",
+      "videoId": "jkBOrv-0asQ"
     },
     {
       "type": "p",
       "html": "Co-hosted by <a target=\"_blank\" href=\"https://www.createimpact.org/business-services\" rel=\"noopener\"><strong>Always In The Club's RACHEL CARLSEN</strong></a> (Founder, <a target=\"_top\" href=\"http://www.createimpact.org\" rel=\"noopener\">Create Impact</a>),<strong> </strong>our mission was simple that night - to empower our guests with tools, guidance, and a network community of <a target=\"_blank\" href=\"https://www.createimpact.org/changemakers\" rel=\"noopener\">Changemakers</a> to maximize their goals in socially conscious business and philanthropy."
-    },
-    {
-      "type": "video",
-      "kind": "youtube",
-      "videoId": "jkBOrv-0asQ"
     },
     {
       "type": "p",

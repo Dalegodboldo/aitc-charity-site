@@ -75,7 +75,8 @@
       "Bash(grep -oE '<script type=\"application/ld\\\\+json\">[^<]{50,}' /tmp/mmc36.html)",
       "Bash(grep -oE '.{0,80}Moe Rock.{0,80}|.{0,80}M.{0,5}oe Rock.{0,80}' /tmp/campaigns/day-of-hope.html)",
       "Bash(node scripts/extract-campaigns.js)",
-      "Bash(node -e ' *)"
+      "Bash(node -e ' *)",
+      "Bash(git -c commit.gpgsign=false commit -m 'Day of Hope modal: drop duplicate hero image, move YouTube to its slot *)"
     ]
   }
 }
