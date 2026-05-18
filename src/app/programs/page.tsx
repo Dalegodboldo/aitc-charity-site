@@ -132,6 +132,7 @@ const campaigns: Campaign[] = [
       alt: "Use Your Bottle, Change Our World campaign",
     },
     Icon: Leaf,
+    cta: { label: "Learn more", href: "https://www.createimpactnow.org/use-your-bottle" },
   },
   {
     title: "Veterans, First Responders & Healthcare Workers",
@@ -142,7 +143,10 @@ const campaigns: Campaign[] = [
       alt: "Veterans, first responders & healthcare workers campaign",
     },
     Icon: ShieldCheck,
-    cta: { label: "Victory Bridge", href: "https://www.victorybridge.org/" },
+    cta: {
+      label: "Learn more",
+      href: "https://www.createimpactnow.org/post/honoring-and-supporting-our-veterans",
+    },
   },
   {
     title: "Day at Disney",
