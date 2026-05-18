@@ -217,23 +217,48 @@ export function CampaignModal({ post, onClose }: Props) {
                       j++;
                     }
                     if (run.length === 1) {
-                      out.push(
-                        <button
-                          key={i}
-                          type="button"
-                          onClick={() => openLightbox(b.src, b.alt)}
-                          aria-label={`View full-size: ${b.alt || "image"}`}
-                          className="!my-6 block w-full cursor-zoom-in overflow-hidden rounded-xl"
-                        >
-                          {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img
-                            src={b.src}
-                            alt={b.alt}
-                            loading="lazy"
-                            className="!my-0 block h-auto w-full transition-transform duration-500 ease-out hover:scale-[1.02]"
-                          />
-                        </button>
-                      );
+                      // Standalone logo: centered, contained, max-height
+                      // so it doesn't read as a banner. No lightbox, no
+                      // hover zoom — it's a brand mark, not a photo.
+                      if (b.treatment === "logo") {
+                        out.push(
+                          <div
+                            key={i}
+                            className="!my-6 flex flex-col items-center"
+                          >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={b.src}
+                              alt={b.alt || b.caption || ""}
+                              loading="lazy"
+                              className="!my-0 block h-auto max-h-20 w-auto object-contain sm:max-h-24"
+                            />
+                            {b.caption && (
+                              <p className="!mt-2 !mb-0 text-center text-[12px] font-semibold uppercase tracking-[0.12em] text-warm-gray sm:text-[13px]">
+                                {b.caption}
+                              </p>
+                            )}
+                          </div>
+                        );
+                      } else {
+                        out.push(
+                          <button
+                            key={i}
+                            type="button"
+                            onClick={() => openLightbox(b.src, b.alt)}
+                            aria-label={`View full-size: ${b.alt || "image"}`}
+                            className="!my-6 block w-full cursor-zoom-in overflow-hidden rounded-xl"
+                          >
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
+                            <img
+                              src={b.src}
+                              alt={b.alt}
+                              loading="lazy"
+                              className="!my-0 block h-auto w-full transition-transform duration-500 ease-out hover:scale-[1.02]"
+                            />
+                          </button>
+                        );
+                      }
                     } else {
                       // 2 or 4 imgs → 2 columns; everything else 2+ →
                       // 3 columns. Stay 3-across on mobile too — the
