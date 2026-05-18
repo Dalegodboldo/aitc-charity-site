@@ -71,7 +71,7 @@ const programs: Program[] = [
     },
     Icon: Plane,
     features: [
-      { Icon: Sparkles, label: "Broadway + Disney" },
+      { Icon: Sparkles, label: "Disney + Broadway + Music/Film Production Facilities" },
       { Icon: Compass, label: "Behind-the-scenes" },
       { Icon: GraduationCap, label: "Real-world credit" },
     ],
@@ -81,8 +81,8 @@ const programs: Program[] = [
     body: "Mouseketeers share their knowledge through workshops and one-on-one coaching — training young creatives on their craft while guiding them through emotional well-being and the business of entertainment.",
     href: "https://www.mickeymouseclubreunion.com/mentorship-coaching#coaches",
     image: {
-      src: "/images/dale-coaching.png",
-      alt: "A Mouseketeer coaching a small group of students",
+      src: "/images/tony-coaching.avif",
+      alt: "Tony Lucca coaching a student",
     },
     Icon: Mic2,
     features: [
