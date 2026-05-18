@@ -137,6 +137,7 @@ const staff: Person[] = [
     name: "Carrie Mulderink",
     description: "Doctor of Philosophy / Master of Arts",
     role: "Diversity Manager",
+    photo: "/images/carrie.webp",
   },
   {
     name: "Jonathan B. Smith, CPA",
