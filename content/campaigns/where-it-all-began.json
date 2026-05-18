@@ -34,6 +34,11 @@
       "html": "<em>Always In The Club's Launch featuring a watch party for Tony Lucca and Christina Aguilera on NBC's The Voice Finals. Special guests included reunited Mouseketeers Dale Godboldo, Jennifer McGill, Raquel Herring, Lindsey Alley, TJ Fantini, Deedee Magno Hall, David Kater, En Vogue's Rhona Bennett, and Terra 'Deva' McNair.</em>"
     },
     {
+      "type": "video",
+      "kind": "youtube",
+      "videoId": "pKWoVZSA9SU"
+    },
+    {
       "type": "p",
       "html": "<em>Tony Lucca talking Mouse Club and The Voice</em>"
     },
