@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/site/reveal";
+import { StudentSpotlightTrigger } from "@/components/site/student-spotlight";
 import { YouTubeEmbed } from "@/components/site/youtube-embed";
 
 type ImageData = {
@@ -17,9 +18,12 @@ const pillars: {
   body: string[];
   image: ImageData;
   imageBack: ImageData;
+  /** If true, render the Student Spotlight CTA + modal trigger in the body. */
+  spotlight?: boolean;
 }[] = [
   {
     title: "Mentorship & Youth Arts Education",
+    spotlight: true,
     body: [
       "We provide mentoring, workshops, coaching sessions and Experiential Learning opportunities with professional creatives and innovative companies across a wide range of industries.",
       "Our coaches’ students have gone on to sign with Disney, Epitaph Records, Capitol, Sony Red, Universal Music Group, and been seen all over the world in festivals and on stages such as Coachella, Lollapalooza, GMA, Jimmy Kimmel, iHeart Music Awards, and many more.",
@@ -140,6 +144,7 @@ export function OurMission() {
                     <p key={idx}>{para}</p>
                   ))}
                 </div>
+                {p.spotlight && <StudentSpotlightTrigger />}
               </div>
             </Reveal>
           ))}
