@@ -352,11 +352,23 @@ export function CampaignModal({ post, onClose }: Props) {
                       />
                     );
                   } else if (b.type === "h2") {
-                    out.push(<h2 key={i}>{b.text}</h2>);
+                    out.push(
+                      b.html
+                        ? <h2 key={i} dangerouslySetInnerHTML={{ __html: b.html }} />
+                        : <h2 key={i}>{b.text}</h2>
+                    );
                   } else if (b.type === "h3") {
-                    out.push(<h3 key={i}>{b.text}</h3>);
+                    out.push(
+                      b.html
+                        ? <h3 key={i} dangerouslySetInnerHTML={{ __html: b.html }} />
+                        : <h3 key={i}>{b.text}</h3>
+                    );
                   } else if (b.type === "h4") {
-                    out.push(<h4 key={i}>{b.text}</h4>);
+                    out.push(
+                      b.html
+                        ? <h4 key={i} dangerouslySetInnerHTML={{ __html: b.html }} />
+                        : <h4 key={i}>{b.text}</h4>
+                    );
                   } else if (b.type === "video" && b.kind === "youtube") {
                     out.push(
                       <div

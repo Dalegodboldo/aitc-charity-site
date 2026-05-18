@@ -16,9 +16,9 @@ import whereItAllBegan from "../../content/campaigns/where-it-all-began.json";
 
 export type CampaignBlock =
   | { type: "p"; html: string }
-  | { type: "h2"; text: string }
-  | { type: "h3"; text: string }
-  | { type: "h4"; text: string }
+  | { type: "h2"; text: string; html?: string }
+  | { type: "h3"; text: string; html?: string }
+  | { type: "h4"; text: string; html?: string }
   | {
       type: "img";
       src: string;
