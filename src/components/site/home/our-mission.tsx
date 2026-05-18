@@ -51,12 +51,13 @@ const pillars: {
 /**
  * Iris / spotlight reveal: the front photo is the always-visible base;
  * on hover, the back photo is unmasked from the center outward via an
- * expanding circular clip-path. A subtle ~3% counter-zoom on the back
- * makes the spotlight feel like it's "pulling forward" as it opens.
+ * expanding circular clip-path. Both states are class-based so the
+ * cascade resolves cleanly (an inline clip-path would beat any
+ * hover rule on specificity).
  */
 function FlipImage({ front, back }: { front: ImageData; back: ImageData }) {
   return (
-    <div className="group/flip relative aspect-[16/10] w-full overflow-hidden bg-warm-white">
+    <div className="iris-card group relative aspect-[16/10] w-full overflow-hidden bg-warm-white">
       {/* Front (base, always visible) */}
       <div className="absolute inset-0">
         <Image
@@ -71,14 +72,9 @@ function FlipImage({ front, back }: { front: ImageData; back: ImageData }) {
           className="object-cover"
         />
       </div>
-      {/* Back (spotlight reveal — clip-path circle grows from center;
-          inner image counter-zooms slightly for depth) */}
-      <div
-        className="absolute inset-0 transition-[clip-path] duration-[750ms] ease-out motion-reduce:transition-none"
-        style={{
-          clipPath: "circle(0% at 50% 50%)",
-        }}
-      >
+      {/* Back (spotlight reveal — clip-path defined in the <style> block below
+          so the default and hover states share specificity and transition cleanly) */}
+      <div className="iris-back absolute inset-0 motion-reduce:!transition-none">
         <Image
           src={back.src}
           alt={back.alt}
@@ -88,20 +84,22 @@ function FlipImage({ front, back }: { front: ImageData; back: ImageData }) {
             ...(back.objectPosition ? { objectPosition: back.objectPosition } : {}),
             ...(back.imgStyle ?? {}),
           }}
-          className="scale-[1.04] object-cover transition-transform duration-[750ms] ease-out group-hover/flip:scale-100 motion-reduce:transition-none"
+          className="object-cover"
         />
       </div>
-      {/* Inline style is overridden on hover via the group-hover utility below.
-          Tailwind's clip-path arbitrary value handles the hover state. */}
       <style>{`
-        .group\\/flip:hover > div:nth-child(2) {
-          clip-path: circle(130% at 50% 50%);
+        .iris-back {
+          clip-path: circle(0% at 50% 50%);
+          transition: clip-path 750ms cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .iris-card:hover .iris-back {
+          clip-path: circle(120% at 50% 50%);
         }
       `}</style>
       {/* Subtle hint that there's a second image — only visible until first hover */}
       <span
         aria-hidden
-        className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-ink/55 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cream backdrop-blur-sm transition-opacity duration-500 group-hover/flip:opacity-0"
+        className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-ink/55 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cream backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-0"
       >
         Hover
       </span>
