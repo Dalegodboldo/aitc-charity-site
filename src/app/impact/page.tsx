@@ -470,6 +470,19 @@ export default function ImpactPage() {
               );
             })}
           </ul>
+
+          {/* Outbound link to the main blog for more campaigns and events */}
+          <Reveal delay={120} className="mt-14 flex justify-center">
+            <a
+              href="https://www.mickeymouseclubreunion.com/blog"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-base font-semibold text-red no-underline transition-colors hover:text-red-deep"
+            >
+              Visit our main blog for more campaigns and events
+              <ArrowUpRight className="h-4 w-4" aria-hidden />
+            </a>
+          </Reveal>
         </div>
       </section>
     </>
