@@ -632,23 +632,23 @@ export default function ProgramsPage() {
               transparent background "shows through" to the image
               rather than to a coloured tile. */}
           <Reveal>
-            <div className="relative mx-auto max-w-2xl overflow-hidden rounded-2xl bg-ink shadow-soft">
+            <div className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl bg-ink shadow-soft">
               <Image
                 src="/images/mmc89_mmc30.png"
                 alt="Mouseketeers reunited on stage with Mickey Mouse under the MMC'89 logo"
                 width={2560}
                 height={2560}
-                sizes="(min-width: 768px) 672px, 100vw"
+                sizes="(min-width: 768px) 768px, 100vw"
                 className="block h-auto w-full"
               />
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/75 via-ink/20 to-transparent" />
-              <div className="absolute bottom-0 right-0 p-5 sm:p-7 lg:p-8">
+              <div className="absolute bottom-0 right-0 p-5 sm:p-6 lg:p-7">
                 <Image
                   src="/images/Changemaker-regular-Logo-white.png"
                   alt="Changemaker"
                   width={528}
                   height={524}
-                  className="h-40 w-auto drop-shadow-md sm:h-48 lg:h-60"
+                  className="h-28 w-auto drop-shadow-md sm:h-32 lg:h-40"
                 />
               </div>
             </div>
