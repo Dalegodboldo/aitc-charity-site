@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import type { ReactNode } from "react";
 import Image from "next/image";
 import type { LucideIcon } from "lucide-react";
 import {
@@ -95,7 +96,7 @@ const programs: Program[] = [
 
 type Campaign = {
   title: string;
-  body: string;
+  body: ReactNode;
   goals: string;
   image: { src: string; alt: string };
   Icon: LucideIcon;
@@ -213,14 +214,31 @@ const campaigns: Campaign[] = [
   },
   {
     title: "Shop the Club, We Plant a Tree",
-    body: "With every purchase or donation in our Club Store, we plant a tree in your name to help offset carbon emissions.",
+    body: (
+      <>
+        With every purchase or donation in our{" "}
+        <a
+          href="https://mmcreunion.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-red underline underline-offset-2 transition-colors hover:text-red-deep"
+        >
+          Club Store
+        </a>
+        , we plant a tree in your name to help offset carbon emissions. We&rsquo;ve
+        proudly planted more than 2,500 trees around the world.
+      </>
+    ),
     goals: "",
     image: {
       src: "/images/screen-shot-2023-12-23-at-4_49_42-pm.webp",
       alt: "Shop the Club, We Plant a Tree campaign",
     },
     Icon: Leaf,
-    cta: { label: "Visit the Club Store", href: "https://mmcreunion.com/" },
+    cta: {
+      label: "Visit our forest",
+      href: "https://tree-nation.com/profile/impact/always-in-the-club-foundation#co2",
+    },
   },
 ];
 
