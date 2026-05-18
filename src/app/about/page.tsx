@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { ArrowUpRight, Quote, Sparkles } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, BookOpen, Quote, Sparkles } from "lucide-react";
 import { OriginStoryTrigger } from "@/components/site/about/origin-story-trigger";
 import { PageIntro } from "@/components/site/page-intro";
 import { Reveal } from "@/components/site/reveal";
@@ -52,7 +53,45 @@ export default function AboutPage() {
             </p>
           </Reveal>
 
-          <Reveal delay={160}>
+          {/* Book promo banner — links out to /about-mmc and the book store */}
+          <Reveal delay={140} className="mt-12">
+            <div className="overflow-hidden rounded-2xl border border-border shadow-soft-sm">
+              <Image
+                src="/images/Cast-Photo-Book-Branding.png"
+                alt="Always In The Club: The True Story of the All-New Mickey Mouse Club — cast photo and book branding"
+                width={1800}
+                height={570}
+                sizes="(min-width: 1024px) 768px, 100vw"
+                className="block h-auto w-full"
+              />
+            </div>
+            <div className="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
+              <a
+                href="https://www.mickeymouseclubreunion.com/books"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-red px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-red-deep hover:text-cream"
+              >
+                <BookOpen className="h-4 w-4" aria-hidden />
+                Get the true story
+                <ArrowUpRight className="h-4 w-4" aria-hidden />
+              </a>
+              <a
+                href="https://www.mickeymouseclubreunion.com/about-mmc"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-1.5 text-base font-semibold text-red no-underline transition-colors hover:text-red-deep"
+              >
+                Learn more about MMC
+                <ArrowUpRight
+                  className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0"
+                  aria-hidden
+                />
+              </a>
+            </div>
+          </Reveal>
+
+          <Reveal delay={200}>
             <figure className="my-14 rounded-2xl border border-border bg-cream p-8 sm:p-10">
               <Quote className="h-7 w-7 text-gold" aria-hidden />
               <blockquote className="mt-4 font-display text-2xl italic leading-snug text-ink sm:text-[28px]">
