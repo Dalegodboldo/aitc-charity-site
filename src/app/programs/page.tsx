@@ -6,13 +6,16 @@ import {
   ArrowUpRight,
   Briefcase,
   Brush,
+  Compass,
   Download,
   GraduationCap,
   HandHeart,
   HeartHandshake,
   Leaf,
   Lightbulb,
+  Mic2,
   Music2,
+  Plane,
   Quote,
   Rocket,
   ShieldCheck,
@@ -20,6 +23,7 @@ import {
   Sparkles,
   Sun,
   Trophy,
+  Users,
   Utensils,
 } from "lucide-react";
 import { PageIntro } from "@/components/site/page-intro";
@@ -31,21 +35,61 @@ export const metadata: Metadata = {
     "Mentoring, Experiential Learning, Workshops & Coaching, and the MMC'89 Social Impact Initiative.",
 };
 
-const programs = [
+type Program = {
+  title: string;
+  body: string;
+  href: string;
+  image: { src: string; alt: string };
+  Icon: LucideIcon;
+  /** Three short feature pills shown under the body — quick scan of what's inside. */
+  features: { Icon: LucideIcon; label: string }[];
+};
+
+const programs: Program[] = [
   {
     title: "Mentoring",
-    body: "We match young adults and children pursuing a career in the entertainment industry with a Mouseketeer Mentor or other accomplished veteran of the arts, based on common interests, career goals, experiences, and life challenges. Our mentorship service provides a safe space for both virtual and in-person meet-ups, and includes collaboration with parents for children under 18.",
+    body: "We match young adults and children pursuing a career in the entertainment industry with a Mouseketeer Mentor or other accomplished veteran of the arts — based on common interests, career goals, experiences and life challenges.",
     href: "https://www.mickeymouseclubreunion.com/mentorship-coaching#mentor",
+    image: {
+      src: "/images/mentoring-cropped-3deae8f.png",
+      alt: "A Mouseketeer mentoring a student",
+    },
+    Icon: HeartHandshake,
+    features: [
+      { Icon: Users, label: "1:1 matches" },
+      { Icon: Smartphone, label: "Virtual + IRL" },
+      { Icon: ShieldCheck, label: "Parent-loop for under-18s" },
+    ],
   },
   {
     title: "Experiential Learning",
-    body: "There’s no education like real-world experience. Mouseketeers are leading experiential learning trips to Broadway and to Disney Imagination Campus for young people interested in performing arts, arts and humanities, science and technology, leadership, and innovation.",
+    body: "There’s no education like real-world experience. Mouseketeers lead trips to Broadway and Disney Imagination Campus for students interested in performing arts, humanities, science, technology, leadership and innovation.",
     href: "https://www.mickeymouseclubreunion.com/destination-broadway",
+    image: {
+      src: "/images/img_1593.jpg",
+      alt: "Students on an experiential learning trip",
+    },
+    Icon: Plane,
+    features: [
+      { Icon: Sparkles, label: "Broadway + Disney" },
+      { Icon: Compass, label: "Behind-the-scenes" },
+      { Icon: GraduationCap, label: "Real-world credit" },
+    ],
   },
   {
     title: "Workshops & Coaching",
-    body: "Mouseketeers are sharing their knowledge through workshops and one-on-one coaching sessions for personal growth and advancing students’ careers — training young creatives on their craft while providing guidance on emotional well-being and the business of entertainment.",
+    body: "Mouseketeers share their knowledge through workshops and one-on-one coaching — training young creatives on their craft while guiding them through emotional well-being and the business of entertainment.",
     href: "https://www.mickeymouseclubreunion.com/mentorship-coaching#coaches",
+    image: {
+      src: "/images/dale-coaching.png",
+      alt: "A Mouseketeer coaching a small group of students",
+    },
+    Icon: Mic2,
+    features: [
+      { Icon: Brush, label: "Craft training" },
+      { Icon: HeartHandshake, label: "Well-being focus" },
+      { Icon: Briefcase, label: "Business of the biz" },
+    ],
   },
 ];
 
@@ -409,30 +453,76 @@ export default function ProgramsPage() {
             </h2>
           </Reveal>
           <ul className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {programs.map((p, i) => (
-              <Reveal
-                as="li"
-                key={p.title}
-                delay={i * 80}
-                className="flex h-full flex-col rounded-2xl border border-border bg-warm-white p-7 shadow-soft-sm sm:p-8"
-              >
-                <h3 className="font-display text-xl font-medium leading-snug text-ink sm:text-[22px]">
-                  {p.title}
-                </h3>
-                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-warm-gray">
-                  {p.body}
-                </p>
-                <a
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
+            {programs.map((p, i) => {
+              const Icon = p.Icon;
+              return (
+                <Reveal
+                  as="li"
+                  key={p.title}
+                  delay={i * 80}
+                  className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-warm-white shadow-soft-sm transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-soft motion-reduce:transition-none motion-reduce:hover:translate-y-0"
                 >
-                  Learn more
-                  <ArrowUpRight className="h-4 w-4" aria-hidden />
-                </a>
-              </Reveal>
-            ))}
+                  {/* Red top accent — wipes in on hover */}
+                  <span
+                    aria-hidden
+                    className="absolute inset-x-0 top-0 z-10 h-[3px] origin-left scale-x-0 bg-red transition-transform duration-500 ease-out group-hover:scale-x-100 motion-reduce:transition-none motion-reduce:group-hover:scale-x-0"
+                  />
+                  {/* Image header */}
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-cream">
+                    <Image
+                      src={p.image.src}
+                      alt={p.image.alt}
+                      fill
+                      sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                    />
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/45 via-ink/0 to-transparent"
+                    />
+                    {/* Icon badge — top-left, flips red on hover */}
+                    <span className="absolute left-4 top-4 inline-flex h-11 w-11 items-center justify-center rounded-full bg-cream/95 text-red shadow-soft-sm backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-red group-hover:text-cream motion-reduce:transition-none motion-reduce:group-hover:scale-100">
+                      <Icon className="h-5 w-5" aria-hidden />
+                    </span>
+                    {/* Number tag — bottom-left, overlays the image */}
+                    <span className="absolute bottom-4 left-4 font-display text-[44px] font-medium leading-none tracking-tight text-cream drop-shadow-md">
+                      0{i + 1}
+                    </span>
+                  </div>
+
+                  {/* Body */}
+                  <div className="flex flex-1 flex-col p-7 sm:p-8">
+                    <h3 className="font-display text-xl font-medium leading-snug text-ink sm:text-[22px]">
+                      {p.title}
+                    </h3>
+                    <p className="mt-4 text-[15px] leading-relaxed text-warm-gray">
+                      {p.body}
+                    </p>
+                    {/* Feature pills — quick scan of what's inside the program */}
+                    <ul className="mt-5 flex flex-1 flex-wrap items-start gap-2">
+                      {p.features.map(({ Icon: FIcon, label }, idx) => (
+                        <li
+                          key={idx}
+                          className="inline-flex items-center gap-1.5 rounded-full bg-cream px-3 py-1 text-[12px] font-semibold text-warm-gray ring-1 ring-inset ring-border"
+                        >
+                          <FIcon className="h-3.5 w-3.5 text-gold" aria-hidden />
+                          {label}
+                        </li>
+                      ))}
+                    </ul>
+                    <a
+                      href={p.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-6 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
+                    >
+                      Learn more
+                      <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0" aria-hidden />
+                    </a>
+                  </div>
+                </Reveal>
+              );
+            })}
           </ul>
         </div>
       </section>
