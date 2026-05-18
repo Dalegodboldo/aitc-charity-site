@@ -51,8 +51,8 @@ const programs: Program[] = [
     body: "We match young adults and children pursuing a career in the entertainment industry with a Mouseketeer Mentor or other accomplished veteran of the arts — based on common interests, career goals, experiences and life challenges.",
     href: "https://www.mickeymouseclubreunion.com/mentorship-coaching#mentor",
     image: {
-      src: "/images/mentoring-cropped-3deae8f.png",
-      alt: "A Mouseketeer mentoring a student",
+      src: "/images/chasen-girl.jpg",
+      alt: "Mouseketeer Chasen Hampton mentoring a young creative",
     },
     Icon: HeartHandshake,
     features: [
