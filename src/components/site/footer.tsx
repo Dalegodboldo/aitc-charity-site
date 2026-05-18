@@ -72,7 +72,7 @@ const externalLinkGroups: { label: string; links: FooterLink[] }[] = [
       },
       {
         href: siteConfig.external.mainSiteBlog,
-        label: "Blog",
+        label: "MMC'89 Blog",
         external: true,
       },
       { href: siteConfig.external.annualReport, label: "Annual Report", external: true },
