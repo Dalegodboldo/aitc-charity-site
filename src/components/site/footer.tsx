@@ -240,6 +240,14 @@ export function Footer() {
         <p className="mt-8 text-[12px] text-warm-gray">
           © {year} Always In The Club Foundation. All rights reserved.
         </p>
+
+        {/* Disney trademark disclaimer */}
+        <p className="mt-4 max-w-3xl text-[12px] leading-relaxed text-warm-gray">
+          Always In The Club is not affiliated with Disney®. The Mickey Mouse
+          Club, Disney, and Disney Imagination Campus logos are registered
+          trademarks of The Walt Disney Company. As to Disney artwork, logos
+          and properties: ©Disney
+        </p>
       </div>
     </footer>
   );
