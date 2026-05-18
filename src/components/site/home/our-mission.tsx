@@ -20,6 +20,8 @@ const pillars: {
   imageBack: ImageData;
   /** If true, render the Student Spotlight CTA + modal trigger in the body. */
   spotlight?: boolean;
+  /** If true, render the "Our Programs & Initiatives" button in the body. */
+  programsLink?: boolean;
 }[] = [
   {
     title: "Mentorship & Youth Arts Education",
@@ -42,6 +44,7 @@ const pillars: {
   },
   {
     title: "MMC’89 Social Impact Initiative",
+    programsLink: true,
     body: [
       "Through our programs and campaigns, we address global challenges related to education, hunger, mental health, poverty, inequality and climate change.",
       "We also provide marketing and business management services to nonprofit organizations and socially conscious entrepreneurs who want to create impact — guided by all 17 of the United Nations Global Goals for a better world by 2030.",
@@ -145,6 +148,15 @@ export function OurMission() {
                   ))}
                 </div>
                 {p.spotlight && <StudentSpotlightTrigger />}
+                {p.programsLink && (
+                  <Link
+                    href="/programs"
+                    className="mt-6 inline-flex h-12 shrink-0 items-center justify-center gap-2 self-start rounded-full bg-ink px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-ink/90"
+                  >
+                    Our Programs & Initiatives
+                    <ArrowRight className="h-4 w-4" aria-hidden />
+                  </Link>
+                )}
               </div>
             </Reveal>
           ))}
@@ -159,17 +171,7 @@ export function OurMission() {
           />
         </Reveal>
 
-        <Reveal
-          delay={280}
-          className="mt-12 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-8"
-        >
-          <Link
-            href="/programs"
-            className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-ink px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-ink/90"
-          >
-            Our Programs & Initiatives
-            <ArrowRight className="h-4 w-4" aria-hidden />
-          </Link>
+        <Reveal delay={280} className="mt-8">
           <p className="max-w-md text-[15px] leading-relaxed text-warm-gray">
             Stream the{" "}
             <a
