@@ -129,10 +129,10 @@ function StudentSpotlightModal({
             type="button"
             onClick={onClose}
             aria-label="Close Student Spotlight"
-            className="inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-full border border-border bg-warm-white px-3.5 text-sm font-semibold text-ink no-underline transition-colors hover:border-ink/30 hover:bg-cream sm:h-10 sm:px-4"
+            className="inline-flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-full bg-ink px-4 text-sm font-semibold text-cream no-underline shadow-soft-sm transition-colors hover:bg-red focus-visible:bg-red sm:h-11 sm:px-5"
           >
             <X className="h-4 w-4" aria-hidden />
-            <span className="hidden sm:inline">Close</span>
+            Close
           </button>
         </header>
 
