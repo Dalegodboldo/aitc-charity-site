@@ -52,5 +52,5 @@ export const primaryNav = [
   { href: "/impact", label: "Impact" },
   { href: "/about", label: "About" },
   { href: "/team", label: "Team" },
-  { href: "/blog", label: "Blog" },
+  { href: "/blog", label: "All Ears" },
 ] as const;

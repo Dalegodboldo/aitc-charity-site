@@ -7,9 +7,9 @@ import { Reveal } from "@/components/site/reveal";
 import { formatPostDate, getAllPosts } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "All Ears",
   description:
-    "Discover the magic of youth empowerment through arts and mentorship with the Always In The Club Foundation.",
+    "All Ears — ideas, stories, and resources from the Always In The Club Foundation's mission of youth mentorship and arts education.",
 };
 
 export default async function BlogIndex() {
@@ -18,8 +18,9 @@ export default async function BlogIndex() {
     <>
       <PageIntro
         eyebrow="Stories from the Club"
-        title="Blog"
-        body="Discover the magic of youth empowerment through arts and mentorship with the Always In The Club Foundation."
+        title="All Ears"
+        subtitle="Ideas, stories, and resources from our mission."
+        body={"Every creative journey needs someone in its corner. The ‘All New’ Mickey Mouse Club proved what’s possible when young people get the arts, genuine mentorship, and a community that listens — and All Ears is where we keep that going. You’ll find ideas on mentorship and arts education, stories of the young people and Mouseketeers turning talent into possibility, and resources for anyone helping a young creative find their voice. We’re all ears here — we hope you are too."}
       />
 
       <section className="bg-warm-white pb-24 pt-4 sm:pb-32">

@@ -50,7 +50,7 @@ export default async function BlogPostPage({
             className="inline-flex items-center gap-1.5 text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
           >
             <ArrowLeft className="h-4 w-4" aria-hidden />
-            Back to blog
+            Back to All Ears
           </Link>
           <p className="mt-8 text-[12px] font-semibold uppercase tracking-[0.18em] text-gold">
             {formatPostDate(post.date)}
