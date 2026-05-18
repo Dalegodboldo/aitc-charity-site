@@ -12,6 +12,7 @@ import disneyCampus from "../../content/campaigns/disney-campus.json";
 import laStrong from "../../content/campaigns/lastrong.json";
 import mmc35 from "../../content/campaigns/mmc35.json";
 import mmc36 from "../../content/campaigns/mmc36.json";
+import whereItAllBegan from "../../content/campaigns/where-it-all-began.json";
 
 export type CampaignBlock =
   | { type: "p"; html: string }
@@ -41,6 +42,7 @@ const all: Record<string, CampaignPost> = {
   "baby-j": babyJ as CampaignPost,
   "day-of-hope": dayOfHope as CampaignPost,
   lastrong: laStrong as CampaignPost,
+  "where-it-all-began": whereItAllBegan as CampaignPost,
 };
 
 export function getCampaign(slug: string): CampaignPost | null {

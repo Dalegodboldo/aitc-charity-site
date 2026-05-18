@@ -16,6 +16,7 @@ const SOURCES = [
   { slug: "baby-j",        file: "/tmp/campaigns/baby-j.html",        url: "https://www.mickeymouseclubreunion.com/post/whatever-happened-to-baby-j" },
   { slug: "day-of-hope",   file: "/tmp/campaigns/day-of-hope.html",   url: "https://www.mickeymouseclubreunion.com/post/en-vogue-s-rhona-bennett-hosts-changemakers-networking-night" },
   { slug: "lastrong",      file: "/tmp/campaigns/lastrong.html",      url: "https://www.mickeymouseclubreunion.com/post/doing-what-we-can-the-mmc-89-fire-relief-fund" },
+  { slug: "where-it-all-began", file: "/tmp/campaigns/where-it-all-began.html", url: "https://www.mickeymouseclubreunion.com/post/where-it-all-began" },
 ];
 
 const decode = (s) =>

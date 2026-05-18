@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ArrowUpRight, Quote, Sparkles } from "lucide-react";
+import { OriginStoryTrigger } from "@/components/site/about/origin-story-trigger";
 import { PageIntro } from "@/components/site/page-intro";
 import { Reveal } from "@/components/site/reveal";
 import { siteConfig } from "@/lib/site-config";
@@ -89,6 +90,9 @@ export default function AboutPage() {
               featuring global leaders in entertainment, business and
               government.
             </p>
+          </Reveal>
+          <Reveal delay={140} className="mt-8">
+            <OriginStoryTrigger />
           </Reveal>
         </div>
       </section>
