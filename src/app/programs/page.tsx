@@ -358,7 +358,9 @@ const testimonials = [
 type Partner = {
   name: string;
   body: string;
-  logo: { src: string; alt: string };
+  /** If the source PNG is a white-only mark on transparent, set `invert`
+   *  so the logo is recoloured black for visibility on the cream tile. */
+  logo: { src: string; alt: string; invert?: boolean };
   href: string;
 };
 
@@ -378,7 +380,11 @@ const partners: Partner[] = [
   {
     name: "That’s 4 Entertainment",
     body: "We partner with their 90s Con and Christmas Con to raise awareness and funds for our programs.",
-    logo: { src: "/images/unnamed.jpg", alt: "That’s 4 Entertainment logo" },
+    logo: {
+      src: "/images/Thats4EntertainmentLogo%20white%20small.png",
+      alt: "That’s 4 Entertainment logo",
+      invert: true,
+    },
     href: "https://www.thats4entertainment.com/",
   },
   {
@@ -858,7 +864,7 @@ export default function ProgramsPage() {
                     alt={p.logo.alt}
                     fill
                     sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw"
-                    className="object-contain p-5"
+                    className={`object-contain p-5 ${p.logo.invert ? "invert" : ""}`}
                   />
                 </div>
                 {/* Body */}
