@@ -140,13 +140,13 @@ const cards: ImpactCard[] = [
       alt: "Rhona Bennett at the Evening of Hope, gifting signed copies of Saving Your Soul",
     },
     Icon: Sun,
-    stat: { label: "host + book gifted to every guest", value: 1, suffix: " Evening of Hope" },
+    stat: { label: "host + book gifted to every guest", value: 1, suffix: " Day+Evening of Hope" },
   },
   {
     title: "unite4:humanity",
     body: "AITCF provided marketing and fundraising support to help raise $4,000,000 for charity with the launch of unite4:humanity. Honorees and speakers included Robert De Niro, Martin Scorsese, Alicia Keys, Sean Penn, Selena Gomez, Forest Whitaker, and President Bill Clinton.",
     image: {
-      src: "/images/untitled-design---2025-07-20t000647.052.png",
+      src: "/images/unite4humanity.webp",
       alt: "unite4:humanity launch",
     },
     Icon: Handshake,
@@ -156,7 +156,7 @@ const cards: ImpactCard[] = [
     title: "Jenesse Center",
     body: "AITCF provided marketing and production support to help raise $100,000 for the Jenesse Center, supporting Ambassador Halle Berry’s call to action.",
     image: {
-      src: "/images/b15ad88f-fd59-4c59-891d-1447a777ae8e.jpg",
+      src: "/images/jenesse-halle.webp",
       alt: "Jenesse Center event with Ambassador Halle Berry",
     },
     Icon: Shield,
@@ -166,7 +166,7 @@ const cards: ImpactCard[] = [
     title: "The Party 30th Anniversary Concert",
     body: "Cast members reunited as The Party for an epic 30th anniversary concert at House of Blues Orlando, grossing over $120,000 for charity.",
     image: {
-      src: "/images/teers-concert-cropped.jpg",
+      src: "/images/b15ad88f-fd59-4c59-891d-1447a777ae8e.jpg",
       alt: "The Party 30th Anniversary Concert at House of Blues Orlando",
     },
     Icon: Mic2,
