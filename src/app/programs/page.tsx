@@ -626,32 +626,61 @@ export default function ProgramsPage() {
 
       {/* MMC'89 Social Impact Initiative */}
       <section className="bg-warm-white py-20 sm:py-28">
-        <div className="mx-auto max-w-4xl px-5 sm:px-8">
-          <Reveal>
-            <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-gold">
-              Social Impact
-            </p>
-            <h2 className="mt-4 font-display text-4xl font-medium leading-tight tracking-tight sm:text-5xl">
-              MMC&rsquo;89 Social Impact Initiative
-            </h2>
-          </Reveal>
-          <Reveal delay={80} className="mt-10 space-y-6 text-lg leading-relaxed text-warm-gray">
-            <p>
-              MMC&rsquo;89 promotes the United Nations&rsquo; Sustainable
-              Development Goals (Global Goals) that address the global
-              challenges we face. We support socially conscious efforts across
-              a wide range of causes including climate action, feeding the
-              hungry, critically ill children, victims of domestic abuse, music
-              people in need, socially conscious entrepreneurship, quality
-              education, job creation, veterans issues, and mental health.
-            </p>
-            <p>
-              Through events and awareness campaigns, we have helped raise
-              more than $4.5 million. MMC&rsquo;89 is currently comprised of 11
-              programs and campaigns addressing all 17 of the UN&rsquo;s Global
-              Goals for a better world by 2030.
-            </p>
-          </Reveal>
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
+            {/* Stage photo with the MMC'89 logo as the backdrop */}
+            <Reveal className="order-2 lg:order-1">
+              <Image
+                src="/images/mmc89_mmc30.png"
+                alt="Mouseketeers reunited on stage with Mickey Mouse under the MMC'89 logo"
+                width={2560}
+                height={2560}
+                sizes="(min-width: 1024px) 480px, 90vw"
+                className="mx-auto h-auto w-full max-w-md rounded-2xl shadow-soft lg:max-w-none"
+              />
+            </Reveal>
+            {/* Copy + Changemaker brand mark */}
+            <div className="order-1 lg:order-2">
+              <Reveal>
+                <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-gold">
+                  Social Impact
+                </p>
+                <h2 className="mt-4 font-display text-4xl font-medium leading-tight tracking-tight sm:text-5xl">
+                  MMC&rsquo;89 Social Impact Initiative
+                </h2>
+              </Reveal>
+              <Reveal delay={80} className="mt-8 space-y-6 text-lg leading-relaxed text-warm-gray">
+                <p>
+                  MMC&rsquo;89 promotes the United Nations&rsquo; Sustainable
+                  Development Goals (Global Goals) that address the global
+                  challenges we face. We support socially conscious efforts
+                  across a wide range of causes including climate action,
+                  feeding the hungry, critically ill children, victims of
+                  domestic abuse, music people in need, socially conscious
+                  entrepreneurship, quality education, job creation, veterans
+                  issues, and mental health.
+                </p>
+                <p>
+                  Through events and awareness campaigns, we have helped raise
+                  more than $4.5 million. MMC&rsquo;89 is currently comprised
+                  of 11 programs and campaigns addressing all 17 of the
+                  UN&rsquo;s Global Goals for a better world by 2030.
+                </p>
+              </Reveal>
+              <Reveal
+                delay={160}
+                className="mt-8 inline-flex items-center rounded-xl bg-ink px-5 py-3 shadow-soft-sm"
+              >
+                <Image
+                  src="/images/Changemaker-regular-Logo-white.png"
+                  alt="Changemaker"
+                  width={528}
+                  height={524}
+                  className="h-12 w-auto sm:h-14"
+                />
+              </Reveal>
+            </div>
+          </div>
         </div>
       </section>
 
