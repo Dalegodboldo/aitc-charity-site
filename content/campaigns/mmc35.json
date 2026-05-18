@@ -390,7 +390,7 @@
     },
     {
       "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_3c1a42521c744e6c9d86510756357a06~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "src": "/images/People_Magazine_logo.png",
       "alt": "PEOPLE magazine",
       "placement": "inline",
       "treatment": "logo"
