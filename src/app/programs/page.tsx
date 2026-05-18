@@ -442,6 +442,13 @@ export default function ProgramsPage() {
               More than a variety show, the &ldquo;All New&rdquo; Mickey Mouse
               Club was a world-class performing arts academy.
             </p>
+            <p>
+              Inspired by the support they received from Disney, Mouseketeers
+              are lending their unique insights to enhance the lives of young
+              people through mentoring and arts education — essential for
+              social and emotional well-being, and critical tools for
+              establishing equity and access.
+            </p>
           </Reveal>
 
           <Reveal delay={140}>
@@ -455,16 +462,6 @@ export default function ProgramsPage() {
                 Justin Timberlake <span className="text-gold">— Mouseketeer</span>
               </figcaption>
             </figure>
-          </Reveal>
-
-          <Reveal delay={200} className="space-y-7 text-lg leading-relaxed text-warm-gray">
-            <p>
-              Inspired by the support they received from Disney, Mouseketeers
-              are lending their unique insights to enhance the lives of young
-              people through mentoring and arts education — essential for social
-              and emotional well-being, and critical tools for establishing
-              equity and access.
-            </p>
           </Reveal>
 
           <Reveal delay={260} className="mt-12 grid gap-8 lg:grid-cols-2">
