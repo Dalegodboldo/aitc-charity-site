@@ -237,35 +237,84 @@ export function CampaignModal({ post, onClose }: Props) {
                     } else {
                       // 2 or 4 imgs → 2 columns; everything else 2+ →
                       // 3 columns. Stay 3-across on mobile too — the
-                      // tiles are aspect-square and shrink gracefully.
+                      // tiles shrink gracefully.
                       const gridClass =
                         run.length === 2 || run.length === 4
                           ? "grid-cols-2"
                           : "grid-cols-3";
+                      // A row of "logo"-treated images: light contained
+                      // tiles that match the modal bg, no zoom on hover,
+                      // no aspect-square crop. Mixed rows fall back to
+                      // the standard photo treatment.
+                      const isLogoRow = run.every(
+                        (img) => img.treatment === "logo"
+                      );
                       out.push(
                         <div
                           key={i}
-                          className={`!my-6 grid gap-2 sm:gap-3 ${gridClass}`}
+                          className={`!my-6 grid gap-3 sm:gap-4 ${gridClass}`}
                         >
-                          {run.map((img, k) => (
-                            <button
-                              key={k}
-                              type="button"
-                              onClick={() => openLightbox(img.src, img.alt)}
-                              aria-label={`View full-size: ${img.alt || "image"}`}
-                              className="group relative aspect-square cursor-zoom-in overflow-hidden rounded-xl bg-warm-white"
-                            >
-                              {/* eslint-disable-next-line @next/next/no-img-element */}
-                              <img
-                                src={img.src}
-                                alt={img.alt}
-                                loading="lazy"
-                                className="!my-0 absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
-                              />
-                            </button>
-                          ))}
+                          {run.map((img, k) => {
+                            const hasCaption = !!img.caption;
+                            if (img.treatment === "logo") {
+                              const inner = (
+                                <>
+                                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                                  <img
+                                    src={img.src}
+                                    alt={img.alt || img.caption || ""}
+                                    loading="lazy"
+                                    className="!my-0 mx-auto block h-full w-full max-h-32 object-contain sm:max-h-40"
+                                  />
+                                  {hasCaption && (
+                                    <p className="!mt-2 !mb-0 text-center text-[12px] font-semibold uppercase tracking-[0.12em] text-warm-gray sm:text-[13px]">
+                                      {img.caption}
+                                    </p>
+                                  )}
+                                </>
+                              );
+                              // Logo tiles don't open a lightbox — they're
+                              // just brand marks, not photos worth zooming.
+                              return (
+                                <div
+                                  key={k}
+                                  className="flex flex-col items-center justify-center p-2 sm:p-3"
+                                >
+                                  {inner}
+                                </div>
+                              );
+                            }
+                            return (
+                              <figure key={k} className="!my-0">
+                                <button
+                                  type="button"
+                                  onClick={() =>
+                                    openLightbox(img.src, img.alt)
+                                  }
+                                  aria-label={`View full-size: ${img.alt || img.caption || "image"}`}
+                                  className="group relative block aspect-square w-full cursor-zoom-in overflow-hidden rounded-xl bg-warm-white"
+                                >
+                                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                                  <img
+                                    src={img.src}
+                                    alt={img.alt}
+                                    loading="lazy"
+                                    className="!my-0 absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                                  />
+                                </button>
+                                {hasCaption && (
+                                  <figcaption className="!mt-2 !mb-0 text-center text-[12px] font-semibold leading-snug text-warm-gray sm:text-[13px]">
+                                    {img.caption}
+                                  </figcaption>
+                                )}
+                              </figure>
+                            );
+                          })}
                         </div>
                       );
+                      // Suppress unused-var warning when isLogoRow isn't
+                      // referenced inside the map (kept for readability).
+                      void isLogoRow;
                     }
                     i = j;
                     continue;

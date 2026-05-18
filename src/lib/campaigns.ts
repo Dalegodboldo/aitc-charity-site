@@ -19,7 +19,21 @@ export type CampaignBlock =
   | { type: "h2"; text: string }
   | { type: "h3"; text: string }
   | { type: "h4"; text: string }
-  | { type: "img"; src: string; alt: string; placement?: "inline" | "gallery" }
+  | {
+      type: "img";
+      src: string;
+      alt: string;
+      placement?: "inline" | "gallery";
+      /**
+       * Optional display hint:
+       *  - "logo" → render contained on a light, untinted tile (no
+       *    square crop, no warm-white tile, no zoom hover) so brand
+       *    marks with transparent backgrounds sit cleanly.
+       */
+      treatment?: "logo";
+      /** Short text shown under the image (e.g. board-member name). */
+      caption?: string;
+    }
   | { type: "video"; kind: "youtube" | "vimeo"; videoId: string }
   | { type: "video"; kind: "mp4"; src: string }
   /** Featured document: full-size image (no crop, not expandable) + CTA. */

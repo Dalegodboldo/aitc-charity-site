@@ -280,19 +280,25 @@
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_da069077f07a40d383175b155ab79761~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
       "alt": "",
-      "placement": "inline"
+      "placement": "inline",
+      "treatment": "logo",
+      "caption": "Always In The Club"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_945072c6adcb444b985ac86bb6f961d5~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
       "alt": "",
-      "placement": "inline"
+      "placement": "inline",
+      "treatment": "logo",
+      "caption": "Always In The Club Foundation"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_900f877705a94a34bc08fff13a4cbf48~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
       "alt": "",
-      "placement": "inline"
+      "placement": "inline",
+      "treatment": "logo",
+      "caption": "MMC '89"
     },
     {
       "type": "h4",
