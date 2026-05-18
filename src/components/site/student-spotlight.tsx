@@ -15,7 +15,7 @@ import { ArrowUpRight, Sparkles, X } from "lucide-react";
 
 type Photo = { src: string; alt: string };
 
-const VIDEO_SRC = "/images/YAFFA-video.MP4";
+const VIDEO_SRC = "/images/yaffa-video-3.MP4";
 const PHOTOS: Photo[] = [
   { src: "/images/yaffa-1.JPG", alt: "Yaffa Botier on stage with Yungblud" },
   { src: "/images/yaffa-2.JPG", alt: "Yaffa Botier performing live" },
@@ -198,19 +198,30 @@ function StudentSpotlightModal({
         </div>
 
         {/* CTA + photo credit */}
-        <footer className="mt-7 flex flex-col gap-4 border-t border-border bg-warm-white px-6 py-6 sm:flex-row sm:items-center sm:justify-between sm:px-10">
-          <a
-            href={LEARN_MORE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-red px-6 text-base font-semibold text-cream no-underline transition-colors hover:bg-red-deep"
+        <footer className="mt-7 flex flex-col gap-4 border-t border-border bg-warm-white px-6 py-6 sm:px-10">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <a
+              href={LEARN_MORE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-red px-6 text-base font-semibold text-cream no-underline transition-colors hover:bg-red-deep"
+            >
+              Learn about our mentoring programs
+              <ArrowUpRight className="h-4 w-4" aria-hidden />
+            </a>
+            <p className="text-[12px] uppercase tracking-[0.16em] text-warm-gray">
+              📸 @_fitzphotos_
+            </p>
+          </div>
+          {/* Secondary, text-labelled exit — easier to find than the X icon */}
+          <button
+            type="button"
+            onClick={onClose}
+            className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border border-border bg-cream text-sm font-semibold text-ink no-underline transition-colors hover:border-ink/30 hover:bg-warm-white sm:w-auto sm:self-start"
           >
-            Learn about our mentoring programs
-            <ArrowUpRight className="h-4 w-4" aria-hidden />
-          </a>
-          <p className="text-[12px] uppercase tracking-[0.16em] text-warm-gray">
-            📸 @_fitzphotos_
-          </p>
+            <X className="h-4 w-4" aria-hidden />
+            Close
+          </button>
         </footer>
       </div>
     </div>
