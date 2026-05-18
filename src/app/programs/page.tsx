@@ -1,5 +1,27 @@
 import type { Metadata } from "next";
-import { ArrowUpRight, Download, Quote } from "lucide-react";
+import Image from "next/image";
+import type { LucideIcon } from "lucide-react";
+import {
+  AlertTriangle,
+  ArrowUpRight,
+  Briefcase,
+  Brush,
+  Download,
+  GraduationCap,
+  HandHeart,
+  HeartHandshake,
+  Leaf,
+  Lightbulb,
+  Music2,
+  Quote,
+  Rocket,
+  ShieldCheck,
+  Smartphone,
+  Sparkles,
+  Sun,
+  Trophy,
+  Utensils,
+} from "lucide-react";
 import { PageIntro } from "@/components/site/page-intro";
 import { Reveal } from "@/components/site/reveal";
 
@@ -18,7 +40,7 @@ const programs = [
   {
     title: "Experiential Learning",
     body: "There’s no education like real-world experience. Mouseketeers are leading experiential learning trips to Broadway and to Disney Imagination Campus for young people interested in performing arts, arts and humanities, science and technology, leadership, and innovation.",
-    href: "https://createimpactnow.funnels.cx/experiential-learning-adventures",
+    href: "https://www.mickeymouseclubreunion.com/destination-broadway",
   },
   {
     title: "Workshops & Coaching",
@@ -27,56 +49,133 @@ const programs = [
   },
 ];
 
-const campaigns = [
+type Campaign = {
+  title: string;
+  body: string;
+  goals: string;
+  image: { src: string; alt: string };
+  Icon: LucideIcon;
+};
+
+const campaigns: Campaign[] = [
   {
     title: "Business Launch & Growth Solutions",
     body: "We transform visions into impact, providing comprehensive for-profit and nonprofit launch and growth solutions.",
     goals: "Global Goals 8, 9, 10 & 17",
+    image: { src: "/images/cin.png", alt: "Business launch & growth solutions workshop" },
+    Icon: Rocket,
   },
   {
     title: "Community Support & Resources",
     body: "A range of emergency services for cast members in need. Originally formed as Cast Member Pantry at the height of the COVID-19 pandemic, we have served more than 10,000 cast members with groceries and other food essentials.",
     goals: "Global Goals 2 & 17",
+    image: {
+      src: "/images/b91c43_0f462b73bc154aa28b3b48c4fbd575d6-mv2.jpeg",
+      alt: "Cast Member Pantry volunteers serving groceries",
+    },
+    Icon: Utensils,
   },
   {
     title: "Use Your Bottle, Change Our World",
     body: "With support from the United Nations Development Program, we launched a campaign promoting a solution-based approach to reducing single-use plastic.",
     goals: "Global Goals 6, 12 & 13",
+    image: {
+      src: "/images/3ee52e_6bcc609dea3148129d984b10d3d1b3e8-mv2.j.webp",
+      alt: "Use Your Bottle, Change Our World campaign",
+    },
+    Icon: Leaf,
   },
   {
     title: "Veterans, First Responders & Healthcare Workers",
     body: "We support veterans and first responders in partnership with Victory Bridge and others, including a campaign with Orlando Bloom to reduce the stigma around mental health in veteran communities.",
     goals: "Global Goals 3, 8, 16 & 17",
+    image: {
+      src: "/images/3ee52e_433531b6a8ee4f17b8cba8c26f623909-mv2-1.webp",
+      alt: "Veterans, first responders & healthcare workers campaign",
+    },
+    Icon: ShieldCheck,
   },
   {
     title: "Day at Disney",
     body: "Merit-based trips with Mouseketeers to Disney World and Disneyland for outstanding youth.",
     goals: "Global Goals 4 & 17",
+    image: {
+      src: "/images/65126762_2564381300247248_5987177040460120064_.jpg",
+      alt: "Mouseketeers and youth at Disney for a Day at Disney trip",
+    },
+    Icon: Sparkles,
   },
   {
     title: "Day of Service",
     body: "Mouseketeer-led volunteering — including sorting 4,000 pounds of food at Nashville’s Second Harvest Food Bank to provide more than 3,000 meals to people in need.",
     goals: "Global Goals 1–17",
+    image: { src: "/images/img_8917.jpg", alt: "Mouseketeers volunteering at Second Harvest Food Bank" },
+    Icon: HandHeart,
   },
   {
     title: "Day of Hope / Evening of Impact",
     body: "Empowering days of pampering and evenings of impact for women who are victims of domestic abuse.",
     goals: "Global Goals 5 & 10",
+    image: { src: "/images/rhona_doh.png", alt: "Rhona Bennett at the Evening of Hope" },
+    Icon: Sun,
   },
   {
     title: "Hall of Fame / Be Great! Awards",
     body: "Like the Mouse Club’s “Hall of Fame Day,” we spotlight community leaders and provide grants to those in need.",
     goals: "Global Goals 1–17",
+    image: { src: "/images/img_5573.webp", alt: "Hall of Fame / Be Great! Awards honourees" },
+    Icon: Trophy,
   },
   {
     title: "Why? Because It’s Christmas",
     body: "Mouseketeers reunited for music and events supporting MusiCares and music people in need.",
     goals: "Global Goals 1, 2 & 3",
+    image: {
+      src: "/images/mmc-holidays-musicares-facebook-event-cover.jpg",
+      alt: "Why? Because It’s Christmas — Mouseketeers x MusiCares",
+    },
+    Icon: Music2,
   },
   {
     title: "Shop the Club, We Plant a Tree",
     body: "With every purchase or donation in our Club Store, we plant a tree in your name to help offset carbon emissions.",
     goals: "",
+    image: {
+      src: "/images/screen-shot-2023-12-23-at-4_49_42-pm.webp",
+      alt: "Shop the Club, We Plant a Tree campaign",
+    },
+    Icon: Leaf,
+  },
+];
+
+// Bullets that flesh out the two side-by-side problem/solution panels.
+const problemPoints: { Icon: LucideIcon; text: string }[] = [
+  {
+    Icon: AlertTriangle,
+    text: "Adolescence brings real mental-health pressure — and arts education is a proven preventive tool.",
+  },
+  {
+    Icon: GraduationCap,
+    text: "Schools still optimize for a diploma → 9-to-5 path that no longer guarantees a stable career.",
+  },
+  {
+    Icon: Smartphone,
+    text: "Social media and the gig economy add professional and emotional hurdles previous generations didn’t face.",
+  },
+];
+
+const solutionPoints: { Icon: LucideIcon; text: string }[] = [
+  {
+    Icon: Brush,
+    text: "Training in the arts and craft alongside working professionals.",
+  },
+  {
+    Icon: Briefcase,
+    text: "Entrepreneurship + the business of entertainment, taught the way it actually works.",
+  },
+  {
+    Icon: HeartHandshake,
+    text: "Mentoring on innovation, leadership and managing mental health for the long run.",
   },
 ];
 
@@ -192,38 +291,77 @@ export default function ProgramsPage() {
           </Reveal>
 
           <Reveal delay={260} className="mt-12 grid gap-8 lg:grid-cols-2">
-            <div className="rounded-2xl border border-border bg-cream p-7 sm:p-9">
-              <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-red">
+            {/* Problem panel — red accent + bullet list of pressures */}
+            <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-cream p-7 shadow-soft-sm transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-soft sm:p-9 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+              <span
+                aria-hidden
+                className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-red transition-transform duration-500 ease-out group-hover:scale-x-100 motion-reduce:transition-none motion-reduce:group-hover:scale-x-0"
+              />
+              {/* Decorative blur — soft red halo */}
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-red/10 blur-3xl"
+              />
+              <span className="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-red text-cream shadow-soft-sm transition-transform duration-300 group-hover:scale-110 motion-reduce:transition-none motion-reduce:group-hover:scale-100">
+                <AlertTriangle className="h-6 w-6" aria-hidden />
+              </span>
+              <p className="relative mt-5 text-[12px] font-semibold uppercase tracking-[0.18em] text-red">
                 What We Aim To Solve
               </p>
-              <p className="mt-4 text-[17px] leading-relaxed text-warm-gray">
-                Adolescence is a critical period of development characterized
-                by numerous challenges and transitions. Arts education can
-                serve as a powerful preventive tool to mitigate potential
-                negative mental health outcomes among adolescents. Traditional
-                educational institutions prioritize preparing young people to
-                obtain a diploma that leads to employment — but the era when a
-                diploma guaranteed a stable 9-to-5 job has passed. Today&rsquo;s
-                young people confront unique professional and emotional hurdles
-                stemming, in part, from the pervasive influence of social media
-                and the rise of the gig economy.
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border bg-cream p-7 sm:p-9">
-              <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-red">
+              <h3 className="relative mt-2 font-display text-2xl font-medium leading-snug text-ink sm:text-[26px]">
+                The gap today’s young creatives face
+              </h3>
+              <ul className="relative mt-6 space-y-4">
+                {problemPoints.map(({ Icon, text }, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-red/10 text-red transition-colors group-hover:bg-red/15">
+                      <Icon className="h-4 w-4" aria-hidden />
+                    </span>
+                    <p className="text-[15px] leading-relaxed text-warm-gray sm:text-[16px]">
+                      {text}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </article>
+
+            {/* Solution panel — gold accent + bullet list of responses */}
+            <article className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-cream p-7 shadow-soft-sm transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-soft sm:p-9 motion-reduce:transition-none motion-reduce:hover:translate-y-0">
+              <span
+                aria-hidden
+                className="absolute inset-x-0 top-0 h-[3px] origin-left scale-x-0 bg-gold transition-transform duration-500 ease-out group-hover:scale-x-100 motion-reduce:transition-none motion-reduce:group-hover:scale-x-0"
+              />
+              <span
+                aria-hidden
+                className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-gold/15 blur-3xl"
+              />
+              <span className="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-gold text-cream shadow-soft-sm transition-transform duration-300 group-hover:scale-110 motion-reduce:transition-none motion-reduce:group-hover:scale-100">
+                <Lightbulb className="h-6 w-6" aria-hidden />
+              </span>
+              <p className="relative mt-5 text-[12px] font-semibold uppercase tracking-[0.18em] text-gold">
                 Our Solutions
               </p>
-              <p className="mt-4 text-[17px] leading-relaxed text-warm-gray">
-                To thrive in a modern, dynamic landscape, young people today
-                require a well-rounded education with mentoring that includes
-                training in the arts, entrepreneurship, and life skills, as
-                well as guidance in innovation, leadership and managing mental
-                health. Spearheaded by reunited Mouseketeers and others, we are
-                working to fill the gaps left by traditional learning
-                institutions with youth arts education and mentoring programs
-                that include real-world learning opportunities.
+              <h3 className="relative mt-2 font-display text-2xl font-medium leading-snug text-ink sm:text-[26px]">
+                A well-rounded education that meets the moment
+              </h3>
+              <ul className="relative mt-6 space-y-4">
+                {solutionPoints.map(({ Icon, text }, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-gold/15 text-gold transition-colors group-hover:bg-gold/25">
+                      <Icon className="h-4 w-4" aria-hidden />
+                    </span>
+                    <p className="text-[15px] leading-relaxed text-warm-gray sm:text-[16px]">
+                      {text}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+              <p className="relative mt-6 text-[14px] leading-relaxed text-warm-gray/90">
+                Spearheaded by reunited Mouseketeers, we fill the gaps with
+                youth arts education and mentoring programs that include
+                real-world learning opportunities.
               </p>
-            </div>
+            </article>
           </Reveal>
         </div>
       </section>
@@ -310,27 +448,51 @@ export default function ProgramsPage() {
               MMC&rsquo;89 in action
             </h2>
           </Reveal>
-          <ul className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {campaigns.map((c, i) => (
-              <Reveal
-                as="li"
-                key={c.title}
-                delay={(i % 3) * 80}
-                className="flex h-full flex-col rounded-2xl border border-border bg-warm-white p-7 shadow-soft-sm"
-              >
-                <h3 className="font-display text-lg font-medium leading-snug text-ink">
-                  {c.title}
-                </h3>
-                <p className="mt-3 flex-1 text-[15px] leading-relaxed text-warm-gray">
-                  {c.body}
-                </p>
-                {c.goals && (
-                  <p className="mt-5 text-[12px] font-semibold uppercase tracking-[0.14em] text-gold">
-                    {c.goals}
-                  </p>
-                )}
-              </Reveal>
-            ))}
+          <ul className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+            {campaigns.map((c, i) => {
+              const Icon = c.Icon;
+              return (
+                <Reveal
+                  as="li"
+                  key={c.title}
+                  delay={(i % 3) * 80}
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-warm-white shadow-soft-sm transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-soft motion-reduce:transition-none motion-reduce:hover:translate-y-0"
+                >
+                  {/* Image + icon badge */}
+                  <div className="relative aspect-[16/10] w-full overflow-hidden bg-cream">
+                    <Image
+                      src={c.image.src}
+                      alt={c.image.alt}
+                      fill
+                      sizes="(min-width: 1024px) 340px, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                    />
+                    <div
+                      aria-hidden
+                      className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink/35 via-ink/0 to-transparent"
+                    />
+                    {/* Icon badge — top-left */}
+                    <span className="absolute left-3 top-3 inline-flex h-10 w-10 items-center justify-center rounded-full bg-cream/95 text-red shadow-soft-sm backdrop-blur-sm transition-all duration-300 group-hover:scale-110 group-hover:bg-red group-hover:text-cream motion-reduce:transition-none motion-reduce:group-hover:scale-100">
+                      <Icon className="h-4 w-4" aria-hidden />
+                    </span>
+                  </div>
+                  {/* Body */}
+                  <div className="flex flex-1 flex-col p-6 sm:p-7">
+                    <h3 className="font-display text-lg font-medium leading-snug text-ink">
+                      {c.title}
+                    </h3>
+                    <p className="mt-3 flex-1 text-[15px] leading-relaxed text-warm-gray">
+                      {c.body}
+                    </p>
+                    {c.goals && (
+                      <p className="mt-5 text-[12px] font-semibold uppercase tracking-[0.14em] text-gold">
+                        {c.goals}
+                      </p>
+                    )}
+                  </div>
+                </Reveal>
+              );
+            })}
           </ul>
         </div>
       </section>
