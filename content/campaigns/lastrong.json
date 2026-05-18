@@ -10,6 +10,12 @@
   },
   "blocks": [
     {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_ba0a21e8791f45d0b785eb9c9dbb5634~mv2.webp/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "LA Fire Relief Fund",
+      "placement": "inline"
+    },
+    {
       "type": "h2",
       "text": "Introduction"
     },
@@ -52,6 +58,12 @@
     {
       "type": "p",
       "html": "OVER 80,000 WITHOUT POWER"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_1a09006fd17f4765a387086ea6e1e433~mv2.webp/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "Fire Relief Fund",
+      "placement": "inline"
     },
     {
       "type": "h2",
@@ -144,6 +156,18 @@
     {
       "type": "p",
       "html": "You can also purchase an MMC'89 <a href=\"https://www.mickeymouseclubreunion.com/events/hashtags/LAStrong\" target=\"_blank\">#LAStrong</a> T-Shirt. 100% of the profits supports LA Fire relief."
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_419636b9554140c8b15b8c7bf5947c38~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_1f46685bb7554c9e9a92883c743872e9~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "https://www.directrelief.org/",
+      "placement": "gallery"
     },
     {
       "type": "h2",
@@ -250,16 +274,40 @@
       "html": "Check official social media channels"
     },
     {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_e2f71c263a3d4cc89554ed273293ffd6~mv2.webp/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "Fire Relief Fund",
+      "placement": "inline"
+    },
+    {
       "type": "h2",
       "text": "Resources & Ways to Help"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_3c157614a463479cb22bdc25a2a74202~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "The California Arts Council maintains this webpage dedicated to resources for Californians who have been affected by recent natural disasters in the state.",
+      "placement": "inline"
     },
     {
       "type": "p",
       "html": "The California Arts Council maintains this webpage dedicated to resources for Californians who have been affected by recent natural disasters in the state. <a target=\"_top\" href=\"https://arts.ca.gov/disaster-relief-emergency-preparedness-resources/\" rel=\"noopener\"><strong><u>Click here</u></strong></a>"
     },
     {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_3ff80dad7bfa4d0fae1f1dcda195f6e5~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "inline"
+    },
+    {
       "type": "p",
       "html": "<a target=\"_blank\" href=\"https://www.sagaftra.org/disaster-relief-and-emergency-resources-la-wildfires\" rel=\"noopener noreferrer\"><strong><u>Click here</u></strong></a>"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_e0b4bb398e4f43a9b9a9a16e7b2c06d8~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "https://www.directrelief.org/",
+      "placement": "inline"
     },
     {
       "type": "p",
@@ -268,27 +316,32 @@
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_43c5e111fb4240e4a8f7c55e5ed5a3d5~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_ae4983ae316b485a97eaa5f50cc2316c~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_8be2346bc7d5469c97fea1f25e8d8b6e~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_5eaea3e0ad5a408591886b449bc3b6cd~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_0eb0e0beac844807b781de80a940a107~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "p",
@@ -297,22 +350,26 @@
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_17b921b590a645e699b9d213f1c4155a~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_f87af6bf07cd4f0996d8a8e713679d35~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_547d0412f1c04ae4845d123465441f2c~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_cb953667b889410fb074c2d314c73985~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "p",
@@ -321,7 +378,62 @@
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_16cdee3ff5424c9fa52dbe123a39b87b~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": "Fire Relief Fund"
+      "alt": "Fire Relief Fund",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_d067f0e68284463593cd8e3aa668bee9~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "Fire Relief Fund",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_52d5abcc47544b8c939d0e8df25a0fed~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "Fire Relief Fund",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_1cece41c01734dc0a37574c0474ee594~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "Fire Relief Fund",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_57e3e781faae4ebf9f937e9b1a097e26~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "Fire Relief Fund",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_3db5919bffa843239f52dc5ed0aff013~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "Fire Relief Fund",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_66a6e94a8dad47fe9f87ad0cee21c713~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "Fire Relief Fund",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_3911abc45ad54583826ec6f38a631409~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "Fire Relief Fund",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_5f231fdc39794d7096be3e93c6baf53c~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "Fire Relief Fund",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_a1b071e24018499fb7bb13089a2f8c14~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "Fire Relief Fund",
+      "placement": "gallery"
     },
     {
       "type": "p",

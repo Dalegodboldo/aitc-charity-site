@@ -10,6 +10,12 @@
   },
   "blocks": [
     {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_cbe2a8b7024a4437ba98ff9aa262a67d~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "inline"
+    },
+    {
       "type": "p",
       "html": "<a target=\"_blank\" href=\"https://www.mickeymouseclubreunion.com/aitcfoundation\" rel=\"noopener noreferrer\"><u>Always In The Club</u></a> teamed up with <a target=\"_blank\" href=\"https://www.thats4entertainment.com/\" rel=\"noopener noreferrer\"><u>That's 4 Entertainment</u></a> and <a target=\"_blank\" href=\"https://www.halifaxrep.com/\" rel=\"noopener noreferrer\"><u>Halifax Repertory Theatre</u></a> on launching our <a href=\"https://www.mickeymouseclubreunion.com/events/hashtags/MMC35\" target=\"_blank\">#MMC35</a> campaign celebrating the 35th anniversary of The 'All New' Mickey Mouse Club at <strong>90s Con Daytona Beach</strong> <strong>2024</strong>."
     },
@@ -19,53 +25,87 @@
     },
     {
       "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_7c555cff92a142b283307f84a5412825~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_2e1b03b201884dcbb99f6c0ffdda7f54~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_f55b1f7f9cc24170ba13e72f7ec4f296~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_c3d3e67b3fac4d6e84980498a2a96723~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_877fe849ba1d46ad980ef59980cee1ea~mv2.webp/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_6ea45a84cddb45e593d24232dbea3ff5~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_e24f9a35da654be1a688068e851a4ece~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_29e6e888c107443fbdd4f89afd8e0ef0~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_7f08034d16a3463b8b5c04af85c2a002~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_e0ae7d7cbc3f48239e55893270609c97~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_5a4a86a87dad4938b604c79eb38f00d7~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_a6309a1bf5ec49d38ce2ddbf2876c5ed~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": ""
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_09cd5d49108b4f7186e30101e9c2c641~mv2.webp/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_530aec77cdd34ce9a096baa35586f20b~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "p",
@@ -80,6 +120,11 @@
       "html": "Day one featured rehearsals at Halifax for the 90s Con official after-party. We then hit the red carpet and ended the evening back at Halifax Repertory Theatre for our Club Member Meet-up featuring a super fun Karaoke Pizza Party hosted by Mouseketeer Jennifer McGill!"
     },
     {
+      "type": "video",
+      "kind": "mp4",
+      "src": "https://video.wixstatic.com/video/3ee52e_a1bab6f0fcf345538515446ecb07645e/720p/mp4/file.mp4"
+    },
+    {
       "type": "h4",
       "text": "One of the highlights of the weekend of events was during the After-Party produced by Always In the Club:"
     },
@@ -88,24 +133,90 @@
       "html": "The founders of 90s Con were inducted into our <a target=\"_blank\" href=\"https://www.mickeymouseclubreunion.com/hall-of-fame\" rel=\"noopener noreferrer\"><u>MMC'89 HALL OF FAME</u></a> by <a target=\"_blank\" href=\"https://www.mickeymouseclubreunion.com/aitcfoundation\" rel=\"noopener noreferrer\"><u>Always In The Club Foundation</u></a> board members Jennifer McGill, Tony Lucca and Chasen Hampton, along with program manager Dale Godboldo and Halifax's Jack and Sandy Cook."
     },
     {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_c6e521b01a37451d8f8a8a7b1b86d61d~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "inline"
+    },
+    {
       "type": "p",
       "html": "90s Con reunites the most iconic stars of the era and has been named by People Magazine as one of the Top 100 Reasons to Love America. <strong>Liliana Kligman</strong> and <strong>Christina Figliolia</strong> were honored for their work in transforming nostalgia into impact."
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_b96dd79b1e5f467cbe25aaa8e588e7dd~mv2.webp/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "inline"
     },
     {
       "type": "p",
       "html": "Another highlight was the House of Halliwell Tribute to Shannen Doherty that was presented by Always In The Club and featured the cast of “Charmed” and Brian Austin Green of “Beverly Hills 90210.”"
     },
     {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_480e2e8394654aa9a47f5bbd25cc9424~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "inline"
+    },
+    {
       "type": "p",
       "html": "And of course there was the After-party hosted by Mouseketeer <strong>Lindsey Alley</strong> and featuring performances by <strong>O-Town</strong>, <strong>En Vogue's Rhona Bennett</strong>, and <strong>The Party</strong>, with Mouseketeers <strong>Tony Lucca</strong> and <strong>Jennifer McGill. </strong>The evening featured The Party being inducted into the <strong>New England Hall of Fame!</strong>"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_f0f0756451704b8f81ed3bfd5e6024d3~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_d5ea76e2e7eb40fba06243386ca895da~mv2.webp/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_50f35057d43c4f9f8fe079b5fc59059e~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "p",
       "html": "The weekend of events ended with our <strong>MMC'89 Day of Service</strong>. Always In The Club teamed up with Halifax Repertory Theatre on a special Film & TV acting masterclass for youth and a Q&A session for their parents 🎭"
     },
     {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_a3384404a2554d79aa6be8b763297ecb~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "inline"
+    },
+    {
       "type": "p",
       "html": "The class was led by Mouseketeer <a target=\"_blank\" href=\"https://dale-godboldo.com/\" rel=\"noopener noreferrer\"><u>Dale Godboldo</u></a> (<em>The People v OJ Simpson, HBO's Perry Mason, The Sum of All Fears</em>) with support from Halifax's <a target=\"_blank\" href=\"https://www.jennifermcgill.com/\" rel=\"noopener noreferrer\"><u>Jennifer McGill</u></a> (also a Mouseketeer)."
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_7f00834384ce47b399000d46ec81d7df~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_002620d9405c458fad90f2b2bbdfc13b~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_5ae28afd51604bed811658baedbcf55e~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_c2ca2e05f449498c9d070e326556f756~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "p",
@@ -114,6 +225,174 @@
     {
       "type": "p",
       "html": "<strong>GALLERY</strong>"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_60d469aa2b5b490dbff03f7e305fdf9d~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_76f81099dae5436bb65c0cba127b7e18~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_79071d5d1f464e24883cbf8f3e0f3333~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_b93669e555ff409bb74eee1eaa67c732~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_7a890615f19543c68eb381f0250606d9~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_098765da5dc84074ae72a2ac3657504e~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_234139a9bf984c7dacc80882ac821fa6~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_86aad9d449484ae89cafb49743c0b89d~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_2699f2f242d849869811ecb1db43add5~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_064d345400544175b4cf2552975ceadb~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_2cc2e0ae1a3d485b8da1a84f2b7ec7a5~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_68be8e1ddf6c49db87381a89fb99bd42~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_7a038714080341bda5729e71ac0adfc6~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_27544b89194845dcacabb436cf43dfb9~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_f7c39c8478f442dc8d95f739091451b2~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_04fea8828f3842d3a7cb9e25350478c4~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_9c291e9cf9404ac0892edb4d31746b17~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_2b1fd8f4e08d4ed99ba3b2ea0415efd4~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_21a0fd5a8dfb47a6a3fac423b8e96acb~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_c15bba138f754ee0917fda2de5ba59ec~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_1e0daefc194c495f9b9e2ef40f865eaa~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_1b42f7e5aa114f93890106aac9f648b0~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_91c3a26dda414dcc96c55c2b670d33b5~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_1d1551f815b74ea8b8430f08e2d7efba~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_7bd155e973f44f97aa7a982e7dc329e7~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_db43f84bb9cc4ed8b4e7eda30a240c64~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_56bb4b653d064be1acbdd7bf391b4320~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_3c1a42521c744e6c9d86510756357a06~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
     },
     {
       "type": "h3",
@@ -164,6 +443,24 @@
       "html": "Co-founded by reunited cast members from <em>The All-New Mickey Mouse Club </em>and more than 10,000 dedicated fans, the nonprofit organization is inspired by the support that the Mouseketeers received from Disney while young. It also serves as the beneficiary of the celebrity memorabilia auction and will be hosting a <a target=\"_blank\" href=\"https://www.tapkat.org/always-in-the-club-foundation/49oNWk\" rel=\"noopener nofollow\">sweepstakes to win two free VIP tickets</a>."
     },
     {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_4f74b3e919854deca8b9de35f57f516d~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_9ab80ad04fa24cf99f4f72c68c8cbfb2~mv2.webp/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_483fe9ff1aa747af8adce6b247e117dc~mv2.webp/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
       "type": "h3",
       "text": "For a deeper dive, visit www.MickeyMouseClubReunion.com/90s-con"
     },
@@ -174,6 +471,12 @@
     {
       "type": "p",
       "html": "Always In The Club Foundation generated more than <strong>$62,000</strong> in sales and contributions to help launch the <a target=\"_blank\" href=\"https://www.mickeymouseclubreunion.com/mmc35\" rel=\"noopener noreferrer\"><u>#MMC35</u></a> campaign."
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_18da1e5b3d184b53b6503f49ab5db3c9~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "inline"
     },
     {
       "type": "p",

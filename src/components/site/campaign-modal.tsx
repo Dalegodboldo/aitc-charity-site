@@ -144,12 +144,15 @@ export function CampaignModal({ post, onClose }: Props) {
           </h2>
         </header>
 
-        {/* Body — text/headings/videos flow as prose; images are pulled
-            out into a single clean gallery grid at the bottom */}
+        {/* Body — text/headings/videos and INLINE images flow as prose;
+            images marked `placement: "gallery"` (runs of 2+ consecutive
+            images in the source) are collected into one grid at the bottom */}
         <div className="px-7 pb-2 pt-6 sm:px-10">
           <div className="prose-aitc prose max-w-none">
             {post.blocks
-              .filter((b) => b.type !== "img")
+              .filter(
+                (b) => b.type !== "img" || b.placement !== "gallery"
+              )
               .map((b, i) => {
                 if (b.type === "p") {
                   return (
@@ -162,6 +165,20 @@ export function CampaignModal({ post, onClose }: Props) {
                 if (b.type === "h2") return <h2 key={i}>{b.text}</h2>;
                 if (b.type === "h3") return <h3 key={i}>{b.text}</h3>;
                 if (b.type === "h4") return <h4 key={i}>{b.text}</h4>;
+                if (b.type === "img") {
+                  // Inline contextual image — render at its position in flow,
+                  // not in the bottom gallery
+                  return (
+                    // eslint-disable-next-line @next/next/no-img-element
+                    <img
+                      key={i}
+                      src={b.src}
+                      alt={b.alt}
+                      loading="lazy"
+                      className="!my-6 rounded-xl"
+                    />
+                  );
+                }
                 if (b.type === "video" && b.kind === "youtube") {
                   return (
                     <div
@@ -178,29 +195,36 @@ export function CampaignModal({ post, onClose }: Props) {
                     </div>
                   );
                 }
+                if (b.type === "video" && b.kind === "mp4") {
+                  return (
+                    <video
+                      key={i}
+                      src={b.src}
+                      controls
+                      preload="metadata"
+                      className="!my-6 w-full rounded-xl"
+                    />
+                  );
+                }
                 return null;
               })}
           </div>
 
-          {/* Gallery — every image in the post, uniform grid */}
+          {/* Gallery — only images that appeared as part of a run in the
+              source (contiguous gallery sections in the original post) */}
           {(() => {
-            const imgs = post.blocks.filter(
-              (b): b is Extract<typeof b, { type: "img" }> => b.type === "img"
+            const galleryImgs = post.blocks.filter(
+              (b): b is Extract<typeof b, { type: "img" }> =>
+                b.type === "img" && b.placement === "gallery"
             );
-            if (imgs.length === 0) return null;
+            if (galleryImgs.length === 0) return null;
             return (
               <section className="mt-10 border-t border-border pt-8">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
                   Gallery
                 </p>
-                <ul
-                  className={
-                    imgs.length === 1
-                      ? "mt-5"
-                      : "mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3"
-                  }
-                >
-                  {imgs.map((img, i) => (
+                <ul className="mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3">
+                  {galleryImgs.map((img, i) => (
                     <li
                       key={i}
                       className="relative aspect-square overflow-hidden rounded-xl bg-warm-white"

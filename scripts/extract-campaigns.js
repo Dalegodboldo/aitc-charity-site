@@ -31,7 +31,11 @@ const decode = (s) =>
     .replace(/&nbsp;/g, " ")
     .replace(/&#010;/g, "\n")
     .replace(/&#(\d+);/g, (_, n) => String.fromCharCode(+n))
-    .replace(/&#x([0-9a-fA-F]+);/g, (_, n) => String.fromCharCode(parseInt(n, 16)));
+    .replace(/&#x([0-9a-fA-F]+);/g, (_, n) => String.fromCharCode(parseInt(n, 16)))
+    // Wix sprinkles zero-width characters (BOM / ZWSP / ZWNJ / ZWJ / WJ)
+    // inside words — they show up as small visual gaps like "M oe Rock".
+    // U+200B-200D, U+2060 (word joiner), U+FEFF (BOM).
+    .replace(/[​‌‍⁠﻿]/g, "");
 
 function jsonLd(html) {
   const m = html.match(
@@ -86,6 +90,10 @@ function blocksFromArticle(body) {
         .replace(/\s+style="[^"]*"/g, "")
         .replace(/\s+class="[^"]*"/g, "")
         .replace(/\s+data-[a-z-]+="[^"]*"/g, "")
+        // Strip zero-width characters BEFORE the whitespace collapse — V8's
+        // \s class matches U+FEFF, which would otherwise turn the BOM into a
+        // visible space mid-word ("M oe Rock").
+        .replace(/[​‌‍⁠﻿]/g, "")
         .replace(/\s+/g, " ")
         .trim();
       const text = h.replace(/<[^>]+>/g, "").trim();
@@ -94,15 +102,52 @@ function blocksFromArticle(body) {
       const text = inner.replace(/<[^>]+>/g, "").trim();
       if (text) blocks.push({ type: tag, text: decode(text) });
     } else if (tag === "img" || tag === "wow-image") {
-      // Look for src in attrs or inner (Wix wow-image wraps an img)
+      // Skip the author avatar (Wix wraps it in a wow-image with the
+      // fluid-avatar-image class). We want article content images only.
+      if (/fluid-avatar-image|avatar/i.test(attrs + inner)) continue;
+      // Prefer the canonical data-pin-media URL, fall back to any URL-looking
+      // src. Skips Wix's lazy-load src="true" flags.
       const all = attrs + inner;
-      const srcM = all.match(/(?:data-pin-media|data-src|src)="([^"]+)"/);
+      const pinM = all.match(/data-pin-media="(https?:[^"]+)"/);
+      const srcM = all.match(/\bsrc="(https?:\/\/[^"]+)"/);
+      const url = pinM ? pinM[1] : srcM ? srcM[1] : null;
       const altM = all.match(/alt="([^"]*)"/);
-      if (srcM && /wixstatic|wsimg/.test(srcM[1])) {
-        // Skip tiny avatars (heuristic: filter by url params or alt)
-        const src = srcM[1].replace(/&amp;/g, "&");
+      if (url && /wixstatic|wsimg/.test(url)) {
+        const src = url.replace(/&amp;/g, "&");
         if (!/avatar|profile|sm_v1|w_40|w_50|w_80|w_100/i.test(src)) {
           blocks.push({ type: "img", src, alt: altM ? decode(altM[1]) : "" });
+        }
+      }
+    } else if (tag === "figure") {
+      // Wix wraps inline media in <figure data-hook="figure-IMAGE|figure-VIDEO">.
+      // Pull the underlying <img>/<iframe>/poster out of the figure body.
+      if (/figure-IMAGE/i.test(attrs)) {
+        // Prefer data-pin-media (Wix's canonical media URL for Pinterest),
+        // fall back to the first URL-looking src in the figure body. Bare
+        // src="true" attributes (Wix lazy-loading flags) get filtered out.
+        const pinM = inner.match(/data-pin-media="(https?:[^"]+)"/);
+        const srcM = inner.match(/\bsrc="(https?:\/\/[^"]+)"/);
+        const url = pinM ? pinM[1] : srcM ? srcM[1] : null;
+        const altM = inner.match(/alt="([^"]*)"/);
+        if (url && /wixstatic|wsimg/.test(url)) {
+          blocks.push({
+            type: "img",
+            src: url.replace(/&amp;/g, "&"),
+            alt: altM ? decode(altM[1]) : "",
+          });
+        }
+      } else if (/figure-VIDEO/i.test(attrs)) {
+        // Check for YouTube/Vimeo embeds first, then fall back to Wix's
+        // direct MP4 (used when the author uploads a video file).
+        const ytM = inner.match(/(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([\w-]{6,})/);
+        const vmM = inner.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+        const mp4M = inner.match(/<video[^>]*\bsrc="(https?:\/\/[^"]+\.mp4)"/);
+        if (ytM) {
+          blocks.push({ type: "video", kind: "youtube", videoId: ytM[1] });
+        } else if (vmM) {
+          blocks.push({ type: "video", kind: "vimeo", videoId: vmM[1] });
+        } else if (mp4M) {
+          blocks.push({ type: "video", kind: "mp4", src: mp4M[1] });
         }
       }
     } else if (tag === "iframe") {
@@ -159,13 +204,21 @@ function blocksFromArticle(body) {
     return true;
   });
 
-  // Cap content images at 10 so the modal stays readable
-  let imgsKept = 0;
-  filtered = filtered.filter((b) => {
-    if (b.type !== "img") return true;
-    imgsKept += 1;
-    return imgsKept <= 10;
-  });
+  // Mark each image as "inline" (a single image sandwiched between non-image
+  // blocks — contextual to the surrounding text) vs "gallery" (one of a run
+  // of 2+ consecutive images — they belong together in a grid).
+  //
+  // The render layer renders inline images at their position in the flow and
+  // collects gallery-marked images into a single grid at the bottom.
+  for (let i = 0; i < filtered.length; i++) {
+    const b = filtered[i];
+    if (b.type !== "img") continue;
+    const prev = filtered[i - 1];
+    const next = filtered[i + 1];
+    const runWithNeighbor =
+      (prev && prev.type === "img") || (next && next.type === "img");
+    b.placement = runWithNeighbor ? "gallery" : "inline";
+  }
 
   return filtered;
 }

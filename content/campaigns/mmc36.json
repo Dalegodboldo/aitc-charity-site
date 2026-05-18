@@ -14,12 +14,35 @@
       "html": "On April 24, 1989, the <strong>'All New' Mickey Mouse Club</strong> premiered, sparking a cultural phenomenon that continues to inspire generations. Now, 36 years later, we’re thrilled to announce the release of a unique collector’s item: <strong>\"Always In The Club: The True Story of the 'All New' Mickey Mouse Club.\"</strong>"
     },
     {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_1d82c8927ead4013a4d6fcc6b038efc1~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "Mickey Mouse Club",
+      "placement": "gallery"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_19c16d6ff42b49c2aaa3c743ecd583b4~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "gallery"
+    },
+    {
       "type": "p",
       "html": "This <strong>Limited Edition, Numbered Commemorative Coffee Table Book</strong> is a stunning piece of art that celebrates the magic, memories, and cultural impact of the '90s MMC. It features exclusive behind-the-scenes stories, rare photos, and personal reflections from cast members, their parents, crew, and fans. This book is more than just a keepsake—it’s a historical record of a show that shaped pop culture and launched the careers of global superstars."
     },
     {
       "type": "p",
       "html": "Also available are the <strong>Paperback</strong>, <strong>Hardcover, and Master Digital Archive</strong> editions."
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_e97c469b1c0645c2a4ebd3ff44289615~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "",
+      "placement": "inline"
+    },
+    {
+      "type": "video",
+      "kind": "mp4",
+      "src": "https://video.wixstatic.com/video/3ee52e_4bada451ca504d899aa4f2b97eb18ff6/720p/mp4/file.mp4"
     },
     {
       "type": "h3",

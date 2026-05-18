@@ -18,8 +18,9 @@ export type CampaignBlock =
   | { type: "h2"; text: string }
   | { type: "h3"; text: string }
   | { type: "h4"; text: string }
-  | { type: "img"; src: string; alt: string }
-  | { type: "video"; kind: "youtube" | "vimeo"; videoId: string };
+  | { type: "img"; src: string; alt: string; placement?: "inline" | "gallery" }
+  | { type: "video"; kind: "youtube" | "vimeo"; videoId: string }
+  | { type: "video"; kind: "mp4"; src: string };
 
 export type CampaignPost = {
   slug: string;
