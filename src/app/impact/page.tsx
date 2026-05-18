@@ -15,6 +15,7 @@ import {
   Users,
   Utensils,
 } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { CountUp } from "@/components/site/count-up";
 import { PageIntro } from "@/components/site/page-intro";
 import { Reveal } from "@/components/site/reveal";
@@ -39,6 +40,8 @@ type ImpactCard = {
     thousands?: boolean;
     decimals?: number;
   };
+  /** Optional CTA at the foot of the card — links to the campaign report. */
+  cta?: { label: string; href: string };
 };
 
 const cards: ImpactCard[] = [
@@ -51,6 +54,10 @@ const cards: ImpactCard[] = [
     },
     Icon: GraduationCap,
     stat: { label: "youth delegates reached", value: 2000, suffix: "+", thousands: true },
+    cta: {
+      label: "See recap",
+      href: "https://www.canva.com/design/DAF7Zy0aTyU/ol6N5NmXAJena8N-trOswg/view",
+    },
   },
   {
     title: "Cast Member Pantry",
@@ -61,6 +68,10 @@ const cards: ImpactCard[] = [
     },
     Icon: Utensils,
     stat: { label: "raised + 10,000 cast members served", value: 300000, prefix: "$", thousands: true },
+    cta: {
+      label: "See impact report",
+      href: "https://www.canva.com/design/DAE8sXxfRhY/AJwpfYC2wm74P1xImOodBg/view",
+    },
   },
   {
     title: "90s Con / Alzheimer’s Association",
@@ -71,6 +82,10 @@ const cards: ImpactCard[] = [
     },
     Icon: HandHeart,
     stat: { label: "raised across both causes", value: 40000, prefix: "$", thousands: true },
+    cta: {
+      label: "See impact report",
+      href: "https://www.canva.com/design/DAE8rwuGeQY/nOHgCkGoOjkGXHpO3FvS8Q/view",
+    },
   },
   {
     title: "Disney Imagination Campus",
@@ -81,6 +96,10 @@ const cards: ImpactCard[] = [
     },
     Icon: Sparkles,
     stat: { label: "children sponsored behind the scenes", value: 11, suffix: "" },
+    cta: {
+      label: "See recap",
+      href: "https://www.mickeymouseclubreunion.com/post/destination-disney-imagination-campus-walt-disney-world",
+    },
   },
   {
     title: "The Party VIP Cruise 2023",
@@ -91,6 +110,10 @@ const cards: ImpactCard[] = [
     },
     Icon: Mic2,
     stat: { label: "raised across donations, sponsorships, sales", value: 53000, prefix: "$", thousands: true },
+    cta: {
+      label: "See impact report",
+      href: "https://www.mickeymouseclubreunion.com/post/the-party-vip-cruise-2023",
+    },
   },
   {
     title: "Give Kids The World Village",
@@ -101,6 +124,10 @@ const cards: ImpactCard[] = [
     },
     Icon: HeartHandshake,
     stat: { label: "raised for GKTW + Orlando diversity", value: 20000, prefix: "$", thousands: true },
+    cta: {
+      label: "Learn more",
+      href: "https://www.mickeymouseclubreunion.com/mmc30",
+    },
   },
   {
     title: "DIS Family Reunion",
@@ -111,6 +138,10 @@ const cards: ImpactCard[] = [
     },
     Icon: Users,
     stat: { label: "direct contributions + 2,000 delegates", value: 7000, prefix: "$", thousands: true },
+    cta: {
+      label: "See impact report",
+      href: "https://www.canva.com/design/DAE9iOnJkJM/6R813rCy-8BGPlIBd9YKOw/view",
+    },
   },
   {
     title: "2022 Humanitarian Awards",
@@ -121,6 +152,10 @@ const cards: ImpactCard[] = [
     },
     Icon: Award,
     stat: { label: "raised; $12,500 to four nonprofits", value: 60000, prefix: "$", thousands: true },
+    cta: {
+      label: "Learn more",
+      href: "https://www.createimpactnow.org/begreat2022",
+    },
   },
   {
     title: "Day of Hope with Jenesse Center",
@@ -131,6 +166,10 @@ const cards: ImpactCard[] = [
     },
     Icon: Sun,
     stat: { label: "survivors of domestic abuse honored", value: 1, suffix: " Day of Hope" },
+    cta: {
+      label: "Learn more",
+      href: "https://www.createimpactnow.org/post/a-day-of-hope-for-victims-of-domestic-abuse",
+    },
   },
   {
     title: "Evening of Hope with Rhona Bennett",
@@ -141,6 +180,10 @@ const cards: ImpactCard[] = [
     },
     Icon: Sun,
     stat: { label: "host + book gifted to every guest", value: 1, suffix: " Day+Evening of Hope" },
+    cta: {
+      label: "Learn more",
+      href: "https://www.mickeymouseclubreunion.com/post/en-vogue-s-rhona-bennett-hosts-changemakers-networking-night",
+    },
   },
   {
     title: "unite4:humanity",
@@ -151,6 +194,10 @@ const cards: ImpactCard[] = [
     },
     Icon: Handshake,
     stat: { label: "raised at the unite4:humanity launch", value: 4, prefix: "$", suffix: "M", decimals: 0 },
+    cta: {
+      label: "Learn more",
+      href: "https://www.createimpactnow.org/post/unite4-humanity",
+    },
   },
   {
     title: "Jenesse Center",
@@ -161,6 +208,10 @@ const cards: ImpactCard[] = [
     },
     Icon: Shield,
     stat: { label: "raised for the Jenesse Center", value: 100000, prefix: "$", thousands: true },
+    cta: {
+      label: "Learn more",
+      href: "https://www.createimpactnow.org/post/100-000-raised-for-jenesse-center-for-the-prevention-of-domestic-violence",
+    },
   },
   {
     title: "The Party 30th Anniversary Concert",
@@ -171,6 +222,10 @@ const cards: ImpactCard[] = [
     },
     Icon: Mic2,
     stat: { label: "grossed for charity at House of Blues Orlando", value: 120000, prefix: "$", thousands: true },
+    cta: {
+      label: "Learn more",
+      href: "https://www.mickeymouseclubreunion.com/post/the-party-reunion-house-of-blues-disney-world",
+    },
   },
 ];
 
@@ -307,6 +362,17 @@ export default function ImpactPage() {
                     <p className="mt-3 flex-1 text-[15px] leading-relaxed text-warm-gray">
                       {c.body}
                     </p>
+                    {c.cta && (
+                      <a
+                        href={c.cta.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-6 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
+                      >
+                        {c.cta.label}
+                        <ArrowUpRight className="h-4 w-4" aria-hidden />
+                      </a>
+                    )}
                   </div>
                 </Reveal>
               );
