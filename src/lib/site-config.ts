@@ -5,7 +5,7 @@ export const siteConfig = {
   ein: "85-4015614",
   contact: {
     email: "Info@AlwaysInTheClub.org",
-    phones: ["407.804.8737", "925.350.6448"],
+    phones: ["407.804.8737"],
     addresses: [
       {
         label: "Orlando",
