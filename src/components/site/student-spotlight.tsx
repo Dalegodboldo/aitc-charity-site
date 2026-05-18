@@ -55,16 +55,16 @@ function StudentSpotlightModal({
   const previouslyFocusedRef = useRef<Element | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  // Body scroll lock + focus management while modal is open
+  // Focus management while modal is open. (We deliberately do NOT lock
+  // body scroll — the modal is fixed-position with a full backdrop, so
+  // page scroll behind it is harmless, and locking body scroll has
+  // historically broken touch scroll inside the modal on iOS.)
   useEffect(() => {
     if (!open) return;
     previouslyFocusedRef.current = document.activeElement;
-    const prevOverflow = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
     closeBtnRef.current?.focus();
     panelRef.current?.scrollTo({ top: 0 });
     return () => {
-      document.body.style.overflow = prevOverflow;
       // Pause video if it was playing
       videoRef.current?.pause();
       const prev = previouslyFocusedRef.current;
@@ -115,7 +115,10 @@ function StudentSpotlightModal({
     >
       <div
         ref={panelRef}
-        className="relative max-h-[95vh] w-full max-w-3xl overflow-y-auto rounded-t-2xl bg-cream shadow-soft sm:max-h-[90vh] sm:rounded-2xl"
+        // overscroll-contain stops iOS rubber-band from bubbling up to
+        // the page; touch-pan-y keeps vertical touch scroll inside the
+        // panel responsive even with a sticky header child.
+        className="relative max-h-[95dvh] w-full max-w-3xl touch-pan-y overflow-y-auto overscroll-contain rounded-t-2xl bg-cream shadow-soft sm:max-h-[90dvh] sm:rounded-2xl"
       >
         {/* Sticky title bar — title + visible Close button stay pinned so the
             exit is always one click away, even after scrolling. */}
