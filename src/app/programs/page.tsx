@@ -568,7 +568,7 @@ export default function ProgramsPage() {
             </p>
             <p>
               Through events and awareness campaigns, we have helped raise
-              more than $4.5 million. MMC&rsquo;89 is currently comprised of 12
+              more than $4.5 million. MMC&rsquo;89 is currently comprised of 11
               programs and campaigns addressing all 17 of the UN&rsquo;s Global
               Goals for a better world by 2030.
             </p>
