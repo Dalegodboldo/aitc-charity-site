@@ -253,6 +253,30 @@ export function CampaignModal({ post, onClose }: Props) {
                       />
                     );
                   }
+                  if (b.type === "report") {
+                    // Featured document tile: full-size image (natural aspect,
+                    // not cropped, not expandable) with a CTA button below.
+                    return (
+                      <div key={i} className="!my-8 flex flex-col items-center">
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img
+                          src={b.src}
+                          alt={b.alt}
+                          loading="lazy"
+                          className="!my-0 block h-auto w-full max-w-full rounded-xl border border-border"
+                        />
+                        <a
+                          href={b.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-5 inline-flex h-11 items-center justify-center gap-2 rounded-full bg-red px-6 text-sm font-semibold text-cream no-underline transition-colors hover:bg-red-deep hover:text-cream"
+                        >
+                          {b.label}
+                          <ArrowUpRight className="h-4 w-4" aria-hidden />
+                        </a>
+                      </div>
+                    );
+                  }
                   return null;
                 })}
             </div>

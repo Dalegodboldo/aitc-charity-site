@@ -20,7 +20,9 @@ export type CampaignBlock =
   | { type: "h4"; text: string }
   | { type: "img"; src: string; alt: string; placement?: "inline" | "gallery" }
   | { type: "video"; kind: "youtube" | "vimeo"; videoId: string }
-  | { type: "video"; kind: "mp4"; src: string };
+  | { type: "video"; kind: "mp4"; src: string }
+  /** Featured document: full-size image (no crop, not expandable) + CTA. */
+  | { type: "report"; src: string; alt: string; href: string; label: string };
 
 export type CampaignPost = {
   slug: string;

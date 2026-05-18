@@ -96,72 +96,73 @@ export function FeaturedCampaigns() {
               delay={(i % 3) * 80}
               className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-warm-white shadow-soft-sm transition-shadow duration-300 hover:shadow-soft"
             >
-              <button
-                type="button"
-                onClick={() => {
-                  const post = getCampaign(c.slug);
-                  if (post) setOpenPost(post);
-                }}
-                aria-haspopup="dialog"
-                className="flex h-full flex-col text-left no-underline"
-              >
-                <div className="iris-card relative aspect-[4/3] overflow-hidden bg-cream">
-                  {c.image ? (
-                    <>
-                      <div className="absolute inset-0">
-                        <Image
-                          src={c.image.src}
-                          alt={c.image.alt}
-                          fill
-                          sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
-                          style={
-                            c.image.objectPosition
-                              ? { objectPosition: c.image.objectPosition }
-                              : undefined
-                          }
-                          className="object-cover"
-                        />
-                        <div
-                          aria-hidden
-                          className="pointer-events-none absolute inset-0 bg-red mix-blend-multiply opacity-55"
-                        />
-                      </div>
-                      <div className="iris-back absolute inset-0">
-                        <Image
-                          src={c.image.src}
-                          alt=""
-                          fill
-                          sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
-                          style={
-                            c.image.objectPosition
-                              ? { objectPosition: c.image.objectPosition }
-                              : undefined
-                          }
-                          className="object-cover"
-                        />
-                      </div>
-                    </>
-                  ) : (
-                    <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(171,7,7,0.08),rgba(255,255,255,0)_70%)]">
-                      <span className="font-display text-5xl italic text-ink/15">
-                        MMC&rsquo;89
-                      </span>
+              {/* Card itself isn't clickable — image only does the iris
+                  hover reveal; the modal opens only when "Read more" is
+                  pressed (button below). */}
+              <div className="iris-card relative aspect-[4/3] overflow-hidden bg-cream">
+                {c.image ? (
+                  <>
+                    <div className="absolute inset-0">
+                      <Image
+                        src={c.image.src}
+                        alt={c.image.alt}
+                        fill
+                        sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                        style={
+                          c.image.objectPosition
+                            ? { objectPosition: c.image.objectPosition }
+                            : undefined
+                        }
+                        className="object-cover"
+                      />
+                      <div
+                        aria-hidden
+                        className="pointer-events-none absolute inset-0 bg-red mix-blend-multiply opacity-55"
+                      />
                     </div>
-                  )}
-                </div>
-                <div className="flex flex-1 flex-col p-7">
-                  <h3 className="font-display text-xl font-medium leading-snug text-ink">
-                    {c.title}
-                  </h3>
-                  <p className="mt-4 flex-1 text-[15px] leading-relaxed text-warm-gray">
-                    {c.body}
-                  </p>
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-red transition-colors group-hover:text-red-deep">
-                    Read more
-                    <ArrowUpRight className="h-4 w-4" aria-hidden />
-                  </span>
-                </div>
-              </button>
+                    <div className="iris-back absolute inset-0">
+                      <Image
+                        src={c.image.src}
+                        alt=""
+                        fill
+                        sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                        style={
+                          c.image.objectPosition
+                            ? { objectPosition: c.image.objectPosition }
+                            : undefined
+                        }
+                        className="object-cover"
+                      />
+                    </div>
+                  </>
+                ) : (
+                  <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(171,7,7,0.08),rgba(255,255,255,0)_70%)]">
+                    <span className="font-display text-5xl italic text-ink/15">
+                      MMC&rsquo;89
+                    </span>
+                  </div>
+                )}
+              </div>
+              <div className="flex flex-1 flex-col p-7">
+                <h3 className="font-display text-xl font-medium leading-snug text-ink">
+                  {c.title}
+                </h3>
+                <p className="mt-4 flex-1 text-[15px] leading-relaxed text-warm-gray">
+                  {c.body}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => {
+                    const post = getCampaign(c.slug);
+                    if (post) setOpenPost(post);
+                  }}
+                  aria-haspopup="dialog"
+                  className="mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-red transition-colors hover:text-red-deep"
+                >
+                  Read more
+                  <ArrowUpRight className="h-4 w-4" aria-hidden />
+                </button>
+              </div>
             </Reveal>
           ))}
         </ul>
