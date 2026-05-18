@@ -41,7 +41,7 @@ const campaigns: Campaign[] = [
   },
   {
     title: "Whatever Happened to Baby J",
-    body: "We were honored to sponsor an evening supporting the AIDS Resource Foundation for Children with a live table read of “Whatever Happened to Baby J,” featuring Jodie Sweetin, Drew Seeley, and a cast of fan favorites.",
+    body: "We were honored to sponsor an evening supporting the AIDS Resource Foundation for Children with a live table read of “Whatever Happened to Baby J,” featuring Jodie Sweetin, Drew Seeley, Dale Godboldo, and a cast of fan favorite stars.",
     href: "https://www.mickeymouseclubreunion.com/post/whatever-happened-to-baby-j",
     image: {
       src: "/images/whatever-baby-j.avif",
@@ -50,7 +50,7 @@ const campaigns: Campaign[] = [
   },
   {
     title: "Day of Hope / Evening of Impact",
-    body: "After our Day of Hope pampered and empowered survivors of domestic abuse, En Vogue’s Rhona Bennett joined the women for an Evening of Impact.",
+    body: "After our Day of Hope pampered and empowered survivors of domestic abuse, Rhona Bennett (formerly of En Vogue) joined the women for an Evening of Impact.",
     href: "https://www.mickeymouseclubreunion.com/post/en-vogue-s-rhona-bennett-hosts-changemakers-networking-night",
     image: {
       src: "/images/rhona_doh.png",
