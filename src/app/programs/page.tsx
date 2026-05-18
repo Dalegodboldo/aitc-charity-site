@@ -626,30 +626,30 @@ export default function ProgramsPage() {
       {/* MMC'89 Social Impact Initiative */}
       <section className="bg-warm-white py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          {/* Wide hero — stage photo cropped to 21:9 with the white
-              Changemaker mark sitting on the photo's dark area so the
-              logo's transparent background "shows through" to the image
+          {/* Hero — full square stage photo (no crop, so the MMC'89 logo
+              inside the image stays intact) with the white Changemaker
+              mark sitting on the photo's dark bottom edge so the logo's
+              transparent background "shows through" to the image
               rather than to a coloured tile. */}
           <Reveal>
-            <div className="relative overflow-hidden rounded-2xl bg-ink shadow-soft">
-              <div className="relative aspect-[21/9] w-full">
+            <div className="relative mx-auto max-w-2xl overflow-hidden rounded-2xl bg-ink shadow-soft">
+              <Image
+                src="/images/mmc89_mmc30.png"
+                alt="Mouseketeers reunited on stage with Mickey Mouse under the MMC'89 logo"
+                width={2560}
+                height={2560}
+                sizes="(min-width: 768px) 672px, 100vw"
+                className="block h-auto w-full"
+              />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/75 via-ink/20 to-transparent" />
+              <div className="absolute bottom-0 right-0 p-5 sm:p-7 lg:p-8">
                 <Image
-                  src="/images/mmc89_mmc30.png"
-                  alt="Mouseketeers reunited on stage with Mickey Mouse under the MMC'89 logo"
-                  fill
-                  sizes="(min-width: 1280px) 1152px, 100vw"
-                  className="object-cover object-center"
+                  src="/images/Changemaker-regular-Logo-white.png"
+                  alt="Changemaker"
+                  width={528}
+                  height={524}
+                  className="h-40 w-auto drop-shadow-md sm:h-48 lg:h-60"
                 />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
-                <div className="absolute bottom-0 right-0 p-4 sm:p-6">
-                  <Image
-                    src="/images/Changemaker-regular-Logo-white.png"
-                    alt="Changemaker"
-                    width={528}
-                    height={524}
-                    className="h-14 w-auto drop-shadow-md sm:h-16 lg:h-20"
-                  />
-                </div>
               </div>
             </div>
           </Reveal>
