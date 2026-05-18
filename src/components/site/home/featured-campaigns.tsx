@@ -43,6 +43,10 @@ const campaigns: Campaign[] = [
     title: "Whatever Happened to Baby J",
     body: "We were honored to sponsor an evening supporting the AIDS Resource Foundation for Children with a live table read of “Whatever Happened to Baby J,” featuring Jodie Sweetin, Drew Seeley, and a cast of fan favorites.",
     href: "https://www.mickeymouseclubreunion.com/post/whatever-happened-to-baby-j",
+    image: {
+      src: "/images/whatever-baby-j.avif",
+      alt: "Whatever Happened to Baby J — live table read",
+    },
   },
   {
     title: "Day of Hope / Evening of Impact",
