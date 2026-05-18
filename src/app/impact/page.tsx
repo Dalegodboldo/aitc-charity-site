@@ -49,8 +49,8 @@ const cards: ImpactCard[] = [
     title: "Youth Education & Mentorship",
     body: "We are particularly proud of our livestream from Walt Disney World Resort to more than 2,000 youth delegates around the world, featuring in-depth discussions with Disney icons, humanitarians, and business leaders — including Lee Cockerell (former EVP, Walt Disney World), Pamela Landwirth (CEO, Give Kids The World) and Jodi Benson (the voice of Ariel in The Little Mermaid).",
     image: {
-      src: "/images/disney-campus-kids-only.webp",
-      alt: "Youth delegates at Walt Disney World",
+      src: "/images/DIS-famility-2000-delegates.png",
+      alt: "2,000 youth delegates broadcast from Walt Disney World",
     },
     Icon: GraduationCap,
     stat: { label: "youth delegates reached", value: 2000, suffix: "+", thousands: true },
@@ -91,7 +91,7 @@ const cards: ImpactCard[] = [
     title: "Disney Imagination Campus",
     body: "We launched our experiential learning and mentoring program, sponsoring 11 children on a learning adventure behind the scenes at Walt Disney World Resort with Disney Imagineers and company leaders.",
     image: {
-      src: "/images/disney-campus-bright.png",
+      src: "/images/disney-campus-kids-only.webp",
       alt: "Students at Disney Imagination Campus",
     },
     Icon: Sparkles,
