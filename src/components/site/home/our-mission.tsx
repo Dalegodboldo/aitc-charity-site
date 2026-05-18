@@ -49,30 +49,16 @@ const pillars: {
 ];
 
 /**
- * Cinematic crossfade reveal: on hover, the front photo slowly fades
- * out while zooming in slightly, and the back photo fades in while
- * settling from a slight zoom — like a slow-motion photographic
- * transition. Reads as editorial rather than gimmicky.
+ * Iris / spotlight reveal: the front photo is the always-visible base;
+ * on hover, the back photo is unmasked from the center outward via an
+ * expanding circular clip-path. A subtle ~3% counter-zoom on the back
+ * makes the spotlight feel like it's "pulling forward" as it opens.
  */
 function FlipImage({ front, back }: { front: ImageData; back: ImageData }) {
   return (
     <div className="group/flip relative aspect-[16/10] w-full overflow-hidden bg-warm-white">
-      {/* Back face (revealed underneath) */}
-      <div className="absolute inset-0 origin-center scale-[1.08] opacity-0 transition-[opacity,transform] duration-[900ms] ease-out group-hover/flip:scale-100 group-hover/flip:opacity-100 motion-reduce:transition-none motion-reduce:duration-0">
-        <Image
-          src={back.src}
-          alt={back.alt}
-          fill
-          sizes="(min-width: 1024px) 560px, 100vw"
-          style={{
-            ...(back.objectPosition ? { objectPosition: back.objectPosition } : {}),
-            ...(back.imgStyle ?? {}),
-          }}
-          className="object-cover"
-        />
-      </div>
-      {/* Front face (sits on top until hover) */}
-      <div className="absolute inset-0 origin-center scale-100 opacity-100 transition-[opacity,transform] duration-[900ms] ease-out group-hover/flip:scale-[1.06] group-hover/flip:opacity-0 motion-reduce:transition-none motion-reduce:duration-0">
+      {/* Front (base, always visible) */}
+      <div className="absolute inset-0">
         <Image
           src={front.src}
           alt={front.alt}
@@ -85,10 +71,37 @@ function FlipImage({ front, back }: { front: ImageData; back: ImageData }) {
           className="object-cover"
         />
       </div>
+      {/* Back (spotlight reveal — clip-path circle grows from center;
+          inner image counter-zooms slightly for depth) */}
+      <div
+        className="absolute inset-0 transition-[clip-path] duration-[750ms] ease-out motion-reduce:transition-none"
+        style={{
+          clipPath: "circle(0% at 50% 50%)",
+        }}
+      >
+        <Image
+          src={back.src}
+          alt={back.alt}
+          fill
+          sizes="(min-width: 1024px) 560px, 100vw"
+          style={{
+            ...(back.objectPosition ? { objectPosition: back.objectPosition } : {}),
+            ...(back.imgStyle ?? {}),
+          }}
+          className="scale-[1.04] object-cover transition-transform duration-[750ms] ease-out group-hover/flip:scale-100 motion-reduce:transition-none"
+        />
+      </div>
+      {/* Inline style is overridden on hover via the group-hover utility below.
+          Tailwind's clip-path arbitrary value handles the hover state. */}
+      <style>{`
+        .group\\/flip:hover > div:nth-child(2) {
+          clip-path: circle(130% at 50% 50%);
+        }
+      `}</style>
       {/* Subtle hint that there's a second image — only visible until first hover */}
       <span
         aria-hidden
-        className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-ink/55 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cream backdrop-blur-sm opacity-100 transition-opacity duration-500 group-hover/flip:opacity-0"
+        className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-ink/55 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cream backdrop-blur-sm transition-opacity duration-500 group-hover/flip:opacity-0"
       >
         Hover
       </span>
