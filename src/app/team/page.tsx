@@ -17,6 +17,8 @@ type Person = {
   role: string;
   href?: string;
   photo?: string;
+  /** CSS object-position for the square crop (default: "center"). */
+  objectPosition?: string;
 };
 
 const board: Person[] = [
@@ -62,6 +64,7 @@ const board: Person[] = [
     role: "Board Member",
     href: "https://www.tonylucca.com/",
     photo: "/images/tony-lucca-promo-pic-3.jpg",
+    objectPosition: "50% 20%",
   },
   {
     name: "Jennifer McGill",
@@ -181,6 +184,11 @@ function PersonCard({ person, index }: { person: Person; index: number }) {
             alt={person.name}
             fill
             sizes="(min-width: 1024px) 220px, (min-width: 768px) 30vw, (min-width: 640px) 45vw, 100vw"
+            style={
+              person.objectPosition
+                ? { objectPosition: person.objectPosition }
+                : undefined
+            }
             className="object-cover"
           />
         ) : (
