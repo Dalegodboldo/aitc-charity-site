@@ -292,7 +292,7 @@ const partners: Partner[] = [
     name: "Entertainment For Change",
     body: "We work with EFC to amplify young voices and create a new kind of empowered leader.",
     logo: { src: "/images/logo-text-only.webp", alt: "Entertainment For Change logo" },
-    href: "https://www.createimpact.org/impactartist",
+    href: "https://www.createimpactnow.org/impactartist",
   },
   {
     name: "Be Great!",
