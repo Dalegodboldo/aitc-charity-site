@@ -235,15 +235,17 @@ export function CampaignModal({ post, onClose }: Props) {
                         </button>
                       );
                     } else {
-                      const cols = run.length % 2 === 0 ? 2 : 3;
+                      // 2 or 4 imgs → 2 columns; everything else 2+ →
+                      // 3 columns. Stay 3-across on mobile too — the
+                      // tiles are aspect-square and shrink gracefully.
                       const gridClass =
-                        cols === 3
-                          ? "grid-cols-2 sm:grid-cols-3"
-                          : "grid-cols-2";
+                        run.length === 2 || run.length === 4
+                          ? "grid-cols-2"
+                          : "grid-cols-3";
                       out.push(
                         <div
                           key={i}
-                          className={`!my-6 grid gap-3 ${gridClass}`}
+                          className={`!my-6 grid gap-2 sm:gap-3 ${gridClass}`}
                         >
                           {run.map((img, k) => (
                             <button
