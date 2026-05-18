@@ -351,7 +351,16 @@ const solutionPoints: { Icon: LucideIcon; text: string }[] = [
   },
 ];
 
-const testimonials = [
+type Testimonial = {
+  quote: string;
+  name: string;
+  title: string;
+  /** Small italic footnote rendered under the title — used for event-
+   *  attribution context like "Event co-produced by AITCF". */
+  note?: string;
+};
+
+const testimonials: Testimonial[] = [
   {
     quote:
       "We are truly honored to be a part of this special reunion of the Mickey Mouse Club. The joy that participants bring to these precious families through their support is immeasurable.",
@@ -369,6 +378,20 @@ const testimonials = [
       "Music has such a unique ability to heal and unify us. The direct impact we’ve been able to make on our music community would not be possible without the generosity of partners like Always In The Club.",
     name: "Laura Segura",
     title: "Executive Director of MusiCares",
+  },
+  {
+    quote:
+      "On behalf of Jenessee Center, Inc., I would like to thank you for your donation of $100,000. Your gift ensures that families who are survivors of domestic violence will continue to receive safe and culturally relevant services that will both empower and guide them on the road to self sufficiency and independence.",
+    name: "Karen Earl",
+    title: "CEO, Jenessee Center, Inc.",
+    note: "(Event co-produced by AITCF)",
+  },
+  {
+    quote:
+      "On behalf of the Charlize Africa Outreach Project, I would like to acknowledge and express our appreciation for your support for CTAOP. The donation has helped CTAOP in its mission to help keep African youth safe from HIV/AIDS.",
+    name: "Lee Bodner",
+    title: "Managing Director, Charlize Theron Africa Outreach Project*",
+    note: "*Event co-produced by AITCF. Letter addressed to the event’s Executive Producer.",
   },
 ];
 
@@ -853,6 +876,11 @@ export default function ProgramsPage() {
                 <figcaption className="mt-6 border-t border-border pt-5">
                   <p className="font-semibold text-ink">{t.name}</p>
                   <p className="mt-1 text-sm text-warm-gray">{t.title}</p>
+                  {t.note && (
+                    <p className="mt-2 text-[12px] italic leading-snug text-warm-gray">
+                      {t.note}
+                    </p>
+                  )}
                 </figcaption>
               </Reveal>
             ))}
