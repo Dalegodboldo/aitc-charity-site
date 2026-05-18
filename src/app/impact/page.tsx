@@ -257,8 +257,8 @@ const totals = [
   },
   {
     Icon: Users,
-    value: <CountUp to={2000} suffix="+" thousands />,
-    label: "youth impacted worldwide",
+    value: <CountUp to={3500} suffix="+" thousands />,
+    label: "students impacted by our mentors and coaches",
   },
   {
     Icon: TreePine,

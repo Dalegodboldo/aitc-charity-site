@@ -13,8 +13,8 @@ const stats = [
     label: "individuals in need fed",
   },
   {
-    value: <CountUp to={2000} suffix="+" thousands />,
-    label: "youth impacted worldwide",
+    value: <CountUp to={3500} suffix="+" thousands />,
+    label: "students impacted by our mentors and coaches",
   },
   {
     value: <CountUp to={2500} suffix="+" thousands />,
