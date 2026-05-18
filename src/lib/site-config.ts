@@ -30,9 +30,11 @@ export const siteConfig = {
     newsletter: "https://stats.sender.net/forms/dwWNMd/view",
     store: "https://mmcreunion.com",
     events: "https://www.mickeymouseclubreunion.com/events",
+    gallery: "https://www.createimpactnow.org/gallery",
     bookTeers: "https://www.mickeymouseclubreunion.com/bookings",
     book: "https://www.mickeymouseclubreunion.com/books",
     mainSite: "https://www.mickeymouseclubreunion.com/",
+    mainSiteBlog: "https://www.mickeymouseclubreunion.com/blog",
     annualReport:
       "https://aitc-annual-report-2024.my.canva.site/aitcf-2024-digital-annual-report",
     linktree: "https://linktr.ee/alwaysintheclub",

@@ -44,20 +44,37 @@ function YoutubeIcon({ className }: IconProps) {
   );
 }
 
-const externalLinkGroups = [
+type FooterLink = { href: string; label: string; external: boolean };
+
+const externalLinkGroups: { label: string; links: FooterLink[] }[] = [
   {
     label: "Get involved",
     links: [
       { href: siteConfig.external.donate, label: "Donate", external: true },
       { href: siteConfig.external.events, label: "Events", external: true },
+      {
+        href: siteConfig.external.gallery,
+        label: "Campaign / Event Gallery",
+        external: true,
+      },
       { href: siteConfig.external.store, label: "Store", external: true },
       { href: siteConfig.external.bookTeers, label: "Book the 'Teers", external: true },
       { href: siteConfig.external.newsletter, label: "Newsletter", external: true },
     ],
   },
   {
-    label: "About us",
+    label: "Read & explore",
     links: [
+      {
+        href: "/blog",
+        label: "All Ears — Stories from the Club",
+        external: false,
+      },
+      {
+        href: siteConfig.external.mainSiteBlog,
+        label: "Blog",
+        external: true,
+      },
       { href: siteConfig.external.annualReport, label: "Annual Report", external: true },
       { href: siteConfig.external.mainSite, label: "Main Website", external: true },
       { href: siteConfig.external.book, label: "The MMC Book", external: true },
@@ -102,16 +119,18 @@ export function Footer() {
               Explore
             </h2>
             <ul className="mt-5 space-y-3 text-[15px]">
-              {primaryNav.map((item) => (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className="text-warm-gray no-underline transition-colors hover:text-red"
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
+              {primaryNav
+                .filter((item) => item.href !== "/blog")
+                .map((item) => (
+                  <li key={item.href}>
+                    <Link
+                      href={item.href}
+                      className="text-warm-gray no-underline transition-colors hover:text-red"
+                    >
+                      {item.label}
+                    </Link>
+                  </li>
+                ))}
             </ul>
           </nav>
 
