@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight, BookOpen, Quote, Sparkles } from "lucide-react";
 import { OriginStoryTrigger } from "@/components/site/about/origin-story-trigger";
 import { PageIntro } from "@/components/site/page-intro";
@@ -18,7 +19,7 @@ export default function AboutPage() {
       <PageIntro
         eyebrow="About"
         title="A foundation built on lifelong friendship"
-        body="Filmed at Hollywood Studios in Walt Disney World, the “All New” Mickey Mouse Club helped raise a generation of socially conscious artists, entrepreneurs and humanitarians. Today, that family of Mouseketeers and millions of fans continues to make a difference."
+        body="Filmed at Hollywood Studios in Walt Disney World, the “All New” Mickey Mouse Club helped raise a generation of socially conscious artists, entrepreneurs and humanitarians. Today, that family of Mouseketeers and thousands of fans continue to make a difference."
       />
 
       {/* About the 'All New' Mickey Mouse Club */}
@@ -130,8 +131,18 @@ export default function AboutPage() {
               government.
             </p>
           </Reveal>
-          <Reveal delay={140} className="mt-8">
+          <Reveal delay={140} className="mt-8 flex flex-col items-start gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
             <OriginStoryTrigger />
+            <Link
+              href="/programs"
+              className="group inline-flex items-center gap-1.5 text-base font-semibold text-red no-underline transition-colors hover:text-red-deep"
+            >
+              Learn more about our Programs
+              <ArrowUpRight
+                className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0"
+                aria-hidden
+              />
+            </Link>
           </Reveal>
         </div>
       </section>
@@ -140,6 +151,19 @@ export default function AboutPage() {
       <section className="bg-warm-white py-20 sm:py-28">
         <div className="mx-auto max-w-4xl px-5 sm:px-8">
           <Reveal>
+            <div className="overflow-hidden rounded-2xl border border-border shadow-soft-sm">
+              <Image
+                src="/images/mmc30-confetti-mickey-fist-pump.jpg"
+                alt="Mouseketeers and Mickey Mouse celebrating with confetti and fists raised in the air"
+                width={3000}
+                height={1251}
+                sizes="(min-width: 1024px) 768px, 100vw"
+                className="block h-auto w-full"
+                priority={false}
+              />
+            </div>
+          </Reveal>
+          <Reveal delay={80} className="mt-12">
             <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-gold">
               Get Involved
             </p>
@@ -147,7 +171,7 @@ export default function AboutPage() {
               There&rsquo;s a place for you in the Club
             </h2>
           </Reveal>
-          <Reveal delay={80} className="mt-8 text-lg leading-relaxed text-warm-gray">
+          <Reveal delay={140} className="mt-8 text-lg leading-relaxed text-warm-gray">
             <p>
               Whether you&rsquo;re interested in volunteering, donating, or
               simply learning more about us, there are plenty of ways to get
@@ -156,7 +180,7 @@ export default function AboutPage() {
             </p>
           </Reveal>
 
-          <Reveal delay={160}>
+          <Reveal delay={200}>
             <aside className="mt-10 flex items-start gap-4 rounded-2xl border border-gold/40 bg-gold/10 p-6 sm:p-7">
               <Sparkles className="h-6 w-6 shrink-0 text-gold" aria-hidden />
               <p className="text-[16px] leading-relaxed text-ink">
@@ -167,7 +191,7 @@ export default function AboutPage() {
             </aside>
           </Reveal>
 
-          <Reveal delay={220}>
+          <Reveal delay={260}>
             <a
               href={`mailto:${siteConfig.contact.email}`}
               className="mt-10 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-red px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-red-deep hover:text-cream"
