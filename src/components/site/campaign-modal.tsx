@@ -191,43 +191,98 @@ export function CampaignModal({ post, onClose }: Props) {
           {/* Body */}
           <div className="px-7 pb-2 pt-6 sm:px-10">
             <div className="prose-aitc prose max-w-none">
-              {post.blocks
-                .filter(
+              {(() => {
+                /**
+                 * Walk the filtered blocks and group consecutive inline
+                 * images into a single row. Per spec:
+                 *   - 2 images side-by-side → 2 columns
+                 *   - odd count             → 3 columns
+                 *   - any larger even count → 2 columns (wraps)
+                 *   - solo image            → full width
+                 */
+                const visible = post.blocks.filter(
                   (b) => b.type !== "img" || b.placement !== "gallery"
-                )
-                .map((b, i) => {
+                );
+                type B = (typeof visible)[number];
+                const out: React.ReactNode[] = [];
+                let i = 0;
+                while (i < visible.length) {
+                  const b = visible[i];
+                  if (b.type === "img") {
+                    // Collect the consecutive image run
+                    const run: Extract<B, { type: "img" }>[] = [b];
+                    let j = i + 1;
+                    while (j < visible.length && visible[j].type === "img") {
+                      run.push(visible[j] as Extract<B, { type: "img" }>);
+                      j++;
+                    }
+                    if (run.length === 1) {
+                      out.push(
+                        <button
+                          key={i}
+                          type="button"
+                          onClick={() => openLightbox(b.src, b.alt)}
+                          aria-label={`View full-size: ${b.alt || "image"}`}
+                          className="!my-6 block w-full cursor-zoom-in overflow-hidden rounded-xl"
+                        >
+                          {/* eslint-disable-next-line @next/next/no-img-element */}
+                          <img
+                            src={b.src}
+                            alt={b.alt}
+                            loading="lazy"
+                            className="!my-0 block h-auto w-full transition-transform duration-500 ease-out hover:scale-[1.02]"
+                          />
+                        </button>
+                      );
+                    } else {
+                      const cols = run.length % 2 === 0 ? 2 : 3;
+                      const gridClass =
+                        cols === 3
+                          ? "grid-cols-2 sm:grid-cols-3"
+                          : "grid-cols-2";
+                      out.push(
+                        <div
+                          key={i}
+                          className={`!my-6 grid gap-3 ${gridClass}`}
+                        >
+                          {run.map((img, k) => (
+                            <button
+                              key={k}
+                              type="button"
+                              onClick={() => openLightbox(img.src, img.alt)}
+                              aria-label={`View full-size: ${img.alt || "image"}`}
+                              className="group relative aspect-square cursor-zoom-in overflow-hidden rounded-xl bg-warm-white"
+                            >
+                              {/* eslint-disable-next-line @next/next/no-img-element */}
+                              <img
+                                src={img.src}
+                                alt={img.alt}
+                                loading="lazy"
+                                className="!my-0 absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04]"
+                              />
+                            </button>
+                          ))}
+                        </div>
+                      );
+                    }
+                    i = j;
+                    continue;
+                  }
                   if (b.type === "p") {
-                    return (
+                    out.push(
                       <p
                         key={i}
                         dangerouslySetInnerHTML={{ __html: b.html }}
                       />
                     );
-                  }
-                  if (b.type === "h2") return <h2 key={i}>{b.text}</h2>;
-                  if (b.type === "h3") return <h3 key={i}>{b.text}</h3>;
-                  if (b.type === "h4") return <h4 key={i}>{b.text}</h4>;
-                  if (b.type === "img") {
-                    return (
-                      <button
-                        key={i}
-                        type="button"
-                        onClick={() => openLightbox(b.src, b.alt)}
-                        aria-label={`View full-size: ${b.alt || "image"}`}
-                        className="!my-6 block w-full cursor-zoom-in overflow-hidden rounded-xl"
-                      >
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                          src={b.src}
-                          alt={b.alt}
-                          loading="lazy"
-                          className="!my-0 block h-auto w-full transition-transform duration-500 ease-out hover:scale-[1.02]"
-                        />
-                      </button>
-                    );
-                  }
-                  if (b.type === "video" && b.kind === "youtube") {
-                    return (
+                  } else if (b.type === "h2") {
+                    out.push(<h2 key={i}>{b.text}</h2>);
+                  } else if (b.type === "h3") {
+                    out.push(<h3 key={i}>{b.text}</h3>);
+                  } else if (b.type === "h4") {
+                    out.push(<h4 key={i}>{b.text}</h4>);
+                  } else if (b.type === "video" && b.kind === "youtube") {
+                    out.push(
                       <div
                         key={i}
                         className="relative my-6 aspect-video w-full overflow-hidden rounded-xl"
@@ -241,9 +296,8 @@ export function CampaignModal({ post, onClose }: Props) {
                         />
                       </div>
                     );
-                  }
-                  if (b.type === "video" && b.kind === "mp4") {
-                    return (
+                  } else if (b.type === "video" && b.kind === "mp4") {
+                    out.push(
                       <video
                         key={i}
                         src={b.src}
@@ -252,11 +306,8 @@ export function CampaignModal({ post, onClose }: Props) {
                         className="!my-6 w-full rounded-xl"
                       />
                     );
-                  }
-                  if (b.type === "report") {
-                    // Featured document tile: full-size image (natural aspect,
-                    // not cropped, not expandable) with a CTA button below.
-                    return (
+                  } else if (b.type === "report") {
+                    out.push(
                       <div key={i} className="!my-8 flex flex-col items-center">
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
@@ -277,8 +328,10 @@ export function CampaignModal({ post, onClose }: Props) {
                       </div>
                     );
                   }
-                  return null;
-                })}
+                  i++;
+                }
+                return out;
+              })()}
             </div>
 
             {/* Gallery — click any tile to see the full uncropped image */}
