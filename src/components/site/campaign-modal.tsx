@@ -144,54 +144,80 @@ export function CampaignModal({ post, onClose }: Props) {
           </h2>
         </header>
 
-        {/* Body */}
+        {/* Body — text/headings/videos flow as prose; images are pulled
+            out into a single clean gallery grid at the bottom */}
         <div className="px-7 pb-2 pt-6 sm:px-10">
           <div className="prose-aitc prose max-w-none">
-            {post.blocks.map((b, i) => {
-              if (b.type === "p") {
-                return (
-                  <p
-                    key={i}
-                    dangerouslySetInnerHTML={{ __html: b.html }}
-                  />
-                );
-              }
-              if (b.type === "h2") return <h2 key={i}>{b.text}</h2>;
-              if (b.type === "h3") return <h3 key={i}>{b.text}</h3>;
-              if (b.type === "h4") return <h4 key={i}>{b.text}</h4>;
-              if (b.type === "img") {
-                // Use raw <img> for body images — they're Wix CDN-optimized
-                // already and avoids a remotePatterns round-trip.
-                return (
-                  // eslint-disable-next-line @next/next/no-img-element
-                  <img
-                    key={i}
-                    src={b.src}
-                    alt={b.alt}
-                    loading="lazy"
-                    className="!my-6 rounded-xl"
-                  />
-                );
-              }
-              if (b.type === "video" && b.kind === "youtube") {
-                return (
-                  <div
-                    key={i}
-                    className="relative my-6 aspect-video w-full overflow-hidden rounded-xl"
-                  >
-                    <iframe
-                      src={`https://www.youtube-nocookie.com/embed/${b.videoId}?rel=0`}
-                      title="Embedded video"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute inset-0 h-full w-full border-0"
+            {post.blocks
+              .filter((b) => b.type !== "img")
+              .map((b, i) => {
+                if (b.type === "p") {
+                  return (
+                    <p
+                      key={i}
+                      dangerouslySetInnerHTML={{ __html: b.html }}
                     />
-                  </div>
-                );
-              }
-              return null;
-            })}
+                  );
+                }
+                if (b.type === "h2") return <h2 key={i}>{b.text}</h2>;
+                if (b.type === "h3") return <h3 key={i}>{b.text}</h3>;
+                if (b.type === "h4") return <h4 key={i}>{b.text}</h4>;
+                if (b.type === "video" && b.kind === "youtube") {
+                  return (
+                    <div
+                      key={i}
+                      className="relative my-6 aspect-video w-full overflow-hidden rounded-xl"
+                    >
+                      <iframe
+                        src={`https://www.youtube-nocookie.com/embed/${b.videoId}?rel=0`}
+                        title="Embedded video"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="absolute inset-0 h-full w-full border-0"
+                      />
+                    </div>
+                  );
+                }
+                return null;
+              })}
           </div>
+
+          {/* Gallery — every image in the post, uniform grid */}
+          {(() => {
+            const imgs = post.blocks.filter(
+              (b): b is Extract<typeof b, { type: "img" }> => b.type === "img"
+            );
+            if (imgs.length === 0) return null;
+            return (
+              <section className="mt-10 border-t border-border pt-8">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-gold">
+                  Gallery
+                </p>
+                <ul
+                  className={
+                    imgs.length === 1
+                      ? "mt-5"
+                      : "mt-5 grid grid-cols-2 gap-3 sm:grid-cols-3"
+                  }
+                >
+                  {imgs.map((img, i) => (
+                    <li
+                      key={i}
+                      className="relative aspect-square overflow-hidden rounded-xl bg-warm-white"
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={img.src}
+                        alt={img.alt}
+                        loading="lazy"
+                        className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 ease-out hover:scale-[1.03]"
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            );
+          })()}
         </div>
 
         {/* Footer — original link + visit our blog */}
