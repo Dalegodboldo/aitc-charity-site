@@ -10,15 +10,15 @@ const stats = [
   },
   {
     value: <CountUp to={10000} suffix="+" thousands />,
-    label: "Cast Members served",
+    label: "individuals in need fed",
   },
   {
     value: <CountUp to={2000} suffix="+" thousands />,
-    label: "youth delegates reached worldwide",
+    label: "youth impacted worldwide",
   },
   {
-    value: <CountUp to={1400} suffix="+" thousands />,
-    label: "trees planted",
+    value: <CountUp to={2500} suffix="+" thousands />,
+    label: "trees planted to fight carbon emissions",
   },
 ];
 
