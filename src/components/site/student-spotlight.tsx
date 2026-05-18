@@ -11,7 +11,7 @@
  */
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { ArrowUpRight, Sparkles, X } from "lucide-react";
+import { Sparkles, X } from "lucide-react";
 
 type Photo = { src: string; alt: string };
 
@@ -117,39 +117,42 @@ function StudentSpotlightModal({
         ref={panelRef}
         className="relative max-h-[95vh] w-full max-w-3xl overflow-y-auto rounded-t-2xl bg-cream shadow-soft sm:max-h-[90vh] sm:rounded-2xl"
       >
-        {/* Close button — floats top-right */}
-        <button
-          ref={closeBtnRef}
-          type="button"
-          onClick={onClose}
-          aria-label="Close Student Spotlight"
-          className="absolute right-3 top-3 z-10 inline-flex h-10 w-10 items-center justify-center rounded-full bg-cream/95 text-ink shadow-soft-sm backdrop-blur-sm transition-colors hover:bg-warm-white"
-        >
-          <X className="h-5 w-5" aria-hidden />
-        </button>
-
-        {/* Header band */}
-        <header className="px-6 pb-5 pt-7 sm:px-10 sm:pb-7 sm:pt-9">
-          <p className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-            <Sparkles className="h-3.5 w-3.5" aria-hidden />
-            Student Spotlight
-          </p>
-          <h2
-            id="student-spotlight-title"
-            className="mt-3 font-display text-3xl font-medium leading-tight tracking-tight text-ink sm:text-4xl"
+        {/* Sticky title bar — title + visible Close button stay pinned so the
+            exit is always one click away, even after scrolling. */}
+        <header className="sticky top-0 z-20 flex items-start justify-between gap-4 border-b border-border bg-cream/95 px-6 py-5 backdrop-blur-sm sm:px-10 sm:py-6">
+          <div className="min-w-0">
+            <p className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+              <Sparkles className="h-3.5 w-3.5" aria-hidden />
+              Student Spotlight
+            </p>
+            <h2
+              id="student-spotlight-title"
+              className="mt-2 font-display text-2xl font-medium leading-tight tracking-tight text-ink sm:text-3xl"
+            >
+              Yaffa Botier
+            </h2>
+          </div>
+          <button
+            ref={closeBtnRef}
+            type="button"
+            onClick={onClose}
+            aria-label="Close Student Spotlight"
+            className="inline-flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-full border border-border bg-warm-white px-4 text-sm font-semibold text-ink no-underline transition-colors hover:border-ink/30 hover:bg-cream"
           >
-            Yaffa Botier
-          </h2>
+            <X className="h-4 w-4" aria-hidden />
+            Close
+          </button>
         </header>
 
-        {/* Hero video */}
-        <div className="px-6 sm:px-10">
+        {/* Hero video — preload="none" so opening the modal doesn't pull a
+            30MB file before the user clicks play. Poster still renders. */}
+        <div className="px-6 pt-6 sm:px-10 sm:pt-8">
           <div className="relative aspect-[9/16] w-full overflow-hidden rounded-xl bg-ink shadow-soft-sm sm:aspect-video">
             <video
               ref={videoRef}
               controls
               playsInline
-              preload="metadata"
+              preload="none"
               poster="/images/yaffa-1.JPG"
               className="h-full w-full bg-ink object-contain"
             >
@@ -195,32 +198,31 @@ function StudentSpotlightModal({
           <p>
             Congrats Yaffa, we can’t wait to see how far you go!
           </p>
-        </div>
-
-        {/* CTA + photo credit */}
-        <footer className="mt-7 flex flex-col gap-4 border-t border-border bg-warm-white px-6 py-6 sm:px-10">
-          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            Learn more about our mentoring programs at{" "}
             <a
               href={LEARN_MORE_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-red px-6 text-base font-semibold text-cream no-underline transition-colors hover:bg-red-deep"
+              className="font-semibold text-red no-underline transition-colors hover:text-red-deep"
             >
-              Learn about our mentoring programs
-              <ArrowUpRight className="h-4 w-4" aria-hidden />
+              www.Learn-Grow-Thrive.org
             </a>
-            <p className="text-[12px] uppercase tracking-[0.16em] text-warm-gray">
-              📸 @_fitzphotos_
-            </p>
-          </div>
-          {/* Secondary, text-labelled exit — easier to find than the X icon */}
+          </p>
+          <p className="text-[13px] uppercase tracking-[0.16em] text-warm-gray/80">
+            📸 @_fitzphotos_
+          </p>
+        </div>
+
+        {/* Footer exit — second, obvious close at the end of the modal flow */}
+        <footer className="mt-8 flex justify-center border-t border-border bg-warm-white px-6 py-6 sm:px-10">
           <button
             type="button"
             onClick={onClose}
-            className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-full border border-border bg-cream text-sm font-semibold text-ink no-underline transition-colors hover:border-ink/30 hover:bg-warm-white sm:w-auto sm:self-start"
+            className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-ink px-6 text-base font-semibold text-cream no-underline transition-colors hover:bg-ink/90 sm:w-auto"
           >
             <X className="h-4 w-4" aria-hidden />
-            Close
+            Close Student Spotlight
           </button>
         </footer>
       </div>
