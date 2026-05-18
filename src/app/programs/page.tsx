@@ -105,6 +105,20 @@ type Campaign = {
 
 const campaigns: Campaign[] = [
   {
+    title: "Mentoring & Youth Arts Education",
+    body: "Inspired by the training they received from Disney in their youth, Mouseketeers are supporting the next generation of artists and entrepreneurs with training and mentorship programs. Our programs not only help young people pursue careers in entertainment, but also help improve their academic performance, relationships, and overall well-being.",
+    goals: "Global Goals 3, 4 & 8",
+    image: {
+      src: "/images/deedee_jenn_student.png",
+      alt: "Mouseketeer mentoring a young student through the Mentoring & Youth Arts Education program",
+    },
+    Icon: GraduationCap,
+    cta: {
+      label: "Learn, Grow, Thrive",
+      href: "https://www.mickeymouseclubreunion.com/mentorship-coaching",
+    },
+  },
+  {
     title: "Business Launch & Growth Solutions",
     body: "We transform visions into impact, providing comprehensive for-profit and nonprofit launch and growth solutions.",
     goals: "Global Goals 8, 9, 10 & 17",
