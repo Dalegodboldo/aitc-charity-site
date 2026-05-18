@@ -5,7 +5,7 @@
   "date": "2025-01-13T21:45:41.980Z",
   "description": "Learn how the MMC'89 Fire Relief Fund is providing crucial support to those affected by the devastating 2025 Los Angeles wildfires, and discover ways you can help your community in crisis.",
   "heroImage": {
-    "src": "https://static.wixstatic.com/media/3ee52e_ba0a21e8791f45d0b785eb9c9dbb5634~mv2.webp/v1/fill/w_1000,h_750,al_c,q_85,usm_0.66_1.00_0.01/3ee52e_ba0a21e8791f45d0b785eb9c9dbb5634~mv2.webp",
+    "src": "https://static.wixstatic.com/media/3ee52e_ba0a21e8791f45d0b785eb9c9dbb5634~mv2.webp/v1/fill/w_1200,h_675,al_c,q_90/file.jpg",
     "alt": "Doing What We Can: Essential Information + MMC'89 #LAStrong Fire Relief Fund"
   },
   "blocks": [
@@ -267,52 +267,27 @@
     },
     {
       "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_43c5e111fb4240e4a8f7c55e5ed5a3d5~mv2.jpg/v1/fill/w_200,h_250,al_c,q_30,blur_30/3ee52e_43c5e111fb4240e4a8f7c55e5ed5a3d5~mv2.jpg",
+      "src": "https://static.wixstatic.com/media/3ee52e_43c5e111fb4240e4a8f7c55e5ed5a3d5~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
       "alt": ""
     },
     {
       "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_43c5e111fb4240e4a8f7c55e5ed5a3d5~mv2.jpg/v1/fill/w_1045,h_1306,al_c,q_90/3ee52e_43c5e111fb4240e4a8f7c55e5ed5a3d5~mv2.jpg",
+      "src": "https://static.wixstatic.com/media/3ee52e_ae4983ae316b485a97eaa5f50cc2316c~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
       "alt": ""
     },
     {
       "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_ae4983ae316b485a97eaa5f50cc2316c~mv2.jpg/v1/fill/w_200,h_250,al_c,q_30,blur_30/3ee52e_ae4983ae316b485a97eaa5f50cc2316c~mv2.jpg",
+      "src": "https://static.wixstatic.com/media/3ee52e_8be2346bc7d5469c97fea1f25e8d8b6e~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
       "alt": ""
     },
     {
       "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_ae4983ae316b485a97eaa5f50cc2316c~mv2.jpg/v1/fill/w_1045,h_1306,al_c,q_90/3ee52e_ae4983ae316b485a97eaa5f50cc2316c~mv2.jpg",
+      "src": "https://static.wixstatic.com/media/3ee52e_5eaea3e0ad5a408591886b449bc3b6cd~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
       "alt": ""
     },
     {
       "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_8be2346bc7d5469c97fea1f25e8d8b6e~mv2.jpg/v1/fill/w_200,h_250,al_c,q_30,blur_30/3ee52e_8be2346bc7d5469c97fea1f25e8d8b6e~mv2.jpg",
-      "alt": ""
-    },
-    {
-      "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_8be2346bc7d5469c97fea1f25e8d8b6e~mv2.jpg/v1/fill/w_1045,h_1306,al_c,q_90/3ee52e_8be2346bc7d5469c97fea1f25e8d8b6e~mv2.jpg",
-      "alt": ""
-    },
-    {
-      "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_5eaea3e0ad5a408591886b449bc3b6cd~mv2.jpg/v1/fill/w_200,h_250,al_c,q_30,blur_30/3ee52e_5eaea3e0ad5a408591886b449bc3b6cd~mv2.jpg",
-      "alt": ""
-    },
-    {
-      "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_5eaea3e0ad5a408591886b449bc3b6cd~mv2.jpg/v1/fill/w_1045,h_1306,al_c,q_90/3ee52e_5eaea3e0ad5a408591886b449bc3b6cd~mv2.jpg",
-      "alt": ""
-    },
-    {
-      "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_0eb0e0beac844807b781de80a940a107~mv2.jpg/v1/fill/w_200,h_250,al_c,q_30,blur_30/3ee52e_0eb0e0beac844807b781de80a940a107~mv2.jpg",
-      "alt": ""
-    },
-    {
-      "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_0eb0e0beac844807b781de80a940a107~mv2.jpg/v1/fill/w_1045,h_1306,al_c,q_90/3ee52e_0eb0e0beac844807b781de80a940a107~mv2.jpg",
+      "src": "https://static.wixstatic.com/media/3ee52e_0eb0e0beac844807b781de80a940a107~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
       "alt": ""
     },
     {
@@ -320,8 +295,33 @@
       "html": "<strong>Scroll >>>></strong>"
     },
     {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_17b921b590a645e699b9d213f1c4155a~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": ""
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_f87af6bf07cd4f0996d8a8e713679d35~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": ""
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_547d0412f1c04ae4845d123465441f2c~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": ""
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_cb953667b889410fb074c2d314c73985~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": ""
+    },
+    {
       "type": "p",
       "html": "<strong>Scroll >>>></strong>"
+    },
+    {
+      "type": "img",
+      "src": "https://static.wixstatic.com/media/3ee52e_16cdee3ff5424c9fa52dbe123a39b87b~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
+      "alt": "Fire Relief Fund"
     },
     {
       "type": "p",

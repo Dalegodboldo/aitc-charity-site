@@ -5,7 +5,7 @@
   "date": "2023-05-25T19:22:44.810Z",
   "description": "After our Day of Hope event that pampered and empowered survivors of domestic abuse.",
   "heroImage": {
-    "src": "https://static.wixstatic.com/media/3ee52e_8b175b7bd78c4b1cb78aaf2778489486~mv2.jpg/v1/fill/w_1000,h_750,al_c,q_85,usm_0.66_1.00_0.01/3ee52e_8b175b7bd78c4b1cb78aaf2778489486~mv2.jpg",
+    "src": "https://static.wixstatic.com/media/3ee52e_8b175b7bd78c4b1cb78aaf2778489486~mv2.jpg/v1/fill/w_1200,h_675,al_c,q_90/file.jpg",
     "alt": "En Vogue's Rhona Bennett Hosts Evening Of Impact & Empowerment"
   },
   "blocks": [
@@ -51,22 +51,12 @@
     },
     {
       "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_3ae5d8f0128b415086f7f8eaaaa417fa~mv2.png/v1/fill/w_251,h_250,fp_0.50_0.50,blur_30/3ee52e_3ae5d8f0128b415086f7f8eaaaa417fa~mv2.png",
+      "src": "https://static.wixstatic.com/media/3ee52e_3ae5d8f0128b415086f7f8eaaaa417fa~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
       "alt": ""
     },
     {
       "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_3ae5d8f0128b415086f7f8eaaaa417fa~mv2.png/v1/fill/w_488,h_487,fp_0.50_0.50/3ee52e_3ae5d8f0128b415086f7f8eaaaa417fa~mv2.png",
-      "alt": ""
-    },
-    {
-      "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_0ba5a57a1e88493e9e0b8daf3d9143f9~mv2.png/v1/fill/w_250,h_250,fp_0.50_0.50,blur_30/3ee52e_0ba5a57a1e88493e9e0b8daf3d9143f9~mv2.png",
-      "alt": ""
-    },
-    {
-      "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_0ba5a57a1e88493e9e0b8daf3d9143f9~mv2.png/v1/fill/w_487,h_487,fp_0.50_0.50/3ee52e_0ba5a57a1e88493e9e0b8daf3d9143f9~mv2.png",
+      "src": "https://static.wixstatic.com/media/3ee52e_0ba5a57a1e88493e9e0b8daf3d9143f9~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
       "alt": ""
     },
     {

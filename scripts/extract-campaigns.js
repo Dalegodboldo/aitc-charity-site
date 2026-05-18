@@ -120,10 +120,34 @@ function blocksFromArticle(body) {
     }
   }
 
-  // Dedupe consecutive identical image srcs (Wix often double-wraps)
-  let filtered = blocks.filter((b, i) =>
-    !(i > 0 && b.type === "img" && blocks[i - 1].type === "img" && blocks[i - 1].src === b.src)
-  );
+  // Normalize Wix CDN URLs: drop existing transforms (which often point to a
+  // tiny blur_30 placeholder) and replace with one clean transform that
+  // requests a real photo at a reasonable size.
+  //
+  //   https://static.wixstatic.com/media/<id>.<ext>/v1/fill/.../...<id>.<ext>
+  //                                       ^^^^^^^^^^^^^^^^^^ stripped
+  //
+  // Then dedupe by the bare media path — Wix renders both an LQIP and the
+  // real image in the same HTML; we want one entry per actual photo.
+  const baseOf = (url) => {
+    const m = url.match(/^(https:\/\/static\.wixstatic\.com\/media\/[^/]+)/);
+    return m ? m[1] : url;
+  };
+  const cleanWix = (url) => {
+    const base = baseOf(url);
+    if (base === url && !url.startsWith("https://static.wixstatic.com")) return url;
+    // Square crop, 800px wide, quality 85 — good for the modal gallery
+    return `${base}/v1/fill/w_800,h_800,al_c,q_85/file.jpg`;
+  };
+
+  const seenBase = new Set();
+  let filtered = blocks.flatMap((b) => {
+    if (b.type !== "img") return [b];
+    const base = baseOf(b.src);
+    if (seenBase.has(base)) return [];
+    seenBase.add(base);
+    return [{ ...b, src: cleanWix(b.src) }];
+  });
 
   // Drop metadata-y "Updated: …" and "N min read" paragraphs
   filtered = filtered.filter((b) => {
@@ -155,6 +179,11 @@ for (const { slug, file, url } of SOURCES) {
   const body = extractArticleBody(html);
   const blocks = blocksFromArticle(body);
 
+  // Hero gets a wide, high-quality transform (the in-page hero is 16:9)
+  const heroBase = (u) => {
+    const m = u.match(/^(https:\/\/static\.wixstatic\.com\/media\/[^/]+)/);
+    return m ? `${m[1]}/v1/fill/w_1200,h_675,al_c,q_90/file.jpg` : u;
+  };
   const out = {
     slug,
     originalUrl: url,
@@ -162,7 +191,7 @@ for (const { slug, file, url } of SOURCES) {
     date: ld.datePublished || null,
     description: ld.description ? decode(ld.description) : "",
     heroImage: ld.image && ld.image.url
-      ? { src: ld.image.url, alt: decode(ld.headline || "") }
+      ? { src: heroBase(ld.image.url), alt: decode(ld.headline || "") }
       : null,
     blocks,
   };
