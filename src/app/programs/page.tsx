@@ -55,6 +55,8 @@ type Campaign = {
   goals: string;
   image: { src: string; alt: string };
   Icon: LucideIcon;
+  /** Outbound "Learn more" link at the foot of the card. */
+  cta?: { label: string; href: string };
 };
 
 const campaigns: Campaign[] = [
@@ -64,6 +66,7 @@ const campaigns: Campaign[] = [
     goals: "Global Goals 8, 9, 10 & 17",
     image: { src: "/images/cin.png", alt: "Business launch & growth solutions workshop" },
     Icon: Rocket,
+    cta: { label: "View program", href: "https://www.createimpactnow.org/" },
   },
   {
     title: "Community Support & Resources",
@@ -74,6 +77,7 @@ const campaigns: Campaign[] = [
       alt: "Cast Member Pantry volunteers serving groceries",
     },
     Icon: Utensils,
+    cta: { label: "View program", href: "https://www.mickeymouseclubreunion.com/csr" },
   },
   {
     title: "Use Your Bottle, Change Our World",
@@ -94,6 +98,7 @@ const campaigns: Campaign[] = [
       alt: "Veterans, first responders & healthcare workers campaign",
     },
     Icon: ShieldCheck,
+    cta: { label: "Victory Bridge", href: "https://www.victorybridge.org/" },
   },
   {
     title: "Day at Disney",
@@ -104,6 +109,7 @@ const campaigns: Campaign[] = [
       alt: "Mouseketeers and youth at Disney for a Day at Disney trip",
     },
     Icon: Sparkles,
+    cta: { label: "Learn more", href: "https://www.mickeymouseclubreunion.com/mmc30" },
   },
   {
     title: "Day of Service",
@@ -111,6 +117,7 @@ const campaigns: Campaign[] = [
     goals: "Global Goals 1–17",
     image: { src: "/images/img_8917.jpg", alt: "Mouseketeers volunteering at Second Harvest Food Bank" },
     Icon: HandHeart,
+    cta: { label: "Learn more", href: "https://www.mickeymouseclubreunion.com/mmc-89-day-of-service" },
   },
   {
     title: "Day of Hope / Evening of Impact",
@@ -118,6 +125,10 @@ const campaigns: Campaign[] = [
     goals: "Global Goals 5 & 10",
     image: { src: "/images/rhona_doh.png", alt: "Rhona Bennett at the Evening of Hope" },
     Icon: Sun,
+    cta: {
+      label: "See event recap",
+      href: "https://www.mickeymouseclubreunion.com/post/en-vogue-s-rhona-bennett-hosts-changemakers-networking-night",
+    },
   },
   {
     title: "Hall of Fame / Be Great! Awards",
@@ -125,6 +136,7 @@ const campaigns: Campaign[] = [
     goals: "Global Goals 1–17",
     image: { src: "/images/img_5573.webp", alt: "Hall of Fame / Be Great! Awards honourees" },
     Icon: Trophy,
+    cta: { label: "Learn more", href: "https://www.mickeymouseclubreunion.com/hall-of-fame" },
   },
   {
     title: "Why? Because It’s Christmas",
@@ -135,6 +147,7 @@ const campaigns: Campaign[] = [
       alt: "Why? Because It’s Christmas — Mouseketeers x MusiCares",
     },
     Icon: Music2,
+    cta: { label: "Learn more", href: "https://www.mickeymouseclubreunion.com/mmcholidays" },
   },
   {
     title: "Shop the Club, We Plant a Tree",
@@ -145,6 +158,7 @@ const campaigns: Campaign[] = [
       alt: "Shop the Club, We Plant a Tree campaign",
     },
     Icon: Leaf,
+    cta: { label: "Visit the Club Store", href: "https://mmcreunion.com/" },
   },
 ];
 
@@ -200,26 +214,43 @@ const testimonials = [
   },
 ];
 
-const partners = [
+type Partner = {
+  name: string;
+  body: string;
+  logo: { src: string; alt: string };
+  href: string;
+};
+
+const partners: Partner[] = [
   {
     name: "MusiCares",
     body: "We partnered with MusiCares on our holiday album Why? Because It’s Christmas, which debuted at #21 on Billboard.",
+    logo: { src: "/images/musicares-lockup_red-rgb.webp", alt: "MusiCares logo" },
+    href: "https://www.musicares.org/",
   },
   {
     name: "Educational Destinations",
     body: "A Disney Parks Recognized Youth Travel Planner and Disney on Broadway’s Preferred Travel Planner.",
+    logo: { src: "/images/logo.png", alt: "Educational Destinations logo" },
+    href: "https://www.educationaldestinations.com/index.html",
   },
   {
     name: "That’s 4 Entertainment",
     body: "We partner with their 90s Con and Christmas Con to raise awareness and funds for our programs.",
+    logo: { src: "/images/unnamed.jpg", alt: "That’s 4 Entertainment logo" },
+    href: "https://www.thats4entertainment.com/",
   },
   {
     name: "Entertainment For Change",
     body: "We work with EFC to amplify young voices and create a new kind of empowered leader.",
+    logo: { src: "/images/logo-text-only.webp", alt: "Entertainment For Change logo" },
+    href: "https://www.createimpact.org/impactartist",
   },
   {
     name: "Be Great!",
     body: "A social impact-based production company. Together we produce awards, events and media that inspire people to Be Great!",
+    logo: { src: "/images/cr-w-814-h-407.webp", alt: "Be Great! logo" },
+    href: "https://begreatshow.com/",
   },
 ];
 
@@ -489,6 +520,17 @@ export default function ProgramsPage() {
                         {c.goals}
                       </p>
                     )}
+                    {c.cta && (
+                      <a
+                        href={c.cta.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-5 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
+                      >
+                        {c.cta.label}
+                        <ArrowUpRight className="h-4 w-4" aria-hidden />
+                      </a>
+                    )}
                   </div>
                 </Reveal>
               );
@@ -547,12 +589,34 @@ export default function ProgramsPage() {
                 as="li"
                 key={p.name}
                 delay={(i % 3) * 80}
-                className="rounded-2xl border border-border bg-warm-white p-7 shadow-soft-sm"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-warm-white shadow-soft-sm transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-soft motion-reduce:transition-none motion-reduce:hover:translate-y-0"
               >
-                <p className="font-display text-xl font-medium text-ink">{p.name}</p>
-                <p className="mt-3 text-[15px] leading-relaxed text-warm-gray">
-                  {p.body}
-                </p>
+                {/* Logo matte — full logo with safe padding, no crop */}
+                <div className="relative aspect-[16/9] w-full bg-cream p-6 ring-1 ring-inset ring-ink/[0.04]">
+                  <Image
+                    src={p.logo.src}
+                    alt={p.logo.alt}
+                    fill
+                    sizes="(min-width: 1024px) 320px, (min-width: 640px) 50vw, 100vw"
+                    className="object-contain p-5"
+                  />
+                </div>
+                {/* Body */}
+                <div className="flex flex-1 flex-col p-7">
+                  <p className="font-display text-xl font-medium text-ink">{p.name}</p>
+                  <p className="mt-3 flex-1 text-[15px] leading-relaxed text-warm-gray">
+                    {p.body}
+                  </p>
+                  <a
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-5 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
+                  >
+                    Visit {p.name}
+                    <ArrowUpRight className="h-4 w-4" aria-hidden />
+                  </a>
+                </div>
               </Reveal>
             ))}
           </ul>
