@@ -381,9 +381,8 @@ const partners: Partner[] = [
     name: "That’s 4 Entertainment",
     body: "We partner with their 90s Con and Christmas Con to raise awareness and funds for our programs.",
     logo: {
-      src: "/images/Thats4EntertainmentLogo%20white%20small.png",
+      src: "/images/Thats4EntertainmentLogo-dark.png",
       alt: "That’s 4 Entertainment logo",
-      invert: true,
     },
     href: "https://www.thats4entertainment.com/",
   },
