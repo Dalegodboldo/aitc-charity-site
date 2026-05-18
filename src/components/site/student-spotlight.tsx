@@ -33,7 +33,7 @@ export function StudentSpotlightTrigger() {
           className="h-4 w-4 text-red transition-colors group-hover:text-cream"
           aria-hidden
         />
-        Student Spotlight: Yaffa Botier
+        Student Spotlight: Yaffa Botier (Musician/Guitar)
       </button>
       <StudentSpotlightModal open={open} onClose={() => setOpen(false)} />
     </>
