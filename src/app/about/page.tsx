@@ -151,17 +151,22 @@ export default function AboutPage() {
       <section className="bg-warm-white py-20 sm:py-28">
         <div className="mx-auto max-w-4xl px-5 sm:px-8">
           <Reveal>
-            <div className="overflow-hidden rounded-2xl border border-border shadow-soft-sm">
-              <Image
-                src="/images/mmc30-confetti-mickey-fist-pump.jpg"
-                alt="Mouseketeers and Mickey Mouse celebrating with confetti and fists raised in the air"
-                width={3000}
-                height={1251}
-                sizes="(min-width: 1024px) 768px, 100vw"
-                className="block h-auto w-full"
-                priority={false}
-              />
-            </div>
+            <figure>
+              <div className="overflow-hidden rounded-2xl border border-border shadow-soft-sm">
+                <Image
+                  src="/images/mmc30-confetti-mickey-fist-pump.jpg"
+                  alt="Mouseketeers and Mickey Mouse celebrating with confetti and fists raised in the air"
+                  width={3000}
+                  height={1251}
+                  sizes="(min-width: 1024px) 768px, 100vw"
+                  className="block h-auto w-full"
+                  priority={false}
+                />
+              </div>
+              <figcaption className="mt-3 text-center text-[12px] italic leading-snug text-warm-gray">
+                #MMC30 — Cast &amp; Crew reunion at Walt Disney World® Resort
+              </figcaption>
+            </figure>
           </Reveal>
           <Reveal delay={80} className="mt-12">
             <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-gold">

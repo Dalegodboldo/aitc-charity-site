@@ -632,39 +632,44 @@ export default function ProgramsPage() {
               Top + bottom gradients keep both white marks legible against
               the photo. */}
           <Reveal>
-            <div className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl bg-ink shadow-soft">
-              <Image
-                src="/images/mmc30-mickey-confetti.png"
-                alt="Mouseketeers and Mickey Mouse celebrating amid confetti"
-                width={2995}
-                height={1114}
-                sizes="(min-width: 768px) 768px, 100vw"
-                className="block h-auto w-full"
-              />
-              {/* Top + bottom legibility gradients */}
-              <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-ink/55 via-ink/10 to-transparent" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/60 via-ink/15 to-transparent" />
-              {/* MMC'89 mark — mobile: top-left small; desktop: top-centre prominent */}
-              <div className="absolute left-3 top-3 sm:left-1/2 sm:top-4 sm:-translate-x-1/2 lg:top-5">
+            <figure className="mx-auto max-w-3xl">
+              <div className="relative overflow-hidden rounded-2xl bg-ink shadow-soft">
                 <Image
-                  src="/images/MMC89-mj-v6-wht.png"
-                  alt="MMC'89 logo"
-                  width={450}
-                  height={460}
-                  className="h-10 w-auto drop-shadow-md sm:h-20 lg:h-24"
+                  src="/images/mmc30-mickey-confetti.png"
+                  alt="Mouseketeers and Mickey Mouse celebrating amid confetti"
+                  width={2995}
+                  height={1114}
+                  sizes="(min-width: 768px) 768px, 100vw"
+                  className="block h-auto w-full"
                 />
+                {/* Top + bottom legibility gradients */}
+                <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-ink/55 via-ink/10 to-transparent" />
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/60 via-ink/15 to-transparent" />
+                {/* MMC'89 mark — mobile: top-left small; desktop: top-centre prominent */}
+                <div className="absolute left-3 top-3 sm:left-1/2 sm:top-4 sm:-translate-x-1/2 lg:top-5">
+                  <Image
+                    src="/images/MMC89-mj-v6-wht.png"
+                    alt="MMC'89 logo"
+                    width={450}
+                    height={460}
+                    className="h-10 w-auto drop-shadow-md sm:h-20 lg:h-24"
+                  />
+                </div>
+                {/* Changemaker mark — mobile: top-right small; desktop: bottom-right */}
+                <div className="absolute right-3 top-3 sm:bottom-4 sm:right-4 sm:top-auto lg:bottom-5 lg:right-5">
+                  <Image
+                    src="/images/Changemaker-regular-Logo-white.png"
+                    alt="Changemaker"
+                    width={528}
+                    height={524}
+                    className="h-10 w-auto drop-shadow-md sm:h-20 lg:h-24"
+                  />
+                </div>
               </div>
-              {/* Changemaker mark — mobile: top-right small; desktop: bottom-right */}
-              <div className="absolute right-3 top-3 sm:bottom-4 sm:right-4 sm:top-auto lg:bottom-5 lg:right-5">
-                <Image
-                  src="/images/Changemaker-regular-Logo-white.png"
-                  alt="Changemaker"
-                  width={528}
-                  height={524}
-                  className="h-10 w-auto drop-shadow-md sm:h-20 lg:h-24"
-                />
-              </div>
-            </div>
+              <figcaption className="mt-3 text-center text-[12px] italic leading-snug text-warm-gray">
+                #MMC30 — Cast &amp; Crew reunion at Walt Disney World® Resort
+              </figcaption>
+            </figure>
           </Reveal>
 
           {/* Copy */}
