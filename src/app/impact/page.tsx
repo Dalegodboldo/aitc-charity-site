@@ -471,17 +471,31 @@ export default function ImpactPage() {
             })}
           </ul>
 
-          {/* Outbound link to the main blog for more campaigns and events */}
-          <Reveal delay={120} className="mt-14 flex justify-center">
-            <a
-              href="https://www.mickeymouseclubreunion.com/blog"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-base font-semibold text-red no-underline transition-colors hover:text-red-deep"
-            >
-              Visit our main blog for more campaigns and events
-              <ArrowUpRight className="h-4 w-4" aria-hidden />
-            </a>
+          {/* Descriptor + two outbound links: event recap blog posts and the photo gallery */}
+          <Reveal delay={120} className="mt-14 text-center">
+            <p className="text-lg leading-relaxed text-warm-gray">
+              Explore more of our campaigns and events working to Create Impact.
+            </p>
+            <div className="mt-5 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">
+              <a
+                href="https://www.mickeymouseclubreunion.com/events"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-base font-semibold text-red no-underline transition-colors hover:text-red-deep"
+              >
+                Event Recap Blog Posts
+                <ArrowUpRight className="h-4 w-4" aria-hidden />
+              </a>
+              <a
+                href="https://www.createimpactnow.org/gallery"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-base font-semibold text-red no-underline transition-colors hover:text-red-deep"
+              >
+                Campaign / Event Photo Gallery
+                <ArrowUpRight className="h-4 w-4" aria-hidden />
+              </a>
+            </div>
           </Reveal>
         </div>
       </section>
