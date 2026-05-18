@@ -2,12 +2,9 @@
 
 /**
  * Student Spotlight modal — opened from the Mentorship card on the home
- * page. Showcases a single student (currently Yaffa Botier) with a hero
- * video, a 3-up photo gallery, a short tribute, and a CTA to the
- * mentoring program.
- *
- * Modal mechanics (focus trap / scroll lock / Esc) mirror CampaignModal
- * so behavior is consistent across the site.
+ * page. Compact, no-scroll layout: on desktop the video sits beside the
+ * gallery + copy; on mobile it stacks but everything is sized to fit
+ * within the panel without overflowing.
  */
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
@@ -63,9 +60,7 @@ function StudentSpotlightModal({
     if (!open) return;
     previouslyFocusedRef.current = document.activeElement;
     closeBtnRef.current?.focus();
-    panelRef.current?.scrollTo({ top: 0 });
     return () => {
-      // Pause video if it was playing
       videoRef.current?.pause();
       const prev = previouslyFocusedRef.current;
       if (prev instanceof HTMLElement) prev.focus();
@@ -107,7 +102,7 @@ function StudentSpotlightModal({
       role="dialog"
       aria-modal="true"
       aria-labelledby="student-spotlight-title"
-      className="fixed inset-0 z-50 flex items-end justify-center bg-ink/65 backdrop-blur-sm sm:items-center"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-ink/65 p-4 backdrop-blur-sm"
       onClick={(e) => {
         // Click on backdrop (not panel) → close
         if (e.target === e.currentTarget) onClose();
@@ -115,42 +110,36 @@ function StudentSpotlightModal({
     >
       <div
         ref={panelRef}
-        // overscroll-contain stops iOS rubber-band from bubbling up to
-        // the page; touch-pan-y keeps vertical touch scroll inside the
-        // panel responsive even with a sticky header child.
-        className="relative max-h-[95dvh] w-full max-w-3xl touch-pan-y overflow-y-auto overscroll-contain rounded-t-2xl bg-cream shadow-soft sm:max-h-[90dvh] sm:rounded-2xl"
+        className="relative w-full max-w-5xl overflow-hidden rounded-2xl bg-cream shadow-soft"
       >
-        {/* Sticky title bar — title + visible Close button stay pinned so the
-            exit is always one click away, even after scrolling. */}
-        <header className="sticky top-0 z-20 flex items-start justify-between gap-4 border-b border-border bg-cream/95 px-6 py-5 backdrop-blur-sm sm:px-10 sm:py-6">
-          <div className="min-w-0">
-            <p className="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
-              <Sparkles className="h-3.5 w-3.5" aria-hidden />
-              Student Spotlight
-            </p>
-            <h2
-              id="student-spotlight-title"
-              className="mt-2 font-display text-2xl font-medium leading-tight tracking-tight text-ink sm:text-3xl"
-            >
-              Yaffa Botier
-            </h2>
-          </div>
+        {/* Title bar — single-line title + Close */}
+        <header className="flex items-center justify-between gap-4 border-b border-border bg-cream px-5 py-3 sm:px-7 sm:py-4">
+          <h2
+            id="student-spotlight-title"
+            className="inline-flex items-center gap-2 truncate font-display text-lg font-medium leading-tight tracking-tight text-ink sm:text-xl"
+          >
+            <Sparkles className="h-4 w-4 shrink-0 text-gold" aria-hidden />
+            <span>
+              <span className="text-gold">Student Spotlight:</span>{" "}
+              <span className="text-ink">Yaffa Botier</span>
+            </span>
+          </h2>
           <button
             ref={closeBtnRef}
             type="button"
             onClick={onClose}
             aria-label="Close Student Spotlight"
-            className="inline-flex h-10 shrink-0 items-center justify-center gap-1.5 rounded-full border border-border bg-warm-white px-4 text-sm font-semibold text-ink no-underline transition-colors hover:border-ink/30 hover:bg-cream"
+            className="inline-flex h-9 shrink-0 items-center justify-center gap-1.5 rounded-full border border-border bg-warm-white px-3.5 text-sm font-semibold text-ink no-underline transition-colors hover:border-ink/30 hover:bg-cream sm:h-10 sm:px-4"
           >
             <X className="h-4 w-4" aria-hidden />
-            Close
+            <span className="hidden sm:inline">Close</span>
           </button>
         </header>
 
-        {/* Hero video — preload="none" so opening the modal doesn't pull a
-            30MB file before the user clicks play. Poster still renders. */}
-        <div className="px-6 pt-6 sm:px-10 sm:pt-8">
-          <div className="relative aspect-[9/16] w-full overflow-hidden rounded-xl bg-ink shadow-soft-sm sm:aspect-video">
+        {/* Body — side-by-side on desktop, stacked on mobile */}
+        <div className="grid gap-5 p-5 sm:gap-6 sm:p-7 lg:grid-cols-[1.2fr_1fr]">
+          {/* Left: video */}
+          <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-ink shadow-soft-sm">
             <video
               ref={videoRef}
               controls
@@ -163,71 +152,53 @@ function StudentSpotlightModal({
               Your browser does not support the video element.
             </video>
           </div>
+
+          {/* Right: gallery + copy + links */}
+          <div className="flex flex-col gap-4">
+            <ul className="grid grid-cols-3 gap-2 sm:gap-2.5">
+              {PHOTOS.map((p) => (
+                <li
+                  key={p.src}
+                  className="relative aspect-[3/4] overflow-hidden rounded-lg bg-warm-white shadow-soft-sm"
+                >
+                  <Image
+                    src={p.src}
+                    alt={p.alt}
+                    fill
+                    sizes="(min-width: 1024px) 140px, (min-width: 640px) 200px, 30vw"
+                    className="object-cover"
+                  />
+                </li>
+              ))}
+            </ul>
+
+            <p className="text-[15px] leading-relaxed text-warm-gray sm:text-[16px]">
+              Check out Yaffa sharing the stage with none other than{" "}
+              <strong className="text-ink">Yungblud</strong>! Yaffa was
+              mentored by AITC&rsquo;s{" "}
+              <strong className="text-ink">Tony Lucca</strong>, and we
+              couldn&rsquo;t be more proud. Shout out to AITC&rsquo;s{" "}
+              <strong className="text-ink">Chasen Hampton</strong> for making
+              the connection!
+            </p>
+
+            <p className="text-[14px] leading-relaxed text-warm-gray">
+              Learn more about our mentoring programs at{" "}
+              <a
+                href={LEARN_MORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-red no-underline transition-colors hover:text-red-deep"
+              >
+                www.Learn-Grow-Thrive.org
+              </a>
+            </p>
+
+            <p className="mt-auto text-[12px] uppercase tracking-[0.16em] text-warm-gray/80">
+              📸 @_fitzphotos_
+            </p>
+          </div>
         </div>
-
-        {/* 3-up photo gallery */}
-        <ul className="mt-5 grid grid-cols-3 gap-2 px-6 sm:gap-3 sm:px-10">
-          {PHOTOS.map((p) => (
-            <li
-              key={p.src}
-              className="relative aspect-[3/4] overflow-hidden rounded-lg bg-warm-white shadow-soft-sm"
-            >
-              <Image
-                src={p.src}
-                alt={p.alt}
-                fill
-                sizes="(min-width: 640px) 220px, 33vw"
-                className="object-cover"
-              />
-            </li>
-          ))}
-        </ul>
-
-        {/* Body copy */}
-        <div className="space-y-4 px-6 pt-7 text-[16px] leading-relaxed text-warm-gray sm:px-10 sm:text-[17px]">
-          <p>
-            So great to see one of our students thriving! Check her out
-            sharing the stage with none other than{" "}
-            <strong className="text-ink">Yungblud</strong>! Yaffa is being
-            mentored by Always In The Club Foundation’s{" "}
-            <strong className="text-ink">Tony Lucca</strong>, and we couldn’t
-            be more proud.
-          </p>
-          <p>
-            Shout out to AITC’s{" "}
-            <strong className="text-ink">Chasen Hampton</strong> for making
-            the connection!
-          </p>
-          <p>
-            Congrats Yaffa, we can’t wait to see how far you go!
-          </p>
-          <p>
-            Learn more about our mentoring programs at{" "}
-            <a
-              href={LEARN_MORE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-semibold text-red no-underline transition-colors hover:text-red-deep"
-            >
-              www.Learn-Grow-Thrive.org
-            </a>
-          </p>
-          <p className="text-[13px] uppercase tracking-[0.16em] text-warm-gray/80">
-            📸 @_fitzphotos_
-          </p>
-        </div>
-
-        {/* Footer exit — second, obvious close at the end of the modal flow */}
-        <footer className="mt-8 flex justify-center border-t border-border bg-warm-white px-6 py-6 sm:px-10">
-          <button
-            type="button"
-            onClick={onClose}
-            className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-full bg-ink px-6 text-base font-semibold text-cream no-underline transition-colors hover:bg-ink/90 sm:w-auto"
-          >
-            <X className="h-4 w-4" aria-hidden />
-            Close Student Spotlight
-          </button>
-        </footer>
       </div>
     </div>
   );
