@@ -74,20 +74,6 @@ const featured = {
 
 const cards: ImpactCard[] = [
   {
-    title: "Cast Member Pantry",
-    body: "We teamed with Cast Member Pantry, founded by Emily Lartigue, to help the startup raise almost $300,000 and serve over 10,000 cast members.",
-    image: {
-      src: "/images/4-0003.png",
-      alt: "A Cast Member Pantry volunteer in the food bank",
-    },
-    Icon: Utensils,
-    stat: { label: "raised + 10,000 cast members served", value: 300000, prefix: "$", thousands: true },
-    cta: {
-      label: "See impact report",
-      href: "https://www.canva.com/design/DAE8sXxfRhY/AJwpfYC2wm74P1xImOodBg/view",
-    },
-  },
-  {
     title: "90s Con / Alzheimer’s Association",
     body: "We facilitated the reunion of Mouseketeers at the first-ever 90s Con, where more than $10,000 was raised for the Alzheimer’s Association and an additional $30,000 for Always In The Club Foundation. Mouseketeer Nikki DeLoach helped present a $5,000 donation from After-Party sponsor Tito’s Handmade Vodka.",
     image: {
@@ -239,6 +225,20 @@ const cards: ImpactCard[] = [
     cta: {
       label: "Learn more",
       href: "https://www.mickeymouseclubreunion.com/post/the-party-reunion-house-of-blues-disney-world",
+    },
+  },
+  {
+    title: "Cast Member Pantry",
+    body: "We teamed with Cast Member Pantry, founded by Emily Lartigue, to help the startup raise almost $300,000 and serve over 10,000 cast members.",
+    image: {
+      src: "/images/4-0003.png",
+      alt: "A Cast Member Pantry volunteer in the food bank",
+    },
+    Icon: Utensils,
+    stat: { label: "raised + 10,000 cast members served", value: 300000, prefix: "$", thousands: true },
+    cta: {
+      label: "See impact report",
+      href: "https://www.canva.com/design/DAE8sXxfRhY/AJwpfYC2wm74P1xImOodBg/view",
     },
   },
 ];
