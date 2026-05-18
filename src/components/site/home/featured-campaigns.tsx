@@ -8,7 +8,7 @@ type Campaign = {
   title: string;
   body: string;
   href: string;
-  image?: { src: string; alt: string };
+  image?: { src: string; alt: string; objectPosition?: string };
 };
 
 const campaigns: Campaign[] = [
@@ -28,6 +28,8 @@ const campaigns: Campaign[] = [
     image: {
       src: "/images/disney-shot-on-stage.webp",
       alt: "Students with Mouseketeers at the Disney Imagination Campus",
+      // Slide image left within the frame so the "Always in the Club" logo edge is visible
+      objectPosition: "right center",
     },
   },
   {
@@ -91,20 +93,43 @@ export function FeaturedCampaigns() {
                 rel="noopener noreferrer"
                 className="flex h-full flex-col no-underline"
               >
-                <div className="relative aspect-[4/3] overflow-hidden bg-cream">
+                <div className="iris-card relative aspect-[4/3] overflow-hidden bg-cream">
                   {c.image ? (
                     <>
-                      <Image
-                        src={c.image.src}
-                        alt={c.image.alt}
-                        fill
-                        sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
-                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                      />
-                      <div
-                        aria-hidden
-                        className="pointer-events-none absolute inset-0 bg-red mix-blend-multiply opacity-55"
-                      />
+                      {/* Front (always visible) — same image with red film */}
+                      <div className="absolute inset-0">
+                        <Image
+                          src={c.image.src}
+                          alt={c.image.alt}
+                          fill
+                          sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                          style={
+                            c.image.objectPosition
+                              ? { objectPosition: c.image.objectPosition }
+                              : undefined
+                          }
+                          className="object-cover"
+                        />
+                        <div
+                          aria-hidden
+                          className="pointer-events-none absolute inset-0 bg-red mix-blend-multiply opacity-55"
+                        />
+                      </div>
+                      {/* Back (iris reveal — same image in true colour, no overlay) */}
+                      <div className="iris-back absolute inset-0">
+                        <Image
+                          src={c.image.src}
+                          alt=""
+                          fill
+                          sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                          style={
+                            c.image.objectPosition
+                              ? { objectPosition: c.image.objectPosition }
+                              : undefined
+                          }
+                          className="object-cover"
+                        />
+                      </div>
                     </>
                   ) : (
                     <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(171,7,7,0.08),rgba(255,255,255,0)_70%)]">

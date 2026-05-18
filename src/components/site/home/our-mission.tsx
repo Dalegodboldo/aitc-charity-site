@@ -14,13 +14,16 @@ type ImageData = {
 
 const pillars: {
   title: string;
-  body: string;
+  body: string[];
   image: ImageData;
   imageBack: ImageData;
 }[] = [
   {
     title: "Mentorship & Youth Arts Education",
-    body: "We provide mentoring, workshops, coaching sessions and Experiential Learning opportunities with professional creatives and innovative companies across a wide range of industries. Our coaches’ students have gone on to sign with Disney, Epitaph Records, Capitol, Sony Red, Universal Music Group, and been seen all over the world in festivals and on stages such as Coachella, Lollapalooza, GMA, Jimmy Kimmel, iHeart Music Awards, and many more.",
+    body: [
+      "We provide mentoring, workshops, coaching sessions and Experiential Learning opportunities with professional creatives and innovative companies across a wide range of industries.",
+      "Our coaches’ students have gone on to sign with Disney, Epitaph Records, Capitol, Sony Red, Universal Music Group, and been seen all over the world in festivals and on stages such as Coachella, Lollapalooza, GMA, Jimmy Kimmel, iHeart Music Awards, and many more.",
+    ],
     image: {
       src: "/images/dale-coaching.png",
       alt: "A Mouseketeer leading a coaching session with a group of young students",
@@ -35,7 +38,10 @@ const pillars: {
   },
   {
     title: "MMC’89 Social Impact Initiative",
-    body: "Through our programs and campaigns, we address global challenges related to education, hunger, mental health, poverty, inequality and climate change. We also provide marketing and business management services to nonprofit organizations and socially conscious entrepreneurs who want to create impact — guided by all 17 of the United Nations Global Goals for a better world by 2030.",
+    body: [
+      "Through our programs and campaigns, we address global challenges related to education, hunger, mental health, poverty, inequality and climate change.",
+      "We also provide marketing and business management services to nonprofit organizations and socially conscious entrepreneurs who want to create impact — guided by all 17 of the United Nations Global Goals for a better world by 2030.",
+    ],
     image: {
       src: "/images/mmc89_mmc30.png",
       alt: "Mouseketeers reunited on stage with Mickey Mouse under the MMC'89 logo",
@@ -92,15 +98,6 @@ function FlipImage({ front, back }: { front: ImageData; back: ImageData }) {
           className="object-cover"
         />
       </div>
-      <style>{`
-        .iris-back {
-          clip-path: circle(0% at 50% 50%);
-          transition: clip-path 750ms cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .iris-card:hover .iris-back {
-          clip-path: circle(120% at 50% 50%);
-        }
-      `}</style>
       {/* Subtle hint that there's a second image — only visible until first hover */}
       <span
         aria-hidden
@@ -138,9 +135,11 @@ export function OurMission() {
                 <h3 className="font-display text-2xl font-medium leading-snug text-ink sm:text-[28px]">
                   {p.title}
                 </h3>
-                <p className="mt-5 text-[17px] leading-relaxed text-warm-gray">
-                  {p.body}
-                </p>
+                <div className="mt-5 space-y-4 text-[17px] leading-relaxed text-warm-gray">
+                  {p.body.map((para, idx) => (
+                    <p key={idx}>{para}</p>
+                  ))}
+                </div>
               </div>
             </Reveal>
           ))}

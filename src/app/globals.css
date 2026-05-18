@@ -162,6 +162,21 @@
   font-weight: 400;
 }
 
+/* ---------------------------------------------------------------
+   Iris / spotlight reveal — used by Mission and Featured Campaigns
+   cards. The .iris-back element starts fully clipped to a 0% circle
+   and expands to a 120% circle when its .iris-card ancestor is
+   hovered, smoothly transitioning the clip-path.
+--------------------------------------------------------------- */
+.iris-back {
+  clip-path: circle(0% at 50% 50%);
+  transition: clip-path 750ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.iris-card:hover .iris-back,
+.iris-card:focus-within .iris-back {
+  clip-path: circle(120% at 50% 50%);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
