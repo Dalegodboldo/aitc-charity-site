@@ -1,66 +1,71 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
+import { CampaignModal } from "@/components/site/campaign-modal";
 import { Reveal } from "@/components/site/reveal";
-import { siteConfig } from "@/lib/site-config";
+import { getCampaign, type CampaignPost } from "@/lib/campaigns";
 
 type Campaign = {
+  /** Which content/campaigns/<slug>.json this card opens. */
+  slug: string;
   title: string;
   body: string;
-  href: string;
   image?: { src: string; alt: string; objectPosition?: string };
 };
 
 const campaigns: Campaign[] = [
   {
+    slug: "mmc36",
     title: "The True Story of the “All New” Mickey Mouse Club",
     body: "Step into the world of the “All New” Mickey Mouse Club with this stunning collector’s book — a one-of-a-kind tribute to the show that defined a generation. Available as eBook/PDF, Hardcover, Paperback, and Coffee Table edition.",
-    href: siteConfig.external.book,
     image: {
       src: "/images/3-e35fc5c.png",
       alt: "Cover of The True Story of the All New Mickey Mouse Club",
     },
   },
   {
+    slug: "disney-campus",
     title: "Destination: Disney Imagination Campus",
     body: "Mouseketeers are on a mission to host 1,000 students on once-in-a-lifetime Experiential Learning trips behind the scenes at Disney Parks with Imagineers, professional performers, and company leaders.",
-    href: "https://www.mickeymouseclubreunion.com/post/destination-disney-imagination-campus-walt-disney-world",
     image: {
       src: "/images/disney-campus-stage.jpg",
       alt: "Students with Mouseketeers on stage at Disney Imagination Campus",
     },
   },
   {
+    slug: "mmc35",
     title: "#MMC35 @ 90s Con Daytona",
     body: "When twelve Mouseketeers reunited to celebrate the 35th anniversary of “The All New” Mickey Mouse Club at 90s Con Daytona Beach, they launched our #MMC35 campaign and transformed nostalgia into impact — generating over $62,000 in contributions.",
-    href: "https://www.mickeymouseclubreunion.com/post/mmc35-90s-con-daytona-beach",
     image: {
       src: "/images/teers-90scon.jpg",
       alt: "Mouseketeers reunited at 90s Con Daytona Beach",
     },
   },
   {
+    slug: "baby-j",
     title: "Whatever Happened to Baby J",
     body: "We were honored to sponsor an evening supporting the AIDS Resource Foundation for Children with a live table read of “Whatever Happened to Baby J,” featuring Jodie Sweetin, Drew Seeley, Dale Godboldo, and a cast of fan favorite stars.",
-    href: "https://www.mickeymouseclubreunion.com/post/whatever-happened-to-baby-j",
     image: {
       src: "/images/whatever-baby-j.avif",
       alt: "Whatever Happened to Baby J — live table read",
     },
   },
   {
+    slug: "day-of-hope",
     title: "Day of Hope / Evening of Impact",
     body: "After our Day of Hope pampered and empowered survivors of domestic abuse, Rhona Bennett (formerly of En Vogue) joined the women for an Evening of Impact.",
-    href: "https://www.mickeymouseclubreunion.com/post/en-vogue-s-rhona-bennett-hosts-changemakers-networking-night",
     image: {
       src: "/images/rhona_doh.png",
       alt: "Rhona Bennett with women supported by Day of Hope",
     },
   },
   {
+    slug: "lastrong",
     title: "#LAStrong Relief Fund",
     body: "As Los Angeles faced one of its most devastating wildfire seasons in history, the MMC’89 #LAStrong Relief Fund mobilized to provide immediate assistance to those affected.",
-    href: "https://www.mickeymouseclubreunion.com/post/doing-what-we-can-the-mmc-89-fire-relief-fund",
     image: {
       src: "/images/7cfac6ae-df61-498c-b14b-4a3e504d5c8c-2.jpg",
       alt: "#LAStrong Relief Fund campaign graphic showing firefighters during the LA fires",
@@ -69,6 +74,8 @@ const campaigns: Campaign[] = [
 ];
 
 export function FeaturedCampaigns() {
+  const [openPost, setOpenPost] = useState<CampaignPost | null>(null);
+
   return (
     <section className="bg-cream py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-5 sm:px-8">
@@ -85,20 +92,22 @@ export function FeaturedCampaigns() {
           {campaigns.map((c, i) => (
             <Reveal
               as="li"
-              key={c.title}
+              key={c.slug}
               delay={(i % 3) * 80}
               className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-warm-white shadow-soft-sm transition-shadow duration-300 hover:shadow-soft"
             >
-              <a
-                href={c.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex h-full flex-col no-underline"
+              <button
+                type="button"
+                onClick={() => {
+                  const post = getCampaign(c.slug);
+                  if (post) setOpenPost(post);
+                }}
+                aria-haspopup="dialog"
+                className="flex h-full flex-col text-left no-underline"
               >
                 <div className="iris-card relative aspect-[4/3] overflow-hidden bg-cream">
                   {c.image ? (
                     <>
-                      {/* Front (always visible) — same image with red film */}
                       <div className="absolute inset-0">
                         <Image
                           src={c.image.src}
@@ -117,7 +126,6 @@ export function FeaturedCampaigns() {
                           className="pointer-events-none absolute inset-0 bg-red mix-blend-multiply opacity-55"
                         />
                       </div>
-                      {/* Back (iris reveal — same image in true colour, no overlay) */}
                       <div className="iris-back absolute inset-0">
                         <Image
                           src={c.image.src}
@@ -153,7 +161,7 @@ export function FeaturedCampaigns() {
                     <ArrowUpRight className="h-4 w-4" aria-hidden />
                   </span>
                 </div>
-              </a>
+              </button>
             </Reveal>
           ))}
         </ul>
@@ -168,6 +176,9 @@ export function FeaturedCampaigns() {
           </Link>
         </Reveal>
       </div>
+
+      {/* The popup that renders the chosen campaign's blog post content */}
+      <CampaignModal post={openPost} onClose={() => setOpenPost(null)} />
     </section>
   );
 }

@@ -69,7 +69,10 @@
       "Bash(git -c commit.gpgsign=false commit -m \"Mission: nudge MMC'89 image down so the mouse ears clear the frame\")",
       "Bash(git -c commit.gpgsign=false commit -m \"Mission: slide Mentorship image left within its frame \\(objectPosition 70%\\)\")",
       "Bash(curl -sS -o /dev/null -w \"HTTP %{http_code} %{time_total}s\\\\n\" http://localhost:3000/)",
-      "Bash(git -c commit.gpgsign=false commit -m \"Campaigns: add whatever-baby-j.avif to the Baby J card \\(replaces gold placeholder\\)\")"
+      "Bash(git -c commit.gpgsign=false commit -m \"Campaigns: add whatever-baby-j.avif to the Baby J card \\(replaces gold placeholder\\)\")",
+      "Bash(grep -oE '\"name\":\"[^\"]{1,100}\"|\"headline\":\"[^\"]{1,200}\"|\"datePublished\":\"[^\"]+\"|\"author\":[^}]+}|\"image\":\"[^\"]+\"' /tmp/mmc36.html)",
+      "Bash(grep -oE '\"articleBody\":\"[^\"\\\\\\\\]{50,500}' /tmp/mmc36.html)",
+      "Bash(grep -oE '<script type=\"application/ld\\\\+json\">[^<]{50,}' /tmp/mmc36.html)"
     ]
   }
 }
