@@ -16,10 +16,18 @@ export function PlantATree() {
                 Join Us to Reforest the World
               </h2>
               <p className="mt-5 text-lg text-warm-gray">
-                When you make a purchase or donate in our Club Store, we plant
-                a tree in your name to help offset global carbon emissions.
-                Thanks to the generosity of our supporters, we have proudly
-                planted more than 2,500 trees around the world.
+                When you make a purchase or donate in our{" "}
+                <a
+                  href="https://mmcreunion.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-red underline underline-offset-2 transition-colors hover:text-red-deep"
+                >
+                  Club Store
+                </a>
+                , we plant a tree in your name to help offset global carbon
+                emissions. Thanks to the generosity of our supporters, we have
+                proudly planted more than 2,500 trees around the world.
               </p>
               <a
                 href="https://tree-nation.com/profile/impact/always-in-the-club-foundation#co2"
