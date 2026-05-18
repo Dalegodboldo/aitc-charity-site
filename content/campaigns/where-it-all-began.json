@@ -358,7 +358,7 @@
     },
     {
       "type": "p",
-      "html": "Our <a target=\"_blank\" href=\"https://alwaysintheclub.org/team\" rel=\"noopener noreferrer\"><u>board and staff</u></a> is comprised of accomplished individuals across a wide range of skills uniquely suited to our mission, and have raised more than $50 million for outstanding nonprofit efforts."
+      "html": "Our <a href=\"/team\"><u>board and staff</u></a> is comprised of accomplished individuals across a wide range of skills uniquely suited to our mission, and have raised more than $50 million for outstanding nonprofit efforts."
     },
     {
       "type": "img",
@@ -464,6 +464,20 @@
       "alt": "Rachel Carlsen, CPA",
       "placement": "inline",
       "caption": "Rachel Carlsen, CPA"
+    },
+    {
+      "type": "img",
+      "src": "/images/carrie.webp",
+      "alt": "Carrie Mulderink",
+      "placement": "inline",
+      "caption": "Carrie Mulderink"
+    },
+    {
+      "type": "img",
+      "src": "/images/anthony-headshot.jpeg",
+      "alt": "Anthony Donovan",
+      "placement": "inline",
+      "caption": "Anthony Donovan"
     },
     {
       "type": "p",
