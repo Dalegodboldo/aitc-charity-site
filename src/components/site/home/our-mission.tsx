@@ -58,7 +58,8 @@ const pillars: {
 function FlipImage({ front, back }: { front: ImageData; back: ImageData }) {
   return (
     <div className="iris-card group relative aspect-[16/10] w-full overflow-hidden bg-warm-white">
-      {/* Front (base, always visible) */}
+      {/* Front (base, always visible) — tinted with a red film that the
+          iris reveal "uncovers" to show the back image in true colour */}
       <div className="absolute inset-0">
         <Image
           src={front.src}
@@ -70,6 +71,10 @@ function FlipImage({ front, back }: { front: ImageData; back: ImageData }) {
             ...(front.imgStyle ?? {}),
           }}
           className="object-cover"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-red mix-blend-multiply opacity-55"
         />
       </div>
       {/* Back (spotlight reveal — clip-path defined in the <style> block below

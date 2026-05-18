@@ -93,13 +93,19 @@ export function FeaturedCampaigns() {
               >
                 <div className="relative aspect-[4/3] overflow-hidden bg-cream">
                   {c.image ? (
-                    <Image
-                      src={c.image.src}
-                      alt={c.image.alt}
-                      fill
-                      sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
-                    />
+                    <>
+                      <Image
+                        src={c.image.src}
+                        alt={c.image.alt}
+                        fill
+                        sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
+                      />
+                      <div
+                        aria-hidden
+                        className="pointer-events-none absolute inset-0 bg-red mix-blend-multiply opacity-55"
+                      />
+                    </>
                   ) : (
                     <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(171,7,7,0.08),rgba(255,255,255,0)_70%)]">
                       <span className="font-display text-5xl italic text-ink/15">
