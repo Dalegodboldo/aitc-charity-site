@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowUpRight, Mail, MapPin, Phone } from "lucide-react";
-import { ContactForm } from "@/components/site/contact-form";
 import { PageIntro } from "@/components/site/page-intro";
 import { Reveal } from "@/components/site/reveal";
 import { siteConfig } from "@/lib/site-config";
@@ -272,7 +271,7 @@ export default function TeamPage() {
 
       {/* Contact */}
       <section className="bg-warm-white py-20 sm:py-28">
-        <div className="mx-auto grid max-w-6xl gap-12 px-5 sm:px-8 lg:grid-cols-[1fr_1fr]">
+        <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <Reveal>
             <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-gold">
               Contact Us
@@ -280,9 +279,9 @@ export default function TeamPage() {
             <h2 className="mt-4 font-display text-4xl font-medium leading-tight tracking-tight sm:text-5xl">
               Drop us a line!
             </h2>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-warm-gray">
-              Reach the Foundation directly using the details below, or send us
-              a message — we read every note.
+            <p className="mt-6 text-lg leading-relaxed text-warm-gray">
+              Reach the Foundation directly using the details below — we read
+              every note.
             </p>
             <ul className="mt-10 space-y-6 text-[15px]">
               <li className="flex items-start gap-3">
@@ -312,10 +311,6 @@ export default function TeamPage() {
                 </a>
               </li>
             </ul>
-          </Reveal>
-
-          <Reveal delay={120}>
-            <ContactForm />
           </Reveal>
         </div>
       </section>
