@@ -436,17 +436,14 @@ export default function ProgramsPage() {
             </h2>
           </Reveal>
 
-          <Reveal delay={80} className="mt-10 space-y-7 text-lg leading-relaxed text-warm-gray">
+          <Reveal delay={80} className="mt-10 text-lg leading-relaxed text-warm-gray">
             <p>
               More than a variety show, the &ldquo;All New&rdquo; Mickey Mouse
-              Club was a world-class performing arts academy.
-            </p>
-            <p>
-              Inspired by the support they received from Disney, Mouseketeers
-              are lending their unique insights to enhance the lives of young
-              people through mentoring and arts education — essential for
-              social and emotional well-being, and critical tools for
-              establishing equity and access.
+              Club was a world-class performing arts academy. Inspired by the
+              support they received from Disney, Mouseketeers are lending their
+              unique insights to enhance the lives of young people through
+              mentoring and arts education — essential for social and emotional
+              well-being, and critical tools for establishing equity and access.
             </p>
           </Reveal>
 
