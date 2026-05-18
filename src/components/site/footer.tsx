@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { DonateTrigger } from "@/components/site/donate-trigger";
 import { primaryNav, siteConfig } from "@/lib/site-config";
 
 type IconProps = { className?: string };
@@ -144,14 +145,20 @@ export function Footer() {
                 <ul className="mt-5 space-y-3 text-[15px]">
                   {group.links.map((link) => (
                     <li key={link.href}>
-                      <a
-                        href={link.href}
-                        target={link.external ? "_blank" : undefined}
-                        rel={link.external ? "noopener noreferrer" : undefined}
-                        className="text-warm-gray no-underline transition-colors hover:text-red"
-                      >
-                        {link.label}
-                      </a>
+                      {link.href === siteConfig.external.donate ? (
+                        <DonateTrigger className="text-warm-gray no-underline transition-colors hover:text-red">
+                          {link.label}
+                        </DonateTrigger>
+                      ) : (
+                        <a
+                          href={link.href}
+                          target={link.external ? "_blank" : undefined}
+                          rel={link.external ? "noopener noreferrer" : undefined}
+                          className="text-warm-gray no-underline transition-colors hover:text-red"
+                        >
+                          {link.label}
+                        </a>
+                      )}
                     </li>
                   ))}
                 </ul>

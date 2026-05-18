@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { DONATE_MODAL_OPEN_EVENT } from "@/components/site/donate-modal";
 import { primaryNav, siteConfig } from "@/lib/site-config";
 
 function Wordmark({ className }: { className?: string }) {
@@ -77,26 +78,24 @@ export function Header() {
           >
             Visit Main Site
           </a>
-          <a
-            href={siteConfig.external.donate}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event(DONATE_MODAL_OPEN_EVENT))}
             className="inline-flex h-10 items-center justify-center rounded-full bg-red px-5 text-sm font-semibold text-cream no-underline transition-colors hover:bg-red-deep hover:text-cream"
           >
             Donate
-          </a>
+          </button>
         </div>
 
         {/* Mobile CTAs */}
         <div className="flex items-center gap-2 lg:hidden">
-          <a
-            href={siteConfig.external.donate}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={() => window.dispatchEvent(new Event(DONATE_MODAL_OPEN_EVENT))}
             className="inline-flex h-9 items-center justify-center rounded-full bg-red px-4 text-[13px] font-semibold text-cream no-underline transition-colors hover:bg-red-deep hover:text-cream"
           >
             Donate
-          </a>
+          </button>
           <button
             type="button"
             onClick={() => setOpen(true)}
@@ -154,15 +153,16 @@ export function Header() {
           >
             Visit Main Site →
           </a>
-          <a
-            href={siteConfig.external.donate}
-            target="_blank"
-            rel="noopener noreferrer"
-            onClick={() => setOpen(false)}
+          <button
+            type="button"
+            onClick={() => {
+              setOpen(false);
+              window.dispatchEvent(new Event(DONATE_MODAL_OPEN_EVENT));
+            }}
             className="mt-4 inline-flex h-12 items-center justify-center rounded-full bg-red px-6 text-base font-semibold text-cream no-underline transition-colors hover:bg-red-deep hover:text-cream"
           >
             Donate
-          </a>
+          </button>
         </nav>
       </div>
     </header>

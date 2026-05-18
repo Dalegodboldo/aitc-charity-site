@@ -27,6 +27,10 @@ export const siteConfig = {
   external: {
     donate:
       "https://www.zeffy.com/en-US/donation-form/12a9b4c5-4c0e-47b7-a70f-e2af2bb4d5e6",
+    /** Iframe-safe variant of the Zeffy donation form — used by the
+     *  in-site DonateModal so visitors can give without leaving the site. */
+    donateEmbed:
+      "https://www.zeffy.com/embed/donation-form/12a9b4c5-4c0e-47b7-a70f-e2af2bb4d5e6",
     newsletter: "https://stats.sender.net/forms/dwWNMd/view",
     store: "https://mmcreunion.com",
     events: "https://www.mickeymouseclubreunion.com/events",

@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { BookModalTrigger } from "@/components/site/book-modal-trigger";
+import { DonateTrigger } from "@/components/site/donate-trigger";
 import { HeroVideo } from "@/components/site/hero-video";
 import { Reveal } from "@/components/site/reveal";
 import { siteConfig } from "@/lib/site-config";
@@ -25,14 +26,9 @@ export function Hero() {
             Using our E.A.R.S. to make a difference.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <a
-              href={siteConfig.external.donate}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center rounded-full bg-red px-7 text-base font-semibold text-cream no-underline shadow-[0_12px_28px_-12px_rgba(171,7,7,0.55)] transition-colors hover:bg-red-deep hover:text-cream"
-            >
+            <DonateTrigger className="inline-flex h-12 items-center justify-center rounded-full bg-red px-7 text-base font-semibold text-cream no-underline shadow-[0_12px_28px_-12px_rgba(171,7,7,0.55)] transition-colors hover:bg-red-deep hover:text-cream">
               Donate
-            </a>
+            </DonateTrigger>
             <BookModalTrigger className="inline-flex h-12 items-center justify-center rounded-full border border-ink/15 bg-warm-white px-7 text-base font-semibold text-ink no-underline transition-colors hover:border-ink/35 hover:text-ink">
               Get the MMC Book
             </BookModalTrigger>
