@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, BookOpen, Quote, Sparkles } from "lucide-react";
 import { OriginStoryTrigger } from "@/components/site/about/origin-story-trigger";
+import { BookModalTrigger } from "@/components/site/book-modal-trigger";
+import { ImageLightbox } from "@/components/site/image-lightbox";
 import { PageIntro } from "@/components/site/page-intro";
 import { Reveal } from "@/components/site/reveal";
 import { siteConfig } from "@/lib/site-config";
@@ -56,27 +57,20 @@ export default function AboutPage() {
 
           {/* Book promo banner — links out to /about-mmc and the book store */}
           <Reveal delay={140} className="mt-12">
-            <div className="overflow-hidden rounded-2xl border border-border shadow-soft-sm">
-              <Image
-                src="/images/Cast-Photo-Book-Branding.png"
-                alt="Always In The Club: The True Story of the All-New Mickey Mouse Club — cast photo and book branding"
-                width={1800}
-                height={570}
-                sizes="(min-width: 1024px) 768px, 100vw"
-                className="block h-auto w-full"
-              />
-            </div>
+            <ImageLightbox
+              src="/images/Cast-Photo-Book-Branding.png"
+              alt="Always In The Club: The True Story of the All-New Mickey Mouse Club — cast photo and book branding"
+              width={1800}
+              height={570}
+              sizes="(min-width: 1024px) 768px, 100vw"
+              wrapperClassName="rounded-2xl border border-border shadow-soft-sm"
+            />
             <div className="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4">
-              <a
-                href="https://www.mickeymouseclubreunion.com/books"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-red px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-red-deep hover:text-cream"
-              >
+              <BookModalTrigger className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-red px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-red-deep hover:text-cream">
                 <BookOpen className="h-4 w-4" aria-hidden />
                 Get the true story
                 <ArrowUpRight className="h-4 w-4" aria-hidden />
-              </a>
+              </BookModalTrigger>
               <a
                 href="https://www.mickeymouseclubreunion.com/about-mmc"
                 target="_blank"
@@ -152,19 +146,24 @@ export default function AboutPage() {
         <div className="mx-auto max-w-4xl px-5 sm:px-8">
           <Reveal>
             <figure>
-              <div className="overflow-hidden rounded-2xl border border-border shadow-soft-sm">
-                <Image
-                  src="/images/mmc30-confetti-mickey-fist-pump.jpg"
-                  alt="Mouseketeers and Mickey Mouse celebrating with confetti and fists raised in the air"
-                  width={3000}
-                  height={1251}
-                  sizes="(min-width: 1024px) 768px, 100vw"
-                  className="block h-auto w-full"
-                  priority={false}
-                />
-              </div>
+              <ImageLightbox
+                src="/images/mmc30-confetti-mickey-fist-pump.jpg"
+                alt="Mouseketeers and Mickey Mouse celebrating with confetti and fists raised in the air"
+                width={3000}
+                height={1251}
+                sizes="(min-width: 1024px) 768px, 100vw"
+                wrapperClassName="rounded-2xl border border-border shadow-soft-sm"
+              />
               <figcaption className="mt-3 text-center text-[12px] italic leading-snug text-warm-gray">
-                #MMC30 — Cast &amp; Crew reunion at Walt Disney World® Resort
+                <a
+                  href="https://www.mickeymouseclubreunion.com/mmc30"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-red underline underline-offset-2 transition-colors hover:text-red-deep"
+                >
+                  #MMC30
+                </a>
+                {" "}— Cast &amp; Crew reunion at Walt Disney World® Resort
               </figcaption>
             </figure>
           </Reveal>

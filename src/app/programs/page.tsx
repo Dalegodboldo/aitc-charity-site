@@ -27,6 +27,7 @@ import {
   Users,
   Utensils,
 } from "lucide-react";
+import { ImageLightbox } from "@/components/site/image-lightbox";
 import { PageIntro } from "@/components/site/page-intro";
 import { Reveal } from "@/components/site/reveal";
 
@@ -186,7 +187,10 @@ const campaigns: Campaign[] = [
     goals: "Global Goals 8, 9, 10 & 17",
     image: { src: "/images/cin.png", alt: "Business launch & growth solutions workshop" },
     Icon: Rocket,
-    cta: { label: "View program", href: "https://www.createimpactnow.org/" },
+    cta: {
+      label: "View program",
+      href: "https://www.mickeymouseclubreunion.com/business-services",
+    },
   },
   {
     title: "Community Support & Resources",
@@ -245,13 +249,26 @@ const campaigns: Campaign[] = [
   },
   {
     title: "Day of Hope / Evening of Impact",
-    body: "Empowering days of pampering and evenings of impact for women who are victims of domestic abuse.",
+    body: (
+      <>
+        Empowering days of pampering and{" "}
+        <a
+          href="https://www.mickeymouseclubreunion.com/post/en-vogue-s-rhona-bennett-hosts-changemakers-networking-night"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-red underline underline-offset-2 transition-colors hover:text-red-deep"
+        >
+          evenings of impact
+        </a>{" "}
+        for women who are victims of domestic abuse.
+      </>
+    ),
     goals: "Global Goals 5 & 10",
     image: { src: "/images/rhona_doh.png", alt: "Rhona Bennett at the Evening of Hope" },
     Icon: Sun,
     cta: {
-      label: "See event recap",
-      href: "https://www.mickeymouseclubreunion.com/post/en-vogue-s-rhona-bennett-hosts-changemakers-networking-night",
+      label: "Learn more",
+      href: "https://www.mickeymouseclubreunion.com/day-of-hope",
     },
   },
   {
@@ -633,41 +650,48 @@ export default function ProgramsPage() {
               the photo. */}
           <Reveal>
             <figure className="mx-auto max-w-3xl">
-              <div className="relative overflow-hidden rounded-2xl bg-ink shadow-soft">
-                <Image
-                  src="/images/mmc30-mickey-confetti.png"
-                  alt="Mouseketeers and Mickey Mouse celebrating amid confetti"
-                  width={2995}
-                  height={1114}
-                  sizes="(min-width: 768px) 768px, 100vw"
-                  className="block h-auto w-full"
-                />
+              <ImageLightbox
+                src="/images/mmc30-mickey-confetti.png"
+                alt="Mouseketeers and Mickey Mouse celebrating amid confetti"
+                width={2995}
+                height={1114}
+                sizes="(min-width: 768px) 768px, 100vw"
+                wrapperClassName="rounded-2xl bg-ink shadow-soft"
+              >
                 {/* Top + bottom legibility gradients */}
-                <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-ink/55 via-ink/10 to-transparent" />
-                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/60 via-ink/15 to-transparent" />
-                {/* MMC'89 mark — mobile: top-left small; desktop: top-centre prominent */}
-                <div className="absolute left-3 top-3 sm:left-1/2 sm:top-4 sm:-translate-x-1/2 lg:top-5">
+                <span aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-ink/55 via-ink/10 to-transparent" />
+                <span aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/60 via-ink/15 to-transparent" />
+                {/* MMC'89 mark — mobile: top-left, 2× the previous small size; desktop: top-centre prominent */}
+                <span className="pointer-events-none absolute left-3 top-3 sm:left-1/2 sm:top-4 sm:-translate-x-1/2 lg:top-5">
                   <Image
                     src="/images/MMC89-mj-v6-wht.png"
-                    alt="MMC'89 logo"
+                    alt=""
                     width={450}
                     height={460}
-                    className="h-10 w-auto drop-shadow-md sm:h-20 lg:h-24"
+                    className="h-20 w-auto drop-shadow-md sm:h-20 lg:h-24"
                   />
-                </div>
-                {/* Changemaker mark — mobile: top-right small; desktop: bottom-right */}
-                <div className="absolute right-3 top-3 sm:bottom-4 sm:right-4 sm:top-auto lg:bottom-5 lg:right-5">
+                </span>
+                {/* Changemaker mark — mobile: top-right, 2× the previous small size; desktop: bottom-right */}
+                <span className="pointer-events-none absolute right-3 top-3 sm:bottom-4 sm:right-4 sm:top-auto lg:bottom-5 lg:right-5">
                   <Image
                     src="/images/Changemaker-regular-Logo-white.png"
-                    alt="Changemaker"
+                    alt=""
                     width={528}
                     height={524}
-                    className="h-10 w-auto drop-shadow-md sm:h-20 lg:h-24"
+                    className="h-20 w-auto drop-shadow-md sm:h-20 lg:h-24"
                   />
-                </div>
-              </div>
+                </span>
+              </ImageLightbox>
               <figcaption className="mt-3 text-center text-[12px] italic leading-snug text-warm-gray">
-                #MMC30 — Cast &amp; Crew reunion at Walt Disney World® Resort
+                <a
+                  href="https://www.mickeymouseclubreunion.com/mmc30"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-red underline underline-offset-2 transition-colors hover:text-red-deep"
+                >
+                  #MMC30
+                </a>
+                {" "}— Cast &amp; Crew reunion at Walt Disney World® Resort
               </figcaption>
             </figure>
           </Reveal>

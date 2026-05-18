@@ -53,10 +53,25 @@ export const siteConfig = {
   },
 } as const;
 
-export const primaryNav = [
+/** A nav item is either an internal route or an outbound link. The
+ *  header and footer renderers branch on `external` to pick <Link>
+ *  vs. <a target="_blank">. */
+export type NavItem =
+  | { href: string; label: string; external?: false }
+  | { href: string; label: string; external: true };
+
+export const primaryNav: readonly NavItem[] = [
   { href: "/programs", label: "Programs" },
   { href: "/impact", label: "Impact" },
   { href: "/about", label: "About" },
   { href: "/team", label: "Team" },
   { href: "/blog", label: "All Ears" },
-] as const;
+  { href: siteConfig.external.events, label: "Events", external: true },
+  {
+    href: "https://www.createimpactnow.org/gallery",
+    label: "Photo Gallery",
+    external: true,
+  },
+  { href: siteConfig.external.store, label: "Store", external: true },
+  { href: siteConfig.external.linktree, label: "Linktree (Explore the Club)", external: true },
+];

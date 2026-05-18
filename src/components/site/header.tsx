@@ -57,15 +57,27 @@ export function Header() {
           aria-label="Primary"
           className="hidden items-center gap-7 lg:flex"
         >
-          {primaryNav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              className="text-[15px] font-medium text-ink no-underline transition-colors hover:text-red"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {primaryNav.map((item) =>
+            item.external ? (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[15px] font-medium text-ink no-underline transition-colors hover:text-red"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                className="text-[15px] font-medium text-ink no-underline transition-colors hover:text-red"
+              >
+                {item.label}
+              </Link>
+            )
+          )}
         </nav>
 
         {/* Desktop CTAs */}
@@ -133,16 +145,29 @@ export function Header() {
           aria-label="Primary"
           className="flex flex-1 flex-col gap-1 overflow-y-auto px-5 py-8 sm:px-8"
         >
-          {primaryNav.map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              onClick={() => setOpen(false)}
-              className="block rounded-xl px-3 py-3 font-display text-2xl font-medium text-ink no-underline transition-colors hover:bg-warm-white hover:text-red"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {primaryNav.map((item) =>
+            item.external ? (
+              <a
+                key={item.href}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="block rounded-xl px-3 py-3 font-display text-2xl font-medium text-ink no-underline transition-colors hover:bg-warm-white hover:text-red"
+              >
+                {item.label}
+              </a>
+            ) : (
+              <Link
+                key={item.href}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="block rounded-xl px-3 py-3 font-display text-2xl font-medium text-ink no-underline transition-colors hover:bg-warm-white hover:text-red"
+              >
+                {item.label}
+              </Link>
+            )
+          )}
           <div className="my-4 h-px bg-border" />
           <a
             href={siteConfig.external.mainSite}

@@ -224,12 +224,6 @@
     },
     {
       "type": "img",
-      "src": "https://static.wixstatic.com/media/3ee52e_60d469aa2b5b490dbff03f7e305fdf9d~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
-      "alt": "",
-      "placement": "gallery"
-    },
-    {
-      "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_76f81099dae5436bb65c0cba127b7e18~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
       "alt": "",
       "placement": "gallery"

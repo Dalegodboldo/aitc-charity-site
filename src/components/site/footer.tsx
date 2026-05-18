@@ -124,12 +124,23 @@ export function Footer() {
                 .filter((item) => item.href !== "/blog")
                 .map((item) => (
                   <li key={item.href}>
-                    <Link
-                      href={item.href}
-                      className="text-warm-gray no-underline transition-colors hover:text-red"
-                    >
-                      {item.label}
-                    </Link>
+                    {item.external ? (
+                      <a
+                        href={item.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-warm-gray no-underline transition-colors hover:text-red"
+                      >
+                        {item.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={item.href}
+                        className="text-warm-gray no-underline transition-colors hover:text-red"
+                      >
+                        {item.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
             </ul>

@@ -344,10 +344,6 @@
       "placement": "gallery"
     },
     {
-      "type": "p",
-      "html": "<strong>Scroll >>>></strong>"
-    },
-    {
       "type": "img",
       "src": "https://static.wixstatic.com/media/3ee52e_17b921b590a645e699b9d213f1c4155a~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
       "alt": "",
@@ -370,10 +366,6 @@
       "src": "https://static.wixstatic.com/media/3ee52e_cb953667b889410fb074c2d314c73985~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
       "alt": "",
       "placement": "gallery"
-    },
-    {
-      "type": "p",
-      "html": "<strong>Scroll >>>></strong>"
     },
     {
       "type": "img",
@@ -434,10 +426,6 @@
       "src": "https://static.wixstatic.com/media/3ee52e_a1b071e24018499fb7bb13089a2f8c14~mv2.jpg/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
       "alt": "Fire Relief Fund",
       "placement": "gallery"
-    },
-    {
-      "type": "p",
-      "html": "<strong>Scroll >>>></strong>"
     },
     {
       "type": "h2",
