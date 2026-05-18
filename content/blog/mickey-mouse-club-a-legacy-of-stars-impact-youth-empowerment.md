@@ -69,6 +69,6 @@ While the original show may have ended in 1996, its impact continues to grow. Th
 
 #### Want to Be Part of This Continuing Legacy?
 
-Visit our [programs page](https://alwaysintheclub.org/programs) to learn how you can support the next generation of creative youth. Whether through membership, donation, or participation in our programs, you can help write the next chapter in this inspiring story.
+Visit our [programs page](/programs) to learn how you can support the next generation of creative youth. Whether through membership, donation, or participation in our programs, you can help write the next chapter in this inspiring story.
 
 From mouse ears to meaningful impact, The 'All New' Mickey Mouse Club's legacy reminds us that entertainment can be more than just a show – it can be a catalyst for lasting change. Now that's something worth singing about!
