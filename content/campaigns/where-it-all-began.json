@@ -67,6 +67,16 @@
       "placement": "inline"
     },
     {
+      "type": "video",
+      "kind": "youtube",
+      "videoId": "WrPToWu3vFI"
+    },
+    {
+      "type": "cta",
+      "href": "https://www.mickeymouseclubreunion.com/mmcholidays",
+      "label": "Visit MMC Holidays"
+    },
+    {
       "type": "p",
       "html": "<em>Inclusive of a grant from Google to help the Mouseketeers advertise their mission, </em><a target=\"_top\" href=\"https://www.mickeymouseclubreunion.com/mmcholidays\" rel=\"noopener noreferrer\"><em><u>Why? Because It's Christmas</u></em></a><em> raised more than $140,000. Tony Lucca and fans also volunteered for a Day of Service at Second Harvest Food bank, where our team helped sort more than 4,000 pounds of food that served more than 3,000 people in need over the holiday season.</em>"
     },

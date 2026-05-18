@@ -415,6 +415,20 @@ export function CampaignModal({ post, onClose }: Props) {
                         </a>
                       </div>
                     );
+                  } else if (b.type === "cta") {
+                    out.push(
+                      <div key={i} className="!my-6 flex justify-center">
+                        <a
+                          href={b.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex h-11 items-center justify-center gap-2 rounded-full bg-red px-6 text-sm font-semibold text-cream no-underline transition-colors hover:bg-red-deep hover:text-cream"
+                        >
+                          {b.label}
+                          <ArrowUpRight className="h-4 w-4" aria-hidden />
+                        </a>
+                      </div>
+                    );
                   }
                   i++;
                 }

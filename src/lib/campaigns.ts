@@ -37,7 +37,10 @@ export type CampaignBlock =
   | { type: "video"; kind: "youtube" | "vimeo"; videoId: string }
   | { type: "video"; kind: "mp4"; src: string }
   /** Featured document: full-size image (no crop, not expandable) + CTA. */
-  | { type: "report"; src: string; alt: string; href: string; label: string };
+  | { type: "report"; src: string; alt: string; href: string; label: string }
+  /** Standalone outbound button rendered inline in the body — used to
+   *  pair with adjacent media (e.g. "Visit MMC Holidays" under a video). */
+  | { type: "cta"; href: string; label: string };
 
 export type CampaignPost = {
   slug: string;
