@@ -50,22 +50,29 @@ type ImpactCard = {
   cta?: { label: string; href: string };
 };
 
-const cards: ImpactCard[] = [
-  {
-    title: "Youth Education & Mentorship",
-    body: "We are particularly proud of our livestream from Walt Disney World Resort to more than 2,000 youth delegates around the world, featuring in-depth discussions with Disney icons, humanitarians, and business leaders — including Lee Cockerell (former EVP, Walt Disney World), Pamela Landwirth (CEO, Give Kids The World) and Jodi Benson (the voice of Ariel in The Little Mermaid).",
-    image: {
-      src: "/images/DIS-famility-2000-delegates.png",
-      alt: "2,000 youth delegates broadcast from Walt Disney World",
-      fit: "contain",
-    },
-    Icon: GraduationCap,
-    stat: { label: "youth delegates reached", value: 2000, suffix: "+", thousands: true },
-    cta: {
-      label: "See recap",
-      href: "https://www.canva.com/design/DAF7Zy0aTyU/ol6N5NmXAJena8N-trOswg/view",
-    },
+/**
+ * Featured activation — pulled out of the grid because it's the youth-
+ * education arm of the DIS Family Reunion (the global broadcast that
+ * activated the 2,000 delegates already credited on that card).
+ */
+const featured = {
+  eyebrow: "Featured activation",
+  kicker: "Youth Education & Mentorship",
+  title: "Global Broadcast from Disney World to 2,000 Youth Delegates",
+  body: "Our livestream from Walt Disney World Resort reached more than 2,000 youth delegates around the world — in-depth conversations with Disney icons, humanitarians and business leaders, including Lee Cockerell (former EVP, Walt Disney World), Pamela Landwirth (CEO, Give Kids The World) and Jodi Benson (the voice of Ariel in The Little Mermaid).",
+  image: {
+    src: "/images/DIS-famility-2000-delegates.png",
+    alt: "2,000 youth delegates broadcast from Walt Disney World",
   },
+  Icon: GraduationCap,
+  stat: { value: 2000, suffix: "+", thousands: true, label: "youth delegates reached" },
+  cta: {
+    label: "See recap",
+    href: "https://www.canva.com/design/DAF7Zy0aTyU/ol6N5NmXAJena8N-trOswg/view",
+  },
+};
+
+const cards: ImpactCard[] = [
   {
     title: "Cast Member Pantry",
     body: "We teamed with Cast Member Pantry, founded by Emily Lartigue, to help the startup raise almost $300,000 and serve over 10,000 cast members.",
@@ -301,6 +308,72 @@ export default function ImpactPage() {
               );
             })}
           </ul>
+        </div>
+      </section>
+
+      {/* Featured activation — sits above the grid, gets its own layout */}
+      <section className="bg-warm-white pt-16 sm:pt-24">
+        <div className="mx-auto max-w-6xl px-5 sm:px-8">
+          <Reveal>
+            <article className="group relative overflow-hidden rounded-3xl border border-border bg-cream shadow-soft-sm ring-1 ring-red/10 transition-shadow duration-300 hover:shadow-soft">
+              {/* Red top accent stripe — always on for the featured block */}
+              <span
+                aria-hidden
+                className="absolute inset-x-0 top-0 h-[3px] bg-red"
+              />
+              <div className="grid gap-0 lg:grid-cols-[1.05fr_1fr]">
+                {/* Image side — matted so the full banner is visible */}
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-warm-white p-5 sm:p-7 lg:aspect-auto lg:min-h-[420px]">
+                  <Image
+                    src={featured.image.src}
+                    alt={featured.image.alt}
+                    fill
+                    sizes="(min-width: 1024px) 600px, 100vw"
+                    className="object-contain p-5 sm:p-7"
+                  />
+                  {/* Featured tag — sits on the image, top-left */}
+                  <span className="absolute left-5 top-5 inline-flex items-center gap-1.5 rounded-full bg-red px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.16em] text-cream shadow-soft-sm">
+                    <featured.Icon className="h-3.5 w-3.5" aria-hidden />
+                    {featured.eyebrow}
+                  </span>
+                </div>
+
+                {/* Text side */}
+                <div className="flex flex-col justify-center gap-5 p-7 sm:p-10 lg:p-12">
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
+                    {featured.kicker}
+                  </p>
+                  <h2 className="font-display text-[28px] font-medium leading-[1.15] tracking-tight text-ink sm:text-[34px] lg:text-[38px]">
+                    {featured.title}
+                  </h2>
+                  <div className="flex items-baseline gap-3">
+                    <p className="font-display text-[44px] font-medium leading-none tracking-tight text-red sm:text-[52px]">
+                      <CountUp
+                        to={featured.stat.value}
+                        suffix={featured.stat.suffix}
+                        thousands={featured.stat.thousands}
+                      />
+                    </p>
+                    <p className="text-[13px] font-medium uppercase tracking-[0.12em] text-warm-gray">
+                      {featured.stat.label}
+                    </p>
+                  </div>
+                  <p className="text-[15px] leading-relaxed text-warm-gray">
+                    {featured.body}
+                  </p>
+                  <a
+                    href={featured.cta.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 self-start text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
+                  >
+                    {featured.cta.label}
+                    <ArrowUpRight className="h-4 w-4" aria-hidden />
+                  </a>
+                </div>
+              </div>
+            </article>
+          </Reveal>
         </div>
       </section>
 
