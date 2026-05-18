@@ -41,6 +41,7 @@ const board: Person[] = [
       "Disney Creative Development, Inclusive Strategies (Walt Disney Imagineering)",
     role: "Board Member",
     href: "https://www.linkedin.com/in/patty-chung-adams/",
+    photo: "/images/patty-chung-adams.jpg",
   },
   {
     name: "Bret Iwan",
@@ -54,6 +55,7 @@ const board: Person[] = [
     description: "Educator, Trainer, Curriculum Developer, Non-Profit Consultant",
     role: "Board Member",
     href: "https://www.linkedin.com/in/jennifer-s-kramer-m-ed-40a15aa5/",
+    photo: "/images/jennifer-kramer.jpg",
   },
   {
     name: "Tony Lucca",
@@ -67,6 +69,7 @@ const board: Person[] = [
     description: "Singer, Vocal Coach & Mouseketeer",
     role: "Board Member",
     href: "https://www.jennifermcgill.com/",
+    photo: "/images/jennifer-mcgill.webp",
   },
   {
     name: "Axel Tillmann",
@@ -79,6 +82,7 @@ const board: Person[] = [
     name: "Jonathan B. Smith, CPA",
     description: "Certified Public Accountant",
     role: "Board Member (Treasurer)",
+    photo: "/images/jonathan-b-smith.jpg",
   },
   {
     name: "Rachel Carlsen, CPA",
@@ -93,6 +97,7 @@ const board: Person[] = [
       "Actress/Singer, Accounting Manager at Caldera Arts & Mouseketeer",
     role: "Advisor",
     href: "https://www.linkedin.com/in/tasha-danner/",
+    photo: "/images/tasha-danner.jpg",
   },
 ];
 
@@ -107,12 +112,14 @@ const staff: Person[] = [
     name: "Lisa Cannata",
     description: "Entrepreneur",
     role: "Production Manager",
+    photo: "/images/lisa-cannata.webp",
   },
   {
     name: "Yvette Cherkala",
     description: "VIP Hospitality",
     role: "Club Memberships & Event Coordination",
     href: "https://www.linkedin.com/in/yvettecherkala",
+    photo: "/images/yvette-cherkala.webp",
   },
   {
     name: "Axel Tillmann",
@@ -135,11 +142,13 @@ const staff: Person[] = [
     name: "Jonathan B. Smith, CPA",
     description: "Certified Public Accountant",
     role: "Treasurer",
+    photo: "/images/jonathan-b-smith.jpg",
   },
   {
     name: "Albert JeunePierre Fields",
     description: "Singer/Songwriter/Producer & Mouseketeer",
     role: "Program: Day of Hope",
+    photo: "/images/albert-fields.webp",
   },
   {
     name: "Anthony Donovan",
