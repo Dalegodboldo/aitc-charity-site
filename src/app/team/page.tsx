@@ -171,33 +171,33 @@ function PersonCard({ person, index }: { person: Person; index: number }) {
   return (
     <Reveal
       as="li"
-      delay={(index % 3) * 70}
-      className="flex h-full flex-col rounded-2xl border border-border bg-cream p-7 shadow-soft-sm"
+      delay={(index % 4) * 60}
+      className="flex h-full flex-col rounded-xl border border-border bg-cream p-4 shadow-soft-sm sm:p-5"
     >
-      <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-warm-white">
+      <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-warm-white">
         {person.photo ? (
           <Image
             src={person.photo}
             alt={person.name}
             fill
-            sizes="(min-width: 1024px) 300px, (min-width: 640px) 50vw, 100vw"
+            sizes="(min-width: 1024px) 220px, (min-width: 768px) 30vw, (min-width: 640px) 45vw, 100vw"
             className="object-cover"
           />
         ) : (
           <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(171,7,7,0.08),rgba(255,255,255,0)_70%)]">
-            <span className="font-display text-5xl font-medium text-ink/25">
+            <span className="font-display text-4xl font-medium text-ink/25">
               {initials(person.name)}
             </span>
           </div>
         )}
       </div>
-      <p className="mt-5 text-[12px] font-semibold uppercase tracking-[0.16em] text-gold">
+      <p className="mt-4 text-[10.5px] font-semibold uppercase tracking-[0.14em] text-gold">
         {person.role}
       </p>
-      <h3 className="mt-2 font-display text-[22px] font-medium leading-snug text-ink">
+      <h3 className="mt-1.5 font-display text-[17px] font-medium leading-snug text-ink">
         {person.name}
       </h3>
-      <p className="mt-2 flex-1 text-[14px] leading-relaxed text-warm-gray">
+      <p className="mt-1.5 flex-1 text-[13px] leading-relaxed text-warm-gray">
         {person.description}
       </p>
       {person.href && (
@@ -205,10 +205,10 @@ function PersonCard({ person, index }: { person: Person; index: number }) {
           href={person.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="mt-5 inline-flex items-center gap-1.5 text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
+          className="mt-3 inline-flex items-center gap-1 text-[13px] font-semibold text-red no-underline transition-colors hover:text-red-deep"
         >
           Bio / website
-          <ArrowUpRight className="h-4 w-4" aria-hidden />
+          <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
         </a>
       )}
     </Reveal>
@@ -235,7 +235,7 @@ export default function TeamPage() {
               Our Board
             </h2>
           </Reveal>
-          <ul className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {board.map((p, i) => (
               <PersonCard key={p.name + p.role} person={p} index={i} />
             ))}
@@ -254,7 +254,7 @@ export default function TeamPage() {
               Our Leadership & Staff
             </h2>
           </Reveal>
-          <ul className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
+          <ul className="mt-12 grid gap-5 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
             {staff.map((p, i) => (
               <PersonCard
                 key={p.name + p.role}
