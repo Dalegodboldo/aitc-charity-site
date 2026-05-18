@@ -55,10 +55,15 @@ export const siteConfig = {
 
 /** A nav item is either an internal route or an outbound link. The
  *  header and footer renderers branch on `external` to pick <Link>
- *  vs. <a target="_blank">. */
-export type NavItem =
-  | { href: string; label: string; external?: false }
-  | { href: string; label: string; external: true };
+ *  vs. <a target="_blank">. `mobileOnly` items are hidden from the
+ *  desktop nav row but still appear in the mobile drawer (so we don't
+ *  push the wide nav over its budget). */
+export type NavItem = {
+  href: string;
+  label: string;
+  external?: boolean;
+  mobileOnly?: boolean;
+};
 
 export const primaryNav: readonly NavItem[] = [
   { href: "/programs", label: "Programs" },
@@ -71,7 +76,13 @@ export const primaryNav: readonly NavItem[] = [
     href: "https://www.createimpactnow.org/gallery",
     label: "Photo Gallery",
     external: true,
+    mobileOnly: true,
   },
   { href: siteConfig.external.store, label: "Store", external: true },
-  { href: siteConfig.external.linktree, label: "Linktree (Explore the Club)", external: true },
+  {
+    href: siteConfig.external.linktree,
+    label: "Linktree (Explore the Club)",
+    external: true,
+    mobileOnly: true,
+  },
 ];

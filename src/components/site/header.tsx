@@ -57,27 +57,29 @@ export function Header() {
           aria-label="Primary"
           className="hidden items-center gap-7 lg:flex"
         >
-          {primaryNav.map((item) =>
-            item.external ? (
-              <a
-                key={item.href}
-                href={item.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[15px] font-medium text-ink no-underline transition-colors hover:text-red"
-              >
-                {item.label}
-              </a>
-            ) : (
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-[15px] font-medium text-ink no-underline transition-colors hover:text-red"
-              >
-                {item.label}
-              </Link>
-            )
-          )}
+          {primaryNav
+            .filter((item) => !item.mobileOnly)
+            .map((item) =>
+              item.external ? (
+                <a
+                  key={item.href}
+                  href={item.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[15px] font-medium text-ink no-underline transition-colors hover:text-red"
+                >
+                  {item.label}
+                </a>
+              ) : (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="text-[15px] font-medium text-ink no-underline transition-colors hover:text-red"
+                >
+                  {item.label}
+                </Link>
+              )
+            )}
         </nav>
 
         {/* Desktop CTAs */}
