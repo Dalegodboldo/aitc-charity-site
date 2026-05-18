@@ -252,8 +252,8 @@ const totals = [
   },
   {
     Icon: Utensils,
-    value: <CountUp to={10000} suffix="+" thousands />,
-    label: "individuals in need fed",
+    value: <CountUp to={13000} suffix="+" thousands />,
+    label: "served through our MMC'89 community programs",
   },
   {
     Icon: Users,

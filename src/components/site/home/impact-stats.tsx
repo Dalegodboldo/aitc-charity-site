@@ -9,8 +9,8 @@ const stats = [
     label: "raised for charitable causes",
   },
   {
-    value: <CountUp to={10000} suffix="+" thousands />,
-    label: "individuals in need fed",
+    value: <CountUp to={13000} suffix="+" thousands />,
+    label: "served through our MMC'89 community programs",
   },
   {
     value: <CountUp to={3500} suffix="+" thousands />,
