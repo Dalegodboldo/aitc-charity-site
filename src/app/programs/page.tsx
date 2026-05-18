@@ -626,29 +626,43 @@ export default function ProgramsPage() {
       {/* MMC'89 Social Impact Initiative */}
       <section className="bg-warm-white py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          {/* Hero — full square stage photo (no crop, so the MMC'89 logo
-              inside the image stays intact) with the white Changemaker
-              mark sitting on the photo's dark bottom edge so the logo's
-              transparent background "shows through" to the image
-              rather than to a coloured tile. */}
+          {/* Hero — wide confetti-stage photo with two white logo overlays.
+              Layout responds to viewport:
+                Mobile: MMC'89 top-left small, Changemaker top-right small.
+                Desktop: MMC'89 top-centre prominent, Changemaker bottom-right.
+              Top + bottom gradients keep both white marks legible against
+              the photo. */}
           <Reveal>
             <div className="relative mx-auto max-w-3xl overflow-hidden rounded-2xl bg-ink shadow-soft">
               <Image
-                src="/images/mmc89_mmc30.png"
-                alt="Mouseketeers reunited on stage with Mickey Mouse under the MMC'89 logo"
-                width={2560}
-                height={2560}
+                src="/images/mmc30-mickey-confetti.png"
+                alt="Mouseketeers and Mickey Mouse celebrating amid confetti"
+                width={2995}
+                height={1114}
                 sizes="(min-width: 768px) 768px, 100vw"
                 className="block h-auto w-full"
               />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/75 via-ink/20 to-transparent" />
-              <div className="absolute bottom-0 right-0 p-5 sm:p-6 lg:p-7">
+              {/* Top + bottom legibility gradients */}
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-1/3 bg-gradient-to-b from-ink/55 via-ink/10 to-transparent" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-ink/60 via-ink/15 to-transparent" />
+              {/* MMC'89 mark — mobile: top-left small; desktop: top-centre prominent */}
+              <div className="absolute left-3 top-3 sm:left-1/2 sm:top-4 sm:-translate-x-1/2 lg:top-5">
+                <Image
+                  src="/images/MMC89-mj-v6-wht.png"
+                  alt="MMC'89 logo"
+                  width={450}
+                  height={460}
+                  className="h-10 w-auto drop-shadow-md sm:h-20 lg:h-24"
+                />
+              </div>
+              {/* Changemaker mark — mobile: top-right small; desktop: bottom-right */}
+              <div className="absolute right-3 top-3 sm:bottom-4 sm:right-4 sm:top-auto lg:bottom-5 lg:right-5">
                 <Image
                   src="/images/Changemaker-regular-Logo-white.png"
                   alt="Changemaker"
                   width={528}
                   height={524}
-                  className="h-28 w-auto drop-shadow-md sm:h-32 lg:h-40"
+                  className="h-10 w-auto drop-shadow-md sm:h-20 lg:h-24"
                 />
               </div>
             </div>
@@ -683,7 +697,7 @@ export default function ProgramsPage() {
           <Reveal delay={120}>
             <ul
               aria-label="All 17 UN Global Goals"
-              className="mx-auto mt-12 grid max-w-5xl grid-cols-4 gap-2.5 sm:grid-cols-6 sm:gap-3 lg:grid-cols-9"
+              className="mx-auto mt-12 grid max-w-3xl grid-cols-4 gap-2.5 sm:grid-cols-6 sm:gap-3 lg:grid-cols-9"
             >
               {Array.from({ length: 17 }, (_, i) => i + 1).map((n) => (
                 <li key={n}>
