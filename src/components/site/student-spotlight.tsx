@@ -8,7 +8,7 @@
  */
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
-import { Sparkles, X } from "lucide-react";
+import { Sparkles, X, ZoomIn } from "lucide-react";
 
 type Photo = { src: string; alt: string };
 
@@ -51,6 +51,7 @@ function StudentSpotlightModal({
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const previouslyFocusedRef = useRef<Element | null>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [lightbox, setLightbox] = useState<Photo | null>(null);
 
   // Focus management while modal is open. (We deliberately do NOT lock
   // body scroll — the modal is fixed-position with a full backdrop, so
@@ -67,15 +68,23 @@ function StudentSpotlightModal({
     };
   }, [open]);
 
-  // Esc to close + Tab focus trap
+  // Reset lightbox each time the modal closes
+  useEffect(() => {
+    if (!open) setLightbox(null);
+  }, [open]);
+
+  // Esc to close + Tab focus trap. If the lightbox is open, Esc closes
+  // that first; otherwise it closes the whole modal.
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
         e.preventDefault();
-        onClose();
+        if (lightbox) setLightbox(null);
+        else onClose();
         return;
       }
+      if (lightbox) return; // don't trap focus while lightbox is open
       if (e.key !== "Tab") return;
       const focusables = panelRef.current?.querySelectorAll<HTMLElement>(
         'a[href], button:not([disabled]), video[controls], [tabindex]:not([tabindex="-1"])'
@@ -93,7 +102,7 @@ function StudentSpotlightModal({
     };
     document.addEventListener("keydown", onKey);
     return () => document.removeEventListener("keydown", onKey);
-  }, [open, onClose]);
+  }, [open, onClose, lightbox]);
 
   if (!open) return null;
 
@@ -157,17 +166,28 @@ function StudentSpotlightModal({
           <div className="flex flex-col gap-4">
             <ul className="grid grid-cols-3 gap-2 sm:gap-2.5">
               {PHOTOS.map((p) => (
-                <li
-                  key={p.src}
-                  className="relative aspect-[3/4] overflow-hidden rounded-lg bg-warm-white shadow-soft-sm"
-                >
-                  <Image
-                    src={p.src}
-                    alt={p.alt}
-                    fill
-                    sizes="(min-width: 1024px) 140px, (min-width: 640px) 200px, 30vw"
-                    className="object-cover"
-                  />
+                <li key={p.src}>
+                  <button
+                    type="button"
+                    onClick={() => setLightbox(p)}
+                    aria-label={`Expand image: ${p.alt}`}
+                    className="group relative block aspect-[3/4] w-full overflow-hidden rounded-lg bg-warm-white shadow-soft-sm transition-shadow hover:shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
+                  >
+                    <Image
+                      src={p.src}
+                      alt={p.alt}
+                      fill
+                      sizes="(min-width: 1024px) 140px, (min-width: 640px) 200px, 30vw"
+                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                    />
+                    {/* Zoom hint badge — top-right */}
+                    <span
+                      aria-hidden
+                      className="pointer-events-none absolute right-1.5 top-1.5 inline-flex h-7 w-7 items-center justify-center rounded-full bg-ink/65 text-cream opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
+                    >
+                      <ZoomIn className="h-3.5 w-3.5" aria-hidden />
+                    </span>
+                  </button>
                 </li>
               ))}
             </ul>
@@ -200,6 +220,41 @@ function StudentSpotlightModal({
           </div>
         </div>
       </div>
+
+      {/* Lightbox — sits above the modal panel; click anywhere or press
+          Esc to dismiss. The image is rendered in its natural aspect with
+          the longest edge capped to the viewport so nothing gets cropped. */}
+      {lightbox && (
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label={`Expanded image: ${lightbox.alt}`}
+          className="absolute inset-0 z-10 flex items-center justify-center bg-ink/85 p-4 backdrop-blur-sm"
+          onClick={() => setLightbox(null)}
+        >
+          <button
+            type="button"
+            onClick={() => setLightbox(null)}
+            aria-label="Close expanded image"
+            className="absolute right-4 top-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-cream text-ink shadow-soft transition-colors hover:bg-warm-white"
+          >
+            <X className="h-5 w-5" aria-hidden />
+          </button>
+          <div
+            className="relative max-h-[88vh] max-w-[95vw] sm:max-w-[80vw]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Use a plain <img> so we can let the image size to its
+                natural aspect without giving next/image a fixed container. */}
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src={lightbox.src}
+              alt={lightbox.alt}
+              className="block max-h-[88vh] max-w-full rounded-xl object-contain shadow-soft"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
