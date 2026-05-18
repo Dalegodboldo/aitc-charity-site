@@ -116,14 +116,22 @@ function GoalIcons({ goals }: { goals: string }) {
   if (parsed === "all") {
     return (
       <div className="mt-2.5">
-        <Image
-          src="/images/sdg/sdg-wheel.png"
-          alt="All 17 UN Global Goals"
-          width={44}
-          height={44}
-          className="h-10 w-10 sm:h-11 sm:w-11"
-          unoptimized
-        />
+        <a
+          href="https://sdgs.un.org/goals"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Learn about all 17 UN Global Goals on sdgs.un.org"
+          className="inline-block rounded-sm transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
+        >
+          <Image
+            src="/images/sdg/sdg-wheel.png"
+            alt="All 17 UN Global Goals"
+            width={44}
+            height={44}
+            className="h-10 w-10 sm:h-11 sm:w-11"
+            unoptimized
+          />
+        </a>
       </div>
     );
   }
@@ -135,14 +143,22 @@ function GoalIcons({ goals }: { goals: string }) {
     >
       {parsed.map((n) => (
         <li key={n}>
-          <Image
-            src={`/images/sdg/sdg-${String(n).padStart(2, "0")}.jpg`}
-            alt={`UN Global Goal ${n}`}
-            width={44}
-            height={44}
-            className="h-10 w-10 rounded-sm sm:h-11 sm:w-11"
-            unoptimized
-          />
+          <a
+            href={`https://sdgs.un.org/goals/goal${n}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`Learn about UN Global Goal ${n} on sdgs.un.org`}
+            className="block rounded-sm transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
+          >
+            <Image
+              src={`/images/sdg/sdg-${String(n).padStart(2, "0")}.jpg`}
+              alt={`UN Global Goal ${n}`}
+              width={44}
+              height={44}
+              className="h-10 w-10 rounded-sm sm:h-11 sm:w-11"
+              unoptimized
+            />
+          </a>
         </li>
       ))}
     </ul>
@@ -259,6 +275,7 @@ const campaigns: Campaign[] = [
   },
   {
     title: "Shop the Club, We Plant a Tree",
+    goals: "Global Goals 7, 11, 13, 14 & 15",
     body: (
       <>
         With every purchase or donation in our{" "}
@@ -274,7 +291,6 @@ const campaigns: Campaign[] = [
         proudly planted more than 2,500 trees around the world.
       </>
     ),
-    goals: "",
     image: {
       src: "/images/screen-shot-2023-12-23-at-4_49_42-pm.webp",
       alt: "Shop the Club, We Plant a Tree campaign",
