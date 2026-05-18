@@ -16,6 +16,9 @@
 # next.js
 /.next/
 /out/
+# Errant build artifacts the Next.js dev server has been known to drop
+# under public/ — ignore so they don't show as untracked clutter.
+/public/images/.next/
 
 # production
 /build
@@ -36,6 +39,14 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# Claude Code: local-only state
+.claude/settings.local.json
+.claude/worktrees/
+
+# Local-only backups (out-of-band sources, unused assets we want to keep
+# off the live build but not lose track of locally).
+.local-backups/
 
 # typescript
 *.tsbuildinfo
