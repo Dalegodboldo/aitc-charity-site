@@ -26,10 +26,8 @@ const campaigns: Campaign[] = [
     body: "Mouseketeers are on a mission to host 1,000 students on once-in-a-lifetime Experiential Learning trips behind the scenes at Disney Parks with Imagineers, professional performers, and company leaders.",
     href: "https://www.mickeymouseclubreunion.com/post/destination-disney-imagination-campus-walt-disney-world",
     image: {
-      src: "/images/disney-shot-on-stage.webp",
-      alt: "Students with Mouseketeers at the Disney Imagination Campus",
-      // Slide image left within the frame so the "Always in the Club" logo edge is visible
-      objectPosition: "right center",
+      src: "/images/disney-campus-stage.jpg",
+      alt: "Students with Mouseketeers on stage at Disney Imagination Campus",
     },
   },
   {
