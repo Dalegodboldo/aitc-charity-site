@@ -417,7 +417,6 @@ export default function ProgramsPage() {
         eyebrow="Programs & Initiatives"
         title="Our Programs & Initiatives"
         subtitle="Using our E.A.R.S. to make a difference — Education, Arts, Resources… Social Impact"
-        body="Our MMC’89 Initiative uses the United Nations’ Global Goals as a framework for identifying and supporting a wide range of causes — including those related to education, inequality and climate change. Although our primary focus is Mentoring & Youth Arts Education, our team has raised more than $50 million to support all 17 of the Goals."
       />
 
       {/* Mentoring & Youth Arts Education */}
@@ -627,60 +626,88 @@ export default function ProgramsPage() {
       {/* MMC'89 Social Impact Initiative */}
       <section className="bg-warm-white py-20 sm:py-28">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          <div className="grid items-center gap-10 lg:grid-cols-[1fr_1.15fr] lg:gap-16">
-            {/* Stage photo with the MMC'89 logo as the backdrop */}
-            <Reveal className="order-2 lg:order-1">
-              <Image
-                src="/images/mmc89_mmc30.png"
-                alt="Mouseketeers reunited on stage with Mickey Mouse under the MMC'89 logo"
-                width={2560}
-                height={2560}
-                sizes="(min-width: 1024px) 480px, 90vw"
-                className="mx-auto h-auto w-full max-w-md rounded-2xl shadow-soft lg:max-w-none"
-              />
-            </Reveal>
-            {/* Copy + Changemaker brand mark */}
-            <div className="order-1 lg:order-2">
-              <Reveal>
-                <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-gold">
-                  Social Impact
-                </p>
-                <h2 className="mt-4 font-display text-4xl font-medium leading-tight tracking-tight sm:text-5xl">
-                  MMC&rsquo;89 Social Impact Initiative
-                </h2>
-              </Reveal>
-              <Reveal delay={80} className="mt-8 space-y-6 text-lg leading-relaxed text-warm-gray">
-                <p>
-                  MMC&rsquo;89 promotes the United Nations&rsquo; Sustainable
-                  Development Goals (Global Goals) that address the global
-                  challenges we face. We support socially conscious efforts
-                  across a wide range of causes including climate action,
-                  feeding the hungry, critically ill children, victims of
-                  domestic abuse, music people in need, socially conscious
-                  entrepreneurship, quality education, job creation, veterans
-                  issues, and mental health.
-                </p>
-                <p>
-                  Through events and awareness campaigns, we have helped raise
-                  more than $4.5 million. MMC&rsquo;89 is currently comprised
-                  of 11 programs and campaigns addressing all 17 of the
-                  UN&rsquo;s Global Goals for a better world by 2030.
-                </p>
-              </Reveal>
-              <Reveal
-                delay={160}
-                className="mt-8 inline-flex items-center rounded-xl bg-ink px-5 py-3 shadow-soft-sm"
-              >
+          {/* Wide hero — stage photo cropped to 21:9 with the white
+              Changemaker mark sitting on the photo's dark area so the
+              logo's transparent background "shows through" to the image
+              rather than to a coloured tile. */}
+          <Reveal>
+            <div className="relative overflow-hidden rounded-2xl bg-ink shadow-soft">
+              <div className="relative aspect-[21/9] w-full">
                 <Image
-                  src="/images/Changemaker-regular-Logo-white.png"
-                  alt="Changemaker"
-                  width={528}
-                  height={524}
-                  className="h-12 w-auto sm:h-14"
+                  src="/images/mmc89_mmc30.png"
+                  alt="Mouseketeers reunited on stage with Mickey Mouse under the MMC'89 logo"
+                  fill
+                  sizes="(min-width: 1280px) 1152px, 100vw"
+                  className="object-cover object-center"
                 />
-              </Reveal>
+                <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-ink/70 via-ink/10 to-transparent" />
+                <div className="absolute bottom-0 right-0 p-4 sm:p-6">
+                  <Image
+                    src="/images/Changemaker-regular-Logo-white.png"
+                    alt="Changemaker"
+                    width={528}
+                    height={524}
+                    className="h-14 w-auto drop-shadow-md sm:h-16 lg:h-20"
+                  />
+                </div>
+              </div>
             </div>
+          </Reveal>
+
+          {/* Copy */}
+          <div className="mx-auto mt-14 max-w-3xl">
+            <Reveal>
+              <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-gold">
+                Social Impact
+              </p>
+              <h2 className="mt-4 font-display text-4xl font-medium leading-tight tracking-tight sm:text-5xl">
+                MMC&rsquo;89 Social Impact Initiative
+              </h2>
+            </Reveal>
+            <Reveal delay={80} className="mt-8 space-y-6 text-lg leading-relaxed text-warm-gray">
+              <p>
+                Our MMC&rsquo;89 Initiative uses the United Nations&rsquo;
+                Global Goals as a framework for identifying and supporting a
+                wide range of causes — including those related to education,
+                inequality and climate change.
+              </p>
+              <p>
+                Although our primary focus is Mentoring &amp; Youth Arts
+                Education, our team has raised more than $50 million to
+                support all 17 of the Global Goals.
+              </p>
+            </Reveal>
           </div>
+
+          {/* All 17 Global Goals — each tile links to the UN goal page */}
+          <Reveal delay={120}>
+            <ul
+              aria-label="All 17 UN Global Goals"
+              className="mx-auto mt-12 grid max-w-5xl grid-cols-4 gap-2.5 sm:grid-cols-6 sm:gap-3 lg:grid-cols-9"
+            >
+              {Array.from({ length: 17 }, (_, i) => i + 1).map((n) => (
+                <li key={n}>
+                  <a
+                    href={`https://sdgs.un.org/goals/goal${n}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Learn about UN Global Goal ${n} on sdgs.un.org`}
+                    className="block overflow-hidden rounded-md transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
+                  >
+                    <Image
+                      src={`/images/sdg/sdg-${String(n).padStart(2, "0")}.jpg`}
+                      alt={`UN Global Goal ${n}`}
+                      width={150}
+                      height={150}
+                      sizes="(min-width: 1024px) 110px, 18vw"
+                      className="block h-auto w-full"
+                      unoptimized
+                    />
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </Reveal>
         </div>
       </section>
 
