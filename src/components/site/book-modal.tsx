@@ -9,6 +9,11 @@ const SUPPRESS_DAYS = 14;
 const DELAY_MS = 9_000; // ~9 seconds after first paint
 const BOOK_URL = "https://www.mickeymouseclubreunion.com/books";
 
+/** Dispatch this event from anywhere on the page to open the BookModal
+ *  on demand — bypasses the auto-open suppression so explicit clicks
+ *  always show the modal even if the visitor recently dismissed it. */
+export const BOOK_MODAL_OPEN_EVENT = "aitc:book-modal:open";
+
 /**
  * Site-wide promo modal for the MMC book. Mounted once in the root layout.
  *
@@ -41,6 +46,16 @@ export function BookModal() {
     return () => {
       if (timer) clearTimeout(timer);
     };
+  }, []);
+
+  // Allow any trigger on the page (e.g. the hero "Get the MMC Book"
+  // button) to open the modal on demand — explicit clicks ignore
+  // the auto-open suppression.
+  useEffect(() => {
+    const openOnDemand = () => setOpen(true);
+    window.addEventListener(BOOK_MODAL_OPEN_EVENT, openOnDemand);
+    return () =>
+      window.removeEventListener(BOOK_MODAL_OPEN_EVENT, openOnDemand);
   }, []);
 
   // Body scroll lock + focus management while open
@@ -119,15 +134,17 @@ export function BookModal() {
         ref={panelRef}
         className="relative grid max-h-[90svh] w-full max-w-3xl overflow-y-auto overflow-x-hidden rounded-2xl bg-cream shadow-soft animate-in fade-in zoom-in-95 duration-300 lg:grid-cols-[5fr_7fr] motion-reduce:animate-none motion-reduce:duration-0"
       >
-        {/* Book cover (anchor) */}
-        <div className="relative h-64 w-full bg-warm-white sm:h-80 lg:h-auto lg:min-h-[420px]">
+        {/* Book cover (anchor) — object-contain so the full cover is
+            visible on both mobile and desktop, with the cream letterbox
+            blending into the modal panel. */}
+        <div className="relative h-72 w-full bg-cream sm:h-96 lg:h-auto lg:min-h-[460px]">
           <Image
             src="/images/3-e35fc5c.png"
             alt="Cover of The True Story of the All New Mickey Mouse Club"
             fill
             priority
             sizes="(min-width: 1024px) 400px, 100vw"
-            className="object-cover object-top lg:object-center"
+            className="object-contain p-4 sm:p-6"
           />
         </div>
 

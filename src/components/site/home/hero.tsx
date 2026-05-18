@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { BookModalTrigger } from "@/components/site/book-modal-trigger";
 import { HeroVideo } from "@/components/site/hero-video";
 import { Reveal } from "@/components/site/reveal";
 import { siteConfig } from "@/lib/site-config";
@@ -32,14 +33,9 @@ export function Hero() {
             >
               Donate
             </a>
-            <a
-              href={siteConfig.external.book}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex h-12 items-center justify-center rounded-full border border-ink/15 bg-warm-white px-7 text-base font-semibold text-ink no-underline transition-colors hover:border-ink/35 hover:text-ink"
-            >
+            <BookModalTrigger className="inline-flex h-12 items-center justify-center rounded-full border border-ink/15 bg-warm-white px-7 text-base font-semibold text-ink no-underline transition-colors hover:border-ink/35 hover:text-ink">
               Get the MMC Book
-            </a>
+            </BookModalTrigger>
           </div>
         </Reveal>
 
