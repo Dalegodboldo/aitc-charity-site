@@ -31,7 +31,7 @@ export const siteConfig = {
      *  in-site DonateModal so visitors can give without leaving the site. */
     donateEmbed:
       "https://www.zeffy.com/embed/donation-form/12a9b4c5-4c0e-47b7-a70f-e2af2bb4d5e6",
-    newsletter: "https://stats.sender.net/forms/dwWNMd/view",
+    newsletter: "https://stats.sender.net/forms/dG6JK5/view",
     store: "https://mmcreunion.com",
     events: "https://www.mickeymouseclubreunion.com/events",
     gallery: "https://www.createimpactnow.org/gallery",

@@ -28,7 +28,7 @@ export function PageIntro({ eyebrow, title, subtitle, body }: Props) {
         )}
         {body && (
           <Reveal delay={160}>
-            <p className="mt-8 max-w-3xl text-lg leading-relaxed text-warm-gray">
+            <p className="mt-8 max-w-3xl text-base leading-relaxed text-warm-gray">
               {body}
             </p>
           </Reveal>

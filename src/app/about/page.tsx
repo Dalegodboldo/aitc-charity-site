@@ -35,7 +35,7 @@ export default function AboutPage() {
             </h2>
           </Reveal>
 
-          <Reveal delay={80} className="mt-10 space-y-6 text-lg leading-relaxed text-warm-gray">
+          <Reveal delay={80} className="mt-10 space-y-6 text-base leading-relaxed text-warm-gray">
             <p>
               Filmed at Hollywood Studios in Walt Disney World, The &ldquo;All
               New&rdquo; Mickey Mouse Club debuted in 1989 on the Disney
@@ -115,7 +115,7 @@ export default function AboutPage() {
               Where It All Began
             </h2>
           </Reveal>
-          <Reveal delay={80} className="mt-10 text-lg leading-relaxed text-warm-gray">
+          <Reveal delay={80} className="mt-10 text-base leading-relaxed text-warm-gray">
             <p>
               Always In The Club was founded in 2012 as a fan community and
               fiscally sponsored program. Since then, we have grown into a
@@ -175,7 +175,7 @@ export default function AboutPage() {
               There&rsquo;s a place for you in the Club
             </h2>
           </Reveal>
-          <Reveal delay={140} className="mt-8 text-lg leading-relaxed text-warm-gray">
+          <Reveal delay={140} className="mt-8 text-base leading-relaxed text-warm-gray">
             <p>
               Whether you&rsquo;re interested in volunteering, donating, or
               simply learning more about us, there are plenty of ways to get
@@ -196,13 +196,10 @@ export default function AboutPage() {
           </Reveal>
 
           <Reveal delay={260}>
-            <a
-              href={`mailto:${siteConfig.contact.email}`}
-              className="mt-10 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-red px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-red-deep hover:text-cream"
-            >
-              Email us to get involved
-              <ArrowUpRight className="h-4 w-4" aria-hidden />
-            </a>
+            <p className="mt-10 text-base leading-relaxed text-ink">
+              Email us to get involved:{" "}
+              <span className="font-semibold">{siteConfig.contact.email}</span>
+            </p>
           </Reveal>
         </div>
       </section>

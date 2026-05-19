@@ -473,7 +473,7 @@ export default function ImpactPage() {
 
           {/* Descriptor + two outbound links: event recap blog posts and the photo gallery */}
           <Reveal delay={120} className="mt-14 text-center">
-            <p className="text-lg leading-relaxed text-warm-gray">
+            <p className="text-base leading-relaxed text-warm-gray">
               Explore more of our campaigns and events working to Create Impact.
             </p>
             <div className="mt-5 flex flex-wrap items-center justify-center gap-x-7 gap-y-3">

@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { formatPostDate, getAllSlugs, getPost } from "@/lib/blog";
+import { siteConfig } from "@/lib/site-config";
 
 type Params = { slug: string };
 
@@ -83,12 +84,31 @@ export default async function BlogPostPage({
       )}
 
       {/* Body */}
-      <div className="bg-cream pb-24 pt-14 sm:pb-32 sm:pt-20">
+      <div className="bg-cream pt-14 sm:pt-20">
         <div className="mx-auto max-w-2xl px-5 sm:px-8">
           <div
             className="prose-aitc prose"
             dangerouslySetInnerHTML={{ __html: post.contentHtml }}
           />
+        </div>
+      </div>
+
+      {/* Subscribe CTA at the end of every post */}
+      <div className="bg-cream pb-24 pt-12 sm:pb-32 sm:pt-16">
+        <div className="mx-auto flex max-w-2xl flex-col items-start gap-3 rounded-2xl border border-border bg-warm-white px-7 py-6 shadow-soft-sm sm:flex-row sm:items-center sm:justify-between sm:gap-6">
+          <p className="text-base leading-relaxed text-warm-gray">
+            Keep up with All Ears — stories from the Club, straight to your
+            inbox.
+          </p>
+          <a
+            href={siteConfig.external.newsletter}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-red px-6 text-sm font-semibold text-cream no-underline transition-colors hover:bg-red-deep hover:text-cream"
+          >
+            Subscribe
+            <ArrowUpRight className="h-4 w-4" aria-hidden />
+          </a>
         </div>
       </div>
     </article>

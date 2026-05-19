@@ -96,12 +96,12 @@ export function ImageLightbox({
           role="dialog"
           aria-modal="true"
           aria-label={alt || "Image preview"}
-          className="fixed inset-0 z-[75] flex items-center justify-center p-4 sm:p-8"
+          className="fixed inset-0 z-[75] flex items-center justify-center"
         >
           <div
             aria-hidden
             onClick={() => setOpen(false)}
-            className="absolute inset-0 bg-ink/80 backdrop-blur-sm animate-in fade-in duration-300 motion-reduce:animate-none motion-reduce:duration-0"
+            className="absolute inset-0 bg-ink/85 backdrop-blur-sm animate-in fade-in duration-300 motion-reduce:animate-none motion-reduce:duration-0"
           />
           <button
             ref={closeBtnRef}
@@ -112,16 +112,19 @@ export function ImageLightbox({
           >
             <X className="h-5 w-5" aria-hidden />
           </button>
-          <div className="relative z-0 max-h-full max-w-full animate-in fade-in zoom-in-95 duration-300 motion-reduce:animate-none motion-reduce:duration-0">
+          {/* Edge-to-edge image: takes the full viewport width/height
+              (object-contain still preserves aspect — black bars fall
+              on whichever axis isn't the binding one). */}
+          <div className="relative z-0 flex h-svh w-screen items-center justify-center animate-in fade-in zoom-in-95 duration-300 motion-reduce:animate-none motion-reduce:duration-0">
             <Image
               src={src}
               alt={alt}
               width={width}
               height={height}
-              sizes="(min-width: 1024px) 90vw, 100vw"
+              sizes="100vw"
               unoptimized={unoptimized}
               priority
-              className="block max-h-[90svh] w-auto max-w-full object-contain"
+              className="block h-auto max-h-[100svh] w-auto max-w-[100vw] object-contain"
             />
           </div>
         </div>

@@ -483,7 +483,7 @@ export default function ProgramsPage() {
             </h2>
           </Reveal>
 
-          <Reveal delay={80} className="mt-10 text-lg leading-relaxed text-warm-gray">
+          <Reveal delay={80} className="mt-10 text-base leading-relaxed text-warm-gray">
             <p>
               More than a variety show, the &ldquo;All New&rdquo; Mickey Mouse
               Club was a world-class performing arts academy. Inspired by the
@@ -736,7 +736,7 @@ export default function ProgramsPage() {
                 MMC&rsquo;89 Social Impact Initiative
               </h2>
             </Reveal>
-            <Reveal delay={80} className="mt-8 space-y-6 text-lg leading-relaxed text-warm-gray">
+            <Reveal delay={80} className="mt-8 space-y-6 text-base leading-relaxed text-warm-gray">
               <p>
                 Our MMC&rsquo;89 Initiative uses the United Nations&rsquo;
                 Global Goals as a framework for identifying and supporting a
