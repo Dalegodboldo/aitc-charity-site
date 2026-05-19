@@ -5,7 +5,7 @@ export function WhoWeAre() {
   return (
     <section className="bg-warm-white py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-5 sm:px-8">
-        <Reveal>
+        <Reveal className="lg:text-center">
           <p className="text-[12px] font-semibold uppercase tracking-[0.22em] text-gold">
             Who We Are
           </p>
