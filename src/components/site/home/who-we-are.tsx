@@ -15,16 +15,18 @@ export function WhoWeAre() {
           </h2>
         </Reveal>
 
-        <Reveal delay={80} className="mt-10 space-y-6 text-base leading-relaxed text-warm-gray">
+        <Reveal delay={80} className="mt-10 space-y-6 text-base leading-relaxed text-warm-gray lg:text-center">
           <p>
             The &ldquo;All New&rdquo; Mickey Mouse Club premiered in 1989 on
             the Disney Channel. Much more than a variety show, it tackled
-            important social issues of the day. And as a performing arts
-            academy, it trained some of the biggest stars in the world,
-            including Keri Russell, Ryan Gosling, Justin Timberlake, Christina
-            Aguilera, Britney Spears, Hallmark Channel&rsquo;s Nikki DeLoach,
-            NSYNC&rsquo;s JC Chasez, and Rhona Bennett (formerly of En Vogue),
-            among many others.
+            important social issues of the day.
+          </p>
+          <p>
+            And as a performing arts academy, it trained some of the biggest
+            stars in the world, including Keri Russell, Ryan Gosling, Justin
+            Timberlake, Christina Aguilera, Britney Spears, Hallmark
+            Channel&rsquo;s Nikki DeLoach, NSYNC&rsquo;s JC Chasez, and Rhona
+            Bennett (formerly of En Vogue), among many others.
           </p>
         </Reveal>
 
@@ -42,13 +44,15 @@ export function WhoWeAre() {
           </p>
         </Reveal>
 
-        <Reveal delay={240} className="space-y-6 text-base leading-relaxed text-warm-gray">
+        <Reveal delay={240} className="space-y-6 text-base leading-relaxed text-warm-gray lg:text-center">
           <p>
             Reunited Mouseketeers and more than 10,000 long-time fans helped
-            launch Always In The Club Foundation and our MMC&rsquo;89
-            Initiative to support those who need it most through projects,
-            programs and outreach campaigns led by cast members of the now
-            iconic show.
+            launch Always In The Club Foundation and our{" "}
+            <strong className="font-semibold text-ink">
+              MMC&rsquo;89 Initiative
+            </strong>{" "}
+            to support those who need it most through projects, programs and
+            outreach campaigns led by cast members of the now iconic show.
           </p>
         </Reveal>
       </div>
