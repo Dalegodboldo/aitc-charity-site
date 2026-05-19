@@ -15,12 +15,15 @@ export function WhoWeAre() {
           </h2>
         </Reveal>
 
-        <Reveal delay={80} className="mt-10 space-y-6 text-base leading-relaxed text-warm-gray lg:text-center">
+        <Reveal delay={80} className="mt-10 text-base leading-relaxed text-warm-gray lg:text-center">
           <p>
             The &ldquo;All New&rdquo; Mickey Mouse Club premiered in 1989 on
             the Disney Channel. Much more than a variety show, it tackled
             important social issues of the day.
           </p>
+        </Reveal>
+
+        <Reveal delay={140} className="mt-8 text-base leading-relaxed text-warm-gray lg:text-center">
           <p>
             And as a performing arts academy, it trained some of the biggest
             stars in the world, including Keri Russell, Ryan Gosling, Justin
