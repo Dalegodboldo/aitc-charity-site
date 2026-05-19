@@ -15,7 +15,7 @@ export function WhoWeAre() {
           </h2>
         </Reveal>
 
-        <Reveal delay={80} className="mt-10 space-y-6 text-lg text-warm-gray">
+        <Reveal delay={80} className="mt-10 space-y-6 text-base leading-relaxed text-warm-gray">
           <p>
             The &ldquo;All New&rdquo; Mickey Mouse Club premiered in 1989 on
             the Disney Channel. Much more than a variety show, it tackled
@@ -42,7 +42,7 @@ export function WhoWeAre() {
           </p>
         </Reveal>
 
-        <Reveal delay={240} className="space-y-6 text-lg text-warm-gray">
+        <Reveal delay={240} className="space-y-6 text-base leading-relaxed text-warm-gray">
           <p>
             Reunited Mouseketeers and more than 10,000 long-time fans helped
             launch Always In The Club Foundation and our MMC&rsquo;89

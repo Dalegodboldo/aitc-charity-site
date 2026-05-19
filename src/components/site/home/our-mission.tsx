@@ -142,7 +142,7 @@ export function OurMission() {
                 <h3 className="font-display text-2xl font-medium leading-snug text-ink sm:text-[28px]">
                   {p.title}
                 </h3>
-                <div className="mt-5 space-y-4 text-[17px] leading-relaxed text-warm-gray">
+                <div className="mt-5 space-y-4 text-base leading-relaxed text-warm-gray">
                   {p.body.map((para, idx) => (
                     <p key={idx}>{para}</p>
                   ))}
