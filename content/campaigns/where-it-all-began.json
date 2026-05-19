@@ -72,14 +72,14 @@
       "placement": "inline"
     },
     {
+      "type": "cta",
+      "href": "https://www.mickeymouseclubreunion.com/mmc30",
+      "label": "Visit #MMC30"
+    },
+    {
       "type": "video",
       "kind": "youtube",
       "videoId": "WrPToWu3vFI"
-    },
-    {
-      "type": "cta",
-      "href": "https://www.mickeymouseclubreunion.com/mmcholidays",
-      "label": "Visit MMC Holidays"
     },
     {
       "type": "p",
@@ -90,6 +90,11 @@
       "src": "https://static.wixstatic.com/media/3ee52e_9adfc6a403ea4111a627f98295e0c038~mv2.png/v1/fill/w_800,h_800,al_c,q_85/file.jpg",
       "alt": "",
       "placement": "inline"
+    },
+    {
+      "type": "cta",
+      "href": "https://www.mickeymouseclubreunion.com/mmcholidays",
+      "label": "Visit MMC Holidays"
     },
     {
       "type": "p",
