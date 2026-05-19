@@ -27,7 +27,7 @@ Each episode featured themed segments that balanced entertainment with education
 
 The show's talent roster reads like a Who's Who of entertainment royalty:
 
-Keri Russell: Golden Globe winner and EMMY-nominated actress from "Felicity" and "The Americans,"Ryan Gosling: From child performer to Oscar-nominated actor,Justin Timberlake: From Mouseketeer to NSYNC sensation to solo superstar,Christina Aguilera: The powerhouse vocalist who became a global pop icon,Britney Spears: The ultimate pop princess who defined an era,JC Chasez: Another NSYNC success story,and En Vogue's Rhona Bennett, among so many others.
+Keri Russell: Golden Globe winner and EMMY-nominated actress from "Felicity" and "The Americans,"Ryan Gosling: From child performer to Oscar-nominated actor,Justin Timberlake: From Mouseketeer to NSYNC sensation to solo superstar,Christina Aguilera: The powerhouse vocalist who became a global pop icon,Britney Spears: The ultimate pop princess who defined an era,JC Chasez: Another NSYNC success story,and Rhona Bennett (Formerly of En Vogue), among so many others.
 
 ![](/images/blog/mickey-mouse-club-billboard-1548-a4020dd3.webp)
 

@@ -37,7 +37,7 @@ Just as Rafiki guided Simba back to his destiny, our mentors at AITC Foundation 
 
 #### From Mentee to Mentor: The Circle Continues
 
-Many of our teachers, like Rhona Bennett of En Vogue, started as young performers mentored on The Mickey Mouse Club, and have completed the circle by becoming mentors themselves. This beautiful cycle of growth and giving back ensures that knowledge and experience continue to flow through generations of artists.
+Many of our teachers, like Rhona Bennett (Formerly of En Vogue), started as young performers mentored on The Mickey Mouse Club, and have completed the circle by becoming mentors themselves. This beautiful cycle of growth and giving back ensures that knowledge and experience continue to flow through generations of artists.
 
 #### Your Support Pride
 

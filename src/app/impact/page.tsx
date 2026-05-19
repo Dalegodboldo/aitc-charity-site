@@ -173,7 +173,7 @@ const cards: ImpactCard[] = [
   },
   {
     title: "Evening of Hope with Rhona Bennett",
-    body: "En Vogue’s Rhona Bennett hosted a Day + Evening of Hope with AITC, Valley Family Center and Create Impact — featuring sponsored gifts, lunch, make-up, manicures and pedicures for the women, and signed copies of Rhona’s book Saving Your Soul.",
+    body: "Rhona Bennett (Formerly of En Vogue) hosted a Day + Evening of Hope with AITC, Valley Family Center and Create Impact — featuring sponsored gifts, lunch, make-up, manicures and pedicures for the women, and signed copies of Rhona’s book Saving Your Soul.",
     image: {
       src: "/images/rhona_doh.png",
       alt: "Rhona Bennett at the Evening of Hope, gifting signed copies of Saving Your Soul",
