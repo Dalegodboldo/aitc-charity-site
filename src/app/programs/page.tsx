@@ -183,7 +183,14 @@ const campaigns: Campaign[] = [
   },
   {
     title: "Business Launch & Growth Solutions",
-    body: "We transform visions into impact, providing comprehensive for-profit and nonprofit launch and growth solutions.",
+    body: (
+      <>
+        Through our dba brand name —{" "}
+        <strong className="font-semibold text-ink">Create Impact Now</strong> —
+        we transform visions into impact, providing comprehensive for-profit
+        and nonprofit launch and growth solutions.
+      </>
+    ),
     goals: "Global Goals 8, 9, 10 & 17",
     image: { src: "/images/cin.png", alt: "Business launch & growth solutions workshop" },
     Icon: Rocket,
