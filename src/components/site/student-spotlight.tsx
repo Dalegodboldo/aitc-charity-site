@@ -238,12 +238,14 @@ function StudentSpotlightModal({
                 onto its own block so the body reads as three short
                 one-sentence paragraphs. */}
             <p className="text-[13px] leading-relaxed text-warm-gray sm:text-[18px]">
-              {/* First sentence runs two sizes larger than the rest on
-                  desktop (sm:text-[20px]); mobile stays uniform. */}
-              <span className="sm:text-[20px]">
+              {/* First sentence — desktop only: display serif at medium
+                  weight + snug leading so it reads as a headline /
+                  announcement (sm:text-[20px]). Mobile stays uniform
+                  body text. */}
+              <span className="sm:block sm:font-display sm:text-[20px] sm:font-medium sm:leading-snug sm:tracking-tight sm:text-ink">
                 Check out <strong className="text-ink">Yaffa Botier</strong>{" "}
                 sharing the stage with none other than{" "}
-                <strong className="text-ink">Yungblud</strong>!
+                <strong className="text-ink sm:uppercase">Yungblud!</strong>
               </span>{" "}
               <span className="sm:mt-4 sm:block">
                 Yaffa was mentored by{" "}
