@@ -89,8 +89,8 @@ const ways: Way[] = [
     Icon: ShoppingBag,
     hero: {
       type: "image",
-      src: "/images/Club-store-1.png",
-      alt: "Always In The Club store merchandise",
+      src: "/images/shop-bundle-2.png",
+      alt: "Always In The Club store bundle",
     },
   },
   {
