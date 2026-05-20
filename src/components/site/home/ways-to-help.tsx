@@ -10,13 +10,23 @@ import {
 } from "lucide-react";
 import { DonateTrigger } from "@/components/site/donate-trigger";
 import { Reveal } from "@/components/site/reveal";
+import { YouTubePosterHero } from "@/components/site/youtube-poster-hero";
 import { siteConfig } from "@/lib/site-config";
 
 /** Card hero — either a still image (with optional object-position
- *  override) or an embedded YouTube video. */
+ *  override) or a click-to-play YouTube video shown with a custom
+ *  poster image and a small play icon (no YouTube chrome until the
+ *  visitor actually plays). */
 type Hero =
   | { type: "image"; src: string; alt: string; objectPosition?: string }
-  | { type: "youtube"; videoId: string; title: string };
+  | {
+      type: "youtube";
+      videoId: string;
+      title: string;
+      posterSrc: string;
+      posterAlt: string;
+      posterObjectPosition?: string;
+    };
 
 type Way = {
   title: string;
@@ -32,7 +42,7 @@ type Way = {
 const ways: Way[] = [
   {
     title: "Make a Donation",
-    body: "Your contribution helps the Mouseketeers continue our work to promote youth arts education.",
+    body: "Your contribution helps us continue our work to empower youth through transformative mentorship and arts education, while working to build stronger communities and a sustainable future through our MMC’89 Initiative.",
     cta: "Donate",
     kind: "donate-modal",
     Icon: HandHeart,
@@ -107,6 +117,8 @@ const ways: Way[] = [
       type: "youtube",
       videoId: "gtC1fE4XBlw",
       title: "Book the Mouseketeers — performance reel",
+      posterSrc: "/images/Lindsey_Alley.png",
+      posterAlt: "Lindsey Alley — Blood, Sweat and Mouseketears, live at Walt Disney World",
     },
   },
 ];
@@ -153,13 +165,13 @@ export function WaysToHelp() {
                       className="object-cover transition-transform duration-700 ease-out group-hover/way:scale-[1.06] motion-reduce:transition-none motion-reduce:group-hover/way:scale-100"
                     />
                   ) : (
-                    <iframe
-                      src={`https://www.youtube-nocookie.com/embed/${w.hero.videoId}?rel=0`}
+                    <YouTubePosterHero
+                      videoId={w.hero.videoId}
                       title={w.hero.title}
-                      loading="lazy"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      className="absolute inset-0 h-full w-full border-0 bg-ink"
+                      posterSrc={w.hero.posterSrc}
+                      posterAlt={w.hero.posterAlt}
+                      posterSizes="(min-width: 1024px) 270px, (min-width: 640px) 50vw, 100vw"
+                      posterObjectPosition={w.hero.posterObjectPosition}
                     />
                   )}
                   {/* Decorative top accent line that grows on hover — pinned
