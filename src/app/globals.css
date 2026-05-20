@@ -177,6 +177,23 @@
   clip-path: circle(120% at 50% 50%);
 }
 
+/* Attention pulse — a soft red halo that breathes in and out, used to
+   draw the eye to a CTA (e.g. the Student Spotlight button). Disabled
+   under prefers-reduced-motion by the global rule below. */
+@keyframes spotlight-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(171, 7, 7, 0);
+  }
+  50% {
+    box-shadow: 0 0 16px 3px rgba(171, 7, 7, 0.4);
+  }
+}
+
+.animate-spotlight-glow {
+  animation: spotlight-glow 2.2s ease-in-out infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

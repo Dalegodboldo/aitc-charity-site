@@ -28,7 +28,7 @@ export function StudentSpotlightTrigger() {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="group mt-6 inline-flex items-center gap-2 self-start rounded-full border border-red/30 bg-red/5 px-4 py-2 text-sm font-semibold text-red no-underline transition-colors hover:border-red hover:bg-red hover:text-cream"
+        className="group animate-spotlight-glow mt-6 inline-flex items-center gap-2 self-start rounded-full border border-red/30 bg-red/5 px-4 py-2 text-sm font-semibold text-red no-underline transition-colors hover:border-red hover:bg-red hover:text-cream"
       >
         <Sparkles
           className="h-4 w-4 text-red transition-colors group-hover:text-cream"
