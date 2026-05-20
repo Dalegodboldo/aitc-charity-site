@@ -54,10 +54,13 @@ export function HeroVideo({ vimeoId, title, posterSrc, posterAlt, seal }: Props)
               type="button"
               onClick={() => setPlaying(true)}
               aria-label={`Play video: ${title}`}
-              className="group absolute inset-0 flex items-center justify-center outline-none transition-colors focus-visible:bg-ink/20"
+              className="group absolute inset-0 outline-none transition-colors focus-visible:bg-ink/20"
             >
-              <span className="flex h-20 w-20 items-center justify-center rounded-full bg-cream/95 text-ink shadow-soft transition-transform duration-300 ease-out group-hover:scale-105 group-focus-visible:scale-105">
-                <Play className="ml-1 h-7 w-7" fill="currentColor" aria-hidden />
+              {/* Play badge — tucked into the upper-right so it doesn't
+                  cover the subject's face in the poster. The whole
+                  button still captures clicks across the hero area. */}
+              <span className="absolute right-4 top-4 flex h-14 w-14 items-center justify-center rounded-full bg-cream/95 text-ink shadow-soft transition-transform duration-300 ease-out group-hover:scale-105 group-focus-visible:scale-105 sm:right-6 sm:top-6 sm:h-16 sm:w-16">
+                <Play className="ml-0.5 h-5 w-5 sm:h-6 sm:w-6" fill="currentColor" aria-hidden />
               </span>
               <span className="absolute bottom-5 left-1/2 -translate-x-1/2 rounded-full bg-ink/70 px-4 py-1.5 text-[12px] font-medium uppercase tracking-[0.18em] text-cream backdrop-blur-sm">
                 Watch our story
