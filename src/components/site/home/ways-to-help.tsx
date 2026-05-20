@@ -74,10 +74,10 @@ const ways: Way[] = [
       type: "image",
       src: "/images/Clubmember-badge.png",
       alt: "Always In The Club member badge",
-      // Slide the badge down a touch from full-bottom (100%) → 80% so
-      // a sliver of the top of the image returns to view while keeping
-      // the "Member" wordmark + circle emblem clearly framed.
-      objectPosition: "50% 80%",
+      // Tiny shift from full-bottom (100% → 92%) — brings a sliver of
+      // the MMC'89 logo into view above without clipping the MEMBER
+      // wordmark, which has to stay fully readable.
+      objectPosition: "50% 92%",
     },
   },
   {
