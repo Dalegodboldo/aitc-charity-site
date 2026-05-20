@@ -233,7 +233,7 @@ function StudentSpotlightModal({
           {/* Body copy + links + credit — mobile flows in order; desktop
               sits in col 1 row 2 under the video */}
           <div className="flex flex-col gap-4 lg:col-start-1 lg:row-start-2">
-            <p className="text-[15px] leading-relaxed text-warm-gray sm:text-[16px]">
+            <p className="text-[13px] leading-relaxed text-warm-gray sm:text-[16px]">
               Check out <strong className="text-ink">Yaffa Botier</strong>{" "}
               sharing the stage with none other than{" "}
               <strong className="text-ink">Yungblud</strong>! Yaffa was
@@ -264,11 +264,7 @@ function StudentSpotlightModal({
               >
                 Close Enemies
               </a>
-              ).
-            </p>
-
-            <p className="text-[14px] leading-relaxed text-warm-gray">
-              Learn more about our mentoring programs at{" "}
+              ). Learn more about our mentoring programs at{" "}
               <a
                 href={LEARN_MORE_URL}
                 target="_blank"
@@ -277,6 +273,7 @@ function StudentSpotlightModal({
               >
                 www.Learn-Grow-Thrive.org
               </a>
+              .
             </p>
 
             <p className="mt-auto text-[12px] uppercase tracking-[0.16em] text-warm-gray/80">
