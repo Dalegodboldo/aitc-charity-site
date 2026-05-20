@@ -57,7 +57,7 @@ export function WhoWeAre() {
               MMC&rsquo;89 Initiative
             </strong>{" "}
             to support those who need it most through projects, programs and
-            outreach campaigns led by cast members of the now iconic show.
+            campaigns led by cast members of the now iconic show.
           </p>
         </Reveal>
       </div>
