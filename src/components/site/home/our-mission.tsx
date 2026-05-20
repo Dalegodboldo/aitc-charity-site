@@ -166,15 +166,16 @@ export function OurMission() {
                 {p.programsLink && (
                   <>
                     {/* Official UN Sustainable Development Goals logo —
-                        decorative, transparent PNG so the cream card
-                        shows through. */}
+                        transparent PNG so the cream card shows through.
+                        Spans the full copy width; mb-6 keeps a gap above
+                        the button. */}
                     <Image
                       src="/images/un-sdg-logo-horizontal.png"
                       alt="United Nations Sustainable Development Goals"
-                      width={1024}
-                      height={187}
-                      sizes="(min-width: 1024px) 420px, 90vw"
-                      className="mt-6 h-auto w-full max-w-[340px]"
+                      width={2459}
+                      height={450}
+                      sizes="(min-width: 1024px) 480px, 90vw"
+                      className="mt-6 mb-6 h-auto w-full"
                     />
                     {/* mt-auto pins the CTA to the bottom of the card so
                         it lines up flush with the Mentorship card's button. */}
