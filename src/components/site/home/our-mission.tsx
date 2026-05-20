@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Reveal } from "@/components/site/reveal";
-import { ALL_GLOBAL_GOALS, GoalIcons } from "@/components/site/sdg-icons";
 import { StudentSpotlightTrigger } from "@/components/site/student-spotlight";
 import { YouTubeEmbed } from "@/components/site/youtube-embed";
 
@@ -166,8 +165,17 @@ export function OurMission() {
                 )}
                 {p.programsLink && (
                   <>
-                    {/* All 17 Global Goals — decorative, no outbound links. */}
-                    <GoalIcons goals={ALL_GLOBAL_GOALS} linked={false} />
+                    {/* Official UN Sustainable Development Goals logo —
+                        decorative, transparent PNG so the cream card
+                        shows through. */}
+                    <Image
+                      src="/images/un-sdg-logo-horizontal.png"
+                      alt="United Nations Sustainable Development Goals"
+                      width={1024}
+                      height={187}
+                      sizes="(min-width: 1024px) 420px, 90vw"
+                      className="mt-6 h-auto w-full max-w-[340px]"
+                    />
                     {/* mt-auto pins the CTA to the bottom of the card so
                         it lines up flush with the Mentorship card's button. */}
                     <Link
