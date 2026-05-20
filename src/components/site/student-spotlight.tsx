@@ -196,10 +196,34 @@ function StudentSpotlightModal({
               Check out <strong className="text-ink">Yaffa Botier</strong>{" "}
               sharing the stage with none other than{" "}
               <strong className="text-ink">Yungblud</strong>! Yaffa was
-              mentored by <strong className="text-ink">Tony Lucca</strong> and
-              introduced to our program by{" "}
-              <strong className="text-ink">Chasen Hampton</strong> (of{" "}
-              <strong className="text-ink">Close Enemies</strong>).
+              mentored by{" "}
+              <a
+                href="https://www.TonyLucca.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-ink underline underline-offset-2 decoration-warm-gray/40 transition-colors hover:text-red hover:decoration-red"
+              >
+                Tony Lucca
+              </a>{" "}
+              and introduced to our program by{" "}
+              <a
+                href="https://www.chasenhampton.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-ink underline underline-offset-2 decoration-warm-gray/40 transition-colors hover:text-red hover:decoration-red"
+              >
+                Chasen Hampton
+              </a>{" "}
+              (of{" "}
+              <a
+                href="https://closeenemiestheband.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-semibold text-ink underline underline-offset-2 decoration-warm-gray/40 transition-colors hover:text-red hover:decoration-red"
+              >
+                Close Enemies
+              </a>
+              ).
             </p>
 
             <p className="text-[14px] leading-relaxed text-warm-gray">
