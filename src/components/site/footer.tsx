@@ -258,11 +258,31 @@ export function Footer() {
               </li>
             ))}
           </ul>
-          <p className="max-w-md text-[12px] leading-relaxed text-warm-gray sm:text-right">
-            Always In The Club Foundation is an exempt organization as
-            described under Section 501(c)(3) of the Internal Revenue Code,
-            EIN #{siteConfig.ein}.
-          </p>
+          <div className="flex flex-col items-start gap-4 sm:items-end">
+            {/* Candid (GuideStar) transparency seal — widget SVG is
+                served from widgets.guidestar.org so we use a plain
+                <img>; next/image would require allowlisting that host
+                in remotePatterns. */}
+            <a
+              href="https://app.candid.org/profile/10968737/always-in-the-club-foundation-85-4015614/?pkId=81b26a3d-5c81-4893-a0b1-ba0087a03c14"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Always In The Club Foundation profile on Candid (GuideStar)"
+              className="inline-block rounded-md transition-opacity hover:opacity-80 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                alt="Candid transparency seal for Always In The Club Foundation"
+                src="https://widgets.guidestar.org/prod/v1/pdp/transparency-seal/10968737/svg"
+                className="block h-24 w-auto sm:h-28"
+              />
+            </a>
+            <p className="max-w-md text-[12px] leading-relaxed text-warm-gray sm:text-right">
+              Always In The Club Foundation is an exempt organization as
+              described under Section 501(c)(3) of the Internal Revenue Code,
+              EIN #{siteConfig.ein}.
+            </p>
+          </div>
         </div>
 
         {/* Copyright */}
