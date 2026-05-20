@@ -29,8 +29,9 @@ export function WhoWeAre() {
             accomplished artists in the world, including Keri Russell, Ryan
             Gosling, Justin Timberlake, Christina Aguilera,
             Britney Spears, Hallmark Channel&rsquo;s Nikki DeLoach,
-            NSYNC&rsquo;s JC Chasez, The Voice&rsquo;s Tony Lucca, and Rhona
-            Bennett (formerly of En Vogue), among many others.
+            NSYNC&rsquo;s JC Chasez, Close Enemies&rsquo; Chasen Hampton,
+            Wicked&rsquo;s Deedee Magno Hall, The Voice&rsquo;s Tony Lucca,
+            and Rhona Bennett (formerly of En Vogue), among many others.
           </p>
         </Reveal>
 
