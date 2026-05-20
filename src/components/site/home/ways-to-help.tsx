@@ -11,12 +11,18 @@ import { DonateTrigger } from "@/components/site/donate-trigger";
 import { Reveal } from "@/components/site/reveal";
 import { siteConfig } from "@/lib/site-config";
 
+/** Card hero — either a still image (with optional object-position
+ *  override) or an embedded YouTube video. */
+type Hero =
+  | { type: "image"; src: string; alt: string; objectPosition?: string }
+  | { type: "youtube"; videoId: string; title: string };
+
 type Way = {
   title: string;
   body: string;
   cta: string;
   Icon: LucideIcon;
-  image: { src: string; alt: string };
+  hero: Hero;
 } & (
   | { kind: "donate-modal" }
   | { kind: "link"; href: string }
@@ -29,21 +35,26 @@ const ways: Way[] = [
     cta: "Donate",
     kind: "donate-modal",
     Icon: HandHeart,
-    image: {
-      src: "/images/b91c43_0f462b73bc154aa28b3b48c4fbd575d6-mv2.jpeg",
-      alt: "Cast Member Pantry volunteers serving groceries",
+    hero: {
+      type: "image",
+      src: "/images/chasen-girl.jpg",
+      alt: "Chasen Hampton mentoring a young student",
     },
   },
   {
     title: "Become a Club Member",
-    body: "By joining the Club, you become an official member of our family — with exclusive opportunities to reunite with your favorite ’Teers, exclusive media, and discounted merch and event tickets.",
+    body: "By joining the Club, you become an official member of our family with exclusive opportunities to reunite with your favorite ’Teers, exclusive media, and discounted merch and event tickets.",
     cta: "Join the Club",
     kind: "link",
     href: siteConfig.external.clubMembership,
     Icon: Sparkles,
-    image: {
-      src: "/images/mmc30-confetti-mickey-fist-pump.jpg",
-      alt: "Mouseketeers and Mickey Mouse celebrating with confetti at #MMC30",
+    hero: {
+      type: "image",
+      src: "/images/Clubmember-badge.png",
+      alt: "Always In The Club member badge",
+      // Pin the badge to the top of the frame so the bottom of "Member"
+      // and the top of the circular emblem stay visible after the 16:10 crop.
+      objectPosition: "top",
     },
   },
   {
@@ -53,8 +64,9 @@ const ways: Way[] = [
     kind: "link",
     href: siteConfig.external.store,
     Icon: ShoppingBag,
-    image: {
-      src: "/images/club-store-image.jpg",
+    hero: {
+      type: "image",
+      src: "/images/Club-store-1.png",
       alt: "Always In The Club store merchandise",
     },
   },
@@ -65,9 +77,10 @@ const ways: Way[] = [
     kind: "link",
     href: siteConfig.external.bookTeers,
     Icon: CalendarHeart,
-    image: {
-      src: "/images/teers-concert-cropped.jpg",
-      alt: "Mouseketeers performing live at a concert event",
+    hero: {
+      type: "youtube",
+      videoId: "gtC1fE4XBlw",
+      title: "Book the Mouseketeers — performance reel",
     },
   },
 ];
@@ -94,18 +107,37 @@ export function WaysToHelp() {
             const numeral = String(i + 1).padStart(2, "0");
             const inner = (
               <>
-                {/* Photo hero — sits flush at the top of the card; gentle
-                    zoom on hover for visual delight */}
+                {/* Hero — sits flush at the top of the card. Either a
+                    still image (with subtle hover zoom) or a YouTube
+                    iframe (the iframe captures its own clicks for the
+                    YouTube player; the rest of the card still routes to
+                    the card's CTA). */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden bg-warm-white">
-                  <Image
-                    src={w.image.src}
-                    alt={w.image.alt}
-                    fill
-                    sizes="(min-width: 1024px) 270px, (min-width: 640px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover/way:scale-[1.06] motion-reduce:transition-none motion-reduce:group-hover/way:scale-100"
-                  />
+                  {w.hero.type === "image" ? (
+                    <Image
+                      src={w.hero.src}
+                      alt={w.hero.alt}
+                      fill
+                      sizes="(min-width: 1024px) 270px, (min-width: 640px) 50vw, 100vw"
+                      style={
+                        w.hero.objectPosition
+                          ? { objectPosition: w.hero.objectPosition }
+                          : undefined
+                      }
+                      className="object-cover transition-transform duration-700 ease-out group-hover/way:scale-[1.06] motion-reduce:transition-none motion-reduce:group-hover/way:scale-100"
+                    />
+                  ) : (
+                    <iframe
+                      src={`https://www.youtube-nocookie.com/embed/${w.hero.videoId}?rel=0`}
+                      title={w.hero.title}
+                      loading="lazy"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      className="absolute inset-0 h-full w-full border-0 bg-ink"
+                    />
+                  )}
                   {/* Decorative top accent line that grows on hover — pinned
-                      to the card edge above the photo */}
+                      to the card edge above the hero */}
                   <span
                     aria-hidden
                     className="absolute inset-x-0 top-0 z-10 h-[3px] origin-left scale-x-0 bg-red transition-transform duration-500 ease-out group-hover/way:scale-x-100 motion-reduce:transition-none"
