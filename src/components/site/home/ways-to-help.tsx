@@ -80,18 +80,23 @@ const ways: Way[] = [
     title: "Book Mouseketeers or Sponsor an Event",
     body: (
       <>
-        The Mouseketeers support a wide range of causes through year-round
-        events. Lindsey Alley’s hilarious one-woman show was performed at
-        Walt Disney World supporting Give Kids the World Village.{" "}
-        <a
-          href="https://mmcreunion.com/products/lindsey-alleys-blood-sweat-and-mouseketears-live-at-walt-disney-world"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-semibold text-red underline underline-offset-2 decoration-red/40 transition-colors hover:text-red-deep hover:decoration-red-deep"
-        >
-          Stream it here on demand
-        </a>
-        .
+        <p>
+          The Mouseketeers support a wide range of causes through year-round
+          events.
+        </p>
+        <p>
+          Lindsey Alley’s hilarious one-woman show was performed at Walt
+          Disney World supporting Give Kids the World Village.{" "}
+          <a
+            href="https://mmcreunion.com/products/lindsey-alleys-blood-sweat-and-mouseketears-live-at-walt-disney-world"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-semibold text-red underline underline-offset-2 decoration-red/40 transition-colors hover:text-red-deep hover:decoration-red-deep"
+          >
+            Stream it here on demand
+          </a>
+          .
+        </p>
       </>
     ),
     cta: "Book the ’Teers",
@@ -179,9 +184,9 @@ export function WaysToHelp() {
                   <h3 className="mt-7 font-display text-xl font-medium leading-snug text-ink transition-colors duration-300 group-hover/way:text-red">
                     {w.title}
                   </h3>
-                  <p className="mt-3 flex-1 text-[15px] leading-relaxed text-warm-gray">
-                    {w.body}
-                  </p>
+                  <div className="mt-3 flex-1 space-y-3 text-[15px] leading-relaxed text-warm-gray">
+                    {typeof w.body === "string" ? <p>{w.body}</p> : w.body}
+                  </div>
 
                   <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-red transition-colors duration-300 group-hover/way:text-red-deep">
                     {w.cta}
