@@ -27,11 +27,12 @@ export function WhoWeAre() {
           <p>
             And as a performing arts academy, it trained some of the most
             accomplished artists in the world, including Keri Russell, Ryan
-            Gosling, Justin Timberlake, Christina Aguilera,
-            Britney Spears, Hallmark Channel&rsquo;s Nikki DeLoach,
-            NSYNC&rsquo;s JC Chasez, Close Enemies&rsquo; Chasen Hampton,
-            Wicked&rsquo;s Deedee Magno Hall, The Voice&rsquo;s Tony Lucca,
-            and Rhona Bennett (formerly of En Vogue), among many others.
+            Gosling, Justin Timberlake, Christina Aguilera, Britney Spears,
+            Hallmark Channel&rsquo;s Nikki DeLoach, NSYNC&rsquo;s JC Chasez,{" "}
+            <em>The Voice</em>&rsquo;s Tony Lucca, Close Enemies&rsquo;
+            Chasen Hampton, BET&rsquo;s Raquel Herring, <em>Wicked</em>
+            &rsquo;s Deedee Magno Hall, and Rhona Bennett (formerly of En
+            Vogue), among many others.
           </p>
         </Reveal>
 
