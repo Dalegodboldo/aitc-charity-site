@@ -70,7 +70,11 @@ const pillars: {
  */
 function FlipImage({ front, back }: { front: ImageData; back: ImageData }) {
   return (
-    <div className="iris-card group relative aspect-[16/10] w-full overflow-hidden bg-warm-white">
+    <button
+      type="button"
+      aria-label="Reveal the second photo"
+      className="iris-card group relative block aspect-[16/10] w-full overflow-hidden bg-warm-white focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-red"
+    >
       {/* Front (base, always visible) — tinted with a red film that the
           iris reveal "uncovers" to show the back image in true colour */}
       <div className="absolute inset-0">
@@ -105,14 +109,15 @@ function FlipImage({ front, back }: { front: ImageData; back: ImageData }) {
           className="object-cover"
         />
       </div>
-      {/* Subtle hint that there's a second image — only visible until first hover */}
+      {/* Subtle hint that there's a second image — fades out once the
+          back photo is revealed (hover on desktop, tap-focus on touch). */}
       <span
         aria-hidden
-        className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-ink/55 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cream backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-0"
+        className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-ink/55 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cream backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-0 group-focus-within:opacity-0"
       >
         Hover
       </span>
-    </div>
+    </button>
   );
 }
 
