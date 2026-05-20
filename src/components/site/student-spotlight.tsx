@@ -279,7 +279,7 @@ function StudentSpotlightModal({
                   its own block, same size as the body sentence above it
                   (inherits the <p>'s sm:text-[18px]). */}
               <span className="sm:mt-4 sm:block">
-                Learn more about our mentoring programs at
+                Learn more about our mentoring and coaching programs at:
                 <br />
                 <a
                   href={LEARN_MORE_URL}
