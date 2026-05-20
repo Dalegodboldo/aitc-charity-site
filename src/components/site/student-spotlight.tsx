@@ -238,9 +238,13 @@ function StudentSpotlightModal({
                 onto its own block so the body reads as three short
                 one-sentence paragraphs. */}
             <p className="text-[13px] leading-relaxed text-warm-gray sm:text-[18px]">
-              Check out <strong className="text-ink">Yaffa Botier</strong>{" "}
-              sharing the stage with none other than{" "}
-              <strong className="text-ink">Yungblud</strong>!{" "}
+              {/* First sentence runs two sizes larger than the rest on
+                  desktop (sm:text-[20px]); mobile stays uniform. */}
+              <span className="sm:text-[20px]">
+                Check out <strong className="text-ink">Yaffa Botier</strong>{" "}
+                sharing the stage with none other than{" "}
+                <strong className="text-ink">Yungblud</strong>!
+              </span>{" "}
               <span className="sm:mt-4 sm:block">
                 Yaffa was mentored by{" "}
                 <a
