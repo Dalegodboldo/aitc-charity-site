@@ -158,7 +158,7 @@ export function OurMission() {
                       rel="noopener noreferrer"
                       className="mt-auto inline-flex min-h-12 shrink-0 items-center justify-center gap-2 self-start rounded-full bg-ink px-7 py-3 text-base font-semibold text-cream no-underline transition-colors hover:bg-ink/90"
                     >
-                      Apply for Mentorship + Book a Coach or Workshop
+                      Apply for Mentor / Book a Coach or Workshop
                       <ArrowRight className="h-4 w-4 shrink-0" aria-hidden />
                     </a>
                   </>
