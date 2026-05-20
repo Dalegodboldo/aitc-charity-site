@@ -264,16 +264,23 @@ function StudentSpotlightModal({
               >
                 Close Enemies
               </a>
-              ). Learn more about our mentoring programs at{" "}
-              <a
-                href={LEARN_MORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-red no-underline transition-colors hover:text-red-deep"
-              >
-                www.Learn-Grow-Thrive.org
-              </a>
-              .
+              ).{" "}
+              {/* Mobile: this sentence stays inline so the body reads as
+                  one paragraph. Desktop (sm+): it breaks onto its own
+                  block with the original spacing + 14px size — the
+                  two-paragraph layout the desktop view had before. */}
+              <span className="sm:mt-4 sm:block sm:text-[14px]">
+                Learn more about our mentoring programs at{" "}
+                <a
+                  href={LEARN_MORE_URL}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-red no-underline transition-colors hover:text-red-deep"
+                >
+                  www.Learn-Grow-Thrive.org
+                </a>
+                .
+              </span>
             </p>
 
             <p className="mt-auto text-[12px] uppercase tracking-[0.16em] text-warm-gray/80">
