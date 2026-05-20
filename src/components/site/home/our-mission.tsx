@@ -147,7 +147,20 @@ export function OurMission() {
                     <p key={idx}>{para}</p>
                   ))}
                 </div>
-                {p.spotlight && <StudentSpotlightTrigger />}
+                {p.spotlight && (
+                  <>
+                    <StudentSpotlightTrigger />
+                    <a
+                      href="https://www.Learn-Grow-Thrive.org"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-flex h-12 shrink-0 items-center justify-center gap-2 self-start rounded-full bg-ink px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-ink/90"
+                    >
+                      Get a Mentor or Coach
+                      <ArrowRight className="h-4 w-4" aria-hidden />
+                    </a>
+                  </>
+                )}
                 {p.programsLink && (
                   <Link
                     href="/programs"
