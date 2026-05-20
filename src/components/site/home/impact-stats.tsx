@@ -18,7 +18,7 @@ const stats = [
   },
   {
     value: <CountUp to={2500} suffix="+" thousands />,
-    label: "trees planted to fight carbon emissions",
+    label: "trees planted to offset global carbon emissions",
   },
 ];
 
