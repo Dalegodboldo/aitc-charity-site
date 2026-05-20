@@ -42,7 +42,7 @@ type Way = {
 const ways: Way[] = [
   {
     title: "Make a Donation",
-    body: "Your contribution helps us continue our work to empower youth through transformative mentorship and arts education, while working to build stronger communities and a sustainable future through our MMC’89 Initiative.",
+    body: "Your contribution helps us empower youth through transformative mentorship and arts education, while helping to build stronger communities and a sustainable future through our MMC’89 Initiative.",
     cta: "Donate",
     kind: "donate-modal",
     Icon: HandHeart,
