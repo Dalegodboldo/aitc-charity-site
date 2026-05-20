@@ -74,10 +74,10 @@ const ways: Way[] = [
       type: "image",
       src: "/images/Clubmember-badge.png",
       alt: "Always In The Club member badge",
-      // Anchor to the bottom of the image — slides the image up within
-      // the frame so the bottom of "Member" and the top of the circular
-      // emblem stay visible after the 16:10 crop.
-      objectPosition: "50% 100%",
+      // Slide the badge down a touch from full-bottom (100%) → 80% so
+      // a sliver of the top of the image returns to view while keeping
+      // the "Member" wordmark + circle emblem clearly framed.
+      objectPosition: "50% 80%",
     },
   },
   {
