@@ -176,6 +176,7 @@ export function OurMission() {
                       height={450}
                       sizes="(min-width: 1024px) 480px, 90vw"
                       className="mt-6 mb-6 h-auto w-full"
+                      unoptimized
                     />
                     {/* mt-auto pins the CTA to the bottom of the card so
                         it lines up flush with the Mentorship card's button. */}
