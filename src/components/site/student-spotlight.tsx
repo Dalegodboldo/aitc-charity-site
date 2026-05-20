@@ -8,6 +8,7 @@
  */
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Sparkles, X, ZoomIn } from "lucide-react";
 
 type Photo = { src: string; alt: string };
@@ -105,8 +106,9 @@ function StudentSpotlightModal({
   }, [open, onClose, lightbox]);
 
   if (!open) return null;
+  if (typeof document === "undefined") return null;
 
-  return (
+  return createPortal(
     <div
       role="dialog"
       aria-modal="true"
@@ -145,9 +147,17 @@ function StudentSpotlightModal({
           </button>
         </header>
 
-        {/* Body — side-by-side on desktop, stacked on mobile */}
-        <div className="grid gap-5 p-5 sm:gap-6 sm:p-7 lg:grid-cols-[1.2fr_1fr]">
-          {/* Left: video */}
+        {/* Body —
+              MOBILE (default): video → 3-thumb row → copy → links → credit
+                                (unchanged from prior layout).
+              DESKTOP (lg+): two featured items side-by-side at the top
+                             (the video and PHOTO #1), then body copy on
+                             the left and the two supporting thumbs
+                             (#2 + #3) on the right beneath them.
+              CSS grid placement (row-start / col-start) gives the
+              desktop layout without disturbing mobile flow order. */}
+        <div className="grid gap-5 p-5 sm:gap-6 sm:p-7 lg:grid-cols-[1.4fr_1fr] lg:gap-x-5">
+          {/* Video — feature, desktop top-left */}
           <div className="relative aspect-video w-full overflow-hidden rounded-xl bg-ink shadow-soft-sm">
             <video
               ref={videoRef}
@@ -162,36 +172,65 @@ function StudentSpotlightModal({
             </video>
           </div>
 
-          {/* Right: gallery + copy + links */}
-          <div className="flex flex-col gap-4">
-            <ul className="grid grid-cols-3 gap-2 sm:gap-2.5">
-              {PHOTOS.map((p) => (
-                <li key={p.src}>
-                  <button
-                    type="button"
-                    onClick={() => setLightbox(p)}
-                    aria-label={`Expand image: ${p.alt}`}
-                    className="group relative block aspect-[3/4] w-full overflow-hidden rounded-lg bg-warm-white shadow-soft-sm transition-shadow hover:shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
-                  >
-                    <Image
-                      src={p.src}
-                      alt={p.alt}
-                      fill
-                      sizes="(min-width: 1024px) 140px, (min-width: 640px) 200px, 30vw"
-                      className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-                    />
-                    {/* Zoom hint badge — top-right */}
-                    <span
-                      aria-hidden
-                      className="pointer-events-none absolute right-1.5 top-1.5 inline-flex h-7 w-7 items-center justify-center rounded-full bg-ink/65 text-cream opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
-                    >
-                      <ZoomIn className="h-3.5 w-3.5" aria-hidden />
-                    </span>
-                  </button>
-                </li>
-              ))}
-            </ul>
+          {/* Featured photo #1 — desktop only, top-right, stretches to
+              match the video's height via grid align-self: stretch */}
+          <button
+            type="button"
+            onClick={() => setLightbox(PHOTOS[0])}
+            aria-label={`Expand image: ${PHOTOS[0].alt}`}
+            className="group relative hidden h-full w-full overflow-hidden rounded-xl bg-warm-white shadow-soft-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red lg:block"
+          >
+            <Image
+              src={PHOTOS[0].src}
+              alt={PHOTOS[0].alt}
+              fill
+              sizes="(min-width: 1024px) 480px, 100vw"
+              className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+            />
+            <span
+              aria-hidden
+              className="pointer-events-none absolute right-2 top-2 inline-flex h-9 w-9 items-center justify-center rounded-full bg-ink/65 text-cream opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
+            >
+              <ZoomIn className="h-4 w-4" aria-hidden />
+            </span>
+          </button>
 
+          {/* Thumbs — mobile shows all 3 in one row; desktop drops #1
+              (it's the featured photo above) and shows #2 + #3 stacked
+              on the right under the featured pair */}
+          <ul className="grid grid-cols-3 gap-2 sm:gap-2.5 lg:col-start-2 lg:row-start-2 lg:grid-cols-2 lg:self-start">
+            {PHOTOS.map((p, idx) => (
+              <li
+                key={p.src}
+                className={idx === 0 ? "lg:hidden" : undefined}
+              >
+                <button
+                  type="button"
+                  onClick={() => setLightbox(p)}
+                  aria-label={`Expand image: ${p.alt}`}
+                  className="group relative block aspect-[3/4] w-full overflow-hidden rounded-lg bg-warm-white shadow-soft-sm transition-shadow hover:shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
+                >
+                  <Image
+                    src={p.src}
+                    alt={p.alt}
+                    fill
+                    sizes="(min-width: 1024px) 200px, (min-width: 640px) 200px, 30vw"
+                    className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.05] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                  />
+                  <span
+                    aria-hidden
+                    className="pointer-events-none absolute right-1.5 top-1.5 inline-flex h-7 w-7 items-center justify-center rounded-full bg-ink/65 text-cream opacity-0 backdrop-blur-sm transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100"
+                  >
+                    <ZoomIn className="h-3.5 w-3.5" aria-hidden />
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+
+          {/* Body copy + links + credit — mobile flows in order; desktop
+              sits in col 1 row 2 under the video */}
+          <div className="flex flex-col gap-4 lg:col-start-1 lg:row-start-2">
             <p className="text-[15px] leading-relaxed text-warm-gray sm:text-[16px]">
               Check out <strong className="text-ink">Yaffa Botier</strong>{" "}
               sharing the stage with none other than{" "}
@@ -279,6 +318,7 @@ function StudentSpotlightModal({
           </div>
         </div>
       )}
-    </div>
+    </div>,
+    document.body
   );
 }

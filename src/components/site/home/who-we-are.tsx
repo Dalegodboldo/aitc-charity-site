@@ -25,10 +25,11 @@ export function WhoWeAre() {
 
         <Reveal delay={140} className="mt-8 text-base leading-relaxed text-warm-gray lg:text-center">
           <p>
-            And as a performing arts academy, it trained some of the biggest
-            stars in the world, including Keri Russell, Ryan Gosling, Justin
-            Timberlake, Christina Aguilera, Britney Spears, Hallmark
-            Channel&rsquo;s Nikki DeLoach, NSYNC&rsquo;s JC Chasez, and Rhona
+            And as a performing arts academy, it trained some of the most
+            accomplished performing artists in the world, including Keri
+            Russell, Ryan Gosling, Justin Timberlake, Christina Aguilera,
+            Britney Spears, Hallmark Channel&rsquo;s Nikki DeLoach,
+            NSYNC&rsquo;s JC Chasez, The Voice&rsquo;s Tony Lucca, and Rhona
             Bennett (formerly of En Vogue), among many others.
           </p>
         </Reveal>
