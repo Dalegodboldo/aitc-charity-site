@@ -181,9 +181,8 @@ const campaigns: Campaign[] = [
     body: "Inspired by the training they received from Disney in their youth, Mouseketeers are supporting the next generation of artists and entrepreneurs with training and mentorship programs.",
     goals: "Global Goals 3, 4 & 8",
     image: {
-      src: "/images/yaffa-3.JPG",
-      alt: "Student Yaffa Botier — Mentoring & Youth Arts Education program",
-      objectPosition: "top",
+      src: "/images/deedee_jenn_student.png",
+      alt: "Mouseketeer mentoring a young student through the Mentoring & Youth Arts Education program",
     },
     Icon: GraduationCap,
     cta: {
