@@ -273,7 +273,7 @@ export default function ImpactPage() {
       <PageIntro
         eyebrow="Our Impact"
         title="Our Impact"
-        body="Guided by the Global Goals, our MMC’89 Social Impact Initiative supports a wide range of philanthropic efforts. Mouseketeers have helped raise more than $4.5 million to support youth education and mentoring, provide cost-free vacations to Disney World for critically ill children, groceries for families facing financial hardships, support victims of domestic abuse, and train socially conscious artists and entrepreneurs, among other important causes."
+        body="Guided by the UN’s Global Goals, our MMC’89 Social Impact Initiative supports a wide range of philanthropic efforts. We have helped raise more than $4.5 million to support youth education and mentoring, provide cost-free vacations to Disney World for critically ill children, deliver groceries for families facing financial hardships, support victims of domestic abuse, and train socially conscious artists and entrepreneurs, among other important causes."
       />
 
       {/* Hero stat band — Foundation totals */}
