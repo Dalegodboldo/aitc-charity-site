@@ -276,8 +276,9 @@ function StudentSpotlightModal({
                 ).
               </span>{" "}
               {/* Mobile: inline so the body stays one paragraph. Desktop:
-                  its own block at the original 14px footnote size. */}
-              <span className="sm:mt-4 sm:block sm:text-[14px]">
+                  its own block, same size as the body sentence above it
+                  (inherits the <p>'s sm:text-[18px]). */}
+              <span className="sm:mt-4 sm:block">
                 Learn more about our mentoring programs at{" "}
                 <a
                   href={LEARN_MORE_URL}
