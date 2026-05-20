@@ -193,13 +193,13 @@ function StudentSpotlightModal({
             </ul>
 
             <p className="text-[15px] leading-relaxed text-warm-gray sm:text-[16px]">
-              Check out Yaffa sharing the stage with none other than{" "}
+              Check out <strong className="text-ink">Yaffa Botier</strong>{" "}
+              sharing the stage with none other than{" "}
               <strong className="text-ink">Yungblud</strong>! Yaffa was
-              mentored by AITC&rsquo;s{" "}
-              <strong className="text-ink">Tony Lucca</strong>, and we
-              couldn&rsquo;t be more proud. Shout out to AITC&rsquo;s{" "}
-              <strong className="text-ink">Chasen Hampton</strong> for making
-              the connection!
+              mentored by <strong className="text-ink">Tony Lucca</strong> and
+              introduced to our program by{" "}
+              <strong className="text-ink">Chasen Hampton</strong> (of{" "}
+              <strong className="text-ink">Close Enemies</strong>).
             </p>
 
             <p className="text-[14px] leading-relaxed text-warm-gray">
