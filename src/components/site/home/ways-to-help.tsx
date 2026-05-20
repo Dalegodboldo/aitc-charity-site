@@ -1,4 +1,5 @@
 import Image from "next/image";
+import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowUpRight,
@@ -19,7 +20,7 @@ type Hero =
 
 type Way = {
   title: string;
-  body: string;
+  body: ReactNode;
   cta: string;
   Icon: LucideIcon;
   hero: Hero;
@@ -39,6 +40,10 @@ const ways: Way[] = [
       type: "image",
       src: "/images/chasen-girl.jpg",
       alt: "Chasen Hampton mentoring a young student",
+      // Nudge the crop downward (image content shifts down within the
+      // frame) so the top of the photo shows more head-room rather than
+      // a tight centred crop.
+      objectPosition: "50% 20%",
     },
   },
   {
@@ -52,9 +57,10 @@ const ways: Way[] = [
       type: "image",
       src: "/images/Clubmember-badge.png",
       alt: "Always In The Club member badge",
-      // Pin the badge to the top of the frame so the bottom of "Member"
-      // and the top of the circular emblem stay visible after the 16:10 crop.
-      objectPosition: "top",
+      // Anchor to the bottom of the image — slides the image up within
+      // the frame so the bottom of "Member" and the top of the circular
+      // emblem stay visible after the 16:10 crop.
+      objectPosition: "50% 100%",
     },
   },
   {
@@ -72,7 +78,22 @@ const ways: Way[] = [
   },
   {
     title: "Book Mouseketeers or Sponsor an Event",
-    body: "The Mouseketeers support a wide range of causes through year-round events.",
+    body: (
+      <>
+        The Mouseketeers support a wide range of causes through year-round
+        events. Lindsey Alley’s hilarious one-woman show was performed at
+        Walt Disney World supporting Give Kids the World Village.{" "}
+        <a
+          href="https://mmcreunion.com/products/lindsey-alleys-blood-sweat-and-mouseketears-live-at-walt-disney-world"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-semibold text-red underline underline-offset-2 decoration-red/40 transition-colors hover:text-red-deep hover:decoration-red-deep"
+        >
+          Stream it here on demand
+        </a>
+        .
+      </>
+    ),
     cta: "Book the ’Teers",
     kind: "link",
     href: siteConfig.external.bookTeers,
