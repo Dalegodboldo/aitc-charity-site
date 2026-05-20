@@ -35,8 +35,15 @@ type Way = {
   Icon: LucideIcon;
   hero: Hero;
 } & (
+  /** Whole card opens the in-site Donate modal. */
   | { kind: "donate-modal" }
+  /** Whole card is a single outbound link. */
   | { kind: "link"; href: string }
+  /** Card container is non-clickable; only the CTA link at the bottom
+   *  navigates. Use this when the card has its own interactive content
+   *  (e.g. a click-to-play video, an inline body link) that shouldn't
+   *  bulk-trigger card navigation. */
+  | { kind: "compound-link"; href: string }
 );
 
 const ways: Way[] = [
@@ -110,7 +117,7 @@ const ways: Way[] = [
       </>
     ),
     cta: "Book the ’Teers",
-    kind: "link",
+    kind: "compound-link",
     href: siteConfig.external.bookTeers,
     Icon: CalendarHeart,
     hero: {
@@ -143,6 +150,30 @@ export function WaysToHelp() {
           {ways.map((w, i) => {
             const Icon = w.Icon;
             const numeral = String(i + 1).padStart(2, "0");
+            const ctaContent = (
+              <>
+                {w.cta}
+                <ArrowUpRight
+                  className="h-4 w-4 transition-transform duration-300 ease-out group-hover/way:translate-x-0.5 group-hover/way:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover/way:translate-x-0 motion-reduce:group-hover/way:translate-y-0"
+                  aria-hidden
+                />
+              </>
+            );
+            const ctaInlineFlex =
+              "mt-6 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-red transition-colors duration-300 group-hover/way:text-red-deep";
+            const cta =
+              w.kind === "compound-link" ? (
+                <a
+                  href={w.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${ctaInlineFlex} no-underline hover:text-red-deep`}
+                >
+                  {ctaContent}
+                </a>
+              ) : (
+                <span className={ctaInlineFlex}>{ctaContent}</span>
+              );
             const inner = (
               <>
                 {/* Hero — sits flush at the top of the card. Either a
@@ -200,13 +231,7 @@ export function WaysToHelp() {
                     {typeof w.body === "string" ? <p>{w.body}</p> : w.body}
                   </div>
 
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-red transition-colors duration-300 group-hover/way:text-red-deep">
-                    {w.cta}
-                    <ArrowUpRight
-                      className="h-4 w-4 transition-transform duration-300 ease-out group-hover/way:translate-x-0.5 group-hover/way:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover/way:translate-x-0 motion-reduce:group-hover/way:translate-y-0"
-                      aria-hidden
-                    />
-                  </span>
+                  {cta}
                 </div>
               </>
             );
@@ -219,6 +244,8 @@ export function WaysToHelp() {
               >
                 {w.kind === "donate-modal" ? (
                   <DonateTrigger className={CARD_CLASSES}>{inner}</DonateTrigger>
+                ) : w.kind === "compound-link" ? (
+                  <div className={CARD_CLASSES}>{inner}</div>
                 ) : (
                   <a
                     href={w.href}
