@@ -110,7 +110,7 @@ const ways: Way[] = [
             rel="noopener noreferrer"
             className="font-semibold text-red underline underline-offset-2 decoration-red/40 transition-colors hover:text-red-deep hover:decoration-red-deep"
           >
-            Stream it here on demand
+            Stream it
           </a>
           .
         </p>
