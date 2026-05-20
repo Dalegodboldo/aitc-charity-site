@@ -73,13 +73,14 @@ export function YouTubePosterHero({
         }
         className="object-cover transition-transform duration-700 ease-out group-hover/play:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover/play:scale-100"
       />
-      {/* Play icon — small circular badge centered on the poster */}
+      {/* Play icon — small circular badge tucked into the top-left so
+          it never covers the subject's face. */}
       <span
         aria-hidden
-        className="pointer-events-none absolute inset-0 flex items-center justify-center"
+        className="pointer-events-none absolute left-3 top-3"
       >
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-cream/90 text-ink shadow-soft backdrop-blur-sm transition-all duration-300 group-hover/play:scale-110 group-hover/play:bg-cream motion-reduce:transition-none motion-reduce:group-hover/play:scale-100">
-          <Play className="ml-0.5 h-5 w-5 fill-current" aria-hidden />
+        <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-cream/90 text-ink shadow-soft backdrop-blur-sm transition-all duration-300 group-hover/play:scale-110 group-hover/play:bg-cream motion-reduce:transition-none motion-reduce:group-hover/play:scale-100">
+          <Play className="ml-0.5 h-4 w-4 fill-current" aria-hidden />
         </span>
       </span>
     </button>
