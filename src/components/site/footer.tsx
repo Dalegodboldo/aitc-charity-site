@@ -87,39 +87,35 @@ const externalLinkGroups: { label: string; links: FooterLink[] }[] = [
 export function Footer() {
   const year = new Date().getFullYear();
   return (
-    <footer className="mt-24 border-t border-border bg-warm-white">
-      <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+    <footer className="mt-20 border-t border-border bg-warm-white">
+      <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
         {/* Top: brand + 4 column grid */}
-        <div className="grid gap-12 lg:grid-cols-[1.2fr_1fr_1fr_1.2fr]">
+        <div className="grid gap-10 lg:grid-cols-[1fr_1fr_1fr_1.3fr]">
           {/* Brand */}
           <div>
-            {/* Wrapper sets a single shared width so the Changemaker mark
-                and the AITC wordmark beneath line up flush on the left. */}
-            <div className="w-[196px]">
+            <Image
+              src="/images/changemaker-ears.png"
+              alt="Changemaker"
+              width={636}
+              height={636}
+              className="block h-auto w-[120px]"
+            />
+            <Link
+              href="/"
+              aria-label="Always In The Club Foundation — home"
+              className="mt-4 inline-block no-underline"
+            >
               <Image
-                src="/images/changemaker-ears.png"
-                alt="Changemaker"
-                width={636}
-                height={636}
-                className="block h-auto w-full"
+                src="/images/aitc-logo-long.png"
+                alt="Always In The Club"
+                width={310}
+                height={57}
+                className="block h-9 w-auto"
               />
-              <Link
-                href="/"
-                aria-label="Always In The Club Foundation — home"
-                className="mt-3 block no-underline"
-              >
-                <Image
-                  src="/images/aitc-logo-long.png"
-                  alt="Always In The Club"
-                  width={310}
-                  height={57}
-                  className="block h-auto w-full"
-                />
-                <span className="mt-1 block text-[11px] font-medium uppercase tracking-[0.2em] text-gold">
-                  Foundation
-                </span>
-              </Link>
-            </div>
+              <span className="mt-1 block text-[11px] font-medium uppercase tracking-[0.2em] text-gold">
+                Foundation
+              </span>
+            </Link>
             <p className="mt-4 max-w-xs font-display text-[15px] italic leading-relaxed text-warm-gray">
               {siteConfig.tagline}
             </p>
