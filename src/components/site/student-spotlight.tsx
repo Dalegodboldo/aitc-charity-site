@@ -237,7 +237,7 @@ function StudentSpotlightModal({
                 paragraph); on desktop (sm+) each sentence span breaks
                 onto its own block so the body reads as three short
                 one-sentence paragraphs. */}
-            <p className="text-[13px] leading-relaxed text-warm-gray sm:text-[17px]">
+            <p className="text-[13px] leading-relaxed text-warm-gray sm:text-[18px]">
               Check out <strong className="text-ink">Yaffa Botier</strong>{" "}
               sharing the stage with none other than{" "}
               <strong className="text-ink">Yungblud</strong>!{" "}
