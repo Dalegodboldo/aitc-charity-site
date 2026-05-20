@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/site/reveal";
+import { GoalIcons } from "@/components/site/sdg-icons";
 
 export function PlantATree() {
   return (
@@ -15,7 +16,7 @@ export function PlantATree() {
               <h2 className="mt-4 font-display text-3xl font-medium leading-tight tracking-tight sm:text-4xl">
                 Join Us to Reforest the World
               </h2>
-              <p className="mt-5 text-lg text-warm-gray">
+              <p className="mt-5 text-base leading-relaxed text-warm-gray">
                 When you make a purchase or donate in our{" "}
                 <a
                   href="https://mmcreunion.com/"
@@ -29,6 +30,7 @@ export function PlantATree() {
                 emissions. Thanks to the generosity of our supporters, we have
                 proudly planted more than 2,500 trees around the world.
               </p>
+              <GoalIcons goals="Global Goals 7, 11, 13, 14 & 15" />
               <a
                 href="https://tree-nation.com/profile/impact/always-in-the-club-foundation#co2"
                 target="_blank"
