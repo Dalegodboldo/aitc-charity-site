@@ -41,7 +41,10 @@ type Program = {
   title: string;
   body: string;
   href: string;
-  image: { src: string; alt: string };
+  /** `objectPosition` overrides the default centred crop — e.g. "top"
+   *  to slide a portrait photo all the way down within the 16:10
+   *  frame so the upper part of the photo stays visible. */
+  image: { src: string; alt: string; objectPosition?: string };
   Icon: LucideIcon;
   /** Three short feature pills shown under the body — quick scan of what's inside. */
   features: { Icon: LucideIcon; label: string }[];
@@ -55,6 +58,9 @@ const programs: Program[] = [
     image: {
       src: "/images/yaffa-3.JPG",
       alt: "Student Yaffa Botier — supported by AITC's Mentoring program",
+      // Slide the image all the way down inside the 16:10 frame so
+      // the top of the photo stays visible after the crop.
+      objectPosition: "top",
     },
     Icon: HeartHandshake,
     features: [
@@ -620,6 +626,11 @@ export default function ProgramsPage() {
                       alt={p.image.alt}
                       fill
                       sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                      style={
+                        p.image.objectPosition
+                          ? { objectPosition: p.image.objectPosition }
+                          : undefined
+                      }
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                     />
                     <div
