@@ -263,7 +263,7 @@ const totals = [
   {
     Icon: TreePine,
     value: <CountUp to={2500} suffix="+" thousands />,
-    label: "trees planted",
+    label: "trees planted to offset global carbon emissions",
   },
 ];
 
