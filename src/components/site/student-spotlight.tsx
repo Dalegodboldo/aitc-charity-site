@@ -233,42 +233,46 @@ function StudentSpotlightModal({
           {/* Body copy + links + credit — mobile flows in order; desktop
               sits in col 1 row 2 under the video */}
           <div className="flex flex-col gap-4 lg:col-start-1 lg:row-start-2">
-            <p className="text-[13px] leading-relaxed text-warm-gray sm:text-[16px]">
+            {/* One <p> on mobile (sentences flow inline as a single
+                paragraph); on desktop (sm+) each sentence span breaks
+                onto its own block so the body reads as three short
+                one-sentence paragraphs. */}
+            <p className="text-[13px] leading-relaxed text-warm-gray sm:text-[17px]">
               Check out <strong className="text-ink">Yaffa Botier</strong>{" "}
               sharing the stage with none other than{" "}
-              <strong className="text-ink">Yungblud</strong>! Yaffa was
-              mentored by{" "}
-              <a
-                href="https://www.TonyLucca.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-ink underline underline-offset-2 decoration-warm-gray/40 transition-colors hover:text-red hover:decoration-red"
-              >
-                Tony Lucca
-              </a>{" "}
-              and introduced to our program by{" "}
-              <a
-                href="https://www.chasenhampton.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-ink underline underline-offset-2 decoration-warm-gray/40 transition-colors hover:text-red hover:decoration-red"
-              >
-                Chasen Hampton
-              </a>{" "}
-              (of{" "}
-              <a
-                href="https://closeenemiestheband.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="font-semibold text-ink underline underline-offset-2 decoration-warm-gray/40 transition-colors hover:text-red hover:decoration-red"
-              >
-                Close Enemies
-              </a>
-              ).{" "}
-              {/* Mobile: this sentence stays inline so the body reads as
-                  one paragraph. Desktop (sm+): it breaks onto its own
-                  block with the original spacing + 14px size — the
-                  two-paragraph layout the desktop view had before. */}
+              <strong className="text-ink">Yungblud</strong>!{" "}
+              <span className="sm:mt-4 sm:block">
+                Yaffa was mentored by{" "}
+                <a
+                  href="https://www.TonyLucca.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-ink underline underline-offset-2 decoration-warm-gray/40 transition-colors hover:text-red hover:decoration-red"
+                >
+                  Tony Lucca
+                </a>{" "}
+                and introduced to our program by{" "}
+                <a
+                  href="https://www.chasenhampton.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-ink underline underline-offset-2 decoration-warm-gray/40 transition-colors hover:text-red hover:decoration-red"
+                >
+                  Chasen Hampton
+                </a>{" "}
+                (of{" "}
+                <a
+                  href="https://closeenemiestheband.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-ink underline underline-offset-2 decoration-warm-gray/40 transition-colors hover:text-red hover:decoration-red"
+                >
+                  Close Enemies
+                </a>
+                ).
+              </span>{" "}
+              {/* Mobile: inline so the body stays one paragraph. Desktop:
+                  its own block at the original 14px footnote size. */}
               <span className="sm:mt-4 sm:block sm:text-[14px]">
                 Learn more about our mentoring programs at{" "}
                 <a
