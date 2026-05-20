@@ -123,17 +123,19 @@ function StudentSpotlightModal({
         ref={panelRef}
         className="relative w-full max-w-5xl overflow-hidden rounded-2xl bg-cream shadow-soft"
       >
-        {/* Title bar — single-line title + Close */}
+        {/* Title bar — title + Close. On mobile the title stacks onto
+            two lines ("Student Spotlight:" / "Yaffa Botier") so the
+            close button never clips the name; one line on sm+. */}
         <header className="flex items-center justify-between gap-4 border-b border-border bg-cream px-5 py-3 sm:px-7 sm:py-4">
           <h2
             id="student-spotlight-title"
-            className="inline-flex items-center gap-2 truncate font-display text-lg font-medium leading-tight tracking-tight text-ink sm:text-xl"
+            className="min-w-0 font-display text-lg font-medium leading-tight tracking-tight text-ink sm:text-xl"
           >
-            <Sparkles className="h-4 w-4 shrink-0 text-gold" aria-hidden />
-            <span>
-              <span className="text-gold">Student Spotlight:</span>{" "}
-              <span className="text-ink">Yaffa Botier</span>
-            </span>
+            <span className="flex items-center gap-2 text-gold sm:inline-flex">
+              <Sparkles className="h-4 w-4 shrink-0" aria-hidden />
+              Student Spotlight:
+            </span>{" "}
+            <span className="block text-ink sm:inline">Yaffa Botier</span>
           </h2>
           <button
             ref={closeBtnRef}
