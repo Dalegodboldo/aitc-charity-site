@@ -99,7 +99,10 @@ type Campaign = {
   title: string;
   body: ReactNode;
   goals: string;
-  image: { src: string; alt: string };
+  /** `objectPosition` overrides the default centred crop — e.g. "top"
+   *  to anchor a portrait photo so the head/upper torso stays visible
+   *  after the 16:10 crop. */
+  image: { src: string; alt: string; objectPosition?: string };
   Icon: LucideIcon;
   /** Outbound "Learn more" link at the foot of the card. */
   cta?: { label: string; href: string };
@@ -172,8 +175,9 @@ const campaigns: Campaign[] = [
     body: "Inspired by the training they received from Disney in their youth, Mouseketeers are supporting the next generation of artists and entrepreneurs with training and mentorship programs.",
     goals: "Global Goals 3, 4 & 8",
     image: {
-      src: "/images/deedee_jenn_student.png",
-      alt: "Mouseketeer mentoring a young student through the Mentoring & Youth Arts Education program",
+      src: "/images/yaffa-3.JPG",
+      alt: "Student Yaffa Botier — Mentoring & Youth Arts Education program",
+      objectPosition: "top",
     },
     Icon: GraduationCap,
     cta: {
@@ -811,6 +815,11 @@ export default function ProgramsPage() {
                       alt={c.image.alt}
                       fill
                       sizes="(min-width: 1024px) 340px, (min-width: 640px) 50vw, 100vw"
+                      style={
+                        c.image.objectPosition
+                          ? { objectPosition: c.image.objectPosition }
+                          : undefined
+                      }
                       className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                     />
                     <div
