@@ -53,16 +53,19 @@ export function Hero() {
               </div>
             }
           />
-          {/* Primary CTA sits directly beneath the hero video, full-width
-              so it lines up flush with the player above it. */}
-          <a
-            href="https://www.mickeymouseclubreunion.com/mentorship-coaching"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-5 inline-flex h-12 w-full items-center justify-center rounded-full bg-red px-7 text-base font-semibold text-cream no-underline shadow-[0_12px_28px_-12px_rgba(171,7,7,0.55)] transition-colors hover:bg-red-deep hover:text-cream"
-          >
-            Apply for a Mentor or Book a Coach
-          </a>
+          {/* Primary CTA beneath the hero video — auto-width and centered
+              so the corner seal (which juts into the bottom-left of the
+              video) doesn't overlap it. */}
+          <div className="mt-5 flex justify-center">
+            <a
+              href="https://www.mickeymouseclubreunion.com/mentorship-coaching"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex h-12 items-center justify-center rounded-full bg-red px-7 text-base font-semibold text-cream no-underline shadow-[0_12px_28px_-12px_rgba(171,7,7,0.55)] transition-colors hover:bg-red-deep hover:text-cream"
+            >
+              Apply for a Mentor or Book a Coach
+            </a>
+          </div>
         </Reveal>
       </div>
     </section>
