@@ -73,7 +73,9 @@ export function HeroVideo({ vimeoId, title, posterSrc, posterAlt, seal }: Props)
         <div
           aria-hidden={playing}
           className={cn(
-            "absolute -bottom-5 -left-5 hidden transition-[opacity,transform] duration-500 ease-out sm:block motion-reduce:transition-none",
+            // The seal is 144px (h-36 w-36); a -72px offset on both axes
+            // centers the circle exactly on the video's bottom-left corner.
+            "absolute -bottom-[72px] -left-[72px] hidden transition-[opacity,transform] duration-500 ease-out sm:block motion-reduce:transition-none",
             playing
               ? "pointer-events-none scale-95 opacity-0"
               : "scale-100 opacity-100"
