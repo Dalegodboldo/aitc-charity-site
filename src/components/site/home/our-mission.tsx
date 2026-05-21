@@ -1,23 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { FlipImage, type FlipImageData } from "@/components/site/flip-image";
 import { Reveal } from "@/components/site/reveal";
 import { StudentSpotlightTrigger } from "@/components/site/student-spotlight";
 import { YouTubeEmbed } from "@/components/site/youtube-embed";
 
-type ImageData = {
-  src: string;
-  alt: string;
-  objectPosition?: string;
-  /** Extra inline style applied to the <Image>, e.g. for scale/origin. */
-  imgStyle?: React.CSSProperties;
-};
-
 const pillars: {
   title: string;
   body: string[];
-  image: ImageData;
-  imageBack: ImageData;
+  image: FlipImageData;
+  imageBack: FlipImageData;
   /** If true, render the Student Spotlight CTA + modal trigger in the body. */
   spotlight?: boolean;
   /** If true, render the "Our Programs & Initiatives" button in the body. */
@@ -60,66 +53,6 @@ const pillars: {
     },
   },
 ];
-
-/**
- * Iris / spotlight reveal: the front photo is the always-visible base;
- * on hover, the back photo is unmasked from the center outward via an
- * expanding circular clip-path. Both states are class-based so the
- * cascade resolves cleanly (an inline clip-path would beat any
- * hover rule on specificity).
- */
-function FlipImage({ front, back }: { front: ImageData; back: ImageData }) {
-  return (
-    <button
-      type="button"
-      aria-label="Reveal the second photo"
-      className="iris-card group relative block aspect-[16/10] w-full overflow-hidden bg-warm-white focus-visible:outline focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-red"
-    >
-      {/* Front (base, always visible) — tinted with a red film that the
-          iris reveal "uncovers" to show the back image in true colour */}
-      <div className="absolute inset-0">
-        <Image
-          src={front.src}
-          alt={front.alt}
-          fill
-          sizes="(min-width: 1024px) 560px, 100vw"
-          style={{
-            ...(front.objectPosition ? { objectPosition: front.objectPosition } : {}),
-            ...(front.imgStyle ?? {}),
-          }}
-          className="object-cover"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-red mix-blend-multiply opacity-55"
-        />
-      </div>
-      {/* Back (spotlight reveal — clip-path defined in the <style> block below
-          so the default and hover states share specificity and transition cleanly) */}
-      <div className="iris-back absolute inset-0 motion-reduce:!transition-none">
-        <Image
-          src={back.src}
-          alt={back.alt}
-          fill
-          sizes="(min-width: 1024px) 560px, 100vw"
-          style={{
-            ...(back.objectPosition ? { objectPosition: back.objectPosition } : {}),
-            ...(back.imgStyle ?? {}),
-          }}
-          className="object-cover"
-        />
-      </div>
-      {/* Subtle hint that there's a second image — fades out once the
-          back photo is revealed (hover on desktop, tap-focus on touch). */}
-      <span
-        aria-hidden
-        className="pointer-events-none absolute bottom-3 right-3 rounded-full bg-ink/55 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cream backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-0 group-focus-within:opacity-0"
-      >
-        Hover
-      </span>
-    </button>
-  );
-}
 
 export function OurMission() {
   return (
