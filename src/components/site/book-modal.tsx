@@ -134,17 +134,27 @@ export function BookModal() {
         ref={panelRef}
         className="relative grid max-h-[90svh] w-full max-w-3xl overflow-y-auto overflow-x-hidden rounded-2xl bg-cream shadow-soft animate-in fade-in zoom-in-95 duration-300 lg:grid-cols-[5fr_7fr] motion-reduce:animate-none motion-reduce:duration-0"
       >
-        {/* Book cover (anchor) — object-contain so the full cover is
-            visible on both mobile and desktop, with the cream letterbox
-            blending into the modal panel. */}
+        {/* Book cover — object-contain so the full image is visible,
+            cream letterbox blending into the modal panel. Mobile (< lg)
+            shows the wide MMCBook-wide.png; desktop keeps the portrait
+            cover, since that column is tall and narrow. */}
         <div className="relative h-72 w-full bg-cream sm:h-96 lg:h-auto lg:min-h-[460px]">
+          {/* Mobile / tablet */}
+          <Image
+            src="/images/MMCBook-wide.png"
+            alt="The True Story of the All New Mickey Mouse Club"
+            fill
+            priority
+            sizes="100vw"
+            className="object-contain p-4 sm:p-6 lg:hidden"
+          />
+          {/* Desktop */}
           <Image
             src="/images/3-e35fc5c.png"
             alt="Cover of The True Story of the All New Mickey Mouse Club"
             fill
-            priority
             sizes="(min-width: 1024px) 400px, 100vw"
-            className="object-contain p-4 sm:p-6"
+            className="hidden object-contain p-4 sm:p-6 lg:block"
           />
         </div>
 
