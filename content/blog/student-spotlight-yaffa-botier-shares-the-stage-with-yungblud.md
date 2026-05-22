@@ -10,7 +10,7 @@ Some musicians spend years chasing a moment like this. Yaffa Botier got hers whe
 
 ## Pulled From the Crowd at Brooklyn Paramount
 
-At a recent Yungblud show at the Brooklyn Paramount, the headliner did something he is known for. He reached past the barricade and pulled a fan up onto the stage. That fan was Yaffa Botier, a nineteen-year-old guitarist. Handed an instrument in front of a sold-out room, she dropped straight into "Fleabag" with the band. No warm-up. No second-guessing. She didn't just survive the moment. She matched it.
+At a recent Yungblud show at the Brooklyn Paramount, the headliner did something he is known for. He reached past the barricade and pulled a fan up onto the stage. That fan was Yaffa Botier, a nineteen-year-old guitarist. Handed an instrument in front of a sold-out room, she dropped straight into "Fleabag" with the band. No warm-up. No second-guessing. She didn't just survive the moment. She met it.
 
 It's the kind of story that reads like luck. It isn't. Moments like that belong to the players who have already put in the work, and to the people and programs that gave that work somewhere to go.
 

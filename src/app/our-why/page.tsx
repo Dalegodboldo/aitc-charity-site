@@ -349,7 +349,7 @@ export default function OurWhyPage() {
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
           <Reveal>
             <SectionImage
-              src="/images/disney-campus-stage.jpg"
+              src="/images/disney-shot-on-stage.webp"
               alt="Students performing on stage"
             />
           </Reveal>
