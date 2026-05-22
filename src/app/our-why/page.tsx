@@ -167,10 +167,10 @@ function SectionImage({
   );
 }
 
-/** A square (1:1) image frame, for the square brand graphics. */
-function SquareImage({ src, alt }: { src: string; alt: string }) {
+/** A 2-up image frame for the paired brand graphics (cropped 1080x974). */
+function PairImage({ src, alt }: { src: string; alt: string }) {
   return (
-    <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-soft-sm ring-1 ring-ink/[0.04]">
+    <div className="relative aspect-[1080/974] w-full overflow-hidden rounded-2xl shadow-soft-sm ring-1 ring-ink/[0.04]">
       <Image
         src={src}
         alt={alt}
@@ -283,11 +283,11 @@ export default function OurWhyPage() {
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
           <Reveal>
             <div className="grid gap-5 sm:grid-cols-2">
-              <SquareImage
+              <PairImage
                 src="/images/Red-mentorship.png"
                 alt="Always In The Club Foundation mentorship"
               />
-              <SquareImage
+              <PairImage
                 src="/images/Mentors-red.png"
                 alt="Mentors at the Always In The Club Foundation"
               />
