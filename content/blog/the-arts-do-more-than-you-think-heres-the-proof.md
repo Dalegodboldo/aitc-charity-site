@@ -2,7 +2,7 @@
 title: "The Arts Do More Than You Think. Here's the Proof."
 date: "2026-05-22"
 excerpt: "Arts education and mentorship are not extras. The research shows they protect young people's mental health and shape the course of their lives."
-coverImage: "/images/teers-concert-cropped.jpg"
+coverImage: "/images/img_1593.jpg"
 author: "Always In The Club Foundation"
 ---
 
