@@ -349,8 +349,8 @@ export default function OurWhyPage() {
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
           <Reveal>
             <SectionImage
-              src="/images/disney-shot-on-stage.webp"
-              alt="Students performing on stage"
+              src="/images/img_1593.jpg"
+              alt="Young people in an Always In The Club Foundation program"
             />
           </Reveal>
           <Reveal className="mt-12 max-w-3xl">
