@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { ArrowUpRight, Check, Mail, Newspaper } from "lucide-react";
+import { ArrowUpRight, Check, Mail } from "lucide-react";
 import { PageIntro } from "@/components/site/page-intro";
 import { Reveal } from "@/components/site/reveal";
+import { RoundupIssues } from "@/components/site/roundup-issues";
 
 export const metadata: Metadata = {
   title: "Mouseketeer Roundup",
@@ -10,24 +11,6 @@ export const metadata: Metadata = {
 };
 
 const SIGNUP_URL = "https://stats.sender.net/forms/dwWNMd/view";
-
-const issues = [
-  {
-    month: "May",
-    year: "2026",
-    href: "https://share.sender.net/campaigns/fXxG/mouseketeer-roundup-may",
-  },
-  {
-    month: "April",
-    year: "2026",
-    href: "https://share.sender.net/campaigns/fiqk/mouseketeer-roundup-april",
-  },
-  {
-    month: "March",
-    year: "2026",
-    href: "https://share.sender.net/campaigns/d7pe/mouseketeer-roundup-march",
-  },
-];
 
 const benefits = [
   "News and projects from your favorite Mouseketeers in entertainment",
@@ -100,36 +83,7 @@ export default function MouseketeerRoundupPage() {
               A look at the last few Roundups so you know what to expect.
             </p>
           </Reveal>
-          <ul className="mt-12 grid gap-7 sm:grid-cols-2 lg:grid-cols-3">
-            {issues.map((iss, i) => (
-              <Reveal as="li" key={iss.month} delay={i * 80}>
-                <a
-                  href={iss.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group flex h-full flex-col rounded-2xl border border-border bg-warm-white p-7 no-underline shadow-soft-sm transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-soft motion-reduce:transition-none motion-reduce:hover:translate-y-0"
-                >
-                  <span className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-red/10 text-red transition-colors group-hover:bg-red group-hover:text-cream">
-                    <Newspaper className="h-5 w-5" aria-hidden />
-                  </span>
-                  <p className="mt-6 text-[12px] font-semibold uppercase tracking-[0.18em] text-gold">
-                    {iss.month} {iss.year}
-                  </p>
-                  <h3 className="mt-2 font-display text-xl font-medium leading-snug text-ink">
-                    Mouseketeer Roundup
-                  </h3>
-                  <p className="mt-4 flex-1 text-[15px] leading-relaxed text-warm-gray">
-                    A recap of Mouseketeers in entertainment, in their
-                    communities, and at the foundation.
-                  </p>
-                  <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-red transition-colors group-hover:text-red-deep">
-                    Read this issue
-                    <ArrowUpRight className="h-4 w-4" aria-hidden />
-                  </span>
-                </a>
-              </Reveal>
-            ))}
-          </ul>
+          <RoundupIssues />
         </div>
       </section>
 
