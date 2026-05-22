@@ -148,11 +148,30 @@ function SectionImage({
   src,
   alt,
   priority,
+  square,
 }: {
   src: string;
   alt: string;
   priority?: boolean;
+  /** Render in a centered 1:1 frame — for square source images that
+   *  would lose their top and bottom in the default 16:9 banner. */
+  square?: boolean;
 }) {
+  if (square) {
+    return (
+      <div className="mx-auto max-w-lg">
+        <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-soft-sm ring-1 ring-ink/[0.04]">
+          <Image
+            src={src}
+            alt={alt}
+            fill
+            sizes="(min-width: 640px) 512px, 90vw"
+            className="object-cover"
+          />
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-soft-sm ring-1 ring-ink/[0.04]">
       <Image
@@ -268,8 +287,9 @@ export default function OurWhyPage() {
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
           <Reveal>
             <SectionImage
-              src="/images/dale-coaching.png"
-              alt="A coaching session with a group of young students"
+              src="/images/Red-mentorship.png"
+              alt="Always In The Club Foundation mentorship"
+              square
             />
           </Reveal>
           <Reveal className="mt-12 max-w-3xl">
@@ -372,8 +392,9 @@ export default function OurWhyPage() {
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
           <Reveal>
             <SectionImage
-              src="/images/tony-coaching.avif"
-              alt="A professional musician coaching a young artist"
+              src="/images/red-mentorship-v2.png"
+              alt="Always In The Club Foundation mentorship"
+              square
             />
           </Reveal>
           <Reveal className="mt-12 max-w-3xl">
