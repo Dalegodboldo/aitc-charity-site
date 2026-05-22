@@ -21,6 +21,8 @@ type Issue = {
   href: string;
   image: string;
   alt: string;
+  /** Short line naming the Mouseketeers featured in this issue. */
+  featured: string;
 };
 
 const issues: Issue[] = [
@@ -30,6 +32,8 @@ const issues: Issue[] = [
     href: "https://share.sender.net/campaigns/fXxG/mouseketeer-roundup-may",
     image: "/images/mmc30-mickey-confetti.png",
     alt: "Mouseketeers and Mickey celebrating",
+    featured:
+      "Featuring Nikki DeLoach, Rhona Bennett, Christina Aguilera, Matt Morris, JC Chasez, and Dale Godboldo.",
   },
   {
     month: "April",
@@ -37,6 +41,8 @@ const issues: Issue[] = [
     href: "https://share.sender.net/campaigns/fiqk/mouseketeer-roundup-april",
     image: "/images/mmc-holidays-musicares-facebook-event-cover.jpg",
     alt: "Mouseketeers, Why? Because It's Christmas with MusiCares",
+    featured:
+      "Featuring JC Chasez, Ryan Gosling, Raquel Herring, Chasen Hampton, and Tony Lucca.",
   },
   {
     month: "March",
@@ -44,6 +50,8 @@ const issues: Issue[] = [
     href: "https://share.sender.net/campaigns/d7pe/mouseketeer-roundup-march",
     image: "/images/disney-shot-on-stage.webp",
     alt: "Mouseketeers and students on stage at Disney Imagination Campus",
+    featured:
+      "Featuring Keri Russell, Ryan Gosling, JC Chasez, Chasen Hampton, Lindsey Alley, and Raquel Herring.",
   },
 ];
 
@@ -87,8 +95,7 @@ export function RoundupIssues() {
                   Mouseketeer Roundup
                 </p>
                 <p className="mt-4 flex-1 text-[15px] leading-relaxed text-warm-gray">
-                  A recap of Mouseketeers in entertainment, in their
-                  communities, and at the foundation.
+                  {iss.featured}
                 </p>
                 <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-red transition-colors group-hover:text-red-deep">
                   Read this issue
