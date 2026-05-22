@@ -9,7 +9,7 @@ What a night! We were honored to sponsor an evening supporting [AIDS Resource Fo
 
 ![](/images/blog/3ee52e-407f65e706be42c2a4a9eca30a78afd1-mv2-1-a847f421.png)
 
-An incredible night of throwback FUN featuring **Jody Sweetin** and **Drew Seeley**, with Tony winner **Marissa Jaret Winokur**, **Doug Jones**, **Elisa Donovan**, **Dale Godboldo**, **Nate Richert**, **Garrett Clayton**, **Romy Rosemont**, and **Myko Olivier** rounding out the cast of fan favorites from the turn of the 21st century!
+An incredible night of throwback FUN featuring **Jodie Sweetin** and **Drew Seeley**, with Tony winner **Marissa Jaret Winokur**, **Doug Jones**, **Elisa Donovan**, **Dale Godboldo**, **Nate Richert**, **Garrett Clayton**, **Romy Rosemont**, and **Myko Olivier** rounding out the cast of fan favorites from the turn of the 21st century!
 
 The event was a full-sensory, Y2K-themed experience built around the cultural moment of millennial nostalgia, and folks dressed for the decade and came in their best throwback looks! The night included original music from Grammy-nominee Yan Perchuk, a raffle, and was livestreamed globally through Dynasty Typewriter's live streaming service "Transmissions by Dynasty".
 
