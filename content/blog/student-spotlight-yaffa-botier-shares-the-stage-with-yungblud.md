@@ -7,6 +7,8 @@ author: "Always In The Club Foundation"
 
 Some musicians spend years waiting for a break. Yaffa Botier got hers when a rock star pointed into the crowd.
 
+![Rock guitarist Yaffa Botier](/images/yaffa-3.JPG)
+
 ## Pulled From the Crowd at Brooklyn Paramount
 
 At a recent Yungblud show at the Brooklyn Paramount, the British rocker did what he's become famous for — he reached past the front row and pulled a fan up onto the stage. That fan was Yaffa Botier, a nineteen-year-old guitarist. Handed a guitar in front of a packed, roaring room, Yaffa launched straight into "Fleabag" alongside the band. She didn't freeze. She didn't fumble. As one fan who was there put it, she **KILLED it.**
@@ -17,7 +19,7 @@ It's the kind of story that looks like pure luck. It isn't. Behind that moment i
 
 Yaffa is a nineteen-year-old rock guitarist based on the East Coast, and if you've spent any time on guitar TikTok or Instagram, you may already know her playing. Her feeds are full of fearless covers — Metallica's "Fade to Black," Muse's "Hysteria," Bon Jovi's "Runaway" — the kind of solos that separate players who *practice* from players who *perform*. Earlier this year she made the trip to NAMM 2026, the music industry's biggest annual gathering, where she was featured by Shreddelicious, a community that spotlights women who play guitar.
 
-You can follow Yaffa on [Instagram](https://www.instagram.com/yaffa_botier/) and [TikTok](https://www.tiktok.com/@yaffa_botier) — fair warning, you'll lose an hour.
+You can follow Yaffa on [Instagram](https://www.instagram.com/yaffa_botier/) and [TikTok](https://www.tiktok.com/@yaffa_botier), or find all of her links in one place at her [Linktree](https://linktr.ee/yaffa.botier) — fair warning, you'll lose an hour.
 
 But great players rarely get there alone. Yaffa's path runs straight through the heart of what we do at the Always In The Club Foundation.
 
