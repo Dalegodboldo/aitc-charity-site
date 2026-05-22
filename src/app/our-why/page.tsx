@@ -148,30 +148,11 @@ function SectionImage({
   src,
   alt,
   priority,
-  square,
 }: {
   src: string;
   alt: string;
   priority?: boolean;
-  /** Render in a centered 1:1 frame — for square source images that
-   *  would lose their top and bottom in the default 16:9 banner. */
-  square?: boolean;
 }) {
-  if (square) {
-    return (
-      <div className="mx-auto max-w-lg">
-        <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-soft-sm ring-1 ring-ink/[0.04]">
-          <Image
-            src={src}
-            alt={alt}
-            fill
-            sizes="(min-width: 640px) 512px, 90vw"
-            className="object-cover"
-          />
-        </div>
-      </div>
-    );
-  }
   return (
     <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl shadow-soft-sm ring-1 ring-ink/[0.04]">
       <Image
@@ -180,6 +161,21 @@ function SectionImage({
         fill
         priority={priority}
         sizes="(min-width: 1024px) 960px, 100vw"
+        className="object-cover"
+      />
+    </div>
+  );
+}
+
+/** A square (1:1) image frame, for the square brand graphics. */
+function SquareImage({ src, alt }: { src: string; alt: string }) {
+  return (
+    <div className="relative aspect-square w-full overflow-hidden rounded-2xl shadow-soft-sm ring-1 ring-ink/[0.04]">
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes="(min-width: 640px) 480px, 90vw"
         className="object-cover"
       />
     </div>
@@ -286,11 +282,16 @@ export default function OurWhyPage() {
       <section className="bg-warm-white py-16 sm:py-24">
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
           <Reveal>
-            <SectionImage
-              src="/images/Red-mentorship.png"
-              alt="Always In The Club Foundation mentorship"
-              square
-            />
+            <div className="grid gap-5 sm:grid-cols-2">
+              <SquareImage
+                src="/images/Red-mentorship.png"
+                alt="Always In The Club Foundation mentorship"
+              />
+              <SquareImage
+                src="/images/Mentors-red.png"
+                alt="Mentors at the Always In The Club Foundation"
+              />
+            </div>
           </Reveal>
           <Reveal className="mt-12 max-w-3xl">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-gold">
@@ -394,7 +395,6 @@ export default function OurWhyPage() {
             <SectionImage
               src="/images/red-mentorship-v2.png"
               alt="Always In The Club Foundation mentorship"
-              square
             />
           </Reveal>
           <Reveal className="mt-12 max-w-3xl">
