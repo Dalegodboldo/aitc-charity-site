@@ -1,7 +1,7 @@
 ---
 title: "The Circle of Mentorship: Building Your Creative Pride"
 date: "2025-02-02"
-excerpt: "Explore the Mickey Mouse Club's legacy with the Always In The Club Foundation. Subscribe for arts mentorship and youth empowerment updates!"
+excerpt: "No artist's journey is meant to be walked alone. A look at how mentorship really works, and how today's students so often become tomorrow's mentors."
 coverImage: "/images/blog/mv5bntqxnzu4nty2of5bml5banbnxkftztcwnzq2nti3ng-ac33d1ff.jpg"
 author: "Always In The Club Foundation"
 ---

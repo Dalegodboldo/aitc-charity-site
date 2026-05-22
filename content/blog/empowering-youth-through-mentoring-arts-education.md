@@ -1,7 +1,7 @@
 ---
 title: "Empowering Youth Through Mentoring & Arts Education"
 date: "2025-01-13"
-excerpt: "Explore the Mickey Mouse Club's legacy with the Always In The Club Foundation. Subscribe for arts mentorship and youth empowerment updates!"
+excerpt: "Talent alone rarely carries a young artist all the way. A look at how our programs blend arts education with mentorship, and the 1,500 young people they have reached."
 coverImage: "/images/blog/add-a-heading-2-8db9397-8280b2ca.png"
 author: "Always In The Club Foundation"
 ---

@@ -1,7 +1,7 @@
 ---
 title: "Inside Out: Understanding the Emotional Architecture of Creative"
 date: "2025-01-13"
-excerpt: "Explore the Mickey Mouse Club's legacy with the Always In The Club Foundation. Subscribe for arts mentorship and youth empowerment updates!"
+excerpt: "Creative growth is as much emotional as it is technical. How young artists learn to work with their feelings instead of against them."
 coverImage: "/images/blog/h-insideout-mobile-19751-befd1504-155edbf3.jpg"
 author: "Always In The Club Foundation"
 ---

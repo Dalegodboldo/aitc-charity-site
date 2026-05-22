@@ -1,7 +1,7 @@
 ---
 title: "A Whole New World of Possibilities: Breaking Creative Barriers"
 date: "2025-02-03"
-excerpt: "Explore the Mickey Mouse Club's legacy with the Always In The Club Foundation. Subscribe for arts mentorship and youth empowerment updates!"
+excerpt: "Most of the barriers between a young artist and a creative career are self-imposed. Here is how the right mentorship helps tear them down."
 coverImage: "/images/blog/aladdin-disney-317ecb36.jpg"
 author: "Always In The Club Foundation"
 ---

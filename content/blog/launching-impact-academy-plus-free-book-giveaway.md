@@ -1,7 +1,7 @@
 ---
 title: "Launching Impact Academy (Plus: FREE Book Giveaway!)"
 date: "2025-01-27"
-excerpt: "Explore the Mickey Mouse Club's legacy with the Always In The Club Foundation. Subscribe for arts mentorship and youth empowerment updates!"
+excerpt: "Impact Academy is here, a new training platform for anyone ready to launch or grow a nonprofit. Plus a free copy of our step-by-step founding guide."
 coverImage: "/images/blog/5512-06a9b8e2.jpg"
 author: "Always In The Club Foundation"
 ---

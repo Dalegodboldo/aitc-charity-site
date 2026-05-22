@@ -1,7 +1,7 @@
 ---
 title: "Mickey Mouse Club: A Legacy of Stars, Impact & Youth Empowerment"
 date: "2025-01-13"
-excerpt: "Explore the Mickey Mouse Club's legacy with the Always In The Club Foundation. Subscribe for arts mentorship and youth empowerment updates!"
+excerpt: "From 1989 to 1996, the 'All New' Mickey Mouse Club did more than launch superstars. It began a legacy of youth empowerment that the Always In The Club Foundation carries on today."
 coverImage: "/images/blog/9f2ec679f7f09683dafc58388062e9c3-cd6b381f.jpg"
 author: "Always In The Club Foundation"
 ---

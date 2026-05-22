@@ -1,7 +1,7 @@
 ---
 title: "Zootopia: Your Dream Role in Entertainment Awaits"
 date: "2025-01-13"
-excerpt: "Explore the Mickey Mouse Club's legacy with the Always In The Club Foundation. Subscribe for arts mentorship and youth empowerment updates!"
+excerpt: "Anyone can be anything, but big dreams still need training and guidance. How our workshops and mentorship help young creatives take their first real steps into entertainment."
 coverImage: "/images/blog/zootopia-2-ginnifer-goodwin-jason-bateman-b7aef997.png"
 author: "Always In The Club Foundation"
 ---

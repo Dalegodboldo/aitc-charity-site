@@ -1,7 +1,7 @@
 ---
 title: "Unlocking Creativity at Disney Parks"
 date: "2025-02-17"
-excerpt: "Explore the Mickey Mouse Club's legacy with the Always In The Club Foundation. Subscribe for arts mentorship and youth empowerment updates!"
+excerpt: "Disney Parks are more than entertainment. They are immersive classrooms where hands-on experiences build the creativity, confidence, and curiosity young people carry for life."
 coverImage: "/images/blog/disney-shot-on-stage-814b45ab.webp"
 author: "Always In The Club Foundation"
 ---

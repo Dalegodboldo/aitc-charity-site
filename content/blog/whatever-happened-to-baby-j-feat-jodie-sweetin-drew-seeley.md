@@ -1,7 +1,7 @@
 ---
 title: "Whatever Happened to Baby J feat. Jodie Sweetin & Drew Seeley"
 date: "2025-06-12"
-excerpt: "Explore the Mickey Mouse Club's legacy with the Always In The Club Foundation. Subscribe for arts mentorship and youth empowerment updates!"
+excerpt: "A recap of our star-studded Y2K table read of 'Whatever Happened to Baby J,' a benefit night supporting the AIDS Resource Foundation for Children."
 coverImage: "/images/blog/dsc03162.jpg-98675103.jpg"
 author: "Always In The Club Foundation"
 ---

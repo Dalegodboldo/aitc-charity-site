@@ -1,7 +1,7 @@
 ---
 title: "Beyond Your Reef: Finding Your Creative Voice with AITCF"
 date: "2025-01-13"
-excerpt: "Explore the Mickey Mouse Club's legacy with the Always In The Club Foundation. Subscribe for arts mentorship and youth empowerment updates!"
+excerpt: "Every young artist reaches a moment when they have to venture past their comfort zone. For more than 25 years, our coaches have helped them answer that call."
 coverImage: "/images/blog/moana-68c83870.webp"
 author: "Always In The Club Foundation"
 ---

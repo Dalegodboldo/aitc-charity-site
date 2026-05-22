@@ -1,7 +1,7 @@
 ---
 title: "Our Mickey & Friends Collection feat. the Leader of the Club!"
 date: "2025-07-04"
-excerpt: "Explore the Mickey Mouse Club's legacy with the Always In The Club Foundation. Subscribe for arts mentorship and youth empowerment updates!"
+excerpt: "Our Mickey & Friends Collection is here: officially licensed Disney designs curated by reunited Mouseketeers, with every purchase funding youth mentoring and arts education."
 coverImage: "/images/blog/blog-banner-4c3a0707.png"
 author: "Always In The Club Foundation"
 ---

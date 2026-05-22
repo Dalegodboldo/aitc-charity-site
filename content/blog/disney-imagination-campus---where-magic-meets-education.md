@@ -1,7 +1,7 @@
 ---
 title: "Disney Imagination Campus - Where Magic Meets Education"
 date: "2025-01-13"
-excerpt: "Explore the Mickey Mouse Club's legacy with the Always In The Club Foundation. Subscribe for arts mentorship and youth empowerment updates!"
+excerpt: "Destination: Disney Imagination Campus takes students into the parks for hands-on workshops in performing arts and academics. Our goal is to sponsor 1,000 children to attend."
 coverImage: "/images/blog/disney-campus-bright-537c76f0.png"
 author: "Always In The Club Foundation"
 ---
