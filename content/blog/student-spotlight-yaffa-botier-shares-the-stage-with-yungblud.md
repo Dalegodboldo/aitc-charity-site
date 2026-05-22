@@ -24,15 +24,11 @@ Yaffa is a nineteen-year-old rock guitarist based on the East Coast. If you foll
 
 You can follow Yaffa on [Instagram](https://www.instagram.com/yaffa_botier/) and [TikTok](https://www.tiktok.com/@yaffa_botier), or find everything in one place through her [Linktree](https://linktr.ee/yaffa.botier).
 
-But very few players get there on their own. Yaffa's path runs directly through the work we do at the Always In The Club Foundation.
-
-## How She Got Ready
-
-Yaffa's path to that stage started long before Brooklyn. She came to the Always In The Club Foundation through [Chasen Hampton](https://chasenhampton.com/), a working musician who fronts [Close Enemies](https://linktr.ee/closeenemies), the rock band led by Aerosmith bassist Tom Hamilton. He saw what she could do and pointed her toward our mentoring program, which she went on to complete.
+Yaffa's path to that stage started long before Brooklyn. She came to the Always In The Club Foundation through our own [Chasen Hampton](https://chasenhampton.com/), lead singer of [Close Enemies](https://closeenemiestheband.com/) featuring Aerosmith bassist Tom Hamilton. He saw what she could do and pointed her toward our mentoring program, which she went on to complete.
 
 ![Rock guitarist Yaffa Botier](/images/yaffa-3.JPG)
 
-Inside the program she worked with professionals who have built real careers in music. One of them was [Tony Lucca](https://www.tonylucca.com/), a singer-songwriter and touring musician who reached the finals of NBC's *The Voice*. Anyone can teach a guitarist scales. Learning how to command a room, and how to stay composed while it's watching, takes someone who has done it for real. That's what Tony gave Yaffa: not just technique, but the steadiness to say yes when the spotlight turns and the band is already counting in.
+Inside the program she worked with a professional who has built an incredible career in music. [Tony Lucca](https://www.tonylucca.com/) is a veteran singer-songwriter and touring musician with Bret Young, who also reached the finals of NBC's *The Voice*. Anyone can teach a guitarist scales. Learning how to command a room, and how to stay composed while it's watching, takes someone who has done it for real. That's what Tony gave Yaffa: not just technique, but the steadiness to say yes when the spotlight turns and the band is already counting in.
 
 ![Yaffa Botier](/images/yaffa-2-2.jpg)
 
@@ -56,4 +52,4 @@ That is what we exist to provide. If you're an artist serious about your craft, 
 
 Learn more about our mentoring and coaching programs at [www.Learn-Grow-Thrive.org](https://www.Learn-Grow-Thrive.org).
 
-Talent gets you noticed. Preparation gets you ready. We're here for the second part.
+Talent gets you noticed. Preparation gets you ready.

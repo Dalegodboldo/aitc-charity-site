@@ -16,7 +16,7 @@ type Photo = { src: string; alt: string };
 const VIDEO_SRC = "/images/yaffa-video-3.MP4";
 const PHOTOS: Photo[] = [
   { src: "/images/yaffa-1.JPG", alt: "Yaffa Botier on stage with Yungblud" },
-  { src: "/images/yaffa-2.JPG", alt: "Yaffa Botier performing live" },
+  { src: "/images/yaffa-2-2.jpg", alt: "Yaffa Botier performing live" },
   { src: "/images/yaffa-3.JPG", alt: "Yaffa Botier on tour" },
 ];
 const LEARN_MORE_URL = "https://www.Learn-Grow-Thrive.org";
