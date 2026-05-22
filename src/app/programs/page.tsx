@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
   AlertTriangle,
+  ArrowRight,
   ArrowUpRight,
   Briefcase,
   Brush,
@@ -529,6 +531,24 @@ export default function ProgramsPage() {
                 real-world learning opportunities.
               </p>
             </article>
+          </Reveal>
+
+          {/* CTA across to the Our Why page */}
+          <Reveal delay={320} className="mt-12">
+            <div className="flex flex-col items-start gap-4 rounded-2xl border border-border bg-cream p-7 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:p-8">
+              <p className="text-[16px] leading-relaxed text-ink">
+                <span className="font-semibold">Why does this matter?</span>{" "}
+                We gathered the research behind arts education and mentorship
+                in one place.
+              </p>
+              <Link
+                href="/our-why"
+                className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-red px-7 text-base font-semibold text-cream no-underline shadow-[0_12px_28px_-12px_rgba(171,7,7,0.55)] transition-colors hover:bg-red-deep hover:text-cream"
+              >
+                Read Our Why
+                <ArrowRight className="h-4 w-4" aria-hidden />
+              </Link>
+            </div>
           </Reveal>
         </div>
       </section>
