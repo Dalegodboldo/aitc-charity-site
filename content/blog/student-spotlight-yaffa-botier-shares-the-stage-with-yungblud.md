@@ -28,7 +28,14 @@ Yaffa's path to that stage started long before Brooklyn. She came to the Always 
 
 ![Rock guitarist Yaffa Botier](/images/yaffa-3.JPG)
 
-Inside the program she worked with a professional who has built an incredible career in music. [Tony Lucca](https://www.tonylucca.com/) is a veteran singer-songwriter and touring musician with [Brett Young](https://www.brettyoungmusic.com/), who also reached the finals of NBC's *The Voice*. Anyone can teach a guitarist scales. Learning how to command a room, and how to stay composed while it's watching, takes someone who has done it for real. That's what Tony gave Yaffa: the steadiness to say yes when the spotlight turns and the band is already counting in.
+<div class="post-split">
+  <div class="post-split-text">
+    <p>Inside the program she worked with a professional who has built an incredible career in music. <a href="https://www.tonylucca.com/">Tony Lucca</a> is a veteran singer-songwriter and touring musician with <a href="https://www.brettyoungmusic.com/">Brett Young</a>, who also reached the finals of NBC's <em>The Voice</em>. Anyone can teach a guitarist scales. Learning how to command a room, and how to stay composed while it's watching, takes someone who has done it for real. That's what Tony gave Yaffa: the steadiness to say yes when the spotlight turns and the band is already counting in.</p>
+  </div>
+  <div class="post-split-media">
+    <img src="/images/tony-stage.png" alt="Tony Lucca performing on stage" />
+  </div>
+</div>
 
 ![Yaffa Botier](/images/yaffa-2-2.jpg)
 

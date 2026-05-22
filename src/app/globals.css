@@ -162,6 +162,41 @@
   font-weight: 400;
 }
 
+/* Blog: split feature row — a paragraph beside an image. Stacks on
+   mobile; two even columns on sm+, where the image fills its column
+   and crops (object-fit: cover) so both columns stay flush. Used in
+   post markdown as a raw <div class="post-split">. */
+.post-split {
+  display: grid;
+  gap: 1.5rem;
+  margin: 1.75rem 0;
+}
+.post-split-text > p {
+  margin: 0;
+}
+.post-split-media {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+.post-split-media img {
+  margin: 0;
+  display: block;
+  width: 100%;
+}
+@media (min-width: 640px) {
+  .post-split {
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+  }
+  .post-split-media img {
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 /* ---------------------------------------------------------------
    Iris / spotlight reveal — used by Mission and Featured Campaigns
    cards. The .iris-back element starts fully clipped to a 0% circle
