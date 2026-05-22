@@ -69,6 +69,7 @@ export const primaryNav: readonly NavItem[] = [
   { href: "/programs", label: "Programs" },
   { href: "/impact", label: "Impact" },
   { href: "/about", label: "About" },
+  { href: "/our-why", label: "Our Why" },
   { href: "/team", label: "Team" },
   { href: "/blog", label: "All Ears" },
   { href: siteConfig.external.events, label: "Events", external: true, mobileOnly: true },
