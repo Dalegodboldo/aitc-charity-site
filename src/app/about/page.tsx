@@ -20,7 +20,7 @@ export default function AboutPage() {
       <PageIntro
         eyebrow="About"
         title="A foundation built on lifelong friendship"
-        body="Filmed at Hollywood Studios in Walt Disney World, the “All New” Mickey Mouse Club helped raise a generation of socially conscious artists, entrepreneurs and humanitarians. Today, that family of Mouseketeers and thousands of fans continue to make a difference."
+        body="The ’90s Mickey Mouse Club helped raise a generation of socially conscious artists, entrepreneurs and humanitarians. Today, that family of Mouseketeers and thousands of fans continue to make a difference."
       />
 
       {/* About the 'All New' Mickey Mouse Club */}
