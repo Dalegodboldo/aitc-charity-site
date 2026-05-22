@@ -9,6 +9,12 @@ export type PostFrontmatter = {
   date: string;
   excerpt: string;
   coverImage?: string;
+  /**
+   * CSS object-position for the cover image (e.g. "center top").
+   * Useful when the cover is a portrait photo and the default centred
+   * crop would cut off the subject. Optional; defaults to centred.
+   */
+  coverPosition?: string;
   author: string;
 };
 
@@ -52,7 +58,12 @@ export async function getPost(slug: string): Promise<PostWithContent | null> {
   );
   if (!filename) return null;
   const { data, content } = await readPostFile(filename);
-  const processed = await remark().use(remarkHtml).process(content);
+  // sanitize: false lets posts embed raw HTML (e.g. <video>). Safe here
+  // because every post is authored in-repo by the site team and reviewed
+  // in git — there is no user-generated blog content.
+  const processed = await remark()
+    .use(remarkHtml, { sanitize: false })
+    .process(content);
   return {
     slug,
     ...data,

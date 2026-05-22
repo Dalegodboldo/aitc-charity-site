@@ -2,22 +2,28 @@
 title: "Student Spotlight: Yaffa Botier Shares the Stage with Yungblud"
 date: "2026-05-21"
 excerpt: "Rock guitarist Yaffa Botier was mentored by Tony Lucca, introduced to our programs by Chasen Hampton — and recently pulled on stage by Yungblud himself."
+coverImage: "/images/yaffa-1.JPG"
+coverPosition: "center top"
 author: "Always In The Club Foundation"
 ---
 
 Some musicians spend years waiting for a break. Yaffa Botier got hers when a rock star pointed into the crowd.
 
-![Rock guitarist Yaffa Botier](/images/yaffa-3.JPG)
-
 ## Pulled From the Crowd at Brooklyn Paramount
 
 At a recent Yungblud show at the Brooklyn Paramount, the British rocker did what he's become famous for — he reached past the front row and pulled a fan up onto the stage. That fan was Yaffa Botier, a nineteen-year-old guitarist. Handed a guitar in front of a packed, roaring room, Yaffa launched straight into "Fleabag" alongside the band. She didn't freeze. She didn't fumble. As one fan who was there put it, she **KILLED it.**
+
+![Rock guitarist Yaffa Botier](/images/yaffa-3.JPG)
 
 It's the kind of story that looks like pure luck. It isn't. Behind that moment is a guitarist who has put in the hours — and a chain of mentors who recognized her talent and made sure she had somewhere to grow it.
 
 ## Meet Yaffa Botier
 
 Yaffa is a nineteen-year-old rock guitarist based on the East Coast, and if you've spent any time on guitar TikTok or Instagram, you may already know her playing. Her feeds are full of fearless covers — Metallica's "Fade to Black," Muse's "Hysteria," Bon Jovi's "Runaway" — the kind of solos that separate players who *practice* from players who *perform*. Earlier this year she made the trip to NAMM 2026, the music industry's biggest annual gathering, where she was featured by Shreddelicious, a community that spotlights women who play guitar.
+
+<video controls playsinline preload="metadata" src="/images/yaffa-video-3.MP4" style="width: 100%; border-radius: 1rem; display: block;">
+  Your browser doesn't support embedded video. <a href="/images/yaffa-video-3.MP4">Watch the clip here.</a>
+</video>
 
 You can follow Yaffa on [Instagram](https://www.instagram.com/yaffa_botier/) and [TikTok](https://www.tiktok.com/@yaffa_botier), or find all of her links in one place at her [Linktree](https://linktr.ee/yaffa.botier) — fair warning, you'll lose an hour.
 
@@ -40,6 +46,8 @@ Chasen knows exactly what a young artist needs, because he was one. When he cros
 This is the part of Yaffa's story we love most: it comes full circle.
 
 A Mouseketeer opened a door. A Mouseketeer became a mentor. And a young guitarist walked through — onto her own stage, in her own spotlight.
+
+![Yaffa Botier](/images/yaffa-2.JPG)
 
 It's exactly what the Always In The Club Foundation was built to do. Through our mentoring, coaching sessions, workshops, and Experiential Learning opportunities, we connect young creatives with working professionals — people who have already lived the journey and can shorten the road. Our coaches' students have gone on to sign with labels including Disney, Capitol, and Universal Music Group, and to perform on stages from Coachella to *Jimmy Kimmel Live!*
 

@@ -62,6 +62,11 @@ export default async function BlogIndex() {
                           alt={p.title}
                           fill
                           sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                          style={
+                            p.coverPosition
+                              ? { objectPosition: p.coverPosition }
+                              : undefined
+                          }
                           className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
                         />
                       </div>
