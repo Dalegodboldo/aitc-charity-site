@@ -43,6 +43,14 @@ export async function GET(
   // case variations) and any bare {{ firstname }} occurrences.
   html = html.replace(/Hi\s*\{\{\s*firstname\s*\}\}\s*,?/gi, "");
   html = html.replace(/\{\{\s*firstname\s*\}\}/gi, "");
+  // sender.net's share-URL preview already substitutes
+  // {{ firstname }} server-side with an empty <span></span>, leaving
+  // a literal "Hi ," paragraph that the rules above can't catch.
+  // Remove the whole greeting paragraph in that form.
+  html = html.replace(
+    /<p[^>]*>\s*Hi\s*(?:<span[^>]*>\s*<\/span>\s*)?,?\s*<\/p>/gi,
+    "",
+  );
 
   // Defensive: strip <script> tags. Email HTML almost never contains
   // them, but the iframe still gives us isolation either way.
