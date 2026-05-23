@@ -81,14 +81,26 @@ export const primaryNav: readonly NavItem[] = [
   },
   { href: siteConfig.external.store, label: "Store", external: true },
   {
-    href: "/mouseketeer-roundup",
-    label: "Mouseketeer Roundup",
+    href: siteConfig.external.book,
+    label: "The MMC Book",
+    external: true,
     mobileOnly: true,
   },
   {
     href: siteConfig.external.linktree,
     label: "Linktree (Explore the Club)",
     external: true,
+    mobileOnly: true,
+  },
+  {
+    href: siteConfig.external.mainSite,
+    label: "Main Website",
+    external: true,
+    mobileOnly: true,
+  },
+  {
+    href: "/mouseketeer-roundup",
+    label: "Mouseketeer Roundup",
     mobileOnly: true,
   },
 ];

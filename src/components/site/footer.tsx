@@ -68,11 +68,16 @@ const externalLinkGroups: { label: string; links: FooterLink[] }[] = [
     ],
   },
   {
-    label: "Read & explore",
+    label: "Get inspired",
     links: [
       {
         href: "/blog",
         label: "All Ears — Stories from the Club",
+        external: false,
+      },
+      {
+        href: "/mouseketeer-roundup",
+        label: "Mouseketeer Roundup",
         external: false,
       },
       {
@@ -81,8 +86,6 @@ const externalLinkGroups: { label: string; links: FooterLink[] }[] = [
         external: true,
       },
       { href: siteConfig.external.annualReport, label: "Annual Report", external: true },
-      { href: siteConfig.external.book, label: "The MMC Book", external: true },
-      { href: siteConfig.external.mainSite, label: "Main Website", external: true },
     ],
   },
 ];
@@ -132,7 +135,11 @@ export function Footer() {
             </h2>
             <ul className="mt-5 space-y-3 text-[15px]">
               {primaryNav
-                .filter((item) => item.href !== "/blog")
+                .filter(
+                  (item) =>
+                    item.href !== "/blog" &&
+                    item.href !== "/mouseketeer-roundup",
+                )
                 .map((item) => (
                   <li key={item.href}>
                     {item.external ? (
