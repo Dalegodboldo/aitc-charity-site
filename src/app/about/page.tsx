@@ -12,6 +12,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Inspired by the 'All New' Mickey Mouse Club and built by reunited cast members. Learn how Always In The Club Foundation began.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

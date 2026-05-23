@@ -24,6 +24,7 @@ export const metadata: Metadata = {
   title: "Our Impact",
   description:
     "Mouseketeers have helped raise more than $4.5 million in support of youth education, mentoring, critically ill children, and many other causes.",
+  alternates: { canonical: "/impact" },
 };
 
 type ImpactCard = {

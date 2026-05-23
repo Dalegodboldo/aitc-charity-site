@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "All Ears",
   description:
     "All Ears — ideas, stories, and resources from the Always In The Club Foundation's mission of youth mentorship and arts education.",
+  alternates: { canonical: "/blog" },
 };
 
 export default async function BlogIndex() {

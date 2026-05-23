@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Our Team",
   description:
     "Meet the artists, educators, and entrepreneurs leading Always In The Club Foundation.",
+  alternates: { canonical: "/team" },
 };
 
 type Person = {

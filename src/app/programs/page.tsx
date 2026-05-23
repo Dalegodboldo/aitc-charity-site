@@ -38,6 +38,7 @@ export const metadata: Metadata = {
   title: "Programs & Initiatives",
   description:
     "Mentoring, Experiential Learning, Workshops & Coaching, and the MMC'89 Social Impact Initiative.",
+  alternates: { canonical: "/programs" },
 };
 
 type Program = {

@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Our Why",
   description:
     "The research behind our work: how arts education and mentorship protect young people's mental health, lift academic achievement, and open real futures.",
+  alternates: { canonical: "/our-why" },
 };
 
 type Stat = {

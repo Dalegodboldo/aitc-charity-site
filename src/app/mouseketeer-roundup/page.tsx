@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Mouseketeer Roundup",
   description:
     "A monthly update on your favorite Mouseketeers making an impact in the entertainment industry and in their communities, delivered straight to your inbox.",
+  alternates: { canonical: "/mouseketeer-roundup" },
 };
 
 const SIGNUP_URL = "https://stats.sender.net/forms/dwWNMd/view";
