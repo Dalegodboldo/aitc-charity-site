@@ -52,13 +52,6 @@ const externalLinkGroups: { label: string; links: FooterLink[] }[] = [
     label: "Get involved",
     links: [
       { href: siteConfig.external.donate, label: "Donate", external: true },
-      { href: siteConfig.external.events, label: "Events", external: true },
-      {
-        href: siteConfig.external.gallery,
-        label: "Campaign / Event Gallery",
-        external: true,
-      },
-      { href: siteConfig.external.store, label: "Store", external: true },
       { href: siteConfig.external.bookTeers, label: "Book the 'Teers", external: true },
       { href: siteConfig.external.newsletter, label: "Newsletter", external: true },
     ],
@@ -77,9 +70,8 @@ const externalLinkGroups: { label: string; links: FooterLink[] }[] = [
         external: true,
       },
       { href: siteConfig.external.annualReport, label: "Annual Report", external: true },
-      { href: siteConfig.external.mainSite, label: "Main Website", external: true },
       { href: siteConfig.external.book, label: "The MMC Book", external: true },
-      { href: siteConfig.external.linktree, label: "Linktree", external: true },
+      { href: siteConfig.external.mainSite, label: "Main Website", external: true },
     ],
   },
 ];
