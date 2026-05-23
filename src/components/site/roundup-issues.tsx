@@ -30,8 +30,8 @@ const issues: Issue[] = [
     month: "May",
     year: "2026",
     href: "https://share.sender.net/campaigns/fXxG/mouseketeer-roundup-may",
-    image: "/images/mmc30-mickey-confetti.png",
-    alt: "Mouseketeers and Mickey celebrating",
+    image: "/images/roundup-may-2026.png",
+    alt: "Featured in the May Mouseketeer Roundup",
     featured:
       "Featuring Nikki DeLoach, Rhona Bennett, Christina Aguilera, Matt Morris, JC Chasez, and Dale Godboldo.",
   },
@@ -39,8 +39,8 @@ const issues: Issue[] = [
     month: "April",
     year: "2026",
     href: "https://share.sender.net/campaigns/fiqk/mouseketeer-roundup-april",
-    image: "/images/mmc-holidays-musicares-facebook-event-cover.jpg",
-    alt: "Mouseketeers, Why? Because It's Christmas with MusiCares",
+    image: "/images/roundup-april-2026.jpg",
+    alt: "Featured in the April Mouseketeer Roundup",
     featured:
       "Featuring JC Chasez, Ryan Gosling, Raquel Herring, Chasen Hampton, and Tony Lucca.",
   },
@@ -48,8 +48,8 @@ const issues: Issue[] = [
     month: "March",
     year: "2026",
     href: "https://share.sender.net/campaigns/d7pe/mouseketeer-roundup-march",
-    image: "/images/disney-shot-on-stage.webp",
-    alt: "Mouseketeers and students on stage at Disney Imagination Campus",
+    image: "/images/roundup-march-2026.jpg",
+    alt: "Featured in the March Mouseketeer Roundup",
     featured:
       "Featuring Keri Russell, Ryan Gosling, JC Chasez, Chasen Hampton, Lindsey Alley, and Raquel Herring.",
   },
