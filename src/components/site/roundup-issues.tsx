@@ -159,59 +159,68 @@ function RoundupModal({
       role="dialog"
       aria-modal="true"
       aria-labelledby="roundup-modal-title"
-      className="fixed inset-0 z-[60] overflow-y-auto bg-ink/65 backdrop-blur-sm"
+      className="fixed inset-0 z-[60] flex items-center justify-center bg-ink/65 p-3 backdrop-blur-sm sm:p-6"
       onClick={(e) => {
-        // Click anywhere outside the panel closes the modal (the
-        // backdrop is the entire scroll container around the panel).
-        if (!(e.target as Element).closest("[data-modal-panel]")) onClose();
+        if (e.target === e.currentTarget) onClose();
       }}
     >
-      <div className="flex min-h-full items-start justify-center p-3 sm:p-6">
-        <div
-          data-modal-panel
-          className="relative w-full max-w-3xl overflow-hidden rounded-2xl bg-cream shadow-soft"
-        >
-          <header className="sticky top-0 z-10 flex items-center justify-between gap-3 border-b border-border bg-cream px-5 py-3 sm:px-7 sm:py-4">
-            <h2
-              id="roundup-modal-title"
-              className="font-display text-lg font-medium leading-tight tracking-tight text-ink sm:text-xl"
-            >
-              Mouseketeer Roundup{" "}
-              <span className="text-warm-gray">
-                {open.month} {open.year}
-              </span>
-            </h2>
-            <div className="flex items-center gap-2">
-              <a
-                href={open.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hidden h-9 items-center gap-1.5 rounded-full border border-border bg-cream px-3 text-xs font-medium text-warm-gray no-underline transition-colors hover:border-ink/30 hover:text-ink sm:inline-flex"
-              >
-                Open in new tab
-                <ArrowUpRight className="h-3.5 w-3.5" aria-hidden />
-              </a>
-              <button
-                ref={closeBtnRef}
-                type="button"
-                onClick={onClose}
-                aria-label={`Close the ${open.month} ${open.year} Mouseketeer Roundup`}
-                className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink text-cream shadow-soft-sm transition-colors hover:bg-red focus-visible:bg-red"
-              >
-                <X className="h-5 w-5" aria-hidden />
-              </button>
-            </div>
-          </header>
-          <div className="bg-warm-white">
-            <iframe
-              src={`/api/roundup-proxy/${open.slug}`}
-              title={`Mouseketeer Roundup ${open.month} ${open.year}`}
-              className="block w-full border-0"
-              style={{ height: "240vh" }}
-              loading="lazy"
-            />
-          </div>
+      {/* The panel is capped at 95svh and the iframe inside fills the
+       *  remaining space. We use the iframe's intrinsic scrolling rather
+       *  than scrolling the whole modal panel, because outer-scrolling a
+       *  tall fixed panel on iOS produces noticeable jank near the end
+       *  of the scroll. */}
+      <div
+        className="relative flex w-full max-w-3xl flex-col overflow-hidden rounded-2xl bg-cream shadow-soft"
+        style={{ height: "95svh" }}
+      >
+        <header className="flex items-center gap-3 border-b border-border bg-cream px-5 py-3 sm:px-7 sm:py-4">
+          <h2
+            id="roundup-modal-title"
+            className="min-w-0 flex-1 truncate font-display text-lg font-medium leading-tight tracking-tight text-ink sm:text-xl"
+          >
+            Mouseketeer Roundup{" "}
+            <span className="text-warm-gray">
+              {open.month} {open.year}
+            </span>
+          </h2>
+          <button
+            ref={closeBtnRef}
+            type="button"
+            onClick={onClose}
+            aria-label={`Close the ${open.month} ${open.year} Mouseketeer Roundup`}
+            className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-ink text-cream shadow-soft-sm transition-colors hover:bg-red focus-visible:bg-red"
+          >
+            <X className="h-5 w-5" aria-hidden />
+          </button>
+        </header>
+        <div className="flex-1 overflow-hidden bg-warm-white">
+          <iframe
+            src={`/api/roundup-proxy/${open.slug}`}
+            title={`Mouseketeer Roundup ${open.month} ${open.year}`}
+            className="block h-full w-full border-0"
+          />
         </div>
+        <footer className="flex shrink-0 items-center justify-center border-t border-border bg-cream px-5 py-3 sm:px-7">
+          {/* Bottom "Open in browser" CTA — visible on every screen
+           *  size, with a click handler that calls window.open
+           *  explicitly. In-app browsers (Facebook, Instagram, etc.)
+           *  sometimes ignore target="_blank" but respond to an
+           *  explicit window.open, giving us a better chance of
+           *  escaping the webview. */}
+          <a
+            href={open.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => {
+              const w = window.open(open.href, "_blank", "noopener,noreferrer");
+              if (w) e.preventDefault();
+            }}
+            className="inline-flex items-center gap-1.5 text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
+          >
+            Open this issue in your browser
+            <ArrowUpRight className="h-4 w-4" aria-hidden />
+          </a>
+        </footer>
       </div>
     </div>,
     document.body,
