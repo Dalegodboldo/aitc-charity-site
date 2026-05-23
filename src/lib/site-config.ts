@@ -71,6 +71,7 @@ export const primaryNav: readonly NavItem[] = [
   { href: "/about", label: "About" },
   { href: "/our-why", label: "Our Why" },
   { href: "/team", label: "Team" },
+  { href: siteConfig.external.store, label: "Store", external: true },
   { href: "/blog", label: "All Ears" },
   { href: siteConfig.external.events, label: "Events", external: true, mobileOnly: true },
   {
@@ -79,7 +80,6 @@ export const primaryNav: readonly NavItem[] = [
     external: true,
     mobileOnly: true,
   },
-  { href: siteConfig.external.store, label: "Store", external: true },
   {
     href: siteConfig.external.book,
     label: "The MMC Book",

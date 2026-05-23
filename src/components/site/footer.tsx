@@ -234,25 +234,16 @@ export function Footer() {
                   Phone
                 </p>
                 {siteConfig.contact.phones.map((phone) => (
-                  <a
-                    key={phone}
-                    href={`tel:${phone.replace(/\./g, "")}`}
-                    className="block text-warm-gray no-underline transition-colors hover:text-red"
-                  >
+                  <p key={phone} className="block text-warm-gray">
                     {phone}
-                  </a>
+                  </p>
                 ))}
               </li>
               <li>
                 <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-ink/70">
                   Email
                 </p>
-                <a
-                  href={`mailto:${siteConfig.contact.email}`}
-                  className="text-warm-gray no-underline transition-colors hover:text-red"
-                >
-                  {siteConfig.contact.email}
-                </a>
+                <p className="text-warm-gray">{siteConfig.contact.email}</p>
               </li>
             </ul>
           </div>
