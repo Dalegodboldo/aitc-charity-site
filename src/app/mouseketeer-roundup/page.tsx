@@ -108,9 +108,6 @@ export default function MouseketeerRoundupPage() {
             <h2 className="font-display text-3xl font-medium leading-tight tracking-tight sm:text-4xl">
               Join the Roundup
             </h2>
-            <p className="mt-5 text-base leading-relaxed text-warm-gray">
-              Free, one email a month, unsubscribe any time.
-            </p>
             <a
               href={SIGNUP_URL}
               target="_blank"
