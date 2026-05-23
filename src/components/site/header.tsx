@@ -2,11 +2,20 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DONATE_MODAL_OPEN_EVENT } from "@/components/site/donate-modal";
 import { primaryNav, siteConfig } from "@/lib/site-config";
+
+/** True when the visitor is on `href` or any sub-route of it (so a
+ *  blog post still highlights the "All Ears" link, etc.). */
+function isActivePath(pathname: string, href: string) {
+  if (pathname === href) return true;
+  if (href === "/") return false;
+  return pathname.startsWith(href + "/");
+}
 
 function Wordmark({ className }: { className?: string }) {
   return (
@@ -35,6 +44,7 @@ function Wordmark({ className }: { className?: string }) {
 
 export function Header() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   // Lock body scroll while the mobile menu is open.
   useEffect(() => {
@@ -74,7 +84,13 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="text-[15px] font-medium text-ink no-underline transition-colors hover:text-red"
+                  aria-current={isActivePath(pathname, item.href) ? "page" : undefined}
+                  className={cn(
+                    "text-[15px] font-medium no-underline transition-colors hover:text-red",
+                    isActivePath(pathname, item.href)
+                      ? "text-gold hover:text-gold"
+                      : "text-ink",
+                  )}
                 >
                   {item.label}
                 </Link>
@@ -164,7 +180,13 @@ export function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="block rounded-xl px-3 py-3 font-display text-2xl font-medium text-ink no-underline transition-colors hover:bg-warm-white hover:text-red"
+                aria-current={isActivePath(pathname, item.href) ? "page" : undefined}
+                className={cn(
+                  "block rounded-xl px-3 py-3 font-display text-2xl font-medium no-underline transition-colors hover:bg-warm-white hover:text-red",
+                  isActivePath(pathname, item.href)
+                    ? "text-gold hover:text-gold"
+                    : "text-ink",
+                )}
               >
                 {item.label}
               </Link>

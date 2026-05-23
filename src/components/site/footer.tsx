@@ -1,7 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { DonateTrigger } from "@/components/site/donate-trigger";
+import { cn } from "@/lib/utils";
 import { primaryNav, siteConfig } from "@/lib/site-config";
+
+/** True when the visitor is on `href` or any sub-route of it. */
+function isActivePath(pathname: string, href: string) {
+  if (pathname === href) return true;
+  if (href === "/") return false;
+  return pathname.startsWith(href + "/");
+}
 
 type IconProps = { className?: string };
 
@@ -78,6 +89,7 @@ const externalLinkGroups: { label: string; links: FooterLink[] }[] = [
 
 export function Footer() {
   const year = new Date().getFullYear();
+  const pathname = usePathname();
   return (
     <footer className="mt-20 border-t border-border bg-warm-white">
       <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
@@ -135,7 +147,13 @@ export function Footer() {
                     ) : (
                       <Link
                         href={item.href}
-                        className="text-warm-gray no-underline transition-colors hover:text-red"
+                        aria-current={isActivePath(pathname, item.href) ? "page" : undefined}
+                        className={cn(
+                          "no-underline transition-colors hover:text-red",
+                          isActivePath(pathname, item.href)
+                            ? "text-gold hover:text-gold"
+                            : "text-warm-gray",
+                        )}
                       >
                         {item.label}
                       </Link>
@@ -164,7 +182,17 @@ export function Footer() {
                           href={link.href}
                           target={link.external ? "_blank" : undefined}
                           rel={link.external ? "noopener noreferrer" : undefined}
-                          className="text-warm-gray no-underline transition-colors hover:text-red"
+                          aria-current={
+                            !link.external && isActivePath(pathname, link.href)
+                              ? "page"
+                              : undefined
+                          }
+                          className={cn(
+                            "no-underline transition-colors hover:text-red",
+                            !link.external && isActivePath(pathname, link.href)
+                              ? "text-gold hover:text-gold"
+                              : "text-warm-gray",
+                          )}
                         >
                           {link.label}
                         </a>
