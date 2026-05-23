@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ArrowUpRight, Check, Mail } from "lucide-react";
 import { PageIntro } from "@/components/site/page-intro";
 import { Reveal } from "@/components/site/reveal";
@@ -31,8 +32,20 @@ export default function MouseketeerRoundupPage() {
       <section className="bg-warm-white pb-16 pt-4 sm:pb-20 sm:pt-8">
         <div className="mx-auto max-w-3xl px-5 sm:px-8">
           <Reveal>
-            <div className="relative overflow-hidden rounded-2xl border border-border bg-cream p-8 shadow-soft-sm sm:p-10">
-              <span aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-red" />
+            <div className="relative overflow-hidden rounded-2xl border border-border bg-cream shadow-soft-sm">
+              <span aria-hidden className="absolute inset-x-0 top-0 z-10 h-[3px] bg-red" />
+              {/* Hero banner for the subscribe block. */}
+              <div className="relative aspect-[16/9] w-full overflow-hidden bg-warm-white">
+                <Image
+                  src="/images/mmc30-confetti-mickey-fist-pump.jpg"
+                  alt="Mouseketeers and Mickey Mouse celebrating"
+                  fill
+                  priority
+                  sizes="(min-width: 768px) 720px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-8 sm:p-10">
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-red text-cream shadow-soft-sm">
                 <Mail className="h-6 w-6" aria-hidden />
               </span>
@@ -64,6 +77,7 @@ export default function MouseketeerRoundupPage() {
                 Subscribe
                 <ArrowUpRight className="h-4 w-4" aria-hidden />
               </a>
+              </div>
             </div>
           </Reveal>
         </div>
