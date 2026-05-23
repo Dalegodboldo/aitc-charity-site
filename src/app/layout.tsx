@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Newsreader, Public_Sans } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { cn } from "@/lib/utils";
 import { BookModal } from "@/components/site/book-modal";
 import { DonateModal } from "@/components/site/donate-modal";
@@ -114,6 +115,7 @@ export default function RootLayout({
         <Footer />
         <BookModal />
         <DonateModal />
+        <Analytics />
       </body>
     </html>
   );
