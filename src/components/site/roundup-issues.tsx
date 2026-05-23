@@ -18,6 +18,10 @@ import { Reveal } from "@/components/site/reveal";
 type Issue = {
   month: string;
   year: string;
+  /** Path-friendly slug used by the same-origin proxy that strips the
+   *  "Hi {{ firstname }}," personalization placeholder. */
+  slug: string;
+  /** Original sender.net share URL, used for "Open in new tab". */
   href: string;
   image: string;
   alt: string;
@@ -29,6 +33,7 @@ const issues: Issue[] = [
   {
     month: "May",
     year: "2026",
+    slug: "may",
     href: "https://share.sender.net/campaigns/fXxG/mouseketeer-roundup-may",
     image: "/images/roundup-may-2026.png",
     alt: "Featured in the May Mouseketeer Roundup",
@@ -38,6 +43,7 @@ const issues: Issue[] = [
   {
     month: "April",
     year: "2026",
+    slug: "april",
     href: "https://share.sender.net/campaigns/fiqk/mouseketeer-roundup-april",
     image: "/images/roundup-april-2026.jpg",
     alt: "Featured in the April Mouseketeer Roundup",
@@ -47,6 +53,7 @@ const issues: Issue[] = [
   {
     month: "March",
     year: "2026",
+    slug: "march",
     href: "https://share.sender.net/campaigns/d7pe/mouseketeer-roundup-march",
     image: "/images/roundup-march-2026.jpg",
     alt: "Featured in the March Mouseketeer Roundup",
@@ -197,7 +204,7 @@ function RoundupModal({
           </header>
           <div className="bg-warm-white">
             <iframe
-              src={open.href}
+              src={`/api/roundup-proxy/${open.slug}`}
               title={`Mouseketeer Roundup ${open.month} ${open.year}`}
               className="block w-full border-0"
               style={{ height: "240vh" }}
