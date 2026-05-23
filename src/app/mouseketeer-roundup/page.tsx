@@ -37,8 +37,8 @@ export default function MouseketeerRoundupPage() {
               {/* Hero banner for the subscribe block. */}
               <div className="relative aspect-[16/9] w-full overflow-hidden bg-warm-white">
                 <Image
-                  src="/images/mmc30-confetti-mickey-fist-pump.jpg"
-                  alt="Mouseketeers and Mickey Mouse celebrating"
+                  src="/images/Ryan-mmc-shirt.png"
+                  alt="Ryan Gosling wearing a Mickey Mouse Club shirt"
                   fill
                   priority
                   sizes="(min-width: 768px) 720px, 100vw"
