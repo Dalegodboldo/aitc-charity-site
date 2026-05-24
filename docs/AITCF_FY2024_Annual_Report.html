@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Always In The Club Foundation — Fiscal Year 2024 Annual Report. DBA Create Impact Now. Education, Arts, Resources… Social Impact.">
+<meta name="theme-color" content="#AB0707">
+<meta property="og:title" content="AITC Foundation — FY 2024 Annual Report">
+<meta property="og:description" content="A year of strengthening fundamentals, launching the book, and deepening our community of supporters.">
+<meta property="og:type" content="article">
+<title>FY 2024 Annual Report — Always In The Club Foundation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --red: #AB0707;
+    --red-deep: #7A0404;
+    --ink: #1A1A1A;
+    --ink-soft: #2D2D2D;
+    --muted: #6B6B6B;
+    --paper: #FAF7F2;
+    --paper-warm: #F4EFE7;
+    --accent: #FFF8EC;
+    --rule: #E6DFD6;
+    --rule-strong: #C7BDAE;
+    --gold: #B8860B;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: "Newsreader", Georgia, serif;
+    font-weight: 400;
+    font-size: 19px;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  .display { font-family: "Fraunces", Georgia, serif; font-variation-settings: "SOFT" 50, "WONK" 0; }
+  .sans { font-family: "Newsreader", sans-serif; }
+
+  /* ============ TOP BAR ============ */
+  .topbar {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250, 247, 242, 0.96);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--rule);
+    padding: 14px 32px;
+  }
+  .topbar-inner {
+    max-width: 1240px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px;
+  }
+  .topbar-brand {
+    font-family: "Fraunces", serif; font-weight: 600; font-size: 15px;
+    letter-spacing: 0.04em; color: var(--ink); text-decoration: none;
+  }
+  .topbar-brand em { font-style: italic; color: var(--red); font-weight: 400; }
+  .topbar-nav {
+    display: flex; gap: 24px; font-size: 13px; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--muted);
+  }
+  .topbar-nav a {
+    color: var(--muted); text-decoration: none;
+    border-bottom: 1px solid transparent; padding-bottom: 2px; transition: all 0.2s;
+  }
+  .topbar-nav a:hover { color: var(--red); border-bottom-color: var(--red); }
+  @media (max-width: 800px) { .topbar-nav { display: none; } }
+
+  /* ============ LAYOUT ============ */
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+  .reading { max-width: 720px; margin: 0 auto; padding: 0 32px; }
+  section { padding: 96px 0; border-bottom: 1px solid var(--rule); }
+  section:last-of-type { border-bottom: none; }
+
+  /* ============ HERO ============ */
+  .hero {
+    padding: 100px 32px 120px;
+    text-align: center;
+    background: linear-gradient(180deg, var(--paper-warm) 0%, var(--paper) 100%);
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: ""; position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+    width: 800px; height: 800px;
+    background: radial-gradient(circle, rgba(171, 7, 7, 0.04) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    font-family: "Newsreader", sans-serif;
+    font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--red); font-weight: 500;
+    margin-bottom: 28px; position: relative;
+  }
+  .hero-title {
+    font-family: "Fraunces", serif;
+    font-size: clamp(58px, 11vw, 132px);
+    font-weight: 400;
+    line-height: 0.95;
+    color: var(--ink);
+    letter-spacing: -0.025em;
+    font-variation-settings: "SOFT" 100, "WONK" 1;
+    margin-bottom: 16px;
+    position: relative;
+  }
+  .hero-title em {
+    font-style: italic; color: var(--red);
+    font-variation-settings: "SOFT" 100, "WONK" 1;
+  }
+  .hero-year {
+    font-family: "Fraunces", serif; font-style: italic; font-weight: 300;
+    font-size: clamp(28px, 4vw, 44px); color: var(--muted);
+    letter-spacing: -0.01em; margin-bottom: 40px;
+    position: relative;
+  }
+  .hero-meta {
+    font-size: 14px; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--muted); font-weight: 500;
+    position: relative;
+  }
+  .hero-meta span { display: inline-block; margin: 0 8px; color: var(--rule-strong); }
+  .hero-tagline {
+    margin-top: 56px; font-family: "Fraunces", serif; font-style: italic;
+    font-size: 22px; color: var(--ink-soft); max-width: 540px; margin-left: auto; margin-right: auto;
+    line-height: 1.5; position: relative;
+  }
+  .hero-tagline em { font-style: normal; color: var(--red); font-weight: 500; }
+
+  /* ============ SECTION LABELS ============ */
+  .section-label {
+    font-family: "Newsreader", sans-serif;
+    font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--red); font-weight: 600;
+    margin-bottom: 20px; display: flex; align-items: center; gap: 16px;
+  }
+  .section-label::before, .section-label::after {
+    content: ""; flex: 0 0 32px; height: 1px; background: var(--red); opacity: 0.4;
+  }
+  .section-label.left::before { display: none; }
+  .section-label.left { justify-content: flex-start; gap: 16px; }
+  .section-label.left::after { flex: 1; max-width: 80px; }
+  .section-label.center { justify-content: center; }
+
+  h2.section-title {
+    font-family: "Fraunces", serif;
+    font-size: clamp(38px, 6vw, 64px);
+    font-weight: 400;
+    line-height: 1.05;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+    margin-bottom: 48px;
+    font-variation-settings: "SOFT" 80;
+  }
+  h2.section-title em {
+    font-style: italic; color: var(--red);
+    font-variation-settings: "SOFT" 80;
+  }
+  h2.section-title.center { text-align: center; }
+
+  h3.sub-title {
+    font-family: "Fraunces", serif;
+    font-size: 26px; font-weight: 500;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    margin-top: 36px; margin-bottom: 14px;
+  }
+  h3.sub-title em { font-style: italic; color: var(--red); }
+  h4.minor-title {
+    font-family: "Newsreader", sans-serif;
+    font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--red); font-weight: 600;
+    margin-top: 32px; margin-bottom: 12px;
+  }
+
+  /* ============ BODY TEXT ============ */
+  p { margin-bottom: 22px; color: var(--ink-soft); }
+  p.lead {
+    font-family: "Fraunces", serif; font-size: 26px; line-height: 1.45;
+    font-weight: 350; color: var(--ink);
+    letter-spacing: -0.005em;
+    margin-bottom: 36px;
+    font-variation-settings: "SOFT" 50;
+  }
+  p.lead em { font-style: italic; color: var(--red); }
+  a { color: var(--red); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { color: var(--red-deep); text-decoration-thickness: 2px; }
+
+  ul.bullets { list-style: none; padding-left: 0; margin-bottom: 24px; }
+  ul.bullets li {
+    position: relative; padding-left: 28px; margin-bottom: 12px; color: var(--ink-soft);
+  }
+  ul.bullets li::before {
+    content: "—"; position: absolute; left: 0; top: 0; color: var(--red); font-weight: 600;
+  }
+
+  /* ============ NUMBERED ITEMS (Nº 01 style from website) ============ */
+  .numbered-grid { display: grid; gap: 0; }
+  .numbered-item {
+    padding: 32px 0; border-top: 1px solid var(--rule);
+    display: grid; grid-template-columns: 100px 1fr; gap: 32px; align-items: start;
+  }
+  .numbered-item:last-child { border-bottom: 1px solid var(--rule); }
+  .numbered-item .num {
+    font-family: "Fraunces", serif; font-style: italic;
+    font-size: 28px; color: var(--red); font-weight: 400;
+    letter-spacing: -0.01em;
+  }
+  .numbered-item .num small {
+    font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase;
+    display: block; font-style: normal; color: var(--muted); margin-bottom: 4px;
+    font-family: "Newsreader", sans-serif;
+  }
+  .numbered-item .body h3 {
+    font-family: "Fraunces", serif; font-size: 24px; font-weight: 500;
+    margin-bottom: 10px; color: var(--ink);
+  }
+  .numbered-item .body p { margin-bottom: 0; }
+  @media (max-width: 700px) {
+    .numbered-item { grid-template-columns: 1fr; gap: 8px; }
+  }
+
+  /* ============ STAT GRID ============ */
+  .stat-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    margin: 56px 0; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+  }
+  .stat {
+    padding: 40px 24px; text-align: center;
+    border-right: 1px solid var(--rule);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: "Fraunces", serif; font-size: 56px; font-weight: 400;
+    color: var(--red); line-height: 1; margin-bottom: 12px;
+    letter-spacing: -0.02em;
+    font-variation-settings: "SOFT" 100, "WONK" 1;
+  }
+  .stat-label {
+    font-family: "Newsreader", sans-serif;
+    font-size: 12px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted); font-weight: 500;
+  }
+  @media (max-width: 800px) {
+    .stat-grid { grid-template-columns: repeat(2, 1fr); }
+    .stat { border-right: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+    .stat:nth-child(2n) { border-right: none; }
+    .stat:nth-last-child(-n+2) { border-bottom: none; }
+  }
+
+  /* ============ STUDENT SPOTLIGHT ============ */
+  .spotlight {
+    padding: 24px 28px; margin: 18px 0;
+    background: var(--paper-warm);
+    border-left: 4px solid var(--red);
+  }
+  .spotlight-name {
+    font-family: "Fraunces", serif; font-weight: 600; font-size: 17px;
+    color: var(--ink); margin-bottom: 6px;
+  }
+  .spotlight-name em { font-style: italic; color: var(--red); font-weight: 500; }
+  .spotlight-detail {
+    font-style: italic; color: var(--muted); margin: 0; font-size: 16px;
+  }
+  .placeholder {
+    color: var(--rule-strong); font-style: italic; font-family: "Newsreader", sans-serif;
+  }
+
+  /* ============ PHOTO PLACEHOLDER ============ */
+  .photo-placeholder {
+    margin: 32px 0;
+    padding: 56px 32px;
+    background: var(--paper-warm);
+    border: 1.5px dashed var(--rule-strong);
+    text-align: center;
+    color: var(--muted);
+    font-style: italic;
+    font-size: 15px;
+    letter-spacing: 0.04em;
+  }
+  .photo-placeholder::before {
+    content: "◇"; display: block; font-size: 24px; color: var(--rule-strong);
+    margin-bottom: 12px; font-style: normal;
+  }
+
+  /* ============ FINANCIAL TABLES ============ */
+  .fin-table { width: 100%; border-collapse: collapse; margin: 24px 0 32px; }
+  .fin-table th, .fin-table td {
+    padding: 14px 18px; text-align: left; border-bottom: 1px solid var(--rule);
+    font-size: 17px; color: var(--ink-soft);
+  }
+  .fin-table th {
+    background: var(--red); color: var(--paper);
+    font-family: "Newsreader", sans-serif; font-weight: 600;
+    font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase;
+    border-bottom: none;
+  }
+  .fin-table th.num, .fin-table td.num {
+    text-align: right; font-variant-numeric: tabular-nums;
+  }
+  .fin-table tr.alt td { background: var(--paper-warm); }
+  .fin-table tr.total td {
+    background: var(--ink); color: var(--paper); font-weight: 600;
+    font-family: "Fraunces", serif; font-size: 18px;
+    border-bottom: none;
+  }
+
+  /* ============ PULL QUOTE ============ */
+  .pull-quote {
+    font-family: "Fraunces", serif; font-style: italic;
+    font-size: clamp(28px, 4vw, 40px);
+    line-height: 1.3; text-align: center;
+    color: var(--ink); padding: 64px 32px;
+    border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule);
+    margin: 48px 0;
+    letter-spacing: -0.015em;
+    font-variation-settings: "SOFT" 100;
+  }
+  .pull-quote em { font-style: normal; color: var(--red); }
+  .pull-quote .attrib {
+    display: block; font-size: 13px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--muted); margin-top: 24px; font-style: normal; font-weight: 500;
+  }
+
+  /* ============ SIGNATURE ============ */
+  .signature {
+    margin-top: 56px; padding-top: 32px; border-top: 1px solid var(--rule);
+  }
+  .signature-name {
+    font-family: "Fraunces", serif; font-style: italic; font-size: 32px;
+    color: var(--ink); margin-bottom: 6px; font-weight: 400;
+  }
+  .signature-title {
+    font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--muted); font-family: "Newsreader", sans-serif;
+  }
+
+  /* ============ FOOTER / CONTACT ============ */
+  footer {
+    background: var(--ink);
+    color: var(--paper);
+    padding: 80px 32px 48px;
+  }
+  footer .container { max-width: 1240px; }
+  .footer-grid {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px;
+    margin-bottom: 48px;
+  }
+  footer h4 {
+    font-family: "Newsreader", sans-serif;
+    font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--red); margin-bottom: 18px; font-weight: 600;
+  }
+  footer p, footer a {
+    color: rgba(250, 247, 242, 0.75); font-size: 15px; line-height: 1.7;
+    margin-bottom: 4px;
+  }
+  footer a { text-decoration: none; }
+  footer a:hover { color: var(--paper); }
+  .footer-brand {
+    font-family: "Fraunces", serif; font-size: 24px; font-weight: 500;
+    color: var(--paper); margin-bottom: 12px;
+  }
+  .footer-brand em { font-style: italic; color: var(--red); font-weight: 400; }
+  .footer-meta {
+    border-top: 1px solid rgba(255,255,255,0.1); padding-top: 24px;
+    font-size: 13px; color: rgba(250, 247, 242, 0.5);
+    display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap;
+  }
+  @media (max-width: 800px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+  }
+  @media (max-width: 500px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    section { padding: 64px 0; }
+    .hero { padding: 64px 24px 80px; }
+    .reading { padding: 0 24px; }
+  }
+
+  /* ============ PRINT ============ */
+  @media print {
+    .topbar { position: static; }
+    section { page-break-inside: avoid; padding: 48px 0; }
+    .hero { padding: 48px 0; }
+    a { color: var(--ink); }
+    .photo-placeholder { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <a href="#hero" class="topbar-brand">Always In The Club <em>Foundation</em></a>
+    <nav class="topbar-nav">
+      <a href="#letter">Letter</a>
+      <a href="#glance">At a Glance</a>
+      <a href="#book">The Book</a>
+      <a href="#mmc89">MMC'89</a>
+      <a href="#financials">Financials</a>
+      <a href="#ahead">Looking Ahead</a>
+    </nav>
+  </div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero" id="hero">
+  <div class="hero-eyebrow">Always In The Club Foundation</div>
+  <h1 class="hero-title">Annual<br><em>Report</em></h1>
+  <div class="hero-year">Fiscal Year 2024</div>
+  <div class="hero-meta">
+    November 1, 2024 <span>·</span> October 31, 2025 <span>·</span> DBA Create Impact Now
+  </div>
+  <p class="hero-tagline">Education, Arts, Resources… <em>Social Impact.</em><br>Using our E.A.R.S. to make a difference.</p>
+</header>
+
+<!-- ============ CEO LETTER ============ -->
+<section id="letter">
+  <div class="reading">
+    <div class="section-label left">A Letter from the CEO</div>
+    <h2 class="section-title">What a <em>defining year</em> for Always In The Club Foundation.</h2>
+
+    <p class="lead">Fiscal Year 2024 brought a <em>new way</em> to help us tell our story and fund our mission.</p>
+
+    <p>After years of preparation, we launched <em>Always In The Club: The True Story of The All-New Mickey Mouse Club</em> — a three-volume authorized history built on more than 60 interviews with cast members, crew, and Disney executives who shaped the show. The book is more than a publishing project. It is a vehicle for preserving cultural legacy, deepening our community of supporters, and generating sustainable revenue to power our youth mentoring and arts education work. This work included new one-on-one mentee sessions led by Mouseketeer alumni Deedee Magno Hall and Tony Lucca, connecting young creatives with working entertainment professionals who have walked the path. We also built new partnerships to assist us in better codifying and scaling our program, and are excited to unveil those plans in the coming years.</p>
+
+    <p>At the same time, we continued our community impact through MMC'89, our overarching initiative for community service. This included sponsoring an event that raised $7,000 for AIDS research and our environmental commitment by funding tree-planting through every merchandise purchased (including items from our newly launched <em>Mickey &amp; Friends Collection by Disney</em>). Thanks to the generosity of our supporters, we have now proudly planted more than <strong>2,500 trees</strong> around the world — a "forest" equivalent to the size of a football field to help fight global carbon emissions.</p>
+
+    <p>We also made the strategic decision to temporarily pause our <em>Destination: Disney Imagination Campus</em> program in order to broaden the partnerships and infrastructure that will let us serve more young creatives in the years ahead. Although we have many children on our waiting list, this was the right call for the long-term health of the program.</p>
+
+    <p>Financially, this was a year of strengthening fundamentals. Net assets more than doubled, our program spending ratio reached 88%, and we entered FY 2025 in our strongest position since incorporation — debt-free, with clearer focus, and a marketable asset actively generating revenue for the mission.</p>
+
+    <p>None of this would be possible without our board, our volunteers, our Mouseketeer family, and the donors who believe in what we are building. Thank you for being part of this story.</p>
+
+    <div class="signature">
+      <div class="signature-name">Chasen Hampton</div>
+      <div class="signature-title">Chief Executive Officer</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PULL QUOTE ============ -->
+<div class="pull-quote">
+  Together, we are <em>always</em> in the club.
+</div>
+
+<!-- ============ MISSION ============ -->
+<section id="mission">
+  <div class="reading">
+    <div class="section-label left">Our Mission</div>
+    <h2 class="section-title">Transforming young lives through <em>mentorship</em> and <em>arts education.</em></h2>
+    <p class="lead">Guided by all 17 United Nations Sustainable Development Goals, we work to address global challenges related to education, hunger, mental health, poverty, inequality, and climate change.</p>
+    <p>Our primary focuses are youth mentoring, arts education, and supporting entrepreneurs committed to empowering their communities.</p>
+  </div>
+</section>
+
+<!-- ============ AT A GLANCE ============ -->
+<section id="glance" style="background: var(--paper-warm);">
+  <div class="container">
+    <div class="section-label center">Impact at a glance</div>
+    <h2 class="section-title center">Real <em>numbers</em> behind the work.</h2>
+
+    <div class="stat-grid">
+      <div class="stat">
+        <div class="stat-num">$138K</div>
+        <div class="stat-label">Total Revenue</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">88%</div>
+        <div class="stat-label">Program Spending</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">+$8,342</div>
+        <div class="stat-label">Net Surplus</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num">+116%</div>
+        <div class="stat-label">Net Asset Growth</div>
+      </div>
+    </div>
+
+    <div class="reading" style="padding: 0;">
+      <h4 class="minor-title">Additional Year-in-Review Highlights</h4>
+      <ul class="bullets">
+        <li><strong>Cast, crew, and executive interviews completed for the book series:</strong> 60+</li>
+        <li><strong>New alumni mentors added to program:</strong> 2 (Deedee Magno Hall, Tony Lucca)</li>
+        <li><strong>Volunteers engaged across all programs:</strong> 35</li>
+        <li><strong>In-kind support received (Google Ad Grant + donated services):</strong> $44,868</li>
+        <li><strong>Status at year-end:</strong> Debt-free</li>
+        <li><strong>Trees planted around the world (lifetime):</strong> 2,500+</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ============ THE BOOK ============ -->
+<section id="book">
+  <div class="reading">
+    <div class="section-label left">A Defining Year</div>
+    <h2 class="section-title">The <em>Book</em> Project.</h2>
+
+    <p class="lead">This year, we launched <em>Always In The Club: The True Story of The All-New Mickey Mouse Club</em> — a three-volume authorized history of one of the most influential youth-focused programs in modern entertainment.</p>
+
+    <p>Built on more than 60 interviews with cast members, crew, and Disney executives, the series is the definitive account of the era — capturing the people, the moments, and the lasting cultural footprint of MMC. Substantially complete in design and manuscript by year-end, the book is both a cultural preservation effort and a sustainable revenue vehicle for our youth mentoring and arts education mission.</p>
+
+    <h3 class="sub-title">Why this matters for our <em>mission.</em></h3>
+    <p>Every book sold powers our coaching, mentoring, and service programs. The book is also a vehicle for storytelling about mentorship itself — the alumni network at the heart of the MMC story is, in many ways, a living illustration of what we strive to build for the young creatives we serve today. Readers don't just learn the history; they meet the kind of intergenerational support system we work to extend to the next generation.</p>
+
+    <h4 class="minor-title">FY 2024 – FYE 2025 Milestones</h4>
+    <ul class="bullets">
+      <li>Manuscripts and designs for all three volumes (and both Trade and Limited Editions) substantially complete</li>
+      <li>Limited Edition Pre-orders secured</li>
+      <li>Limited Edition "Master Digital Archive" launched for collectors and dedicated patrons</li>
+      <li>Active marketing through the newsletter, Facebook/Instagram, and the Google Ad Grant</li>
+      <li>Outreach underway to potential partners for the Trade Edition launch anticipated in 2026/2027</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ MMC'89 ============ -->
+<section id="mmc89" style="background: var(--paper-warm);">
+  <div class="reading">
+    <div class="section-label left">MMC'89</div>
+    <h2 class="section-title">Community <em>Impact</em> in Action.</h2>
+
+    <p class="lead">Our MMC'89 program continued to deliver mentorship, service, and support across the country.</p>
+    <p>Three program initiatives operated under this umbrella in FY 2024:</p>
+
+    <h3 class="sub-title">Coaching &amp; <em>Mentoring</em></h3>
+    <p>One-on-one guidance and group workshops for young creatives seeking to grow in their craft. Our coaches are working entertainment professionals who understand the path because they have walked it themselves.</p>
+    <p>In FY 2024, we launched new alumni-led mentee sessions with Mouseketeers <strong>Deedee Magno Hall</strong> and <strong>Tony Lucca</strong> — giving young creatives direct, recurring access to two artists whose own careers map the journey our students hope to make.</p>
+
+    <h4 class="minor-title">Student Spotlights</h4>
+    <p>Three students whose growth this year reflects what the program is built to do:</p>
+
+    <div class="spotlight">
+      <div class="spotlight-name"><span class="placeholder">[Student Name 1]</span> — <span class="placeholder">[Program / Location]</span></div>
+      <p class="spotlight-detail placeholder">[One brief sentence about their experience, growth, or a short quote.]</p>
+    </div>
+    <div class="spotlight">
+      <div class="spotlight-name"><span class="placeholder">[Student Name 2]</span> — <span class="placeholder">[Program / Location]</span></div>
+      <p class="spotlight-detail placeholder">[One brief sentence about their experience, growth, or a short quote.]</p>
+    </div>
+    <div class="spotlight">
+      <div class="spotlight-name"><span class="placeholder">[Student Name 3]</span> — <span class="placeholder">[Program / Location]</span></div>
+      <p class="spotlight-detail placeholder">[One brief sentence about their experience, growth, or a short quote.]</p>
+    </div>
+
+    <h3 class="sub-title">Day of <em>Service</em></h3>
+    <p>We sponsored an evening supporting <a href="https://aidsresource.org/" target="_blank" rel="noopener">AIDS Resource Foundation for Children</a> with a Live Table Read of <em>"Whatever Happened to Baby J"</em> — a new Y2K boyband-obsessed film written by award-winning screenwriter Victoria Male, and featuring actors Jodie Sweetin, Drew Seely, and Dale Godboldo. The event raised <strong>$7,000 for AIDS research</strong>.</p>
+
+    <h3 class="sub-title">Business <em>Management</em> Services</h3>
+    <p>Through our DBA Create Impact Now, we provided operational guidance and resources to several companies, helping mission-driven leaders build sustainable infrastructure for their own work.</p>
+  </div>
+</section>
+
+<!-- ============ ENVIRONMENTAL ============ -->
+<section id="environmental">
+  <div class="reading">
+    <div class="section-label left">Global Goals</div>
+    <h2 class="section-title">Reforesting the <em>world,</em> one purchase at a time.</h2>
+
+    <p>Sustainability is built into the way we sell. For every piece of merchandise purchased through our online store, we fund a tree-planting initiative in partnership with reforestation platforms. The result: consumer activity becomes ecological restoration, and supporters help us advance the UN Sustainable Development Goals on responsible consumption, climate action, and protecting terrestrial ecosystems.</p>
+
+    <p>This program connects directly to three of the 17 Sustainable Development Goals that guide our work:</p>
+    <ul class="bullets">
+      <li><strong>SDG 12</strong> — Ensure sustainable consumption and production patterns</li>
+      <li><strong>SDG 13</strong> — Take urgent action to combat climate change and its impacts</li>
+      <li><strong>SDG 15</strong> — Protect, restore, and promote sustainable use of terrestrial ecosystems</li>
+    </ul>
+
+    <p>To help our reforestation efforts and support our youth mentoring programs, we launched our <em>Mickey &amp; Friends</em> line of T-shirts by Disney.</p>
+
+    <div class="photo-placeholder">
+      [ Insert 1 photo of Tony, 1 photo of Jennifer, and 1 photo of a family wearing t-shirts ]
+    </div>
+  </div>
+</section>
+
+<!-- ============ TRANSITIONS ============ -->
+<section id="transitions" style="background: var(--paper-warm);">
+  <div class="reading">
+    <div class="section-label left">Strategy</div>
+    <h2 class="section-title">A year of <em>strategic</em> transitions.</h2>
+
+    <p class="lead">The pause is not a retreat — it is a <em>setup.</em></p>
+
+    <p>To position the organization for the next phase of growth, we made the deliberate decision to temporarily pause <em>Destination: Disney Imagination Campus</em> during FY 2024. We are using this period to broaden our partnerships, deepen our infrastructure, and increase the capacity needed to serve more young people. We anticipate resuming the program in FY 2026 or FY 2027 with substantially expanded reach.</p>
+
+    <p>This kind of disciplined, intentional pause is what allows a young organization to grow into the next chapter on solid footing rather than overextending.</p>
+  </div>
+</section>
+
+<!-- ============ FINANCIALS ============ -->
+<section id="financials">
+  <div class="reading">
+    <div class="section-label left">Financial Overview</div>
+    <h2 class="section-title">Where the money <em>came from</em> and where it <em>went.</em></h2>
+
+    <h3 class="sub-title">Revenue</h3>
+    <table class="fin-table">
+      <tbody>
+        <tr><td>Contributions and grants — cash</td><td class="num">$30,438</td></tr>
+        <tr class="alt"><td>Contributions and grants — noncash (in-kind)</td><td class="num">$44,868</td></tr>
+        <tr><td>Book sales (Always In The Club series)</td><td class="num">$45,386</td></tr>
+        <tr class="alt"><td>MMC'89 program service revenue</td><td class="num">$12,210</td></tr>
+        <tr><td>Environmental program revenue</td><td class="num">$5,314</td></tr>
+        <tr class="alt"><td>Other revenue</td><td class="num">$181</td></tr>
+        <tr class="total"><td>Total revenue</td><td class="num">$138,397</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size: 15px; color: var(--muted); font-style: italic;">In-kind contributions reflect our Google Ad Grant ($23,200 in donated advertising) and the donated time and expertise of our volunteer leadership team ($21,668).</p>
+
+    <h3 class="sub-title">How <em>every dollar</em> is spent.</h3>
+    <table class="fin-table">
+      <thead>
+        <tr><th>Category</th><th class="num">Amount</th><th class="num">Share</th></tr>
+      </thead>
+      <tbody>
+        <tr class="alt"><td>Program services</td><td class="num">$114,381</td><td class="num">88%</td></tr>
+        <tr><td>Management &amp; general</td><td class="num">$13,600</td><td class="num">10%</td></tr>
+        <tr class="alt"><td>Fundraising</td><td class="num">$2,074</td><td class="num">2%</td></tr>
+        <tr class="total"><td>Total expenses</td><td class="num">$130,055</td><td class="num">100%</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size: 15px; color: var(--muted); font-style: italic;">Eighty-eight cents of every dollar spent went directly to programs — well above sector benchmarks for organizations at our scale.</p>
+
+    <h3 class="sub-title">Net <em>Result</em></h3>
+    <table class="fin-table">
+      <tbody>
+        <tr><td>Revenue less expenses</td><td class="num">+$8,342</td></tr>
+        <tr class="alt"><td>Beginning net assets</td><td class="num">$7,197</td></tr>
+        <tr><td>Ending net assets</td><td class="num">$15,539</td></tr>
+        <tr class="total"><td>Net asset growth</td><td class="num">+116%</td></tr>
+      </tbody>
+    </table>
+    <p>Always In The Club Foundation closed FY 2024 debt-free, with a stronger financial foundation than at any point since incorporation.</p>
+  </div>
+</section>
+
+<!-- ============ TRANSPARENCY ============ -->
+<section id="transparency" style="background: var(--paper-warm);">
+  <div class="reading">
+    <div class="section-label left">Recognition &amp; Transparency</div>
+    <h2 class="section-title">Platinum status with <em>Candid.</em></h2>
+
+    <p>Always In The Club Foundation holds Platinum status with Candid (GuideStar) — the highest recognition for nonprofit transparency and accountability. This designation confirms our commitment to responsible stewardship of every donor dollar.</p>
+
+    <p>We maintain written conflict of interest, whistleblower, and document retention policies. Annual board compensation reviews are conducted by independent directors, and all related-party transactions are documented and reported in full on our annual IRS Form 990.</p>
+
+    <p>Governing documents, financial statements, and our most recent Form 990 are available on our website and through GuideStar/Candid, and may be requested in writing at any time.</p>
+  </div>
+</section>
+
+<!-- ============ GOVERNANCE ============ -->
+<section id="governance">
+  <div class="reading">
+    <div class="section-label left">Leadership</div>
+    <h2 class="section-title">Board of <em>Directors</em> &amp; Advisors.</h2>
+
+    <h4 class="minor-title">Board of Directors</h4>
+    <ul class="bullets">
+      <li><strong>Chasen Hampton</strong> — Chief Executive Officer</li>
+      <li><strong>Axel Tillmann</strong> — Secretary</li>
+      <li><strong>Jonathan Smith</strong> — Treasurer</li>
+      <li>Patricia Chung Adams — Board Director</li>
+      <li>Gloria Ayee — Board Director</li>
+      <li>Bret Iwan — Board Director</li>
+      <li>Jennifer Kramer — Board Director</li>
+      <li>Anthony Lucca — Board Director</li>
+      <li>Jennifer McGill — Board Director</li>
+    </ul>
+
+    <h4 class="minor-title">Advisors</h4>
+    <ul class="bullets">
+      <li>Tasha Danner</li>
+      <li>Rachel Carlsen</li>
+    </ul>
+
+    <p style="margin-top: 24px;">Six of nine directors are independent. The board reviews CEO compensation annually through an independent committee process and maintains a written conflict of interest policy with annual disclosure requirements for all directors and officers.</p>
+  </div>
+</section>
+
+<!-- ============ LOOKING AHEAD ============ -->
+<section id="ahead" style="background: var(--paper-warm);">
+  <div class="container">
+    <div class="section-label center">Looking Ahead</div>
+    <h2 class="section-title center">FY 2025 is where we <em>build upward.</em></h2>
+
+    <div class="numbered-grid" style="max-width: 880px; margin: 0 auto;">
+      <div class="numbered-item">
+        <div class="num"><small>Nº 01</small>Publishing</div>
+        <div class="body">
+          <h3>Cultural impact at scale.</h3>
+          <ul class="bullets">
+            <li>Active outreach to major marketing and press partners on <em>Always In The Club</em></li>
+            <li>Expanded book marketing through the newsletter, social media, and the Google Ad Grant</li>
+            <li>Continued Master Digital Archive campaign for collectors and dedicated supporters</li>
+          </ul>
+        </div>
+      </div>
+      <div class="numbered-item">
+        <div class="num"><small>Nº 02</small>Partnerships</div>
+        <div class="body">
+          <h3>New relationships in development.</h3>
+          <ul class="bullets">
+            <li>Deepening our partnership with That's 4 Entertainment and 90s Con</li>
+            <li>New partnership in development with the California ScholarShare Investment Board / CalKIDS, focused on expanding access for underprivileged children — including foster youth, homeless students, and English learners</li>
+            <li>Team building with established organizations in Tennessee</li>
+          </ul>
+        </div>
+      </div>
+      <div class="numbered-item">
+        <div class="num"><small>Nº 03</small>Programs</div>
+        <div class="body">
+          <h3>Returning and expanding.</h3>
+          <ul class="bullets">
+            <li>Targeting FY 2026 or FY 2027 relaunch of <em>Destination: Disney Imagination Campus</em> with broader partnership infrastructure</li>
+            <li>Continued growth of MMC'89 mentoring and service initiatives</li>
+            <li>Environmental program expansion through merchandise growth</li>
+          </ul>
+        </div>
+      </div>
+      <div class="numbered-item">
+        <div class="num"><small>Nº 04</small>Events</div>
+        <div class="body">
+          <h3>Signature gatherings on the horizon.</h3>
+          <ul class="bullets">
+            <li>Planning underway for a book launch and MMC cast reunion event</li>
+            <li>Planning underway for a mentorship program expansion event</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ACKNOWLEDGMENTS ============ -->
+<section id="thanks">
+  <div class="reading">
+    <div class="section-label center">Acknowledgments</div>
+    <h2 class="section-title center"><em>Thank you.</em></h2>
+
+    <p class="lead">To every donor, volunteer, Mouseketeer alumnus, board member, advisor, and community supporter who made this year possible.</p>
+
+    <p>Your generosity fuels the mentoring, education, and creative opportunities that change young lives.</p>
+
+    <p>To the alumni and friends of <em>The All-New Mickey Mouse Club</em> who sat for interviews, opened their stories, and trusted us to tell the history right — thank you.</p>
+  </div>
+</section>
+
+<div class="pull-quote">
+  Together, we are <em>always</em> in the club.
+  <span class="attrib">— The AITC Foundation Family</span>
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Always In The Club <em>Foundation</em></div>
+        <p>DBA Create Impact Now</p>
+        <p style="margin-top: 18px;">Education, Arts, Resources… <em style="color: var(--red); font-style: italic;">Social Impact.</em><br>Using our E.A.R.S. to make a difference.</p>
+        <p style="margin-top: 24px; font-size: 13px; opacity: 0.6;">EIN: 85-4015614 · California 501(c)(3) Public Charity</p>
+      </div>
+      <div>
+        <h4>Orlando</h4>
+        <p>100 East Pine Street, Suite 110<br>Orlando, FL 32801</p>
+        <h4 style="margin-top: 24px;">Los Angeles Offices</h4>
+        <p>1801 Century Park East,<br>24th &amp; 25th Floors<br>Los Angeles, CA 90067</p>
+      </div>
+      <div>
+        <h4>Mailing</h4>
+        <p>5042 Wilshire Blvd, #38285<br>Los Angeles, CA 90036</p>
+        <h4 style="margin-top: 24px;">Contact</h4>
+        <p>(407) 804-8737</p>
+        <p><a href="mailto:Info@AlwaysInTheClub.org">Info@AlwaysInTheClub.org</a></p>
+      </div>
+      <div>
+        <h4>Online</h4>
+        <p><a href="https://www.alwaysintheclub.org" target="_blank" rel="noopener">AlwaysInTheClub.org</a></p>
+        <p><a href="https://mmcreunion.com" target="_blank" rel="noopener">MMC Reunion Store</a></p>
+        <p><a href="https://linktr.ee/alwaysintheclub" target="_blank" rel="noopener">Linktree</a></p>
+      </div>
+    </div>
+    <div class="footer-meta">
+      <div>© 2026 Always In The Club Foundation. All rights reserved.</div>
+      <div>Annual Report · Fiscal Year 2024</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Subtle reveal on scroll for sections
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+        }
+      });
+    }, { threshold: 0.05, rootMargin: '0px 0px -60px 0px' });
+
+    document.querySelectorAll('section').forEach(s => {
+      s.style.opacity = '0';
+      s.style.transform = 'translateY(20px)';
+      s.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+      observer.observe(s);
+    });
+  }
+</script>
+
+</body>
+</html>

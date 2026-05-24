@@ -85,7 +85,16 @@ const externalLinkGroups: { label: string; links: FooterLink[] }[] = [
         label: "MMC'89 Blog",
         external: true,
       },
-      { href: siteConfig.external.annualReport, label: "Annual Report", external: true },
+      {
+        href: "/annual-report-2024",
+        label: "Annual Report (FY 2024 - FYE 2025)",
+        external: false,
+      },
+      {
+        href: siteConfig.external.annualReport,
+        label: "Annual Report (FY 2023 - FYE 2024)",
+        external: true,
+      },
     ],
   },
 ];
