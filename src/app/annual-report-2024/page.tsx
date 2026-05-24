@@ -577,16 +577,16 @@ export default function AnnualReport2024Page() {
               Development Goals that guide our work:
             </p>
             {/* Official UN SDG icons (in public/images/sdg/) replace
-                the old text bullets. Each links to that goal's page
-                on sdgs.un.org. Alt text carries the full goal name so
-                screen readers (and crawlers) still get the meaning. */}
+                the old text bullets. Each row is one clickable item:
+                the icon plus the goal's short target text, linking to
+                that goal's page on sdgs.un.org. */}
             <ul className={styles.sdgRow} aria-label="Sustainable Development Goals">
               <li>
                 <a
                   href="https://sdgs.un.org/goals/goal12"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.sdgIcon}
+                  className={styles.sdgItem}
                 >
                   <Image
                     src="/images/sdg/sdg-12.jpg"
@@ -594,6 +594,9 @@ export default function AnnualReport2024Page() {
                     width={240}
                     height={240}
                   />
+                  <span className={styles.sdgItemText}>
+                    Ensure sustainable consumption and production patterns
+                  </span>
                 </a>
               </li>
               <li>
@@ -601,7 +604,7 @@ export default function AnnualReport2024Page() {
                   href="https://sdgs.un.org/goals/goal13"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.sdgIcon}
+                  className={styles.sdgItem}
                 >
                   <Image
                     src="/images/sdg/sdg-13.jpg"
@@ -609,6 +612,9 @@ export default function AnnualReport2024Page() {
                     width={240}
                     height={240}
                   />
+                  <span className={styles.sdgItemText}>
+                    Take urgent action to combat climate change and its impacts
+                  </span>
                 </a>
               </li>
               <li>
@@ -616,7 +622,7 @@ export default function AnnualReport2024Page() {
                   href="https://sdgs.un.org/goals/goal15"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={styles.sdgIcon}
+                  className={styles.sdgItem}
                 >
                   <Image
                     src="/images/sdg/sdg-15.jpg"
@@ -624,6 +630,10 @@ export default function AnnualReport2024Page() {
                     width={240}
                     height={240}
                   />
+                  <span className={styles.sdgItemText}>
+                    Protect, restore, and promote sustainable use of terrestrial
+                    ecosystems
+                  </span>
                 </a>
               </li>
             </ul>

@@ -343,50 +343,61 @@
   font-style: italic;
 }
 
-/* ============ SDG icon row ============
-   Replaces a 3-item bulleted list with a row of 3 official UN SDG
-   icons. Each icon links to that goal's page on sdgs.un.org. */
+/* ============ SDG icon list ============
+   Replaces the old 3-item bulleted list with one row per goal:
+   official UN SDG icon on the left + the goal's short target text
+   on the right. The whole row is a single anchor linking out to
+   that goal's page on sdgs.un.org. */
 .sdgRow {
   list-style: none;
   padding: 0;
   margin: 28px 0 32px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-  align-items: stretch;
+  flex-direction: column;
+  gap: 14px;
 }
 .sdgRow li {
-  flex: 0 1 auto;
   margin: 0;
 }
-.sdgIcon {
-  display: block;
-  border-radius: 4px;
-  overflow: hidden;
-  transition: transform 160ms ease, box-shadow 160ms ease;
-  /* Override .report a defaults (red, underlined) since this anchor
-     wraps an image. */
+.sdgItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /* Override .report a defaults (red, underlined) — the icon is
+     affordance enough; descriptor text stays in the body color. */
   text-decoration: none;
   color: inherit;
+  border-radius: 4px;
 }
-.sdgIcon img {
+.sdgItem img {
   display: block;
-  width: 120px;
-  height: 120px;
+  width: 84px;
+  height: 84px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  transition: transform 160ms ease, box-shadow 160ms ease;
 }
-.sdgIcon:hover,
-.sdgIcon:focus-visible {
+.sdgItem:hover img,
+.sdgItem:focus-visible img {
   transform: translateY(-2px);
   box-shadow: 0 6px 16px -8px rgba(26, 26, 26, 0.28);
+}
+.sdgItem:hover,
+.sdgItem:focus-visible {
   text-decoration: none;
 }
-.sdgIcon:focus-visible {
+.sdgItem:focus-visible {
   outline: 2px solid var(--red);
-  outline-offset: 3px;
+  outline-offset: 4px;
+}
+.sdgItemText {
+  color: var(--ink-soft);
+  line-height: 1.45;
 }
 @media (max-width: 480px) {
-  .sdgRow { gap: 12px; }
-  .sdgIcon img { width: 96px; height: 96px; }
+  .sdgItem { gap: 12px; }
+  .sdgItem img { width: 64px; height: 64px; }
+  .sdgItemText { font-size: 16px; }
 }
 
 /* ============ Nº 01 numbered grid ============ */
