@@ -113,12 +113,12 @@ export default function AnnualReport2024Page() {
                 Always In The Club: The True Story of The All-New Mickey Mouse
                 Club
               </em>{" "}
-              — a three-volume authorized history built on more than 60
-              interviews with cast members, crew, and Disney executives who
-              shaped the show. The book is more than a publishing project. It
-              is a vehicle for preserving cultural legacy, deepening our
-              community of supporters, and generating sustainable revenue to
-              power our youth mentoring and arts education work. This work
+              — a three-volume history built on more than 60 interviews
+              with cast members, crew, and executives who shaped the show.
+              The book is more than a publishing project. It is a vehicle
+              for preserving cultural legacy, deepening our community of
+              supporters, and generating sustainable revenue to power our{" "}
+              <strong>youth mentoring and arts education</strong> work. This work
               included new one-on-one mentee sessions led by Mouseketeer
               alumni Deedee Magno Hall and Tony Lucca, connecting young
               creatives with working entertainment professionals who have
@@ -535,7 +535,7 @@ export default function AnnualReport2024Page() {
               with a Live Table Read of{" "}
               <em>&ldquo;Whatever Happened to Baby J&rdquo;</em> — a new Y2K
               boyband-obsessed film written by award-winning screenwriter
-              Victoria Male, and featuring actors Jodie Sweetin, Drew Seely,
+              Victoria Male, and featuring actors Jodie Sweetin, Drew Seeley,
               and Dale Godboldo. The event raised{" "}
               <strong>$7,000 for AIDS research</strong>.
             </p>
