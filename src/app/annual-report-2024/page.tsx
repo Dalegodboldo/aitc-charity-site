@@ -576,18 +576,55 @@ export default function AnnualReport2024Page() {
               This program connects directly to three of the 17 Sustainable
               Development Goals that guide our work:
             </p>
-            <ul className={styles.bullets}>
+            {/* Official UN SDG icons (in public/images/sdg/) replace
+                the old text bullets. Each links to that goal's page
+                on sdgs.un.org. Alt text carries the full goal name so
+                screen readers (and crawlers) still get the meaning. */}
+            <ul className={styles.sdgRow} aria-label="Sustainable Development Goals">
               <li>
-                <strong>SDG 12</strong> — Ensure sustainable consumption and
-                production patterns
+                <a
+                  href="https://sdgs.un.org/goals/goal12"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.sdgIcon}
+                >
+                  <Image
+                    src="/images/sdg/sdg-12.jpg"
+                    alt="UN Sustainable Development Goal 12 — Responsible Consumption and Production"
+                    width={240}
+                    height={240}
+                  />
+                </a>
               </li>
               <li>
-                <strong>SDG 13</strong> — Take urgent action to combat climate
-                change and its impacts
+                <a
+                  href="https://sdgs.un.org/goals/goal13"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.sdgIcon}
+                >
+                  <Image
+                    src="/images/sdg/sdg-13.jpg"
+                    alt="UN Sustainable Development Goal 13 — Climate Action"
+                    width={240}
+                    height={240}
+                  />
+                </a>
               </li>
               <li>
-                <strong>SDG 15</strong> — Protect, restore, and promote
-                sustainable use of terrestrial ecosystems
+                <a
+                  href="https://sdgs.un.org/goals/goal15"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.sdgIcon}
+                >
+                  <Image
+                    src="/images/sdg/sdg-15.jpg"
+                    alt="UN Sustainable Development Goal 15 — Life on Land"
+                    width={240}
+                    height={240}
+                  />
+                </a>
               </li>
             </ul>
 
