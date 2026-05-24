@@ -641,7 +641,7 @@ export default function AnnualReport2024Page() {
             <p>
               To help our reforestation efforts and support our youth
               mentoring programs, we launched our <em>Mickey &amp; Friends</em>{" "}
-              licensed collection of T-shirts by Disney.
+              collection of licensed T-shirts by Disney.
             </p>
 
             {/* Asymmetric collage of the Mickey & Friends collection.
