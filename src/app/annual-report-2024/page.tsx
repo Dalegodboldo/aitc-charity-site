@@ -30,6 +30,10 @@ export const metadata: Metadata = {
   description:
     "Always In The Club Foundation — Fiscal Year 2024 Annual Report. DBA Create Impact Now. Education, Arts, Resources… Social Impact.",
   alternates: { canonical: "/annual-report-2024" },
+  // Hidden from search engines during team review. Once the page is
+  // re-linked from the footer, drop this `robots` block so Google
+  // can index the page normally.
+  robots: { index: false, follow: false },
   openGraph: {
     type: "article",
     title: "AITC Foundation — FY 2024 Annual Report",
