@@ -48,7 +48,11 @@ type Program = {
   href: string;
   /** Override the default "Learn more" CTA label per card. */
   ctaLabel?: string;
-  /** When true, renders a secondary "Speakers / Workshops" trigger
+  /** When true, hide the trailing ↗ arrow on the primary CTA.
+   *  Useful when the label itself ("Book a Coach") already reads
+   *  as a direct action and the outbound arrow feels redundant. */
+  ctaHideArrow?: boolean;
+  /** When true, renders a secondary "Speakers & Workshops" trigger
    *  next to the primary CTA — opens SpeakersModalTrigger. */
   showSpeakersModal?: boolean;
   /** `objectPosition` overrides the default centred crop — e.g. "top"
@@ -99,6 +103,7 @@ const programs: Program[] = [
     body: "Mouseketeers share their knowledge through workshops and one-on-one coaching — training young creatives on their craft while guiding them through emotional well-being and the business of entertainment.",
     href: "https://www.mickeymouseclubreunion.com/mentorship-coaching#coaches",
     ctaLabel: "Book a Coach",
+    ctaHideArrow: true,
     showSpeakersModal: true,
     image: {
       src: "/images/tony-coaching.avif",
@@ -644,7 +649,9 @@ export default function ProgramsPage() {
                         className="inline-flex items-center gap-1.5 text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
                       >
                         {p.ctaLabel ?? "Learn more"}
-                        <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0" aria-hidden />
+                        {!p.ctaHideArrow && (
+                          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0" aria-hidden />
+                        )}
                       </a>
                       {p.showSpeakersModal && <SpeakersModalTrigger />}
                     </div>

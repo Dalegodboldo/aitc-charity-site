@@ -44,7 +44,7 @@ export function SpeakersModalTrigger() {
           className="h-4 w-4 transition-transform duration-300 group-hover:scale-110 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
           aria-hidden
         />
-        Speakers / Workshops
+        Speakers &amp; Workshops
       </button>
       <SpeakersModal open={open} onClose={() => setOpen(false)} />
     </>
