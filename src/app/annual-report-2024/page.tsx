@@ -880,6 +880,25 @@ export default function AnnualReport2024Page() {
               Form 990 are available on our website and through
               GuideStar/Candid, and may be requested in writing at any time.
             </p>
+
+            {/* Candid (GuideStar) transparency seal widget — SVG is
+                served live from widgets.guidestar.org so we use a
+                plain <img> rather than next/image (which would need
+                widgets.guidestar.org allowlisted in remotePatterns).
+                Same widget that's embedded in the site footer. */}
+            <a
+              aria-label="Always In The Club Foundation profile on Candid (GuideStar)"
+              href="https://app.candid.org/profile/10968737/always-in-the-club-foundation-85-4015614/?pkId=81b26a3d-5c81-4893-a0b1-ba0087a03c14"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.candidSeal}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                alt="Candid transparency seal for Always In The Club Foundation"
+                src="https://widgets.guidestar.org/prod/v1/pdp/transparency-seal/10968737/svg"
+              />
+            </a>
           </div>
         </section>
 

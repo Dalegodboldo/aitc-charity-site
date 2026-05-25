@@ -356,6 +356,37 @@
   font-style: italic;
 }
 
+/* Candid (GuideStar) transparency seal — centered under the
+   Transparency paragraph. The widget renders as a square SVG;
+   we cap its width and let it scale. */
+.candidSeal {
+  display: block;
+  width: fit-content;
+  margin: 28px auto 8px;
+  border-radius: 6px;
+  transition: opacity 160ms ease;
+  /* Override .report a defaults (red, underlined) since the anchor
+     wraps an image. */
+  text-decoration: none;
+}
+.candidSeal:hover,
+.candidSeal:focus-visible {
+  opacity: 0.85;
+  text-decoration: none;
+}
+.candidSeal:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+.candidSeal img {
+  display: block;
+  height: 140px;
+  width: auto;
+}
+@media (max-width: 480px) {
+  .candidSeal img { height: 120px; }
+}
+
 /* ============ SDG icon list ============
    Replaces the old 3-item bulleted list with one row per goal:
    official UN SDG icon on the left + the goal's short target text
