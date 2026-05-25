@@ -24,8 +24,8 @@ const PHOTOS: Photo[] = [
 ];
 
 const RHONA_FEATURED_PHOTO: Photo = {
-  src: "/images/rhona-lights-camera-action.png",
-  alt: "Rhona Bennett — Lights, Camera, Action",
+  src: "/images/rhona-saving-soul-headshot.png",
+  alt: "Rhona Bennett headshot",
 };
 
 const RHONA_URL = "https://www.mickeymouseclubreunion.com/rhona-bennett";
@@ -204,7 +204,9 @@ function SpeakersModal({
             </span>
           </h3>
 
-          <div className="relative mt-5 aspect-[16/9] overflow-hidden rounded-xl bg-cream">
+          {/* 4:3 frame matches the headshot's natural ~1.36 ratio
+              so object-cover crops almost nothing. */}
+          <div className="relative mt-5 aspect-[4/3] overflow-hidden rounded-xl bg-cream">
             <Image
               src={RHONA_FEATURED_PHOTO.src}
               alt={RHONA_FEATURED_PHOTO.alt}
