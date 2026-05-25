@@ -53,12 +53,17 @@ export function WhoWeAre() {
         <Reveal delay={240} className="space-y-6 text-base leading-relaxed text-warm-gray lg:text-center">
           <p>
             Reunited Mouseketeers and more than 10,000 long-time fans helped
-            launch Always In The Club Foundation and our{" "}
+            launch Always In The Club Foundation to{" "}
+            <strong className="font-semibold text-red">
+              Reimagine Tomorrow through Arts &amp; Action
+            </strong>
+            : We empower youth through transformative mentorship and arts
+            education, while working to build stronger communities and a
+            sustainable future through our{" "}
             <strong className="font-semibold text-ink">
               MMC&rsquo;89 Initiative
-            </strong>{" "}
-            to support those who need it most through projects, programs and
-            campaigns led by cast members of the now iconic show.
+            </strong>
+            .
           </p>
         </Reveal>
       </div>

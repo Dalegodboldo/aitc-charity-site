@@ -75,9 +75,8 @@ export const primaryNav: readonly NavItem[] = [
   { href: "/blog", label: "All Ears" },
   { href: siteConfig.external.events, label: "Events", external: true, mobileOnly: true },
   {
-    href: "https://www.createimpactnow.org/gallery",
+    href: "/photo-gallery",
     label: "Photo Gallery",
-    external: true,
     mobileOnly: true,
   },
   {

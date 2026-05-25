@@ -1,0 +1,854 @@
+/* ------------------------------------------------------------------
+   Annual Report FY 2024 — editorial typography and layout.
+
+   Ported from docs/AITCF_FY2024_Annual_Report.html. Scoped via CSS
+   Module so the very-specific report typography (Fraunces axes,
+   tight letter-spacing, em-dash bullets, ::before/::after rules)
+   does not leak into the rest of the site, which uses Tailwind.
+
+   Colour and font variables: paper colours live here because they
+   are only used on this page; the brand red lives in the global
+   Tailwind theme and is referenced as #AB0707 here for clarity
+   (matching the source HTML).
+------------------------------------------------------------------ */
+
+.report {
+  /* Editorial palette, scoped to this page. */
+  --red: #ab0707;
+  --red-deep: #7a0404;
+  --ink: #1a1a1a;
+  --ink-soft: #2d2d2d;
+  --muted: #6b6b6b;
+  --paper: #faf7f2;
+  --paper-warm: #f4efe7;
+  --accent: #fff8ec;
+  --rule: #e6dfd6;
+  --rule-strong: #c7bdae;
+
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-weight: 400;
+  font-size: 19px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+}
+.report p {
+  margin-bottom: 22px;
+  color: var(--ink-soft);
+}
+.report a {
+  color: var(--red);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+.report a:hover {
+  color: var(--red-deep);
+  text-decoration-thickness: 2px;
+}
+.report strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* ============ Sub-nav ============ */
+.subNav {
+  /* Sits below the site header (h-16 mobile / h-20 sm+). */
+  position: sticky;
+  top: 64px;
+  z-index: 30;
+  background: rgba(250, 247, 242, 0.96);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--rule);
+  border-top: 1px solid var(--rule);
+}
+@media (min-width: 640px) {
+  .subNav { top: 80px; }
+}
+.subNavInner {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.subNavInner::-webkit-scrollbar { display: none; }
+@media (min-width: 640px) {
+  .subNavInner {
+    padding: 12px 32px;
+    gap: 24px;
+    justify-content: center;
+  }
+}
+.subNavLink {
+  font-family: var(--font-newsreader), sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  padding-bottom: 3px;
+  border-bottom: 1px solid transparent;
+  white-space: nowrap;
+  transition: color 0.2s, border-color 0.2s;
+}
+@media (min-width: 640px) {
+  .subNavLink { font-size: 13px; letter-spacing: 0.16em; }
+}
+.subNavLink:hover {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+.subNavLinkActive {
+  color: var(--red);
+  border-bottom-color: var(--red);
+}
+
+/* ============ Layout ============ */
+.container {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.reading {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+.section {
+  padding: 96px 0;
+  border-bottom: 1px solid var(--rule);
+  /* Scroll offset for the sub-nav anchor jumps. */
+  scroll-margin-top: 128px;
+}
+.section:last-of-type {
+  border-bottom: none;
+}
+.paperWarm {
+  background: var(--paper-warm);
+}
+
+/* ============ Hero ============ */
+.hero {
+  position: relative;
+  padding: 100px 32px 120px;
+  text-align: center;
+  background: linear-gradient(180deg, var(--paper-warm) 0%, var(--paper) 100%);
+  border-bottom: 1px solid var(--rule);
+  overflow: hidden;
+  scroll-margin-top: 128px;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -200px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(171, 7, 7, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+.heroBackdrop {
+  position: absolute;
+  inset: 0;
+  opacity: 0.07;
+  object-fit: cover;
+  pointer-events: none;
+  filter: grayscale(0.2);
+}
+.heroEyebrow {
+  position: relative;
+  font-family: var(--font-newsreader), sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+.heroTitle {
+  position: relative;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: clamp(58px, 11vw, 132px);
+  font-weight: 400;
+  line-height: 0.95;
+  color: var(--ink);
+  letter-spacing: -0.025em;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+  margin-bottom: 16px;
+}
+.heroTitle em {
+  font-style: italic;
+  color: var(--red);
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+.heroYear {
+  position: relative;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(28px, 4vw, 44px);
+  color: var(--muted);
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+/* Secondary fiscal-year designator that sits flush under .heroYear.
+   Same italic Fraunces but smaller, so it reads as a clarifying
+   parenthetical (e.g. "(FYE 2025)") rather than a second headline. */
+.heroYearSub {
+  position: relative;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(15px, 1.6vw, 18px);
+  color: var(--muted);
+  letter-spacing: 0.01em;
+  margin-bottom: 40px;
+}
+.heroMeta {
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+.heroMeta span {
+  display: inline-block;
+  margin: 0 8px;
+  color: var(--rule-strong);
+}
+.heroTagline {
+  position: relative;
+  margin: 56px auto 0;
+  max-width: 540px;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-size: 22px;
+  color: var(--ink-soft);
+  line-height: 1.5;
+}
+.heroTagline em {
+  font-style: normal;
+  color: var(--red);
+  font-weight: 500;
+}
+
+/* ============ Section labels + titles ============ */
+.sectionLabel {
+  font-family: var(--font-newsreader), sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 600;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.sectionLabel.left::after {
+  content: "";
+  flex: 1;
+  max-width: 80px;
+  height: 1px;
+  background: var(--red);
+  opacity: 0.4;
+}
+.sectionLabel.center {
+  justify-content: center;
+}
+.sectionLabel.center::before,
+.sectionLabel.center::after {
+  content: "";
+  flex: 0 0 32px;
+  height: 1px;
+  background: var(--red);
+  opacity: 0.4;
+}
+.sectionTitle {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: clamp(38px, 6vw, 64px);
+  font-weight: 400;
+  line-height: 1.05;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+  margin-bottom: 48px;
+  font-variation-settings: "SOFT" 80;
+}
+.sectionTitle em {
+  font-style: italic;
+  color: var(--red);
+  font-variation-settings: "SOFT" 80;
+}
+.sectionTitle.center {
+  text-align: center;
+}
+.subTitle {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-top: 36px;
+  margin-bottom: 14px;
+}
+.subTitle em {
+  font-style: italic;
+  color: var(--red);
+}
+.minorTitle {
+  font-family: var(--font-newsreader), sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+  font-weight: 600;
+  margin-top: 32px;
+  margin-bottom: 12px;
+}
+
+/* ============ Body text ============ */
+.lead {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 26px;
+  line-height: 1.45;
+  font-weight: 350;
+  color: var(--ink);
+  letter-spacing: -0.005em;
+  margin-bottom: 36px;
+  font-variation-settings: "SOFT" 50;
+}
+.lead em {
+  font-style: italic;
+  color: var(--red);
+}
+.bullets {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: 24px;
+}
+.bullets li {
+  position: relative;
+  padding-left: 28px;
+  margin-bottom: 12px;
+  color: var(--ink-soft);
+}
+.bullets li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--red);
+  font-weight: 600;
+}
+.tableNote {
+  font-size: 15px;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* Candid (GuideStar) transparency seal — left-aligned under the
+   Transparency paragraph. The widget renders as a square SVG;
+   we cap its width and let it scale. */
+.candidSeal {
+  display: block;
+  width: fit-content;
+  margin: 28px 0 8px;
+  border-radius: 6px;
+  transition: opacity 160ms ease;
+  /* Override .report a defaults (red, underlined) since the anchor
+     wraps an image. */
+  text-decoration: none;
+}
+.candidSeal:hover,
+.candidSeal:focus-visible {
+  opacity: 0.85;
+  text-decoration: none;
+}
+.candidSeal:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+.candidSeal img {
+  display: block;
+  height: 140px;
+  width: auto;
+}
+@media (max-width: 480px) {
+  .candidSeal img { height: 120px; }
+}
+
+/* ============ SDG icon list ============
+   Replaces the old 3-item bulleted list with one row per goal:
+   official UN SDG icon on the left + the goal's short target text
+   on the right. The whole row is a single anchor linking out to
+   that goal's page on sdgs.un.org. */
+.sdgRow {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.sdgRow li {
+  margin: 0;
+}
+.sdgItem {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  /* Override .report a defaults (red, underlined) — the icon is
+     affordance enough; descriptor text stays in the body color. */
+  text-decoration: none;
+  color: inherit;
+  border-radius: 4px;
+}
+.sdgItem img {
+  display: block;
+  width: 84px;
+  height: 84px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.sdgItem:hover img,
+.sdgItem:focus-visible img {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px -8px rgba(26, 26, 26, 0.28);
+}
+.sdgItem:hover,
+.sdgItem:focus-visible {
+  text-decoration: none;
+}
+.sdgItem:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 4px;
+}
+.sdgItemText {
+  color: var(--ink-soft);
+  line-height: 1.45;
+}
+@media (max-width: 480px) {
+  .sdgItem { gap: 12px; }
+  .sdgItem img { width: 64px; height: 64px; }
+  .sdgItemText { font-size: 16px; }
+}
+
+/* ============ Nº 01 numbered grid ============ */
+.numberedGrid {
+  display: grid;
+  gap: 0;
+  max-width: 880px;
+  margin: 0 auto;
+}
+.numberedItem {
+  padding: 32px 0;
+  border-top: 1px solid var(--rule);
+  display: grid;
+  /* Left column needs room for the longest label ("Partnerships")
+     at 28px italic Fraunces; 100px was clipping it into the body
+     column. 150px + 40px gap gives breathing room without making
+     the body copy feel cramped. */
+  grid-template-columns: 150px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+.numberedItem:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+/* `.num` / `.body` here are used as raw string classNames in the
+   JSX (e.g. `<div className="num">`), so they must stay un-hashed.
+   :global() opts them out of CSS-Module name mangling. */
+.numberedItem :global(.num) {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-size: 28px;
+  color: var(--red);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+.numberedItem :global(.num) small {
+  display: block;
+  font-style: normal;
+  color: var(--muted);
+  margin-bottom: 4px;
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-family: var(--font-newsreader), sans-serif;
+}
+.numberedItem :global(.body) h3 {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: var(--ink);
+}
+.numberedItem :global(.body) p {
+  margin-bottom: 0;
+}
+@media (max-width: 700px) {
+  .numberedItem {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* ============ Stat grid ============ */
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  margin: 56px 0;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+}
+.stat {
+  padding: 40px 24px;
+  text-align: center;
+  border-right: 1px solid var(--rule);
+}
+.stat:last-child {
+  border-right: none;
+}
+.statNum {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 56px;
+  font-weight: 400;
+  color: var(--red);
+  line-height: 1;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+  font-variation-settings: "SOFT" 100, "WONK" 1;
+}
+.statLabel {
+  font-family: var(--font-newsreader), sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 500;
+}
+@media (max-width: 800px) {
+  .statGrid { grid-template-columns: repeat(2, 1fr); }
+  .stat {
+    padding: 32px 16px;
+    border-right: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
+  .stat:nth-child(2n) { border-right: none; }
+  .stat:nth-last-child(-n+2) { border-bottom: none; }
+  .statNum { font-size: 40px; }
+}
+/* Phones: a single column so big numbers (+$8,342, +116%) never
+   clip and labels never wrap awkwardly. */
+@media (max-width: 480px) {
+  .statGrid { grid-template-columns: 1fr; }
+  .stat {
+    padding: 28px 16px;
+    border-right: none;
+    border-bottom: 1px solid var(--rule);
+  }
+  .stat:last-child { border-bottom: none; }
+  .statNum { font-size: 44px; }
+}
+
+/* ============ Student spotlight ============ */
+.spotlight {
+  padding: 24px 28px;
+  margin: 18px 0;
+  background: var(--paper-warm);
+  border-left: 4px solid var(--red);
+}
+.spotlightName {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-weight: 600;
+  font-size: 17px;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.spotlightName em {
+  font-style: italic;
+  color: var(--red);
+  font-weight: 500;
+}
+.spotlightDetail {
+  font-style: italic;
+  color: var(--muted);
+  margin: 0;
+  font-size: 16px;
+}
+.placeholder {
+  color: var(--rule-strong);
+  font-style: italic;
+  font-family: var(--font-newsreader), sans-serif;
+}
+
+/* ============ Photo cards ============ */
+.bookCard {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 32px;
+  margin: 32px 0;
+  align-items: start;
+}
+.bookCardImage {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 20px 50px -20px rgba(26, 26, 26, 0.35);
+  background: var(--paper-warm);
+}
+@media (min-width: 720px) {
+  .bookCard {
+    grid-template-columns: 260px 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .bookCardImage { max-width: none; }
+}
+
+.sectionPhoto {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  margin: 32px 0;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--paper-warm);
+}
+
+/* Figure wraps a sectionPhoto with a caption below it. The figure
+   resets its own margin so the inner sectionPhoto's margin still
+   controls top spacing; the caption then sits flush under the photo. */
+.sectionFigure {
+  margin: 0;
+}
+.sectionFigure .sectionPhoto {
+  margin-bottom: 12px;
+}
+.sectionCaption {
+  font-family: var(--font-newsreader), Georgia, serif;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--muted);
+  text-align: center;
+  margin: 0 0 32px;
+  line-height: 1.5;
+}
+.sectionCaption a {
+  color: var(--red);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.sectionCaption a:hover {
+  color: var(--red-deep);
+  text-decoration-thickness: 2px;
+}
+
+/* 3-up photo row (mentor lifestyle shots). Portrait tiles so
+   performance/standing shots aren't letterboxed. Stacks on mobile. */
+.photoGrid3 {
+  display: grid;
+  gap: 14px;
+  margin: 28px 0 12px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 560px) {
+  .photoGrid3 { grid-template-columns: repeat(3, 1fr); }
+}
+.photoGridItemPortrait {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--paper-warm);
+  /* Tiles double as anchors — reset .report a defaults (red, underlined)
+     and add a soft press affordance so the click target feels alive. */
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.photoGridItemPortrait:hover,
+.photoGridItemPortrait:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -8px rgba(26, 26, 26, 0.25);
+  text-decoration: none;
+}
+.photoGridItemPortrait:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 3px;
+}
+
+/* ============ Mickey & Friends Collage ============
+   Asymmetric 2x2 with mixed aspect ratios per tile so portraits
+   and landscapes both fit their frames naturally. On phones the
+   tiles stack into a single column at their natural aspects. */
+.collage {
+  display: grid;
+  gap: 14px;
+  margin: 32px 0;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 720px) {
+  .collage {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(0, auto);
+  }
+}
+.collageTile {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 6px;
+  background: var(--paper-warm);
+}
+/* Product flat-lay: square aspect with inner padding so the bundle
+   sits like a catalog hero on its paper backdrop. */
+.collageTileShop {
+  aspect-ratio: 1 / 1;
+}
+.collageTileShop img {
+  padding: 16px;
+}
+/* Family lifestyle shot: matches the shop tile's square so the top
+   row aligns perfectly. object-cover keeps the group composition
+   tight without letterboxing. */
+.collageTileFamily {
+  aspect-ratio: 1 / 1;
+}
+/* Two portraits side-by-side at 3:4 — naturally tall, side-by-side
+   on desktop they read as a matched pair. */
+.collageTilePortrait {
+  aspect-ratio: 3 / 4;
+}
+
+/* ============ Financial tables ============ */
+.finTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 24px 0 32px;
+}
+.finTable th,
+.finTable td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--rule);
+  font-size: 17px;
+  color: var(--ink-soft);
+}
+.finTable th {
+  background: var(--red);
+  color: var(--paper);
+  font-family: var(--font-newsreader), sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-bottom: none;
+}
+/* `.num`, `.alt`, `.total` are plain string classes on JSX rows,
+   so they need :global() to skip CSS-Module name mangling. */
+.finTable th:global(.num),
+.finTable td:global(.num) {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.finTable tr:global(.alt) td { background: var(--paper-warm); }
+.finTable tr:global(.total) td {
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 600;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-size: 18px;
+  border-bottom: none;
+}
+
+/* ============ Pull quote ============ */
+.pullQuote {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-size: clamp(28px, 4vw, 40px);
+  line-height: 1.3;
+  text-align: center;
+  color: var(--ink);
+  padding: 64px 32px;
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  margin: 48px 0;
+  letter-spacing: -0.015em;
+  font-variation-settings: "SOFT" 100;
+}
+.pullQuote em {
+  font-style: normal;
+  color: var(--red);
+}
+.attrib {
+  display: block;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-top: 24px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+/* ============ Signature ============ */
+.signature {
+  margin-top: 56px;
+  padding-top: 32px;
+  border-top: 1px solid var(--rule);
+}
+.signatureName {
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-size: 32px;
+  color: var(--ink);
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+.signatureTitle {
+  font-size: 13px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-family: var(--font-newsreader), sans-serif;
+}
+
+/* ============ Responsive collapses (matching source) ============ */
+@media (max-width: 500px) {
+  .section { padding: 64px 0; }
+  .hero { padding: 64px 24px 80px; }
+  .reading { padding: 0 24px; }
+  .container { padding: 0 24px; }
+}
+
+/* ============ Print ============ */
+@media print {
+  .subNav { display: none; }
+  .section {
+    page-break-inside: avoid;
+    padding: 48px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .hero { padding: 48px 0; }
+  .report a { color: var(--ink); }
+}
