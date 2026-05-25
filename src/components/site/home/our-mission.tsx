@@ -24,9 +24,11 @@ const pillars: {
       "Our coaches’ students have gone on to sign with Disney, Epitaph Records, Capitol, Sony Red, Universal Music Group, and been seen all over the world in festivals and on stages such as Coachella, Lollapalooza, GMA, Jimmy Kimmel, iHeart Music Awards, and many more.",
     ],
     image: {
-      src: "/images/dale-coaching.png",
-      alt: "A Mouseketeer leading a coaching session with a group of young students",
-      objectPosition: "70% center",
+      src: "/images/yaffa-3.JPG",
+      alt: "Mouseketeer alumni Chasen Hampton and Yaffa Botier",
+      // Anchor to the top so the upper portion of the photo
+      // (faces above the crop line) stays visible inside the card.
+      objectPosition: "center top",
     },
     imageBack: {
       src: "/images/disney-shot-on-stage.webp",
