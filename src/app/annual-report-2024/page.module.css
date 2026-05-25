@@ -198,6 +198,19 @@
   font-size: clamp(28px, 4vw, 44px);
   color: var(--muted);
   letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+/* Secondary fiscal-year designator that sits flush under .heroYear.
+   Same italic Fraunces but smaller, so it reads as a clarifying
+   parenthetical (e.g. "(FYE 2025)") rather than a second headline. */
+.heroYearSub {
+  position: relative;
+  font-family: var(--font-fraunces), Georgia, serif;
+  font-style: italic;
+  font-weight: 300;
+  font-size: clamp(15px, 1.6vw, 18px);
+  color: var(--muted);
+  letter-spacing: 0.01em;
   margin-bottom: 40px;
 }
 .heroMeta {

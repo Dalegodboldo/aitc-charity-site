@@ -80,6 +80,7 @@ export default function AnnualReport2024Page() {
             <em>Report</em>
           </h1>
           <div className={styles.heroYear}>Fiscal Year 2024</div>
+          <div className={styles.heroYearSub}>(FYE 2025)</div>
           <div className={styles.heroMeta}>
             Nov. 1, 2024 &ndash; Oct. 31, 2025
             <span>·</span>
