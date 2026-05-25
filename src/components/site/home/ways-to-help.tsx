@@ -72,12 +72,8 @@ const ways: Way[] = [
     Icon: Sparkles,
     hero: {
       type: "image",
-      src: "/images/Clubmember-badge.png",
-      alt: "Always In The Club member badge",
-      // Tiny shift from full-bottom (100% → 92%) — brings a sliver of
-      // the MMC'89 logo into view above without clipping the MEMBER
-      // wordmark, which has to stay fully readable.
-      objectPosition: "50% 92%",
+      src: "/images/vegas.png",
+      alt: "Mouseketeers reunited in Las Vegas",
     },
   },
   {
