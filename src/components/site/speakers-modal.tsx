@@ -190,6 +190,20 @@ function SpeakersModal({
             maximize your impact. Reach out at{" "}
             <span className="font-semibold text-ink">{CONTACT_EMAIL}</span>
           </p>
+
+          {/* Wide class shot — anchors the contact pitch with a real
+              "this is what an engagement looks like" visual. 16:7
+              frame matches the image's natural ~2.22 ratio so
+              object-cover crops very little. */}
+          <div className="relative aspect-[16/7] overflow-hidden rounded-xl bg-warm-white">
+            <Image
+              src="/images/dale-halifax-class-cropped.png"
+              alt="Dale Godboldo leading a class in Halifax"
+              fill
+              sizes="(min-width: 640px) 560px, 100vw"
+              className="object-cover"
+            />
+          </div>
         </div>
 
         {/* Featured Speaker — Rhona Bennett photo + Learn more button */}
