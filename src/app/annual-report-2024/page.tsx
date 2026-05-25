@@ -299,8 +299,8 @@ export default function AnnualReport2024Page() {
                     Always In The Club: The True Story of The All-New Mickey
                     Mouse Club
                   </em>{" "}
-                  — a three-volume authorized history of one of the most
-                  influential youth-focused programs in modern entertainment.
+                  — a three-volume history of one of the most influential
+                  youth-focused programs in modern entertainment.
                 </p>
               </div>
             </div>
