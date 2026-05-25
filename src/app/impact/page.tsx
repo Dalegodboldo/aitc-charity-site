@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import type { LucideIcon } from "lucide-react";
 import {
   Award,
@@ -487,15 +488,13 @@ export default function ImpactPage() {
                 Event Recap Blog Posts
                 <ArrowUpRight className="h-4 w-4" aria-hidden />
               </a>
-              <a
-                href="https://www.createimpactnow.org/gallery"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/photo-gallery"
                 className="inline-flex items-center gap-2 text-base font-semibold text-red no-underline transition-colors hover:text-red-deep"
               >
                 Campaign / Event Photo Gallery
                 <ArrowUpRight className="h-4 w-4" aria-hidden />
-              </a>
+              </Link>
             </div>
           </Reveal>
         </div>
