@@ -57,11 +57,16 @@ export function WhoWeAre() {
             <strong className="font-semibold text-red">
               Reimagine Tomorrow through Arts &amp; Action
             </strong>
-            : We empower youth through transformative mentorship and arts
-            education, while working to build stronger communities and a
-            sustainable future through our{" "}
+            :
+          </p>
+          <p>
+            We empower youth through transformative{" "}
+            <strong className="font-semibold text-ink">mentorship</strong> and{" "}
+            <strong className="font-semibold text-ink">arts education</strong>,
+            while working to build stronger communities and a sustainable
+            future through our{" "}
             <strong className="font-semibold text-ink">
-              MMC&rsquo;89 Initiative
+              MMC&rsquo;89 Social Impact Initiative
             </strong>
             .
           </p>
