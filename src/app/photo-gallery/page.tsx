@@ -1,8 +1,8 @@
 import fs from "node:fs";
 import path from "node:path";
 import type { Metadata } from "next";
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
+import { GalleryGrid } from "@/components/site/gallery-grid";
 import { PageIntro } from "@/components/site/page-intro";
 import { Reveal } from "@/components/site/reveal";
 import { siteConfig } from "@/lib/site-config";
@@ -67,22 +67,10 @@ export default function PhotoGalleryPage() {
             </Reveal>
           ) : (
             <Reveal>
-              <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
-                {photos.map((filename) => (
-                  <li
-                    key={filename}
-                    className="relative aspect-square overflow-hidden rounded-xl bg-cream"
-                  >
-                    <Image
-                      src={`/images/gallery/${filename}`}
-                      alt=""
-                      fill
-                      sizes="(min-width: 1024px) 280px, (min-width: 640px) 33vw, 50vw"
-                      className="object-cover transition-transform duration-500 ease-out hover:scale-[1.04] motion-reduce:transition-none motion-reduce:hover:scale-100"
-                    />
-                  </li>
-                ))}
-              </ul>
+              {/* Client component: click any tile to open a full-
+                  screen lightbox with a download button. Keyboard:
+                  Esc closes, ←/→ paginate. */}
+              <GalleryGrid photos={photos} />
             </Reveal>
           )}
 
