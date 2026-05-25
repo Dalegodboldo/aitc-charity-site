@@ -95,7 +95,7 @@ export default function PhotoGalleryPage() {
                 rel="noopener noreferrer"
                 className="mt-6 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ink px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-ink/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
               >
-                Our Events
+                Campaign &amp; Event Recaps
                 <ArrowUpRight className="h-4 w-4" aria-hidden />
               </a>
             </div>
