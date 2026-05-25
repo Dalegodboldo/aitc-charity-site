@@ -72,7 +72,7 @@ const ways: Way[] = [
     Icon: Sparkles,
     hero: {
       type: "image",
-      src: "/images/vegas.png",
+      src: "/images/vegas-2.png",
       alt: "Mouseketeers reunited in Las Vegas",
     },
   },
