@@ -10,7 +10,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { Mic2, X } from "lucide-react";
+import { ArrowUpRight, Mic2, X } from "lucide-react";
 
 type Photo = { src: string; alt: string };
 
@@ -22,6 +22,11 @@ const PHOTOS: Photo[] = [
     alt: "Rhona Bennett (formerly of En Vogue) speaking on stage",
   },
 ];
+
+const RHONA_FEATURED_PHOTO: Photo = {
+  src: "/images/rhona-lights-camera-action.png",
+  alt: "Rhona Bennett — Lights, Camera, Action",
+};
 
 const RHONA_URL = "https://www.mickeymouseclubreunion.com/rhona-bennett";
 const CONTACT_EMAIL = "Info@AlwaysInTheClub.org";
@@ -147,6 +152,25 @@ function SpeakersModal({
           </h2>
         </header>
 
+        {/* 3-up portrait grid — sits above the copy so the visuals
+            land first when the modal opens. */}
+        <ul className="mt-6 grid grid-cols-1 gap-3 px-7 sm:grid-cols-3 sm:gap-4 sm:px-10">
+          {PHOTOS.map((photo) => (
+            <li
+              key={photo.src}
+              className="relative aspect-[3/4] overflow-hidden rounded-xl bg-warm-white"
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes="(min-width: 640px) 200px, 100vw"
+                className="object-cover"
+              />
+            </li>
+          ))}
+        </ul>
+
         {/* Body */}
         <div className="space-y-5 px-7 pb-6 pt-6 text-base leading-relaxed text-warm-gray sm:px-10">
           <p>
@@ -168,41 +192,37 @@ function SpeakersModal({
           </p>
         </div>
 
-        {/* Featured Speaker — Rhona Bennett link + 3 portraits */}
+        {/* Featured Speaker — Rhona Bennett photo + Learn more button */}
         <section className="border-t border-border bg-warm-white px-7 py-7 sm:px-10 sm:py-8">
           <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-gold">
             Featured Speaker
           </p>
           <h3 className="mt-2 font-display text-xl font-medium leading-snug text-ink sm:text-[22px]">
-            <a
-              href={RHONA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-ink no-underline transition-colors hover:text-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
-            >
-              Rhona Bennett{" "}
-              <span className="font-display italic text-warm-gray">
-                (Formerly of En Vogue)
-              </span>
-            </a>
+            Rhona Bennett{" "}
+            <span className="font-display italic text-warm-gray">
+              (Formerly of En Vogue)
+            </span>
           </h3>
 
-          <ul className="mt-5 grid grid-cols-1 gap-3 sm:grid-cols-3 sm:gap-4">
-            {PHOTOS.map((photo) => (
-              <li
-                key={photo.src}
-                className="relative aspect-[3/4] overflow-hidden rounded-xl bg-cream"
-              >
-                <Image
-                  src={photo.src}
-                  alt={photo.alt}
-                  fill
-                  sizes="(min-width: 640px) 200px, 100vw"
-                  className="object-cover"
-                />
-              </li>
-            ))}
-          </ul>
+          <div className="relative mt-5 aspect-[16/9] overflow-hidden rounded-xl bg-cream">
+            <Image
+              src={RHONA_FEATURED_PHOTO.src}
+              alt={RHONA_FEATURED_PHOTO.alt}
+              fill
+              sizes="(min-width: 640px) 560px, 100vw"
+              className="object-cover"
+            />
+          </div>
+
+          <a
+            href={RHONA_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-flex h-11 items-center justify-center gap-2 self-start rounded-full bg-ink px-6 text-sm font-semibold text-cream no-underline transition-colors hover:bg-ink/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
+          >
+            Learn more about Rhona
+            <ArrowUpRight className="h-4 w-4" aria-hidden />
+          </a>
         </section>
       </div>
     </div>,
