@@ -191,10 +191,21 @@ function SpeakersModal({
             <span className="font-semibold text-ink">{CONTACT_EMAIL}</span>
           </p>
 
-          {/* Wide class shot — anchors the contact pitch with a real
-              "this is what an engagement looks like" visual. 16:7
-              frame matches the image's natural ~2.22 ratio so
-              object-cover crops very little. */}
+          {/* Lindsey class shot — square frame matches the image's
+              natural ~1:1 ratio so object-cover crops almost nothing. */}
+          <div className="relative aspect-square overflow-hidden rounded-xl bg-warm-white">
+            <Image
+              src="/images/Lindsey-class.jpg"
+              alt="Lindsey Alley leading a class"
+              fill
+              sizes="(min-width: 640px) 560px, 100vw"
+              className="object-cover"
+            />
+          </div>
+
+          {/* Halifax class shot — wide "what an engagement looks
+              like" visual. 16:7 frame matches the image's natural
+              ~2.22 ratio so object-cover crops very little. */}
           <div className="relative aspect-[16/7] overflow-hidden rounded-xl bg-warm-white">
             <Image
               src="/images/dale-halifax-class-cropped.png"
