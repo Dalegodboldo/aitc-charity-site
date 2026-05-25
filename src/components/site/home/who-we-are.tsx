@@ -60,6 +60,14 @@ export function WhoWeAre() {
             to support those who need it most through projects, programs and
             campaigns led by cast members of the now iconic show.
           </p>
+          <p>
+            <strong className="font-semibold text-ink">
+              Reimagining Tomorrow Through Arts &amp; Action:
+            </strong>{" "}
+            We empower youth through transformative mentorship and arts
+            education while working to build stronger communities and a
+            sustainable future through our MMC&rsquo;89 Initiative.
+          </p>
         </Reveal>
       </div>
     </section>
