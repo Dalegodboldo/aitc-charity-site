@@ -307,7 +307,7 @@ export default function AnnualReport2024Page() {
 
             <p>
               Built on more than 60 interviews with cast members, crew, and
-              Disney executives, the series is the definitive account of the
+              executives, the series is the definitive account of the
               era — capturing the people, the moments, and the lasting
               cultural footprint of MMC. Substantially complete in design and
               manuscript by year-end, the book is both a cultural preservation
