@@ -17,10 +17,24 @@ import { Download, X } from "lucide-react";
 
 type Props = { photos: string[] };
 
+/** How many photos to render in the initial batch and per
+ *  "Load more" click. Tuned to ~10 rows of a 4-col desktop grid
+ *  — enough to fill the visible area without thousands of image
+ *  optimization requests piling up on first paint. */
+const PAGE_SIZE = 40;
+
 export function GalleryGrid({ photos }: Props) {
   const [activeIdx, setActiveIdx] = useState<number | null>(null);
+  const [visibleCount, setVisibleCount] = useState(
+    Math.min(PAGE_SIZE, photos.length),
+  );
   const closeBtnRef = useRef<HTMLButtonElement>(null);
   const previouslyFocusedRef = useRef<Element | null>(null);
+
+  const visiblePhotos = photos.slice(0, visibleCount);
+  const remaining = photos.length - visibleCount;
+  const loadMore = () =>
+    setVisibleCount((n) => Math.min(n + PAGE_SIZE, photos.length));
 
   const open = activeIdx !== null;
   const activePhoto = open ? photos[activeIdx as number] : null;
@@ -71,7 +85,7 @@ export function GalleryGrid({ photos }: Props) {
   return (
     <>
       <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
-        {photos.map((filename, i) => (
+        {visiblePhotos.map((filename, i) => (
           <li
             key={filename}
             className="relative aspect-square overflow-hidden rounded-xl bg-cream"
@@ -86,13 +100,41 @@ export function GalleryGrid({ photos }: Props) {
                 src={`/images/gallery/${filename}`}
                 alt=""
                 fill
-                sizes="(min-width: 1024px) 280px, (min-width: 640px) 33vw, 50vw"
+                // Tight sizes hint — desktop grid maxes around 250px
+                // per tile, so we don't need the optimizer to generate
+                // anything wider than that.
+                sizes="(min-width: 1024px) 250px, (min-width: 640px) 33vw, 50vw"
+                // quality=60 is visually identical at thumbnail size
+                // but ~30% fewer bytes than the default 75.
+                quality={60}
+                // First row loads eagerly so the gallery doesn't pop
+                // in below the fold during initial paint.
+                priority={i < 4}
                 className="object-cover transition-transform duration-500 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
               />
             </button>
           </li>
         ))}
       </ul>
+
+      {/* "Load more" pager — instead of rendering all 200+ tiles up
+          front (which triggers a flood of image-optimization requests
+          on first paint), we render PAGE_SIZE at a time and let the
+          visitor pull the next batch on demand. */}
+      {remaining > 0 && (
+        <div className="mt-10 flex flex-col items-center gap-3">
+          <p className="text-[13px] font-semibold uppercase tracking-[0.16em] text-warm-gray">
+            Showing {visibleCount} of {photos.length}
+          </p>
+          <button
+            type="button"
+            onClick={loadMore}
+            className="inline-flex h-12 items-center justify-center rounded-full bg-ink px-7 text-base font-semibold text-cream transition-colors hover:bg-ink/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
+          >
+            Load {Math.min(PAGE_SIZE, remaining)} more
+          </button>
+        </div>
+      )}
 
       {open &&
         activePhoto &&
