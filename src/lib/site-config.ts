@@ -93,7 +93,7 @@ export const primaryNav: readonly NavItem[] = [
   },
   {
     href: siteConfig.external.mainSite,
-    label: "Main Website",
+    label: "Celebrate the Legacy",
     external: true,
     mobileOnly: true,
   },
