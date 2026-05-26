@@ -1,7 +1,9 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { ReactNode } from "react";
 import type { LucideIcon } from "lucide-react";
 import {
+  ArrowRight,
   ArrowUpRight,
   CalendarHeart,
   HandHeart,
@@ -32,6 +34,12 @@ type Way = {
   title: string;
   body: ReactNode;
   cta: string;
+  /** Optional second CTA shown next to the primary one. Currently
+   *  used by the Become a Club Member card to add a "Gallery" link
+   *  pointing to the internal /photo-gallery route. Only renders when
+   *  the card's `kind` is "compound-link" (since the primary card-as-
+   *  link kind can't safely nest a second anchor inside it). */
+  secondaryCta?: { label: string; href: string };
   Icon: LucideIcon;
   hero: Hero;
 } & (
@@ -67,8 +75,11 @@ const ways: Way[] = [
     title: "Become a Club Member",
     body: "By joining the Club, you become an official member of our family with exclusive opportunities to reunite with your favorite ’Teers, exclusive media, and discounted merch and event tickets.",
     cta: "Join the Club",
-    kind: "link",
+    // compound-link so a secondary "Gallery" CTA can sit next to the
+    // primary one without nesting an <a> inside another <a>.
+    kind: "compound-link",
     href: siteConfig.external.clubMembership,
+    secondaryCta: { label: "Gallery", href: "/photo-gallery" },
     Icon: Sparkles,
     hero: {
       type: "image",
@@ -156,19 +167,37 @@ export function WaysToHelp() {
               </>
             );
             const ctaInlineFlex =
-              "mt-6 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-red transition-colors duration-300 group-hover/way:text-red-deep";
+              "inline-flex items-center gap-1.5 self-start text-sm font-semibold text-red transition-colors duration-300 group-hover/way:text-red-deep";
+            const secondaryCta = w.secondaryCta;
             const cta =
               w.kind === "compound-link" ? (
-                <a
-                  href={w.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${ctaInlineFlex} no-underline hover:text-red-deep`}
-                >
-                  {ctaContent}
-                </a>
+                // Compound-link cards may carry a secondary CTA; when
+                // present, render both as siblings (the card container
+                // is not itself a link, so two <a> children are safe).
+                <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2">
+                  <a
+                    href={w.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${ctaInlineFlex} no-underline hover:text-red-deep`}
+                  >
+                    {ctaContent}
+                  </a>
+                  {secondaryCta && (
+                    <Link
+                      href={secondaryCta.href}
+                      className={`${ctaInlineFlex} no-underline hover:text-red-deep`}
+                    >
+                      {secondaryCta.label}
+                      <ArrowRight
+                        className="h-4 w-4 transition-transform duration-300 ease-out group-hover/way:translate-x-0.5 motion-reduce:transition-none motion-reduce:group-hover/way:translate-x-0"
+                        aria-hidden
+                      />
+                    </Link>
+                  )}
+                </div>
               ) : (
-                <span className={ctaInlineFlex}>{ctaContent}</span>
+                <span className={`mt-6 ${ctaInlineFlex}`}>{ctaContent}</span>
               );
             const inner = (
               <>
