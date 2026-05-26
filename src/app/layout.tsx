@@ -3,6 +3,8 @@ import { Newsreader, Public_Sans } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { cn } from "@/lib/utils";
 import { BookModal } from "@/components/site/book-modal";
+import { ChatBubble } from "@/components/chat/chat-bubble";
+import { ChatProvider } from "@/components/chat/chat-context";
 import { DonateModal } from "@/components/site/donate-modal";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
@@ -108,14 +110,19 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        <Header />
-        <main id="main" className="flex flex-1 flex-col">
-          {children}
-        </main>
-        <Footer />
-        <BookModal />
-        <DonateModal />
-        <Analytics />
+        {/* ChatProvider wraps everything so the floating bubble and
+            the /chat page share one conversation across navigation. */}
+        <ChatProvider>
+          <Header />
+          <main id="main" className="flex flex-1 flex-col">
+            {children}
+          </main>
+          <Footer />
+          <BookModal />
+          <DonateModal />
+          <ChatBubble />
+          <Analytics />
+        </ChatProvider>
       </body>
     </html>
   );
