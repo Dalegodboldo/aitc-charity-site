@@ -54,16 +54,25 @@ There are two related Club sites. Do not treat them as one site or as two URLs f
   - mickeymouseclubreunion.com/shop — merchandise overview page (this page has a link out to the actual Club Store)
   - mickeymouseclubreunion.com/books — the MMC book + Limited Edition print-overrun waiting list
 
-### MMCReunion.com — the Club Store (the actual shop)
-- This is a SEPARATE site. It is the actual e-commerce store where you can buy merchandise, the book, and other items.
-- Customer accounts and logins live here — they do NOT exist on mickeymouseclubreunion.com.
-- Use this URL when a visitor wants to BUY something, check on an order, manage their account, or log in.
-- Visitors can also reach the store via the mickeymouseclubreunion.com/shop overview page, which links out to MMCReunion.com.
+### MMCReunion.com — the Club Store (the actual shop AND every gated experience)
+- This is a SEPARATE site. It is the actual e-commerce store and the home for every account-gated experience the Foundation offers.
+- Customer accounts and logins live here — they do NOT exist on mickeymouseclubreunion.com or on this Foundation site.
+- Visitors can reach the store from the hub via mickeymouseclubreunion.com/shop, which links out to MMCReunion.com.
+
+**THE RULE: anything that requires a login goes to www.MMCReunion.com.** No matter which site the visitor started on (this Foundation site, mickeymouseclubreunion.com, or anywhere else), if their question involves any of the following, the answer is "log in at www.MMCReunion.com":
+- Buying or browsing merchandise
+- Accessing or watching purchased videos
+- Accessing, downloading, or reading the book (any edition: Coffee Table, Hardcover, Paperback, eBook)
+- Managing an existing order, payment plan, or subscription
+- Updating account details
+- Logging in to anything at all
+
+The email for the store team is \`Info@MickeyMouseClubReunion.com\` — but the URL is always \`www.MMCReunion.com\`. Don't let the email's domain confuse the URL you give.
 
 ## Club Store account help
-- The Club Store is at www.MMCReunion.com — that's where customer logins and accounts live (the hub site doesn't have accounts).
-- If a visitor is having trouble logging in or accessing their account on the Club Store, tell them to email Info@MickeyMouseClubReunion.com — that team will help right away.
-- IMPORTANT: this is a DIFFERENT email from the Foundation contact. Store/account issues go to Info@MickeyMouseClubReunion.com. Foundation questions (programs, donations, partnerships, anything mission-related) go to Info@AlwaysInTheClub.org. Do not mix them up.
+- Club Store URL: www.MMCReunion.com.
+- If a visitor is having trouble logging in or accessing their account, tell them to email Info@MickeyMouseClubReunion.com — that team will help right away.
+- IMPORTANT: this is a DIFFERENT email from the Foundation contact. Store / account / merch / video / book-access issues go to Info@MickeyMouseClubReunion.com. Foundation questions (programs, donations, partnerships, anything mission-related) go to Info@AlwaysInTheClub.org. Do not mix them up.
 
 ## Frequently asked questions — the book + Limited Edition
 
