@@ -136,6 +136,66 @@ export function ChatInterface({ variant = "bubble" }: Props) {
   );
 }
 
+/**
+ * Render assistant text with clickable links.
+ *
+ * Supports two formats produced by the model:
+ *   - Markdown links: `[label](https://...)`  → renders `<a>label</a>`
+ *   - Bare URLs:       `https://...`           → auto-linked, URL as label
+ *
+ * Trailing sentence punctuation on bare URLs (`. , ; : ! ? )`) is
+ * trimmed off so "Visit https://example.com." doesn't capture the
+ * period as part of the href.
+ */
+const LINK_PATTERN =
+  /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)|(https?:\/\/[^\s<>"\]\)]+)/g;
+
+function linkify(text: string, linkClass: string): React.ReactNode[] {
+  const nodes: React.ReactNode[] = [];
+  let cursor = 0;
+  let key = 0;
+  for (const match of text.matchAll(LINK_PATTERN)) {
+    const start = match.index ?? 0;
+    const [full, mdLabel, mdUrl, bareUrl] = match;
+    if (start > cursor) nodes.push(text.slice(cursor, start));
+    if (mdUrl) {
+      nodes.push(
+        <a
+          key={key++}
+          href={mdUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={linkClass}
+        >
+          {mdLabel}
+        </a>,
+      );
+    } else if (bareUrl) {
+      let url = bareUrl;
+      let tail = "";
+      while (url.length > 0 && /[.,;:!?)]/.test(url.slice(-1))) {
+        tail = url.slice(-1) + tail;
+        url = url.slice(0, -1);
+      }
+      nodes.push(
+        <a
+          key={key++}
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${linkClass} break-all`}
+        >
+          {url}
+        </a>,
+      );
+      if (tail) nodes.push(tail);
+    }
+    cursor = start + full.length;
+  }
+  if (cursor < text.length) nodes.push(text.slice(cursor));
+  return nodes;
+}
+
 function MessageBubble({
   message,
   isStreaming,
@@ -145,6 +205,10 @@ function MessageBubble({
 }) {
   const isUser = message.role === "user";
   const showCursor = !isUser && isStreaming && message.content.length > 0;
+  // Different link colors for the two bubble themes.
+  const linkClass = isUser
+    ? "underline underline-offset-2 decoration-cream/60 hover:decoration-cream"
+    : "font-semibold text-red underline underline-offset-2 decoration-red/40 hover:text-red-deep hover:decoration-red-deep";
   return (
     <li
       className={`flex ${isUser ? "justify-end" : "justify-start"}`}
@@ -156,7 +220,9 @@ function MessageBubble({
             : "max-w-[85%] rounded-2xl rounded-bl-md bg-cream px-4 py-2.5 text-[15px] leading-relaxed text-ink ring-1 ring-border"
         }
       >
-        <span className="whitespace-pre-wrap break-words">{message.content}</span>
+        <span className="whitespace-pre-wrap break-words">
+          {linkify(message.content, linkClass)}
+        </span>
         {showCursor && (
           <span
             aria-hidden
