@@ -49,7 +49,7 @@ export default function AboutPage() {
               Cast members have gone on to play a pivotal role in shaping the
               last 30 years of popular culture with critically acclaimed and
               wildly successful projects across music, film, television and
-              theater — and they&rsquo;re still making an impact today.
+              theater, and they&rsquo;re still making an impact today.
               Recognizing their place as lifelong ambassadors of the Disney
               brand, many have leveraged their global influence to help raise
               millions of dollars for nonprofits around the world.
