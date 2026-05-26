@@ -106,7 +106,7 @@ export function Header() {
             rel="noopener noreferrer"
             className="text-[13px] font-medium text-warm-gray no-underline transition-colors hover:text-ink"
           >
-            Visit Main Site
+            Celebrate the Legacy
           </a>
           <button
             type="button"
@@ -200,7 +200,7 @@ export function Header() {
             className="block px-3 py-2 text-sm font-medium text-warm-gray no-underline transition-colors hover:text-ink"
             onClick={() => setOpen(false)}
           >
-            Visit Main Site →
+            Celebrate the Legacy →
           </a>
           <button
             type="button"
