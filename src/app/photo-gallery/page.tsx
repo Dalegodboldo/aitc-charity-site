@@ -89,15 +89,30 @@ export default function PhotoGalleryPage() {
                 </span>{" "}
                 and let us know how we can help with your event.
               </p>
-              <a
-                href={siteConfig.external.events}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ink px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-ink/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
-              >
-                Campaign &amp; Event Recaps
-                <ArrowUpRight className="h-4 w-4" aria-hidden />
-              </a>
+              {/* Two pill CTAs — Join the Club (red, primary
+                  membership action) and Campaign & Event Recaps
+                  (ink, informational outbound). Stack on mobile,
+                  side-by-side from sm up. */}
+              <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
+                <a
+                  href={siteConfig.external.clubMembership}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-red px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-red-deep hover:text-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
+                >
+                  Join the Club
+                  <ArrowUpRight className="h-4 w-4" aria-hidden />
+                </a>
+                <a
+                  href={siteConfig.external.events}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-ink px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-ink/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
+                >
+                  Campaign &amp; Event Recaps
+                  <ArrowUpRight className="h-4 w-4" aria-hidden />
+                </a>
+              </div>
             </div>
           </Reveal>
         </div>
