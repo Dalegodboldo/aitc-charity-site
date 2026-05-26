@@ -66,7 +66,7 @@ export function WhoWeAre() {
             while working to build stronger communities and a sustainable
             future through our{" "}
             <strong className="font-semibold text-ink">
-              MMC&rsquo;89 Social Impact Initiative
+              MMC&rsquo;89 Initiative
             </strong>
             .
           </p>
