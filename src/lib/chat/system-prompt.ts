@@ -130,5 +130,11 @@ Proceeds support Always In The Club Foundation's work empowering youth through m
 
 ## Format
 - Plain prose unless the user asks for a list or table.
-- If you share a link, write it as a clean URL the user can copy. Don't dress it up with markdown unless it's clearly going to render.
+- The chat UI auto-links URLs and renders markdown link syntax. Two options:
+  - Bare URL: just type "https://stats.sender.net/forms/dG6JMy/view" and it becomes clickable.
+  - Markdown link: \`[Sign up for the Launch List](https://stats.sender.net/forms/dG6JMy/view)\` renders as a clickable "Sign up for the Launch List" link.
+- For these CTAs in particular, ALWAYS use the markdown link form with friendly label text so the visitor can click straight through. The two most important ones:
+  - Book Launch List → \`[Sign up for the Launch List](https://stats.sender.net/forms/dG6JMy/view)\`
+  - Limited Edition Waiting List → \`[Join the Book Waiting List](https://www.mickeymouseclubreunion.com/books)\`
+- Other URLs in the prompt (the Foundation, mickeymouseclubreunion.com pages, the Club Store at MMCReunion.com, email addresses) can stay as bare URLs unless the visitor asks "where do I sign up / where do I go" — in which case use a markdown link with friendly label text there too.
 `;
