@@ -232,11 +232,11 @@ export default function AnnualReport2024Page() {
                 <div className={styles.statLabel}>Program Spending</div>
               </div>
               <div className={styles.stat}>
-                <div className={styles.statNum}>+$7,312</div>
+                <div className={styles.statNum}>+$7,907</div>
                 <div className={styles.statLabel}>Net Surplus</div>
               </div>
               <div className={styles.stat}>
-                <div className={styles.statNum}>+102%</div>
+                <div className={styles.statNum}>+110%</div>
                 <div className={styles.statLabel}>Net Asset Growth</div>
               </div>
             </div>
@@ -799,12 +799,12 @@ export default function AnnualReport2024Page() {
               <tbody>
                 <tr className="alt">
                   <td>Program services</td>
-                  <td className="num">$114,648</td>
+                  <td className="num">$114,112</td>
                   <td className="num">87%</td>
                 </tr>
                 <tr>
                   <td>Management &amp; general</td>
-                  <td className="num">$14,363</td>
+                  <td className="num">$14,304</td>
                   <td className="num">11%</td>
                 </tr>
                 <tr className="alt">
@@ -814,7 +814,7 @@ export default function AnnualReport2024Page() {
                 </tr>
                 <tr className="total">
                   <td>Total expenses</td>
-                  <td className="num">$131,085</td>
+                  <td className="num">$130,490</td>
                   <td className="num">100%</td>
                 </tr>
               </tbody>
@@ -832,7 +832,7 @@ export default function AnnualReport2024Page() {
               <tbody>
                 <tr>
                   <td>Revenue less expenses</td>
-                  <td className="num">+$7,312</td>
+                  <td className="num">+$7,907</td>
                 </tr>
                 <tr className="alt">
                   <td>Beginning net assets</td>
@@ -840,11 +840,11 @@ export default function AnnualReport2024Page() {
                 </tr>
                 <tr>
                   <td>Ending net assets</td>
-                  <td className="num">$14,509</td>
+                  <td className="num">$15,104</td>
                 </tr>
                 <tr className="total">
                   <td>Net asset growth</td>
-                  <td className="num">+102%</td>
+                  <td className="num">+110%</td>
                 </tr>
               </tbody>
             </table>
