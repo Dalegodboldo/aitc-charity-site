@@ -158,9 +158,12 @@ export default function AnnualReport2024Page() {
             <p>
               Financially, this was a year of strengthening fundamentals. Net
               assets more than doubled, our program spending ratio reached
-              88%, and we entered FY 2025 in our strongest position since
-              incorporation — debt-free, with clearer focus, and a marketable
-              asset actively generating revenue for the mission.
+              87%, and we entered FY 2025 in our strongest position since
+              incorporation, with clearer focus and a marketable asset
+              actively generating revenue for the mission. The Foundation
+              closed FY 2024 with a small remaining balance of $595 on a
+              Shopify Capital merchant advance — a 62% reduction from the
+              prior year — and has since fully retired that obligation.
             </p>
 
             <p>
@@ -225,15 +228,15 @@ export default function AnnualReport2024Page() {
                 <div className={styles.statLabel}>Total Revenue</div>
               </div>
               <div className={styles.stat}>
-                <div className={styles.statNum}>88%</div>
+                <div className={styles.statNum}>87%</div>
                 <div className={styles.statLabel}>Program Spending</div>
               </div>
               <div className={styles.stat}>
-                <div className={styles.statNum}>+$8,342</div>
+                <div className={styles.statNum}>+$7,312</div>
                 <div className={styles.statLabel}>Net Surplus</div>
               </div>
               <div className={styles.stat}>
-                <div className={styles.statNum}>+116%</div>
+                <div className={styles.statNum}>+102%</div>
                 <div className={styles.statLabel}>Net Asset Growth</div>
               </div>
             </div>
@@ -265,7 +268,9 @@ export default function AnnualReport2024Page() {
                   $44,868
                 </li>
                 <li>
-                  <strong>Status at year-end:</strong> Debt-free
+                  <strong>Outstanding obligations at year-end:</strong> $595
+                  on a Shopify Capital merchant advance (a 62% reduction from
+                  prior year; since fully retired)
                 </li>
                 <li>
                   <strong>Trees planted around the world (lifetime):</strong>{" "}
@@ -794,13 +799,13 @@ export default function AnnualReport2024Page() {
               <tbody>
                 <tr className="alt">
                   <td>Program services</td>
-                  <td className="num">$114,381</td>
-                  <td className="num">88%</td>
+                  <td className="num">$114,648</td>
+                  <td className="num">87%</td>
                 </tr>
                 <tr>
                   <td>Management &amp; general</td>
-                  <td className="num">$13,600</td>
-                  <td className="num">10%</td>
+                  <td className="num">$14,363</td>
+                  <td className="num">11%</td>
                 </tr>
                 <tr className="alt">
                   <td>Fundraising</td>
@@ -809,13 +814,13 @@ export default function AnnualReport2024Page() {
                 </tr>
                 <tr className="total">
                   <td>Total expenses</td>
-                  <td className="num">$130,055</td>
+                  <td className="num">$131,085</td>
                   <td className="num">100%</td>
                 </tr>
               </tbody>
             </table>
             <p className={styles.tableNote}>
-              Eighty-eight cents of every dollar spent went directly to
+              Eighty-seven cents of every dollar spent went directly to
               programs — well above sector benchmarks for organizations at
               our scale.
             </p>
@@ -827,7 +832,7 @@ export default function AnnualReport2024Page() {
               <tbody>
                 <tr>
                   <td>Revenue less expenses</td>
-                  <td className="num">+$8,342</td>
+                  <td className="num">+$7,312</td>
                 </tr>
                 <tr className="alt">
                   <td>Beginning net assets</td>
@@ -835,18 +840,21 @@ export default function AnnualReport2024Page() {
                 </tr>
                 <tr>
                   <td>Ending net assets</td>
-                  <td className="num">$15,539</td>
+                  <td className="num">$14,509</td>
                 </tr>
                 <tr className="total">
                   <td>Net asset growth</td>
-                  <td className="num">+116%</td>
+                  <td className="num">+102%</td>
                 </tr>
               </tbody>
             </table>
             <p>
-              Always In The Club Foundation closed FY 2024 debt-free, with a
-              stronger financial foundation than at any point since
-              incorporation.
+              The Foundation closed FY 2024 with a small remaining balance
+              of $595 on a Shopify Capital merchant advance — a 62%
+              reduction from the prior year — and has since fully retired
+              that obligation. Even with that obligation, Always In The Club
+              Foundation entered FY 2025 with a stronger financial
+              foundation than at any point since incorporation.
             </p>
           </div>
         </section>
