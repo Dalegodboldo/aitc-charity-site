@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Newsreader, Public_Sans } from "next/font/google";
+import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import { cn } from "@/lib/utils";
 import { BookModal } from "@/components/site/book-modal";
@@ -110,6 +111,25 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
+        {/* Google tag (gtag.js) — routes to Google Ads account
+            AW-11432642033 via GT-KDBG8HHL. Placed in the root
+            layout so it fires on every route. `afterInteractive`
+            is Google's recommended Next.js strategy for analytics
+            and Ads tags: the loader script (async) and the inline
+            config run after hydration without blocking page paint,
+            and Next.js handles re-firing on client-side navigation. */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=GT-KDBG8HHL"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'GT-KDBG8HHL');
+          `}
+        </Script>
         {/* ChatProvider wraps everything so the floating bubble and
             the /chat page share one conversation across navigation. */}
         <ChatProvider>
