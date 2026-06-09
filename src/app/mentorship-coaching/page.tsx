@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { ArrowRight } from "lucide-react";
 import { DonateTrigger } from "@/components/site/donate-trigger";
 import { Reveal } from "@/components/site/reveal";
 import { TrackedCta } from "@/components/mentorship/tracked-cta";
@@ -34,14 +33,13 @@ const HOW_TO_TALK_AMAZON =
   "https://www.amazon.com/How-Talk-People-Confidence-Authentically-ebook/dp/B0FFZV1QFB?dib=eyJ2IjoiMSJ9.O3kHamsUpuCqmfbb19Q2OY_YQvKLiJlkJdsJ1aKArNfbY1JUBzpR-UZaiXhe7ex1MnpqMDBGE_9C-c5PX1CUekYMNDSzdESEu-JT_khxtsCtHIAQSNLTEhRNxT7cY9XSxnsT0jKAZeD0kQ0X9ZJqJ5amg8zA7Fi4fRth70EWdWXtGis9Ngym-f0Ing2iv6G5czQPSMJyuLFWs-9WGTzI97dNLfcP3e1uBjWMclF-M2Ts2NghufgnQOBMExDvI4pypIhnzDPnZ7xrRFhBwL3w4Y2HsQ3y2rZnS40SUvaYfGE.JEI-NdQQagBTTvS-mv9Bhi5NF-OkkXjLfpdiU9x3UKU&dib_tag=se&keywords=zoe+chase&qid=1752993863&sr=8-1&linkCode=sl1&tag=zoechasemedia-20&linkId=8cbaf485cf33781f3130b55019c7008e&language=en_US&ref_=as_li_ss_tl";
 const LIVESTREAM_REPORT =
   "https://www.canva.com/design/DAF7Zy0aTyU/ol6N5NmXAJena8N-trOswg/view?utm_content=DAF7Zy0aTyU&utm_campaign=designshare&utm_medium=link&utm_source#1";
-// This site doesn't have a /contact route (the reference site does). Three
-// CTAs the reference page routed to /contact?subject=… are mailed to
-// Info@AlwaysInTheClub.org with the same subject lines instead — matches
-// the pattern already used on /chat, /team, and the contact-form fallback.
-const CONTACT_EMAIL = "Info@AlwaysInTheClub.org";
-const MAILTO_BOOK_SPEAKER = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Book a speaker / workshop")}`;
-const MAILTO_GET_INVOLVED = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Get involved with mentorship & coaching")}`;
-const MAILTO_PARTNER = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent("Partner with AITCF")}`;
+// This site doesn't have a /contact route (the reference site does).
+// CTAs that previously routed to /contact?subject=… now smooth-scroll
+// down to the footer's Contact column, where the visitor can see the
+// org's email, phones, and addresses and pick how they want to reach
+// out. #contact is the id on the footer's Contact <div> (with
+// scroll-mt-24 so the header doesn't cover the heading).
+const FOOTER_CONTACT_ANCHOR = "#contact";
 
 export const metadata: Metadata = {
   title: "Coaching & Mentorship",
@@ -144,10 +142,10 @@ const PROGRAMS: Program[] = [
     ctas: [
       {
         label: "Book a speaker",
-        href: MAILTO_BOOK_SPEAKER,
+        href: FOOTER_CONTACT_ANCHOR,
         event: { event: "book_speaker" },
         ctaId: "program-card:book-speaker",
-        external: true,
+        external: false,
       },
     ],
   },
@@ -159,10 +157,10 @@ const PROGRAMS: Program[] = [
     ctas: [
       {
         label: "Partner with us",
-        href: MAILTO_PARTNER,
+        href: FOOTER_CONTACT_ANCHOR,
         event: { event: "schedule_call" },
         ctaId: "program-card:partner-with-us",
-        external: true,
+        external: false,
       },
       {
         label: "Livestream impact report",
@@ -372,21 +370,23 @@ export default function MentorshipCoachingPage() {
           <Reveal delay={300}>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm">
               <TrackedCta
-                href={MAILTO_BOOK_SPEAKER}
+                href={FOOTER_CONTACT_ANCHOR}
                 event={{ event: "book_speaker" }}
                 ctaId="hero-strip:book-speaker"
                 variant="inline"
-                external
+                external={false}
               >
                 Book a speaker / workshop
               </TrackedCta>
-              <a
-                href={MAILTO_GET_INVOLVED}
-                className="inline-flex items-baseline gap-1 rounded-sm text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
+              <TrackedCta
+                href={FOOTER_CONTACT_ANCHOR}
+                event={{ event: "schedule_call" }}
+                ctaId="hero-strip:get-involved"
+                variant="inline"
+                external={false}
               >
                 Contact us to get involved
-                <ArrowRight className="h-3.5 w-3.5 self-center" aria-hidden />
-              </a>
+              </TrackedCta>
             </div>
             <div className="mt-4 flex justify-center">
               <DonateTrigger className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-red px-7 text-sm font-semibold uppercase tracking-[0.04em] text-cream no-underline transition-all duration-200 hover:bg-red-deep hover:-translate-y-0.5 hover:shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red motion-reduce:transition-none motion-reduce:hover:translate-y-0">
@@ -653,48 +653,52 @@ export default function MentorshipCoachingPage() {
       {/* ============ MEET OUR COACHES ============ */}
       <section id="coaches" className="scroll-mt-24 bg-cream py-16 sm:py-24">
         <div className="mx-auto max-w-6xl px-5 sm:px-8">
-          {/* Section hero banner — group photo of the Mouseketeer
-              mentors, framed as a soft card. */}
-          <Reveal>
-            <div className="relative mx-auto aspect-[16/7] w-full overflow-hidden rounded-2xl bg-warm-white shadow-soft-sm">
-              <Image
-                src="/images/mentorship-coaching/mentors/mouseketeer-group-mentors.avif"
-                alt="Mouseketeer mentors gathered together"
-                fill
-                sizes="(min-width: 1024px) 1024px, 100vw"
-                className="object-cover"
-              />
-            </div>
-          </Reveal>
+          {/* Section header — two-column on md+: group photo of the
+              Mouseketeer mentors on the LEFT, eyebrow + h2 + lead + the
+              coaching-vs-mentoring callout on the RIGHT. On mobile the
+              image stacks above the copy via the natural grid order. */}
+          <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14">
+            <Reveal>
+              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-warm-white shadow-soft-sm">
+                <Image
+                  src="/images/mentorship-coaching/mentors/mouseketeer-group-mentors.avif"
+                  alt="Mouseketeer mentors gathered together"
+                  fill
+                  sizes="(min-width: 768px) 540px, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </Reveal>
 
-          <Reveal delay={80} className="mt-12 text-center">
-            <p className={eyebrow}>learn. grow. thrive.</p>
-            <h2 className={`${h2Display} max-w-3xl mx-auto`}>
-              Meet our coaches
-            </h2>
-            <p className={`${lead} mx-auto max-w-3xl`}>
-              Each of our coaches brings 30+ years of entertainment
-              industry excellence, trained by Disney in their youth.
-              They&rsquo;ve shared stages alongside icons in entertainment,
-              business, and government — from Jack Canfield and Quincy
-              Jones to Matthew McConaughey, Shark Tank&rsquo;s Robert
-              Herjavec, and Presidents Bill Clinton and George W. Bush.
-            </p>
-            <p className="mx-auto mt-6 max-w-3xl text-sm leading-relaxed text-warm-gray">
-              1:1 Coaching Sessions are booked with a donation to Always In
-              The Club Foundation below. Our 3-month Mentoring Program
-              requires no contribution with your approved application.{" "}
-              <a
-                href={APPLY_FOR_MENTOR_FORM}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-sm font-semibold text-red underline underline-offset-2 decoration-red/40 transition-colors hover:text-red-deep hover:decoration-red-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
-              >
-                Apply here
-              </a>
-              .
-            </p>
-          </Reveal>
+            <Reveal delay={120}>
+              <p className={eyebrow}>learn. grow. thrive.</p>
+              <h2 className={h2Display}>Meet our coaches</h2>
+              <p className={lead}>
+                Each of our coaches brings 30+ years of entertainment
+                industry excellence, trained by Disney in their youth.
+                They&rsquo;ve shared stages alongside icons in
+                entertainment, business, and government — from Jack
+                Canfield and Quincy Jones to Matthew McConaughey, Shark
+                Tank&rsquo;s Robert Herjavec, and Presidents Bill Clinton
+                and George W. Bush.
+              </p>
+              <p className="mt-6 text-sm leading-relaxed text-warm-gray">
+                1:1 Coaching Sessions are booked with a donation to Always
+                In The Club Foundation below. Our 3-month Mentoring
+                Program requires no contribution with your approved
+                application.{" "}
+                <a
+                  href={APPLY_FOR_MENTOR_FORM}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-sm font-semibold text-red underline underline-offset-2 decoration-red/40 transition-colors hover:text-red-deep hover:decoration-red-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
+                >
+                  Apply here
+                </a>
+                .
+              </p>
+            </Reveal>
+          </div>
 
           <div className="mt-12 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {COACHES.map((c, i) => (

@@ -222,8 +222,11 @@ export function Footer() {
             ))}
           </div>
 
-          {/* Contact */}
-          <div>
+          {/* Contact — id="contact" is the scroll target for in-page CTAs
+              like the Mentorship & Coaching page's "Book a speaker" /
+              "Partner with us" / "Get involved" buttons. scroll-mt-24
+              keeps the header from covering the heading. */}
+          <div id="contact" className="scroll-mt-24">
             <h2 className="text-xs font-semibold uppercase tracking-[0.18em] text-ink">
               Contact
             </h2>
