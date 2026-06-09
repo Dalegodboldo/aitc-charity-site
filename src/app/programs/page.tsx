@@ -68,7 +68,7 @@ const programs: Program[] = [
   {
     title: "Mentoring",
     body: "We match young adults and children pursuing a career in the entertainment industry with a Mouseketeer Mentor or other accomplished veteran of the arts — based on common interests, career goals, experiences and life challenges.",
-    href: "https://www.mickeymouseclubreunion.com/mentorship-coaching#mentor",
+    href: "/mentorship-coaching#mentor",
     image: {
       src: "/images/yaffa-3.JPG",
       alt: "Student Yaffa Botier — supported by AITC's Mentoring program",
@@ -101,7 +101,7 @@ const programs: Program[] = [
   {
     title: "Workshops & Coaching",
     body: "Mouseketeers share their knowledge through workshops and one-on-one coaching — training young creatives on their craft while guiding them through emotional well-being and the business of entertainment.",
-    href: "https://www.mickeymouseclubreunion.com/mentorship-coaching#coaches",
+    href: "/mentorship-coaching#coaches",
     ctaLabel: "Book a Coach",
     ctaHideArrow: true,
     showSpeakersModal: true,
@@ -144,7 +144,7 @@ const campaigns: Campaign[] = [
     Icon: GraduationCap,
     cta: {
       label: "Learn, Grow, Thrive",
-      href: "https://www.mickeymouseclubreunion.com/mentorship-coaching",
+      href: "/mentorship-coaching",
     },
   },
   {
@@ -642,17 +642,33 @@ export default function ProgramsPage() {
                       ))}
                     </ul>
                     <div className="mt-6 flex flex-col items-start gap-3 sm:flex-row sm:items-center sm:gap-5">
-                      <a
-                        href={p.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
-                      >
-                        {p.ctaLabel ?? "Learn more"}
-                        {!p.ctaHideArrow && (
-                          <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0" aria-hidden />
-                        )}
-                      </a>
+                      {/* p.href may be internal (e.g. /mentorship-coaching)
+                          or outbound. Internal links render as next/link
+                          (no new tab); outbound get target=_blank as
+                          before. */}
+                      {p.href.startsWith("/") ? (
+                        <Link
+                          href={p.href}
+                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
+                        >
+                          {p.ctaLabel ?? "Learn more"}
+                          {!p.ctaHideArrow && (
+                            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0" aria-hidden />
+                          )}
+                        </Link>
+                      ) : (
+                        <a
+                          href={p.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
+                        >
+                          {p.ctaLabel ?? "Learn more"}
+                          {!p.ctaHideArrow && (
+                            <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:group-hover:translate-x-0 motion-reduce:group-hover:translate-y-0" aria-hidden />
+                          )}
+                        </a>
+                      )}
                       {p.showSpeakersModal && <SpeakersModalTrigger />}
                     </div>
                   </div>
@@ -837,17 +853,26 @@ export default function ProgramsPage() {
                         <GoalIcons goals={c.goals} />
                       </div>
                     )}
-                    {c.cta && (
-                      <a
-                        href={c.cta.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="mt-5 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
-                      >
-                        {c.cta.label}
-                        <ArrowUpRight className="h-4 w-4" aria-hidden />
-                      </a>
-                    )}
+                    {c.cta &&
+                      (c.cta.href.startsWith("/") ? (
+                        <Link
+                          href={c.cta.href}
+                          className="mt-5 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
+                        >
+                          {c.cta.label}
+                          <ArrowUpRight className="h-4 w-4" aria-hidden />
+                        </Link>
+                      ) : (
+                        <a
+                          href={c.cta.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-5 inline-flex items-center gap-1.5 self-start text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
+                        >
+                          {c.cta.label}
+                          <ArrowUpRight className="h-4 w-4" aria-hidden />
+                        </a>
+                      ))}
                   </div>
                 </Reveal>
               );

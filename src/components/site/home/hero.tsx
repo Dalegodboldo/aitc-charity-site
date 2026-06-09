@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { BookModalTrigger } from "@/components/site/book-modal-trigger";
 import { DonateTrigger } from "@/components/site/donate-trigger";
 import { HeroVideo } from "@/components/site/hero-video";
@@ -57,14 +58,12 @@ export function Hero() {
               so the corner seal (which juts into the bottom-left of the
               video) doesn't overlap it. */}
           <div className="mt-5 flex justify-center">
-            <a
-              href="https://www.mickeymouseclubreunion.com/mentorship-coaching"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/mentorship-coaching"
               className="inline-flex h-12 items-center justify-center rounded-full bg-red px-7 text-base font-semibold text-cream no-underline shadow-[0_12px_28px_-12px_rgba(171,7,7,0.55)] transition-colors hover:bg-red-deep hover:text-cream"
             >
               Apply for a Mentor or Book a Coach
-            </a>
+            </Link>
           </div>
         </Reveal>
       </div>

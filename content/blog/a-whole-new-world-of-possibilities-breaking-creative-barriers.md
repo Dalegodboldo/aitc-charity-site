@@ -81,7 +81,7 @@ Ready to explore your whole new world of possibilities? Here's your magic carpet
 
 • Join AITC Foundation's community
 
-• Connect with [experienced mentors](https://www.mickeymouseclubreunion.com/mentorship-coaching)
+• Connect with [experienced mentors](/mentorship-coaching)
 
 • Participate in workshops
 
@@ -89,4 +89,4 @@ Ready to explore your whole new world of possibilities? Here's your magic carpet
 
 #### Remember: You're not just a diamond in the rough—you're the entire Cave of Wonders waiting to be discovered.
 
-Learn more about our programs at [Learn-Grow-Thrive.org](https://www.mickeymouseclubreunion.com/mentorship-coaching)
+Learn more about our programs at [Learn-Grow-Thrive.org](/mentorship-coaching)

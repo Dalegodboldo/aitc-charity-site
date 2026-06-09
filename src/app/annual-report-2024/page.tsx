@@ -422,19 +422,16 @@ export default function AnnualReport2024Page() {
                 mobile. Photos use object-cover with portrait frames to
                 fit performance shots without awkward letterboxing. */}
             {/* Each tile links out to the Mentorship & Coaching
-                page on mickeymouseclubreunion.com (external, opens in
-                a new tab). The anchor IS the grid item so the whole
-                tile is the click target. All three use object-cover
-                in matched 3:4 portrait frames so the trio reads as a
-                clean line of three. Order L→R on desktop:
+                page on this site. The anchor IS the grid item so the
+                whole tile is the click target. All three use
+                object-cover in matched 3:4 portrait frames so the trio
+                reads as a clean line of three. Order L→R on desktop:
                 Deedee-stage · Deedee-Jullianna · Tony. */}
             <div className={styles.photoGrid3}>
-              <a
-                href="https://www.mickeymouseclubreunion.com/mentorship-coaching"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/mentorship-coaching"
                 className={styles.photoGridItemPortrait}
-                aria-label="Mentorship & Coaching — opens in new tab"
+                aria-label="Mentorship & Coaching"
               >
                 <Image
                   src="/images/deedee-mentor-stage.jpg"
@@ -443,13 +440,11 @@ export default function AnnualReport2024Page() {
                   sizes="(min-width: 720px) 240px, 100vw"
                   className="object-cover"
                 />
-              </a>
-              <a
-                href="https://www.mickeymouseclubreunion.com/mentorship-coaching"
-                target="_blank"
-                rel="noopener noreferrer"
+              </Link>
+              <Link
+                href="/mentorship-coaching"
                 className={styles.photoGridItemPortrait}
-                aria-label="Mentorship & Coaching — opens in new tab"
+                aria-label="Mentorship & Coaching"
               >
                 <Image
                   src="/images/deedee-jullianna.jpg"
@@ -458,13 +453,11 @@ export default function AnnualReport2024Page() {
                   sizes="(min-width: 720px) 240px, 100vw"
                   className="object-cover"
                 />
-              </a>
-              <a
-                href="https://www.mickeymouseclubreunion.com/mentorship-coaching"
-                target="_blank"
-                rel="noopener noreferrer"
+              </Link>
+              <Link
+                href="/mentorship-coaching"
                 className={styles.photoGridItemPortrait}
-                aria-label="Mentorship & Coaching — opens in new tab"
+                aria-label="Mentorship & Coaching"
               >
                 <Image
                   src="/images/tony-stage.png"
@@ -473,7 +466,7 @@ export default function AnnualReport2024Page() {
                   sizes="(min-width: 720px) 240px, 100vw"
                   className="object-cover"
                 />
-              </a>
+              </Link>
             </div>
 
             {/* Student Spotlights — TEMPORARILY HIDDEN.

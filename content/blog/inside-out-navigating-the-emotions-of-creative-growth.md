@@ -173,7 +173,7 @@ Each artist receives:
 
 #### Join Our Professional Journey
 
-Visit [www.Learn-Grow-Thrive.org](https://www.mickeymouseclubreunion.com/mentorship-coaching) to:
+Visit [www.Learn-Grow-Thrive.org](/mentorship-coaching) to:
 
 • Connect with professional mentors
 
