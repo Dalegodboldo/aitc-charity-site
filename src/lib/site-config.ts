@@ -102,4 +102,9 @@ export const primaryNav: readonly NavItem[] = [
     label: "Mouseketeer Roundup",
     mobileOnly: true,
   },
+  {
+    href: "/mentorship-coaching",
+    label: "Youth Empowerment",
+    mobileOnly: true,
+  },
 ];
