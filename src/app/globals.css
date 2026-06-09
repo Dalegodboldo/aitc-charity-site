@@ -84,6 +84,11 @@
   html {
     color-scheme: light;
     -webkit-font-smoothing: antialiased;
+    /* Smooth-scroll any in-page anchor navigation
+       (e.g. /mentorship-coaching CTAs → #contact, #coaches).
+       The prefers-reduced-motion override further down this file
+       restores `auto` for visitors who opt out. */
+    scroll-behavior: smooth;
   }
 
   body {
