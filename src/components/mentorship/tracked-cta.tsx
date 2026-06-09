@@ -77,14 +77,16 @@ export function TrackedCta({
   variant = "pill",
   external,
 }: Props) {
-  // External = anything that isn't a same-site path. mailto: / tel: /
-  // http(s):// all need a plain <a>, not next/link's <Link> (which would
-  // treat mailto: as a relative route and fail to resolve).
+  // Three classes of href:
+  //   1. Hash-only ("#contact") — render as plain <a> so the browser's
+  //      native anchor navigation handles the scroll. next/link can be
+  //      flaky for in-page anchors when the click handler also runs.
+  //   2. External ("https://…", "mailto:", "tel:") — plain <a>, with
+  //      target=_blank only for http(s).
+  //   3. Internal route ("/foo") — next/link <Link> for client-side nav.
+  const isHash = href.startsWith("#");
   const isExternal =
-    external ?? /^(https?:|mailto:|tel:)/.test(href);
-  // target="_blank" makes no sense for mailto:/tel: — those open the
-  // OS handler, not a new tab — but it doesn't hurt either. Browsers
-  // ignore it. We keep rel=noopener for the http(s) case.
+    !isHash && (external ?? /^(https?:|mailto:|tel:)/.test(href));
   const isNewTab = /^https?:\/\//.test(href);
   const handleClick = () => trackEvent(event, ctaId);
   const className =
@@ -93,6 +95,14 @@ export function TrackedCta({
   const arrowClasses =
     variant === "inline" ? "h-3.5 w-3.5 self-center" : "h-4 w-4";
 
+  if (isHash) {
+    return (
+      <a href={href} onClick={handleClick} className={className}>
+        {children}
+        <Arrow className={arrowClasses} aria-hidden />
+      </a>
+    );
+  }
   if (isExternal) {
     return (
       <a

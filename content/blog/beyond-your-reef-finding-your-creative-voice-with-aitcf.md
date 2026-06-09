@@ -17,6 +17,6 @@ The ocean calls, just as creativity beckons. Like Moana's journey beyond the ree
 
 **Know Who You Are** "I am Moana of Motunui. You will board my boat, sail across the sea, and restore the heart of Te Fiti." Just as Moana found strength in knowing her identity, our programs help young artists develop their creative identity. Through hands-on training and a supportive community, our teachers have helped over 3,500 young people globally find their voice and purpose.
 
-Ready to begin your own creative voyage? Your journey starts here. Visit [**www.Learn-Grow-Thrive.org**](http://www.learn-grow-thrive.org/) to book a coach or apply for mentorship with industry professionals who can help guide your path in entertainment. Like Moana, your story of discovery awaits – take the first step today.
+Ready to begin your own creative voyage? Your journey starts here. Visit [**www.Learn-Grow-Thrive.org**](/mentorship-coaching) to book a coach or apply for mentorship with industry professionals who can help guide your path in entertainment. Like Moana, your story of discovery awaits – take the first step today.
 
 To partner with us in making a difference in young lives, contact us at [**Info@AlwaysInTheClub.org**](mailto:Info@AlwaysInTheClub.org).

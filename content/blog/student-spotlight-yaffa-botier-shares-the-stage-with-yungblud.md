@@ -57,6 +57,6 @@ That is what we exist to provide. If you're an artist serious about your craft, 
 - Bring us the work, whatever the discipline: music, performance, or the business behind it.
 - Take the next step while the drive is there.
 
-Learn more about our mentoring and coaching programs at [www.Learn-Grow-Thrive.org](https://www.Learn-Grow-Thrive.org).
+Learn more about our mentoring and coaching programs at [www.Learn-Grow-Thrive.org](/mentorship-coaching).
 
 Talent gets you noticed. Preparation gets you ready.

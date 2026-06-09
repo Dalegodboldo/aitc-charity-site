@@ -17,6 +17,6 @@ author: "Always In The Club Foundation"
 
 **Making the World a Better Place:** Like Judy's determination to "make the world a better place," our foundation believes in the power of arts education to transform lives. Our collaboration with organizations like [Disney Imagination Campus](https://www.disneycampus.com/) demonstrates our commitment to creating positive change through creativity and education.
 
-Your dreams deserve professional guidance and support. Take the next step in your entertainment career by visiting [**www.Learn-Grow-Thrive.org**](http://www.learn-grow-thrive.org/). Book a coach or apply for our mentorship program to start turning your big-city dreams into reality. Like Judy Hopps, your determination plus our guidance can make anything possible.
+Your dreams deserve professional guidance and support. Take the next step in your entertainment career by visiting [**www.Learn-Grow-Thrive.org**](/mentorship-coaching). Book a coach or apply for our mentorship program to start turning your big-city dreams into reality. Like Judy Hopps, your determination plus our guidance can make anything possible.
 
 To partner with us in empowering future entertainment professionals, contact us at [**Info@AlwaysInTheClub.org**](mailto:Info@AlwaysInTheClub.org).

@@ -7,6 +7,7 @@
  * within the panel without overflowing.
  */
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { Sparkles, X, ZoomIn } from "lucide-react";
@@ -19,7 +20,9 @@ const PHOTOS: Photo[] = [
   { src: "/images/yaffa-2-2.jpg", alt: "Yaffa Botier performing live" },
   { src: "/images/yaffa-3.JPG", alt: "Yaffa Botier on tour" },
 ];
-const LEARN_MORE_URL = "https://www.Learn-Grow-Thrive.org";
+// Visible link text stays "www.Learn-Grow-Thrive.org" (brand label),
+// but the href points at this site's native Mentorship & Coaching page.
+const LEARN_MORE_URL = "/mentorship-coaching";
 
 export function StudentSpotlightTrigger() {
   const [open, setOpen] = useState(false);
@@ -283,14 +286,12 @@ function StudentSpotlightModal({
               <span className="sm:mt-4 sm:block">
                 Learn more about our mentoring and coaching programs at:
                 <br />
-                <a
+                <Link
                   href={LEARN_MORE_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="font-semibold text-red no-underline transition-colors hover:text-red-deep"
                 >
                   www.Learn-Grow-Thrive.org
-                </a>
+                </Link>
                 .
               </span>
             </p>

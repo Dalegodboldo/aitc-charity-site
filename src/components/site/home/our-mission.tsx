@@ -91,16 +91,17 @@ export function OurMission() {
                   <>
                     <StudentSpotlightTrigger />
                     {/* mt-auto pins the CTA to the bottom of the card so
-                        it lines up flush with the MMC'89 card's button. */}
-                    <a
-                      href="https://www.Learn-Grow-Thrive.org"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                        it lines up flush with the MMC'89 card's button.
+                        The Mentorship & Coaching landing page now lives
+                        natively on this site, so this is an internal
+                        Link — no new tab. */}
+                    <Link
+                      href="/mentorship-coaching"
                       className="mt-auto inline-flex min-h-12 shrink-0 items-center justify-center gap-2 self-start rounded-full bg-ink px-7 py-3 text-base font-semibold text-cream no-underline transition-colors hover:bg-ink/90"
                     >
                       Apply for Mentor / Book a Coach or Workshop
                       <ArrowRight className="h-4 w-4 shrink-0" aria-hidden />
-                    </a>
+                    </Link>
                   </>
                 )}
                 {p.programsLink && (

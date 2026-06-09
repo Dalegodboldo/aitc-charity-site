@@ -659,13 +659,17 @@ export default function MentorshipCoachingPage() {
               image stacks above the copy via the natural grid order. */}
           <div className="grid grid-cols-1 items-center gap-10 md:grid-cols-2 md:gap-14">
             <Reveal>
-              <div className="relative aspect-[16/9] w-full overflow-hidden rounded-2xl bg-warm-white shadow-soft-sm">
+              {/* Group photo is nearly square (862×860). aspect-square +
+                  object-contain keeps everyone visible — nobody's head
+                  or feet get cropped. The bg-warm-white frame fills any
+                  pixel-rounding gaps around the image. */}
+              <div className="relative aspect-square w-full overflow-hidden rounded-2xl bg-warm-white shadow-soft-sm">
                 <Image
                   src="/images/mentorship-coaching/mentors/mouseketeer-group-mentors.avif"
                   alt="Mouseketeer mentors gathered together"
                   fill
                   sizes="(min-width: 768px) 540px, 100vw"
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
             </Reveal>
