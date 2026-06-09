@@ -57,7 +57,7 @@ Remember Mufasa's words: "Everything the light touches is our kingdom." In your 
 
 Ready to begin your mentorship journey? Here's how to start:
 
-• Join AITC Foundation's [mentorship programs](https://www.mickeymouseclubreunion.com/mentorship-coaching)
+• Join AITC Foundation's [mentorship programs](/mentorship-coaching)
 
 • Connect with our community of artists
 
@@ -65,4 +65,4 @@ Ready to begin your mentorship journey? Here's how to start:
 
 • Share your own experiences with others
 
-**The circle of mentorship is waiting for you. Whether you're taking your first steps or ready to guide others, there's a place for you in our creative pride. Visit us at **[**www.Learn-Grow-Thrive.org**](https://www.mickeymouseclubreunion.com/mentorship-coaching)
+**The circle of mentorship is waiting for you. Whether you're taking your first steps or ready to guide others, there's a place for you in our creative pride. Visit us at **[**www.Learn-Grow-Thrive.org**](/mentorship-coaching)

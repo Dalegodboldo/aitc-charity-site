@@ -43,10 +43,10 @@ One-on-one mentoring sessionsProfessional development workshopsMental health sup
 
 Whether you're a young artist looking to develop your talents, a parent seeking quality programs for your child, or a supporter wanting to make a difference, there's a place for you in our community.
 
-Ready to be part of something extraordinary? Visit [Learn-Grow-Thrive.org](https://www.mickeymouseclubreunion.com/mentorship-coaching) today to:
+Ready to be part of something extraordinary? Visit [Learn-Grow-Thrive.org](/mentorship-coaching) today to:
 
 Explore our programsApply for mentorshipSupport a young artistJoin our communityMake a difference
 
-The journey to success begins with a single step. Take that step today at [Learn-Grow-Thrive.org](https://www.mickeymouseclubreunion.com/mentorship-coaching) and become part of a community that's shaping the future of young artists and leaders.
+The journey to success begins with a single step. Take that step today at [Learn-Grow-Thrive.org](/mentorship-coaching) and become part of a community that's shaping the future of young artists and leaders.
 
-Together, we can create opportunities that transform lives. Visit [Learn-Grow-Thrive.org](https://www.mickeymouseclubreunion.com/mentorship-coaching) now and discover how you can be part of this inspiring journey.
+Together, we can create opportunities that transform lives. Visit [Learn-Grow-Thrive.org](/mentorship-coaching) now and discover how you can be part of this inspiring journey.
