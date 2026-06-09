@@ -92,6 +92,11 @@ export const primaryNav: readonly NavItem[] = [
     mobileOnly: true,
   },
   {
+    href: "/mentorship-coaching",
+    label: "Empower Young Creatives",
+    mobileOnly: true,
+  },
+  {
     href: siteConfig.external.mainSite,
     label: "Celebrate the Legacy",
     external: true,
@@ -100,11 +105,6 @@ export const primaryNav: readonly NavItem[] = [
   {
     href: "/mouseketeer-roundup",
     label: "Mouseketeer Roundup",
-    mobileOnly: true,
-  },
-  {
-    href: "/mentorship-coaching",
-    label: "Youth Empowerment",
     mobileOnly: true,
   },
 ];
