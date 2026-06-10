@@ -46,9 +46,9 @@ Here is what makes Chasen's mentorship land. He never stopped being a working ar
   <figcaption>Close Enemies — Chasen fronts the band alongside Aerosmith bassist Tom Hamilton.</figcaption>
 </figure>
 
-### In conversation with our CEO Chasen Hampton, the voice of rock's most exciting new supergroup
+### In conversation with Chasen Hampton, the voice of rock's most exciting new supergroup
 
-*By TANYA SHARMA · Published June 6, 2026*
+*By TANYA SHARMA (Daily Mail) · Published June 6, 2026*
 
 <div class="post-split">
   <div class="post-split-text">
