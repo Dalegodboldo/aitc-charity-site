@@ -4,6 +4,8 @@ date: "2026-06-10"
 excerpt: "Chasen Hampton hosted the Mickey Mouse Club, and today he leads Always In The Club. A look at the mentor and working artist building the next generation of leaders."
 coverImage: "/images/yaffa-3.JPG"
 coverPosition: "center top"
+coverCaption: "See Student Spotlight: Yaffa Botier"
+coverCaptionHref: "/blog/student-spotlight-yaffa-botier-shares-the-stage-with-yungblud"
 author: "Always In The Club Foundation"
 ---
 

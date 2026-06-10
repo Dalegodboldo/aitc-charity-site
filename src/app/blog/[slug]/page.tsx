@@ -86,6 +86,20 @@ export default async function BlogPostPage({
               className="object-cover"
             />
           </div>
+          {post.coverCaption && (
+            <p className="mt-3 text-center text-sm text-warm-gray">
+              {post.coverCaptionHref ? (
+                <Link
+                  href={post.coverCaptionHref}
+                  className="font-semibold text-red no-underline transition-colors hover:text-red-deep"
+                >
+                  {post.coverCaption}
+                </Link>
+              ) : (
+                post.coverCaption
+              )}
+            </p>
+          )}
         </div>
       )}
 
