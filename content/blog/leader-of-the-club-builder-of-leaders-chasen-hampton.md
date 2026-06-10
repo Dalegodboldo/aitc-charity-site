@@ -30,7 +30,7 @@ Ask Chasen about his approach and he will tell you he tries to be "a Go-Giver ra
 
 <figure>
   <img src="/images/chasen-girl.jpg" alt="Chasen Hampton in an MMC’89 cap with a young performer from the mentoring program" style="width: 100%; display: block; border-radius: 1rem;" />
-  <figcaption>Chasen with a young performer in the mentoring program.</figcaption>
+  <figcaption>Chasen with a young performer he mentored.</figcaption>
 </figure>
 
 That point in the right direction adds up. Students he has mentored have gone on to tour with bands like The Wallows, Aly & AJ, and Lovely the Band. Several have earned platinum records, played festivals like Lollapalooza and Coachella, and taken home Billboard Music Awards. He measures success less by the stage he is standing on and more by the ones he helps other people reach.
@@ -61,7 +61,7 @@ Here is what makes Chasen's mentorship land. He never stopped being a working ar
 
 <figure>
   <img src="/images/close-enemies.avif" alt="Cover of Close Enemies’ recently released album" style="width: 100%; display: block; border-radius: 1rem;" />
-  <figcaption>Close Enemies’ recently released album.</figcaption>
+  <figcaption>Close Enemies’ recently released album. <a href="https://music.apple.com/us/artist/close-enemies/1785588801" target="_blank" rel="noopener noreferrer">Listen</a>.</figcaption>
 </figure>
 
 ## Learn From Chasen
