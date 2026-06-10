@@ -24,7 +24,7 @@ Yaffa is a nineteen-year-old rock guitarist based on the East Coast. If you foll
 
 You can follow Yaffa on [Instagram](https://www.instagram.com/yaffa_botier/) and [TikTok](https://www.tiktok.com/@yaffa_botier), or find everything in one place through her [Linktree](https://linktr.ee/yaffa.botier).
 
-Yaffa's path to that stage started long before Brooklyn. She came to the Always In The Club Foundation through our own [Chasen Hampton](https://chasenhampton.com/), lead singer of [Close Enemies](https://closeenemiestheband.com/) featuring Aerosmith bassist Tom Hamilton. He saw what she could do and pointed her toward our mentoring program, which she went on to complete.
+Yaffa's path to that stage started long before Brooklyn. She came to the Always In The Club Foundation through our own [Chasen Hampton](/blog/leader-of-the-club-builder-of-leaders-chasen-hampton), lead singer of [Close Enemies](https://closeenemiestheband.com/) featuring Aerosmith bassist Tom Hamilton. He saw what she could do and pointed her toward our mentoring program, which she went on to complete.
 
 ![Rock guitarist Yaffa Botier](/images/yaffa-3.JPG)
 
