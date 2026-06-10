@@ -2,8 +2,8 @@
 title: "Leader of the Club, Builder of Leaders: Chasen Hampton"
 date: "2026-06-10"
 excerpt: "Chasen Hampton hosted the Mickey Mouse Club, and today he leads Always In The Club. A look at the mentor and working artist building the next generation of leaders."
-coverImage: "/images/chasen-girl.jpg"
-coverPosition: "center 35%"
+coverImage: "/images/yaffa-3.JPG"
+coverPosition: "center top"
 author: "Always In The Club Foundation"
 ---
 
@@ -15,11 +15,21 @@ There is a nice symmetry to it. Chasen once hosted the "All New" Mickey Mouse Cl
 
 Chasen joined the "All New" Mickey Mouse Club in 1989 and became one of its most recognizable faces. When the producers pulled a teen pop group out of the cast, he was one of the five chosen for The Party. And when the show came back for its seventh and final season, he returned as a host, the person out front who set the tone for the whole club.
 
+<figure>
+  <img src="/images/Season7Cast.webp" alt="The season 7 cast of the All New Mickey Mouse Club" style="width: 100%; display: block; border-radius: 1rem;" />
+  <figcaption>Season 7 MMC Hosts Chasen Hampton and Tiffany Hale with Christina Aguilera, Nikki DeLoach, TJ Fantini, Ryan Gosling, Marque ‘Tate’ Lynch, Britney Spears, Justin Timberlake, JC Chasez, Dale Godboldo, Tony Lucca, Rhona Bennett (formerly of En Vogue), Matt Morris, Joshua Ackerman, Lindsey Alley, Jennifer McGill, Ricky Luna, Ilana Miller, Marc Worden, and Nita (Booth) Young.</figcaption>
+</figure>
+
 He came up inside one of the most demanding talent machines in entertainment, and he learned early what real training and mentorship can do for a young performer. That experience is the seed of everything he does now. He came up because people invested in him, and he has spent his career paying that forward.
 
 ## A Go-Giver, Not a Go-Getter
 
 Ask Chasen about his approach and he will tell you he tries to be "a Go-Giver rather than a Go-Getter." He has been mentoring young performers for more than sixteen years, first as a music director and teacher in California and now through the Foundation. His reason is simple and a little stubborn: opportunity is bleak for so many kids, especially in music education, and sometimes all someone needs is a point in the right direction.
+
+<figure>
+  <img src="/images/chasen-girl.jpg" alt="Chasen Hampton in an MMC’89 cap with a young performer from the mentoring program" style="width: 100%; display: block; border-radius: 1rem;" />
+  <figcaption>Chasen with a young performer in the mentoring program.</figcaption>
+</figure>
 
 That point in the right direction adds up. Students he has mentored have gone on to tour with bands like The Wallows, Aly & AJ, and Lovely the Band. Several have earned platinum records, played festivals like Lollapalooza and Coachella, and taken home Billboard Music Awards. He measures success less by the stage he is standing on and more by the ones he helps other people reach.
 
