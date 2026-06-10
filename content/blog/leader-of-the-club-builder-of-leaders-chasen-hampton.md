@@ -17,7 +17,7 @@ Chasen joined the "All New" Mickey Mouse Club in 1989 and became one of its most
 
 <figure>
   <img src="/images/Season7Cast.webp" alt="The season 7 cast of the All New Mickey Mouse Club" style="width: 100%; display: block; border-radius: 1rem;" />
-  <figcaption>Season 7 MMC Hosts Chasen Hampton and Tiffany Hale with Christina Aguilera, Nikki DeLoach, TJ Fantini, Ryan Gosling, Marque ‘Tate’ Lynch, Britney Spears, Justin Timberlake, JC Chasez, Dale Godboldo, Tony Lucca, Rhona Bennett (formerly of En Vogue), Matt Morris, Joshua Ackerman, Lindsey Alley, Jennifer McGill, Ricky Luna, Ilana Miller, Marc Worden, and Nita (Booth) Young.</figcaption>
+  <figcaption>Season 7 MMC Hosts Chasen Hampton and Tiffini Hale with Christina Aguilera, Nikki DeLoach, TJ Fantini, Ryan Gosling, Marque ‘Tate’ Lynch, Britney Spears, Justin Timberlake, JC Chasez, Dale Godboldo, Tony Lucca, Rhona Bennett (formerly of En Vogue), Matt Morris, Joshua Ackerman, Lindsey Alley, Jennifer McGill, Ricky Luna, Ilana Miller, Marc Worden, and Nita (Booth) Young.</figcaption>
 </figure>
 
 He came up inside one of the most demanding talent machines in entertainment, and he learned early what real training and mentorship can do for a young performer. That experience is the seed of everything he does now. He came up because people invested in him, and he has spent his career paying that forward.
