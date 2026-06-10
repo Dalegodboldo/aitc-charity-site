@@ -1,7 +1,7 @@
 ---
 title: "Leader of the Club, Builder of Leaders: Chasen Hampton"
 date: "2026-06-10"
-excerpt: "Chasen Hampton hosted the Mickey Mouse Club, and today he leads Always In The Club. A look at the mentor and working artist building the next generation of leaders."
+excerpt: "Chasen Hampton co-hosted the Mickey Mouse Club, and today he leads Always In The Club. A look at the mentor and working artist building the next generation of leaders."
 coverImage: "/images/yaffa-3.JPG"
 coverPosition: "center top"
 coverCaption: "See Student Spotlight: Yaffa Botier"
@@ -11,15 +11,15 @@ author: "Always In The Club Foundation"
 
 If you have spent any time around the Always In The Club Foundation, you have felt Chasen Hampton's fingerprints on it. He is our Executive Director and Board Chairman, the leader of the Club in the most literal sense. But the title only tells part of the story. Long before he was running the organization, he was doing the work at its center: mentoring young artists, one at a time, and showing them how to build a real life in the arts.
 
-There is a nice symmetry to it. Chasen once hosted the "All New" Mickey Mouse Club. Today he leads Always In The Club. He has been a leader of the club, one way or another, for most of his life.
+There is a nice symmetry to it. Chasen once co-hosted the "All New" Mickey Mouse Club. Today he leads Always In The Club. He has been a leader of the club, one way or another, for most of his life.
 
-## Host of the Club
+## Co-Host of the Club
 
-Chasen joined the "All New" Mickey Mouse Club in 1989 and became one of its most recognizable faces. When the producers pulled a teen pop group out of the cast, he was one of the five chosen for The Party. And when the show came back for its seventh and final season, he returned as a host, the person out front who set the tone for the whole club.
+Chasen joined the "All New" Mickey Mouse Club in 1989 and became one of its most recognizable faces. When the producers pulled a teen pop group out of the cast, he was one of the five chosen for The Party. And when the show came back for its seventh and final season, he returned as a co-host, one of the faces out front who set the tone for the whole club.
 
 <figure>
   <img src="/images/Season7Cast.webp" alt="The season 7 cast of the All New Mickey Mouse Club" style="width: 100%; display: block; border-radius: 1rem;" />
-  <figcaption>Season 7 MMC Hosts Chasen Hampton and Tiffini Hale with Christina Aguilera, Nikki DeLoach, TJ Fantini, Ryan Gosling, Marque ‘Tate’ Lynch, Britney Spears, Justin Timberlake, JC Chasez, Dale Godboldo, Tony Lucca, Rhona Bennett (formerly of En Vogue), Matt Morris, Joshua Ackerman, Lindsey Alley, Jennifer McGill, Ricky Luna, Ilana Miller, Marc Worden, and Nita (Booth) Young.</figcaption>
+  <figcaption>Season 7 MMC Co-Hosts Chasen Hampton and Tiffini Hale with Christina Aguilera, Nikki DeLoach, TJ Fantini, Ryan Gosling, Marque ‘Tate’ Lynch, Britney Spears, Justin Timberlake, JC Chasez, Dale Godboldo, Tony Lucca, Rhona Bennett (formerly of En Vogue), Matt Morris, Joshua Ackerman, Lindsey Alley, Jennifer McGill, Ricky Luna, Ilana Miller, Marc Worden, and Nita (Booth) Young.</figcaption>
 </figure>
 
 He came up inside one of the most demanding talent machines in entertainment, and he learned early what real training and mentorship can do for a young performer. That experience is the seed of everything he does now. He came up because people invested in him, and he has spent his career paying that forward.
@@ -63,6 +63,8 @@ Here is what makes Chasen's mentorship land. He never stopped being a working ar
   <img src="/images/close-enemies.avif" alt="Cover of Close Enemies’ recently released album" style="width: 100%; display: block; border-radius: 1rem;" />
   <figcaption>Close Enemies’ recently released album. <a href="https://music.apple.com/us/artist/close-enemies/1785588801" target="_blank" rel="noopener noreferrer">Listen</a>.</figcaption>
 </figure>
+
+<p style="margin-top: 0.5rem; text-align: right; font-size: 0.8rem; font-style: italic; color: #52525b;">Photos by: Ross Halfin</p>
 
 ## Learn From Chasen
 

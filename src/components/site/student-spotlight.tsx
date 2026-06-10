@@ -261,14 +261,12 @@ function StudentSpotlightModal({
                   Tony Lucca
                 </a>{" "}
                 and introduced to our program by{" "}
-                <a
-                  href="https://www.chasenhampton.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  href="/blog/leader-of-the-club-builder-of-leaders-chasen-hampton"
                   className="font-semibold text-ink underline underline-offset-2 decoration-warm-gray/40 transition-colors hover:text-red hover:decoration-red"
                 >
                   Chasen Hampton
-                </a>{" "}
+                </Link>{" "}
                 (of{" "}
                 <a
                   href="https://closeenemiestheband.com/"
