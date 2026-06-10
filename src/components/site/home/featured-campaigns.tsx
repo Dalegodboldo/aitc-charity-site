@@ -23,12 +23,14 @@ type Campaign = {
 const campaigns: Campaign[] = [
   {
     slug: "chasen-hampton",
-    title: "Leader of the Club, Builder of Leaders",
+    title: "Leader of the Club, Builder of Leaders: Chasen Hampton",
     body: "Chasen Hampton hosted the “All New” Mickey Mouse Club. Today he leads Always In The Club and builds the next generation of leaders. Meet the mentor and working artist at the center of our program — and read about his band, Close Enemies, featuring Aerosmith’s Tom Hamilton.",
     image: {
-      src: "/images/chasen-girl.jpg",
-      alt: "Chasen Hampton in an MMC’89 cap with a young performer from the mentoring program",
-      objectPosition: "center 35%",
+      src: "/images/chasen-daily-mail.avif",
+      alt: "Chasen Hampton, lead singer of Close Enemies",
+      // Portrait photo in the card's 4:3 frame — bias the crop upward
+      // so his face stays in view instead of being cut off.
+      objectPosition: "center 25%",
     },
     href: "/blog/leader-of-the-club-builder-of-leaders-chasen-hampton",
   },
@@ -75,15 +77,6 @@ const campaigns: Campaign[] = [
     image: {
       src: "/images/rhona_doh.png",
       alt: "Rhona Bennett with women supported by Day of Hope",
-    },
-  },
-  {
-    slug: "lastrong",
-    title: "#LAStrong Relief Fund",
-    body: "As Los Angeles faced one of its most devastating wildfire seasons in history, the MMC’89 #LAStrong Relief Fund mobilized to provide immediate assistance to those affected.",
-    image: {
-      src: "/images/7cfac6ae-df61-498c-b14b-4a3e504d5c8c-2.jpg",
-      alt: "#LAStrong Relief Fund campaign graphic showing firefighters during the LA fires",
     },
   },
 ];

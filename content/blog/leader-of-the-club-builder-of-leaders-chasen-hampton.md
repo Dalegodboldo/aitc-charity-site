@@ -34,6 +34,10 @@ Here is what makes Chasen's mentorship land. He never stopped being a working ar
   <figcaption>Close Enemies — Chasen fronts the band alongside Aerosmith bassist Tom Hamilton.</figcaption>
 </figure>
 
+### In conversation with our CEO Chasen Hampton, the voice of rock's most exciting new supergroup
+
+*By TANYA SHARMA · Published June 6, 2026*
+
 <div class="post-split">
   <div class="post-split-text">
     <p>Close Enemies was recently featured in the Daily Mail, with Chasen talking about the band, the music, and the road that brought him here. You can <a href="https://www.dailymail.com/buyline/article-15878655/close-enemies-chasen-hampton-interview.html" target="_blank" rel="noopener noreferrer">read the full interview in the Daily Mail</a>. It is a good window into the person our students get to learn from: someone who has been a kid with a dream, a teen star, a teacher, and a founder, and who still picks up the microphone.</p>
@@ -42,6 +46,11 @@ Here is what makes Chasen's mentorship land. He never stopped being a working ar
     <img src="/images/chasen-daily-mail.avif" alt="Chasen Hampton, photographed for the Daily Mail" />
   </div>
 </div>
+
+<figure style="margin: 1.75rem auto; max-width: 280px;">
+  <img src="/images/close-enemies.avif" alt="Cover of Close Enemies’ recently released album" style="width: 100%; display: block; border-radius: 1rem;" />
+  <figcaption style="text-align: center;">Close Enemies’ recently released album.</figcaption>
+</figure>
 
 ## Learn From Chasen
 
