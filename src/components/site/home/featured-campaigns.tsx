@@ -24,7 +24,7 @@ const campaigns: Campaign[] = [
   {
     slug: "chasen-hampton",
     title: "Leader of the Club, Builder of Leaders",
-    body: "Our Executive Director Chasen Hampton went from helping lead the “All New” Mickey Mouse Club to building the next generation of leaders. Meet the mentor and working artist at the center of our program — and read about his band, Close Enemies, featuring Aerosmith’s Tom Hamilton.",
+    body: "Chasen Hampton hosted the “All New” Mickey Mouse Club. Today he leads Always In The Club and builds the next generation of leaders. Meet the mentor and working artist at the center of our program — and read about his band, Close Enemies, featuring Aerosmith’s Tom Hamilton.",
     image: {
       src: "/images/chasen-girl.jpg",
       alt: "Chasen Hampton in an MMC’89 cap with a young performer from the mentoring program",
