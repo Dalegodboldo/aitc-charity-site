@@ -9,14 +9,31 @@ import { Reveal } from "@/components/site/reveal";
 import { getCampaign, type CampaignPost } from "@/lib/campaigns";
 
 type Campaign = {
-  /** Which content/campaigns/<slug>.json this card opens. */
+  /** Which content/campaigns/<slug>.json this card opens. Also used as
+   *  the React key, so it must be unique even for href-style cards. */
   slug: string;
   title: string;
   body: string;
   image?: { src: string; alt: string; objectPosition?: string };
+  /** When set, "Read more" links to this internal route (e.g. an All Ears
+   *  blog post) instead of opening the campaign modal. */
+  href?: string;
 };
 
 const campaigns: Campaign[] = [
+  {
+    slug: "chasen-hampton",
+    title: "Leader of the Club, Builder of Leaders: Chasen Hampton",
+    body: "Chasen Hampton hosted the “All New” Mickey Mouse Club. Today he leads Always In The Club and builds the next generation of leaders. Meet the mentor and working artist at the center of our program — and read about his band, Close Enemies, featuring Aerosmith’s Tom Hamilton.",
+    image: {
+      src: "/images/chasen-daily-mail.avif",
+      alt: "Chasen Hampton, lead singer of Close Enemies",
+      // Portrait photo in the card's 4:3 frame — bias the crop upward
+      // so his face stays in view instead of being cut off.
+      objectPosition: "center 25%",
+    },
+    href: "/blog/leader-of-the-club-builder-of-leaders-chasen-hampton",
+  },
   {
     slug: "mmc36",
     title: "The True Story of the “All New” Mickey Mouse Club",
@@ -60,15 +77,6 @@ const campaigns: Campaign[] = [
     image: {
       src: "/images/rhona_doh.png",
       alt: "Rhona Bennett with women supported by Day of Hope",
-    },
-  },
-  {
-    slug: "lastrong",
-    title: "#LAStrong Relief Fund",
-    body: "As Los Angeles faced one of its most devastating wildfire seasons in history, the MMC’89 #LAStrong Relief Fund mobilized to provide immediate assistance to those affected.",
-    image: {
-      src: "/images/7cfac6ae-df61-498c-b14b-4a3e504d5c8c-2.jpg",
-      alt: "#LAStrong Relief Fund campaign graphic showing firefighters during the LA fires",
     },
   },
 ];
@@ -150,18 +158,30 @@ export function FeaturedCampaigns() {
                 <p className="mt-4 flex-1 text-[15px] leading-relaxed text-warm-gray">
                   {c.body}
                 </p>
-                <button
-                  type="button"
-                  onClick={() => {
-                    const post = getCampaign(c.slug);
-                    if (post) setOpenPost(post);
-                  }}
-                  aria-haspopup="dialog"
-                  className="mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-red transition-colors hover:text-red-deep"
-                >
-                  Read more
-                  <ArrowUpRight className="h-4 w-4" aria-hidden />
-                </button>
+                {c.href ? (
+                  // Card backed by an All Ears blog post — link straight
+                  // to it instead of opening the campaign modal.
+                  <Link
+                    href={c.href}
+                    className="mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep"
+                  >
+                    Read more
+                    <ArrowUpRight className="h-4 w-4" aria-hidden />
+                  </Link>
+                ) : (
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const post = getCampaign(c.slug);
+                      if (post) setOpenPost(post);
+                    }}
+                    aria-haspopup="dialog"
+                    className="mt-6 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-red transition-colors hover:text-red-deep"
+                  >
+                    Read more
+                    <ArrowUpRight className="h-4 w-4" aria-hidden />
+                  </button>
+                )}
               </div>
             </Reveal>
           ))}

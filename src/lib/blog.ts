@@ -15,6 +15,10 @@ export type PostFrontmatter = {
    * crop would cut off the subject. Optional; defaults to centred.
    */
   coverPosition?: string;
+  /** Optional small caption shown directly under the cover image. */
+  coverCaption?: string;
+  /** When set, the cover caption renders as a link to this href. */
+  coverCaptionHref?: string;
   author: string;
 };
 
