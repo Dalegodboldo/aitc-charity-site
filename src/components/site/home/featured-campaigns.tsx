@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, type CSSProperties } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { CampaignModal } from "@/components/site/campaign-modal";
 import { Reveal } from "@/components/site/reveal";
@@ -14,11 +14,32 @@ type Campaign = {
   slug: string;
   title: string;
   body: string;
-  image?: { src: string; alt: string; objectPosition?: string };
+  image?: {
+    src: string;
+    alt: string;
+    objectPosition?: string;
+    /** Extra zoom on top of object-cover, anchored to the top of the
+     *  frame — enlarges the subject and crops more off the bottom.
+     *  e.g. 1.25 = zoom in 25%. */
+    zoom?: number;
+  };
   /** When set, "Read more" links to this internal route (e.g. an All Ears
    *  blog post) instead of opening the campaign modal. */
   href?: string;
 };
+
+/** Build the cover <Image> style from a card's image config. */
+function imageStyle(
+  image: NonNullable<Campaign["image"]>
+): CSSProperties | undefined {
+  const s: CSSProperties = {};
+  if (image.objectPosition) s.objectPosition = image.objectPosition;
+  if (image.zoom) {
+    s.transform = `scale(${image.zoom})`;
+    s.transformOrigin = "center top";
+  }
+  return Object.keys(s).length ? s : undefined;
+}
 
 const campaigns: Campaign[] = [
   {
@@ -29,8 +50,10 @@ const campaigns: Campaign[] = [
       src: "/images/chasen-daily-mail.avif",
       alt: "Chasen Hampton, lead singer of Close Enemies",
       // Portrait photo in the card's 4:3 frame — bias the crop upward
-      // so his face stays in view instead of being cut off.
+      // so his face stays in view, then zoom in (anchored to the top)
+      // to enlarge him and crop the lower half of his shirt out.
       objectPosition: "center 25%",
+      zoom: 1.25,
     },
     href: "/blog/leader-of-the-club-builder-of-leaders-chasen-hampton",
   },
@@ -116,11 +139,7 @@ export function FeaturedCampaigns() {
                         alt={c.image.alt}
                         fill
                         sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
-                        style={
-                          c.image.objectPosition
-                            ? { objectPosition: c.image.objectPosition }
-                            : undefined
-                        }
+                        style={imageStyle(c.image)}
                         className="object-cover"
                       />
                       <div
@@ -134,11 +153,7 @@ export function FeaturedCampaigns() {
                         alt=""
                         fill
                         sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
-                        style={
-                          c.image.objectPosition
-                            ? { objectPosition: c.image.objectPosition }
-                            : undefined
-                        }
+                        style={imageStyle(c.image)}
                         className="object-cover"
                       />
                     </div>
