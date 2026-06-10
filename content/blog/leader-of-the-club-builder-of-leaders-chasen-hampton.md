@@ -47,9 +47,9 @@ Here is what makes Chasen's mentorship land. He never stopped being a working ar
   </div>
 </div>
 
-<figure style="margin: 1.75rem auto; max-width: 280px;">
+<figure>
   <img src="/images/close-enemies.avif" alt="Cover of Close Enemies’ recently released album" style="width: 100%; display: block; border-radius: 1rem;" />
-  <figcaption style="text-align: center;">Close Enemies’ recently released album.</figcaption>
+  <figcaption>Close Enemies’ recently released album.</figcaption>
 </figure>
 
 ## Learn From Chasen
