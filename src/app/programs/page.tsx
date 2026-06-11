@@ -33,6 +33,7 @@ import { ImageLightbox } from "@/components/site/image-lightbox";
 import { PageIntro } from "@/components/site/page-intro";
 import { Reveal } from "@/components/site/reveal";
 import { GoalIcons } from "@/components/site/sdg-icons";
+import { TrackedOutboundLink } from "@/components/site/tracked-outbound-link";
 import { SpeakersModalTrigger } from "@/components/site/speakers-modal";
 
 export const metadata: Metadata = {
@@ -269,14 +270,14 @@ const campaigns: Campaign[] = [
     body: (
       <>
         With every purchase or donation in our{" "}
-        <a
+        <TrackedOutboundLink
           href="https://mmcreunion.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="text-red underline underline-offset-2 transition-colors hover:text-red-deep"
         >
           Club Store
-        </a>
+        </TrackedOutboundLink>
         , we plant a tree in your name to help offset carbon emissions. We&rsquo;ve
         proudly planted more than 2,500 trees around the world.
       </>

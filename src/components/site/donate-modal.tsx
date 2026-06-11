@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 import { siteConfig } from "@/lib/site-config";
+import { trackEvent } from "@/lib/analytics/track";
 
 /** Dispatch this from anywhere on the page to open the DonateModal —
  *  the in-site Zeffy donation form. Keeps visitors on the site instead
@@ -29,6 +30,12 @@ export function DonateModal() {
 
   useEffect(() => {
     const openOnDemand = () => {
+      // Single source of truth for the `donate` conversion event: every
+      // Donate button on the site (header, hero, footer, Ways-to-Help
+      // card, mentorship page) opens the flow by dispatching this event,
+      // so firing here captures them all exactly once. The modal never
+      // auto-opens, so this only fires on a real Donate click.
+      trackEvent("donate");
       setHasMounted(true);
       setOpen(true);
     };

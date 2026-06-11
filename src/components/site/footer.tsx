@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { DonateTrigger } from "@/components/site/donate-trigger";
 import { cn } from "@/lib/utils";
+import { trackOutbound } from "@/lib/analytics/track";
 import { primaryNav, siteConfig } from "@/lib/site-config";
 
 /** True when the visitor is on `href` or any sub-route of it. */
@@ -158,6 +159,7 @@ export function Footer() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
+                        onClick={() => trackOutbound(item.href)}
                         className="text-warm-gray no-underline transition-colors hover:text-red"
                       >
                         {item.label}
@@ -200,6 +202,11 @@ export function Footer() {
                           href={link.href}
                           target={link.external ? "_blank" : undefined}
                           rel={link.external ? "noopener noreferrer" : undefined}
+                          onClick={
+                            link.external
+                              ? () => trackOutbound(link.href)
+                              : undefined
+                          }
                           aria-current={
                             !link.external && isActivePath(pathname, link.href)
                               ? "page"

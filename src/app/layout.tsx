@@ -111,13 +111,21 @@ export default function RootLayout({
         >
           Skip to main content
         </a>
-        {/* Google tag (gtag.js) — routes to Google Ads account
-            AW-11432642033 via GT-KDBG8HHL. Placed in the root
-            layout so it fires on every route. `afterInteractive`
-            is Google's recommended Next.js strategy for analytics
-            and Ads tags: the loader script (async) and the inline
-            config run after hydration without blocking page paint,
-            and Next.js handles re-firing on client-side navigation. */}
+        {/* Google tag (gtag.js) — loads via GT-KDBG8HHL, then configures
+            two destinations:
+              • GT-KDBG8HHL  → Google Ads (AW-11432642033) for conversion
+                               tracking.
+              • G-30E6TTYWYF → the alwaysintheclub.org data stream in the
+                               shared GA4 property. Without this config the
+                               gtag events only reach Google Ads (ccm/collect)
+                               and never land in GA4. (Do NOT use
+                               G-C1V9PWMFLK — that is the reunion site's
+                               stream in the same property.)
+            Placed in the root layout so it fires on every route.
+            `afterInteractive` is Google's recommended Next.js strategy:
+            the loader (async) and the inline config run after hydration
+            without blocking paint, and Next.js re-fires on client-side
+            navigation. */}
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=GT-KDBG8HHL"
           strategy="afterInteractive"
@@ -128,6 +136,7 @@ export default function RootLayout({
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'GT-KDBG8HHL');
+            gtag('config', 'G-30E6TTYWYF');
           `}
         </Script>
         {/* ChatProvider wraps everything so the floating bubble and

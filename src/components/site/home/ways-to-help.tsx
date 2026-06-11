@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { DonateTrigger } from "@/components/site/donate-trigger";
 import { Reveal } from "@/components/site/reveal";
+import { TrackedOutboundLink } from "@/components/site/tracked-outbound-link";
 import { YouTubePosterHero } from "@/components/site/youtube-poster-hero";
 import { siteConfig } from "@/lib/site-config";
 
@@ -175,14 +176,14 @@ export function WaysToHelp() {
                 // present, render both as siblings (the card container
                 // is not itself a link, so two <a> children are safe).
                 <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-2">
-                  <a
+                  <TrackedOutboundLink
                     href={w.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={`${ctaInlineFlex} no-underline hover:text-red-deep`}
                   >
                     {ctaContent}
-                  </a>
+                  </TrackedOutboundLink>
                   {secondaryCta && (
                     <Link
                       href={secondaryCta.href}
@@ -272,14 +273,14 @@ export function WaysToHelp() {
                 ) : w.kind === "compound-link" ? (
                   <div className={CARD_CLASSES}>{inner}</div>
                 ) : (
-                  <a
+                  <TrackedOutboundLink
                     href={w.href}
                     target="_blank"
                     rel="noopener noreferrer"
                     className={CARD_CLASSES}
                   >
                     {inner}
-                  </a>
+                  </TrackedOutboundLink>
                 )}
               </Reveal>
             );
