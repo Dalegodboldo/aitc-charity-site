@@ -112,14 +112,14 @@ const ways: Way[] = [
         <p>
           Lindsey Alley’s hilarious one-woman show was performed at Walt
           Disney World supporting Give Kids the World Village.{" "}
-          <a
+          <TrackedOutboundLink
             href="https://mmcreunion.com/products/lindsey-alleys-blood-sweat-and-mouseketears-live-at-walt-disney-world"
             target="_blank"
             rel="noopener noreferrer"
             className="font-semibold text-red underline underline-offset-2 decoration-red/40 transition-colors hover:text-red-deep hover:decoration-red-deep"
           >
             Stream it
-          </a>
+          </TrackedOutboundLink>
           .
         </p>
       </>
