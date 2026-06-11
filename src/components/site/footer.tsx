@@ -88,8 +88,13 @@ const externalLinkGroups: { label: string; links: FooterLink[] }[] = [
       },
       {
         href: "/annual-report-2024",
-        label: "Annual Report (FYE 2024)",
+        label: "Annual Report (FYE 2025)",
         external: false,
+      },
+      {
+        href: siteConfig.external.annualReport,
+        label: "Annual Report (FYE 2024)",
+        external: true,
       },
     ],
   },
