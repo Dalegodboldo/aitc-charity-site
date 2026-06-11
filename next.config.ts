@@ -2,6 +2,23 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
+    // ---- Image-optimization budget controls --------------------------
+    // Vercel's free tier caps optimization "transformations" (one per
+    // unique source-image + width + format). These settings minimize how
+    // many we generate.
+    //
+    // Single output format: AVIF roughly DOUBLES transformations because
+    // Next emits a separate optimized file per format. WebP-only halves
+    // that while staying small and well-supported.
+    formats: ["image/webp"],
+    // Fewer responsive widths = fewer transformations per image.
+    // deviceSizes drives fill / `sizes`-based responsive images;
+    // imageSizes drives fixed width/height images.
+    deviceSizes: [640, 1080, 1920],
+    imageSizes: [64, 256],
+    // Keep each optimized image cached as long as possible (31 days) so a
+    // given asset is transformed once and reused, not re-generated.
+    minimumCacheTTL: 2678400,
     // Allow blog post images from the legacy Wix-hosted mickeymouseclubreunion.com
     // CDN. Used by the campaign-modal previews (content/campaigns/*.json).
     remotePatterns: [

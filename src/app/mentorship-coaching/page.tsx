@@ -275,6 +275,9 @@ export default function MentorshipCoachingPage() {
                   alt=""
                   width={140}
                   height={140}
+                  // Small decorative icon (~8–18KB) rendered tiny — serve
+                  // as-is so it doesn't burn an optimization transformation.
+                  unoptimized
                   className="h-16 w-auto object-contain sm:h-20 md:h-24"
                 />
               ))}
@@ -314,6 +317,7 @@ export default function MentorshipCoachingPage() {
               alt=""
               width={160}
               height={160}
+              unoptimized
               className="h-24 w-auto object-contain md:h-32"
             />
           </Reveal>
@@ -532,6 +536,7 @@ export default function MentorshipCoachingPage() {
               alt=""
               width={160}
               height={160}
+              unoptimized
               className="h-24 w-auto object-contain md:h-32"
             />
           </Reveal>
@@ -609,6 +614,8 @@ export default function MentorshipCoachingPage() {
                   alt=""
                   width={140}
                   height={140}
+                  // Small decorative icon rendered tiny — skip optimization.
+                  unoptimized
                   className="h-16 w-auto object-contain sm:h-20 md:h-24"
                 />
               ))}
