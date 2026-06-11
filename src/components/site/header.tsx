@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DONATE_MODAL_OPEN_EVENT } from "@/components/site/donate-modal";
+import { trackOutbound } from "@/lib/analytics/track";
 import { primaryNav, siteConfig } from "@/lib/site-config";
 
 /** True when the visitor is on `href` or any sub-route of it (so a
@@ -76,6 +77,7 @@ export function Header() {
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  onClick={() => trackOutbound(item.href)}
                   className="text-[15px] font-medium text-ink no-underline transition-colors hover:text-red"
                 >
                   {item.label}
@@ -170,7 +172,10 @@ export function Header() {
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  trackOutbound(item.href);
+                  setOpen(false);
+                }}
                 className="block rounded-xl px-3 py-3 font-display text-2xl font-medium text-ink no-underline transition-colors hover:bg-warm-white hover:text-red"
               >
                 {item.label}

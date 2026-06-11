@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { GalleryGrid } from "@/components/site/gallery-grid";
 import { PageIntro } from "@/components/site/page-intro";
 import { Reveal } from "@/components/site/reveal";
+import { TrackedOutboundLink } from "@/components/site/tracked-outbound-link";
 import { siteConfig } from "@/lib/site-config";
 
 const GALLERY_DIR = path.join(process.cwd(), "public/images/gallery");
@@ -94,7 +95,7 @@ export default function PhotoGalleryPage() {
                   (ink, informational outbound). Stack on mobile,
                   side-by-side from sm up. */}
               <div className="mt-6 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
-                <a
+                <TrackedOutboundLink
                   href={siteConfig.external.clubMembership}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -102,7 +103,7 @@ export default function PhotoGalleryPage() {
                 >
                   Join the Club
                   <ArrowUpRight className="h-4 w-4" aria-hidden />
-                </a>
+                </TrackedOutboundLink>
                 <a
                   href={siteConfig.external.events}
                   target="_blank"

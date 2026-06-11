@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { FlipImage, type FlipImageData } from "@/components/site/flip-image";
 import { Reveal } from "@/components/site/reveal";
 import { StudentSpotlightTrigger } from "@/components/site/student-spotlight";
+import { TrackedOutboundLink } from "@/components/site/tracked-outbound-link";
 import { YouTubeEmbed } from "@/components/site/youtube-embed";
 
 const pillars: {
@@ -147,14 +148,14 @@ export function OurMission() {
         <Reveal delay={280} className="mt-8">
           <p className="max-w-md text-[15px] leading-relaxed text-warm-gray">
             Stream the{" "}
-            <a
+            <TrackedOutboundLink
               href="https://mmcreunion.com/products/15-day-rental"
               target="_blank"
               rel="noopener noreferrer"
               className="font-display italic text-red transition-colors hover:text-red-deep"
             >
               Why? Because It&rsquo;s Christmas in Nashville Concert
-            </a>{" "}
+            </TrackedOutboundLink>{" "}
             supporting music people in need.
           </p>
         </Reveal>

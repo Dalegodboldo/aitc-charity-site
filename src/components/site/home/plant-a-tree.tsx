@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "@/components/site/reveal";
 import { GoalIcons } from "@/components/site/sdg-icons";
+import { TrackedOutboundLink } from "@/components/site/tracked-outbound-link";
 
 export function PlantATree() {
   return (
@@ -18,14 +19,14 @@ export function PlantATree() {
               </h2>
               <p className="mt-5 text-base leading-relaxed text-warm-gray">
                 When you make a purchase or donate in our{" "}
-                <a
+                <TrackedOutboundLink
                   href="https://mmcreunion.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-red underline underline-offset-2 transition-colors hover:text-red-deep"
                 >
                   Club Store
-                </a>
+                </TrackedOutboundLink>
                 , we plant a tree in your name to help offset global carbon
                 emissions. Thanks to the generosity of our supporters, we have
                 proudly planted more than 2,500 trees around the world.
