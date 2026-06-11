@@ -86,17 +86,10 @@ const externalLinkGroups: { label: string; links: FooterLink[] }[] = [
         label: "MMC'89 Blog",
         external: true,
       },
-      // Hidden during team review — page is live at /annual-report-2024
-      // but unfindable from the site itself. To re-link, just uncomment.
-      // {
-      //   href: "/annual-report-2024",
-      //   label: "Annual Report (FYE 2025)",
-      //   external: false,
-      // },
       {
-        href: siteConfig.external.annualReport,
+        href: "/annual-report-2024",
         label: "Annual Report (FYE 2024)",
-        external: true,
+        external: false,
       },
     ],
   },
