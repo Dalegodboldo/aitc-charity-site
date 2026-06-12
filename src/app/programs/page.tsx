@@ -126,7 +126,15 @@ type Campaign = {
   /** `objectPosition` overrides the default centred crop — e.g. "top"
    *  to anchor a portrait photo so the head/upper torso stays visible
    *  after the 16:10 crop. */
-  image: { src: string; alt: string; objectPosition?: string };
+  image: {
+    src: string;
+    alt: string;
+    objectPosition?: string;
+    /** Serve the original file (skip /_next/image optimization). Used
+     *  when we're over the Vercel image-optimization quota and a new
+     *  image would otherwise 402 from the optimizer. */
+    unoptimized?: boolean;
+  };
   Icon: LucideIcon;
   /** Outbound "Learn more" link at the foot of the card. */
   cta?: { label: string; href: string };
@@ -249,7 +257,13 @@ const campaigns: Campaign[] = [
     title: "Hall of Fame / Be Great! Awards",
     body: "Like the Mouse Club’s “Hall of Fame Day,” we spotlight community leaders and provide grants to those in need.",
     goals: "Global Goals 1–17",
-    image: { src: "/images/quincy-jones.jpg", alt: "Quincy Jones accepting an award on stage" },
+    image: {
+      src: "/images/quincy-jones.jpg",
+      alt: "Quincy Jones accepting an award on stage",
+      // Over the Vercel optimization quota — serve the (already
+      // web-sized, ~117KB) original so it doesn't 402 from /_next/image.
+      unoptimized: true,
+    },
     Icon: Trophy,
     cta: { label: "Learn more", href: "https://www.mickeymouseclubreunion.com/hall-of-fame" },
   },
@@ -822,6 +836,7 @@ export default function ProgramsPage() {
                       alt={c.image.alt}
                       fill
                       sizes="(min-width: 1024px) 340px, (min-width: 640px) 50vw, 100vw"
+                      unoptimized={c.image.unoptimized}
                       style={
                         c.image.objectPosition
                           ? { objectPosition: c.image.objectPosition }
