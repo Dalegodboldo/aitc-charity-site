@@ -249,7 +249,7 @@ const campaigns: Campaign[] = [
     title: "Hall of Fame / Be Great! Awards",
     body: "Like the Mouse Club’s “Hall of Fame Day,” we spotlight community leaders and provide grants to those in need.",
     goals: "Global Goals 1–17",
-    image: { src: "/images/img_5573.webp", alt: "Hall of Fame / Be Great! Awards honourees" },
+    image: { src: "/images/quincy-jones.jpg", alt: "Quincy Jones accepting an award on stage" },
     Icon: Trophy,
     cta: { label: "Learn more", href: "https://www.mickeymouseclubreunion.com/hall-of-fame" },
   },
