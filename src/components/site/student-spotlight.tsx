@@ -24,14 +24,27 @@ const PHOTOS: Photo[] = [
 // but the href points at this site's native Mentorship & Coaching page.
 const LEARN_MORE_URL = "/mentorship-coaching";
 
-export function StudentSpotlightTrigger() {
+/** Optional override for the modal's closing call-to-action. Defaults to
+ *  the "Learn more about our mentoring and coaching programs" link used
+ *  on the home page. */
+export type SpotlightCta = { text: string; href: string };
+
+export function StudentSpotlightTrigger({
+  cta,
+  className = "mt-6 mb-6 self-start",
+}: {
+  cta?: SpotlightCta;
+  /** Layout classes for the button wrapper (margins/alignment). Pass ""
+   *  to drop the standalone margins when the button sits in a CTA row. */
+  className?: string;
+} = {}) {
   const [open, setOpen] = useState(false);
   return (
     <>
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="group animate-spotlight-glow mt-6 mb-6 inline-flex items-center gap-2 self-start rounded-full border border-red/30 bg-red/5 px-4 py-2 text-sm font-semibold text-red no-underline transition-colors hover:border-red hover:bg-red hover:text-cream"
+        className={`group animate-spotlight-glow ${className} inline-flex items-center gap-2 rounded-full border border-red/30 bg-red/5 px-4 py-2 text-sm font-semibold text-red no-underline transition-colors hover:border-red hover:bg-red hover:text-cream`}
       >
         <Sparkles
           className="h-4 w-4 text-red transition-colors group-hover:text-cream"
@@ -39,7 +52,11 @@ export function StudentSpotlightTrigger() {
         />
         Student Spotlight: Yaffa Botier (Rock Guitarist)
       </button>
-      <StudentSpotlightModal open={open} onClose={() => setOpen(false)} />
+      <StudentSpotlightModal
+        open={open}
+        onClose={() => setOpen(false)}
+        cta={cta}
+      />
     </>
   );
 }
@@ -47,9 +64,11 @@ export function StudentSpotlightTrigger() {
 function StudentSpotlightModal({
   open,
   onClose,
+  cta,
 }: {
   open: boolean;
   onClose: () => void;
+  cta?: SpotlightCta;
 }) {
   const panelRef = useRef<HTMLDivElement>(null);
   const closeBtnRef = useRef<HTMLButtonElement>(null);
@@ -280,18 +299,33 @@ function StudentSpotlightModal({
               </span>{" "}
               {/* Mobile: inline so the body stays one paragraph. Desktop:
                   its own block, same size as the body sentence above it
-                  (inherits the <p>'s sm:text-[18px]). */}
-              <span className="sm:mt-4 sm:block">
-                Learn more about our mentoring and coaching programs at:
-                <br />
-                <Link
-                  href={LEARN_MORE_URL}
-                  className="font-semibold text-red no-underline transition-colors hover:text-red-deep"
-                >
-                  www.Learn-Grow-Thrive.org
-                </Link>
-                .
-              </span>
+                  (inherits the <p>'s sm:text-[18px]). The closing CTA is
+                  overridable via the `cta` prop — the home page uses the
+                  default "Learn more…" link; the /mentorship-coaching card
+                  passes a "Learn how we supported Yaffa's journey" link to
+                  her All Ears post. */}
+              {cta ? (
+                <span className="sm:mt-4 sm:block">
+                  <Link
+                    href={cta.href}
+                    className="font-semibold text-red no-underline transition-colors hover:text-red-deep"
+                  >
+                    {cta.text}
+                  </Link>
+                </span>
+              ) : (
+                <span className="sm:mt-4 sm:block">
+                  Learn more about our mentoring and coaching programs at:
+                  <br />
+                  <Link
+                    href={LEARN_MORE_URL}
+                    className="font-semibold text-red no-underline transition-colors hover:text-red-deep"
+                  >
+                    www.Learn-Grow-Thrive.org
+                  </Link>
+                  .
+                </span>
+              )}
             </p>
 
             <p className="mt-auto text-[12px] uppercase tracking-[0.16em] text-warm-gray/80">

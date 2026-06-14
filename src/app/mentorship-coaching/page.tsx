@@ -4,6 +4,7 @@ import { DonateTrigger } from "@/components/site/donate-trigger";
 import { Reveal } from "@/components/site/reveal";
 import { TrackedCta } from "@/components/mentorship/tracked-cta";
 import { TrackedOutboundLink } from "@/components/site/tracked-outbound-link";
+import { StudentSpotlightTrigger } from "@/components/site/student-spotlight";
 import { COACHES } from "@/lib/mentorship/coaches";
 
 /**
@@ -85,6 +86,14 @@ type Program = {
   title: string;
   body: string;
   image: string;
+  /** object-position class for the card image (e.g. "object-top"). */
+  imagePos?: string;
+  /** Serve the image as-is (skip /_next/image). Used while we're over the
+   *  Vercel optimization quota so a new card image doesn't 402. */
+  unoptimized?: boolean;
+  /** Render the "Student Spotlight: Yaffa Botier" trigger as the first
+   *  button on the card. */
+  spotlight?: boolean;
   ctas: ProgramCta[];
 };
 
@@ -108,7 +117,13 @@ const PROGRAMS: Program[] = [
     eyebrow: "Guiding Youth",
     title: "Through Mentoring & Arts Education",
     body: "Benefits include: healthier lifestyle choices, higher college enrollment rates, and enhanced self-esteem and self-confidence.",
-    image: "/images/mentorship-coaching/Cards/Guiding-Youth.avif",
+    image: "/images/yaffa-chasen.jpg",
+    // Faces (Yaffa + Chasen) sit at the top; the overlay text is at the
+    // bottom — anchor the 16:9 crop to the top to keep the faces and drop
+    // the text. Served unoptimized (web-sized copy) while over quota.
+    imagePos: "object-top",
+    unoptimized: true,
+    spotlight: true,
     ctas: [
       {
         label: "Apply for mentor",
@@ -437,7 +452,8 @@ export default function MentorshipCoachingPage() {
                       alt=""
                       fill
                       sizes="(min-width: 768px) 540px, 100vw"
-                      className="object-cover"
+                      unoptimized={p.unoptimized}
+                      className={`object-cover ${p.imagePos ?? ""}`}
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-7 sm:p-8">
@@ -449,6 +465,15 @@ export default function MentorshipCoachingPage() {
                       {p.body}
                     </p>
                     <div className="mt-6 flex flex-wrap items-center gap-x-5 gap-y-3">
+                      {p.spotlight && (
+                        <StudentSpotlightTrigger
+                          className=""
+                          cta={{
+                            text: "Learn how we supported Yaffa’s journey",
+                            href: "/blog/student-spotlight-yaffa-botier-shares-the-stage-with-yungblud",
+                          }}
+                        />
+                      )}
                       {p.ctas.map((cta) => (
                         <TrackedCta
                           key={cta.ctaId}
