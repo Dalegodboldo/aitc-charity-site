@@ -3,6 +3,7 @@ import Image from "next/image";
 import { DonateTrigger } from "@/components/site/donate-trigger";
 import { Reveal } from "@/components/site/reveal";
 import { TrackedCta } from "@/components/mentorship/tracked-cta";
+import { TrackedOutboundLink } from "@/components/site/tracked-outbound-link";
 import { COACHES } from "@/lib/mentorship/coaches";
 
 /**
@@ -698,14 +699,14 @@ export default function MentorshipCoachingPage() {
                 In The Club Foundation below. Our 3-month Mentoring
                 Program requires no contribution with your approved
                 application.{" "}
-                <a
+                <TrackedOutboundLink
                   href={APPLY_FOR_MENTOR_FORM}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="rounded-sm font-semibold text-red underline underline-offset-2 decoration-red/40 transition-colors hover:text-red-deep hover:decoration-red-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red"
                 >
                   Apply here
-                </a>
+                </TrackedOutboundLink>
                 .
               </p>
             </Reveal>

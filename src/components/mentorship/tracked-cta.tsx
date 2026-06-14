@@ -47,7 +47,7 @@ declare global {
   }
 }
 
-function trackEvent(event: CtaEvent, ctaId: string) {
+function trackEvent(event: CtaEvent, ctaId: string, href: string) {
   if (typeof window === "undefined" || typeof window.gtag !== "function") return;
   try {
     const params: Record<string, string> = { cta: ctaId };
@@ -55,6 +55,13 @@ function trackEvent(event: CtaEvent, ctaId: string) {
       params.coach = event.coach;
     }
     window.gtag("event", event.event, params);
+    // Dedicated signal for "any link to the footer Contact section"
+    // (#contact). Fires alongside the CTA's own event so Google Ads can
+    // count contact intent as ONE clean conversion regardless of which
+    // CTA (book_speaker / schedule_call) drove it.
+    if (href.endsWith("#contact")) {
+      window.gtag("event", "contact_click", { cta: ctaId });
+    }
   } catch {
     /* never block navigation on a tracking glitch */
   }
@@ -88,7 +95,7 @@ export function TrackedCta({
   const isExternal =
     !isHash && (external ?? /^(https?:|mailto:|tel:)/.test(href));
   const isNewTab = /^https?:\/\//.test(href);
-  const handleClick = () => trackEvent(event, ctaId);
+  const handleClick = () => trackEvent(event, ctaId, href);
   const className =
     variant === "pill" ? PILL : variant === "outline" ? OUTLINE : INLINE;
   const Arrow = isExternal ? ArrowUpRight : ArrowRight;

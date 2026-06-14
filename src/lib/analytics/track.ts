@@ -43,6 +43,10 @@ function outboundEvent(href: string): string | null {
   // reserved for real checkout on the reunion shop in the same GA4
   // property.
   if (h.includes("mmcreunion.com")) return "store_click";
+  // The mentor-application Google Form — the only forms.gle link on the
+  // site. Clicking it (e.g. the "Apply here" inline link) is a mentor
+  // application, same as the "Apply for mentor" buttons.
+  if (h.includes("forms.gle/wgwnzef5kpx8zmm17")) return "apply_for_mentor";
   if (norm(href) === norm(external.book)) return "get_mmc_book";
   if (norm(href) === norm(external.clubMembership)) return "join_club_click";
   if (norm(href) === norm(external.bookTeers)) return "book_teers";
