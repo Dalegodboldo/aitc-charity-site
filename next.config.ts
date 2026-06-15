@@ -2,22 +2,28 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    // ---- Image-optimization budget controls --------------------------
-    // Vercel's free tier caps optimization "transformations" (one per
-    // unique source-image + width + format). These settings minimize how
-    // many we generate.
+    // ---- TEMPORARY: optimization disabled (over the Vercel quota) -----
+    // We exceeded Vercel's free-tier image-optimization transformation
+    // cap, so /_next/image returns HTTP 402 for any variant it hasn't
+    // already cached — which shows up as broken images sitewide. Setting
+    // `unoptimized: true` makes next/image serve the original files
+    // directly (no optimizer, no transformations, nothing to 402), so
+    // every image renders. Trade-off: larger downloads since images
+    // aren't resized/recompressed.
     //
-    // Single output format: AVIF roughly DOUBLES transformations because
-    // Next emits a separate optimized file per format. WebP-only halves
-    // that while staying small and well-supported.
+    // REVERT after the transformation quota resets (next Vercel billing
+    // cycle): set `unoptimized: false` (or remove it) to restore the
+    // optimized pipeline below. Resizing the heaviest source images
+    // (esp. /public/images/gallery, avg ~2MB) first will keep bandwidth
+    // reasonable while unoptimized.
+    unoptimized: true,
+    // The settings below only take effect once `unoptimized` is false
+    // again. Single format (AVIF doubles transformations); a trimmed set
+    // of responsive widths; and a long cache so each variant is built
+    // once and reused.
     formats: ["image/webp"],
-    // Fewer responsive widths = fewer transformations per image.
-    // deviceSizes drives fill / `sizes`-based responsive images;
-    // imageSizes drives fixed width/height images.
     deviceSizes: [640, 1080, 1920],
     imageSizes: [64, 256],
-    // Keep each optimized image cached as long as possible (31 days) so a
-    // given asset is transformed once and reused, not re-generated.
     minimumCacheTTL: 2678400,
     // Allow blog post images from the legacy Wix-hosted mickeymouseclubreunion.com
     // CDN. Used by the campaign-modal previews (content/campaigns/*.json).
