@@ -47,13 +47,13 @@ const campaigns: Campaign[] = [
   {
     slug: "book-sold-out",
     title: "Sold Out for the Kids: What Your Support Is Building",
-    body: "Limited-edition ’90s Mickey Mouse Club history book sells out online, raising support for youth mentorship and arts education. See the difference your support is making through coaching, mentoring, and experiential learning.",
+    body: "The limited print editions of the Mickey Mouse Club history sold out — and every purchase supports youth mentorship and arts education. Here's the difference your support is making.",
     image: {
       src: "/images/deedee_jenn_student.png",
       alt: "Deedee Magno Hall and Jennifer McGill with a student in our mentoring program",
       // Zoom in (anchored low) to crop the Imagination Campus logo in
       // the top-left out of the card frame while keeping the trio.
-      zoom: 1.35,
+      zoom: 1.5,
       zoomOrigin: "center 70%",
     },
     href: "/blog/book-sold-out-funding-youth-mentorship",

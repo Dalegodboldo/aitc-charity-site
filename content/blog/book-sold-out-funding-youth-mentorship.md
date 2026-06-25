@@ -1,7 +1,7 @@
 ---
 title: "Sold Out for the Kids: What Your Support Is Building"
 date: "2026-06-24"
-excerpt: "The limited print editions of our Mickey Mouse Club history sold out — and every dollar goes to youth mentorship and arts education. Here's the difference your support is making."
+excerpt: "The limited print editions of the Mickey Mouse Club history sold out — and every purchase supports youth mentorship and arts education. Here's the difference your support is making."
 coverImage: "/images/deedee_jenn_student.png"
 author: "Always In The Club Foundation"
 ---
