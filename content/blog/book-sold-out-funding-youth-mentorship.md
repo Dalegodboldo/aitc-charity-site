@@ -12,7 +12,7 @@ This was never really about a book. It was always about the kids on the other si
 
 ## What Your Support Is Building
 
-At Disney Imagination Campus, Mouseketeers including Deedee Magno Hall, Jennifer McGill, Tony Lucca, and Chasen Hampton have been leading mentoring sessions and masterclasses for young performers — passing along the same kind of training they received as kids to a new generation of dreamers.
+Mouseketeers including Deedee Magno Hall, Jennifer McGill, Tony Lucca, and Chasen Hampton have been leading mentoring sessions and masterclasses for young performers — passing along the same kind of training they received as kids to a new generation of dreamers.
 
 <figure>
   <img src="/images/disney-campus-stage.jpg" alt="Mouseketeers and students on stage at Disney Imagination Campus" style="width: 100%; display: block; border-radius: 1rem;" />
