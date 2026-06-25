@@ -12,7 +12,7 @@ But this was never just about ‘a book.’ It was also about the kids on the ot
 
 ## What Your Support Is Building
 
-Mouseketeers including Deedee Magno Hall, Jennifer McGill, Tony Lucca, and Chasen Hampton have been leading mentoring sessions and masterclasses for young performers — passing along the same kind of training they received as kids to a new generation of dreamers.
+Mouseketeers including Deedee Magno Hall, Jennifer McGill, Tony Lucca, and Chasen Hampton have been leading mentoring sessions and masterclasses for young performers, passing along the same kind of training they received as kids to a new generation of dreamers.
 
 <figure>
   <img src="/images/disney-campus-stage.jpg" alt="Mouseketeers and students on stage at Disney Imagination Campus" style="width: 100%; display: block; border-radius: 1rem;" />
@@ -21,13 +21,13 @@ Mouseketeers including Deedee Magno Hall, Jennifer McGill, Tony Lucca, and Chase
 
 The results are the whole point. A student named Audrey told us, "The highlight of my experience was performing a scene from Frozen on Broadway!" Another student, Mason, shared, "Deedee granted me with feedback and tools that has greatly aided me in developing my skills as a performer."
 
-Tony Lucca — Mouseketeer and a member of our board — put it best: "Watching these kids go on to implement the advice and insights we share with them, and to such great effect, is truly a rewarding and fulfilling experience."
+Tony Lucca, a Mouseketeer and a member of our board, put it best: "Watching these kids go on to implement the advice and insights we share with them, and to such great effect, is truly a rewarding and fulfilling experience."
 
 That is what a sold-out book funds.
 
 ## A Sold-Out Milestone
 
-The Limited Edition was a labor of love: a comprehensive history of all seven seasons of the show, built on more than 62 on-the-record interviews with cast, crew, and former Disney Channel executives. It's the story behind the talent pipeline that launched 35 extraordinary artists and global icons still making a difference today. That this many of you wanted to hold a piece of that history (and that your support now lives on as masterclasses, scholarships, and mentorship), means everything to us.
+The Limited Edition was a labor of love: a comprehensive history of all seven seasons of the show, built on 62 on-the-record interviews with cast, crew, and former Disney Channel executives. It's the story behind the talent pipeline that launched 35 extraordinary artists and global icons still making a difference today. That this many of you wanted to hold a piece of that history (and that your support now lives on as masterclasses, scholarships, and mentorship), means everything to us.
 
 <figure style="margin: 1.75rem auto; max-width: 460px;">
   <img src="/images/Books-mockup-2.png" alt="Always In The Club: The True Story of the All-New Mickey Mouse Club — Coffee Table, Hardcover, Paperback, and eBook editions" style="width: 100%; display: block;" />
