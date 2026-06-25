@@ -6,9 +6,9 @@ coverImage: "/images/deedee_jenn_student.png"
 author: "Always In The Club Foundation"
 ---
 
-Something remarkable happened, and it happened because of you. The numbered limited print editions of *Always In The Club: The True Story of the All-New Mickey Mouse Club* have **sold out** — the Coffee Table edition, the Hardcover, and the Paperback are all gone from our online store. More than 10,000 longtime fans and supporters made that happen, and every dollar raised goes straight to the work that matters most to us: mentoring young creatives, funding arts education, and serving our communities.
+Something remarkable happened, and it happened because of you. The limited print editions of *Always In The Club: The True Story of the All-New Mickey Mouse Club* have **sold out** — the numbered Coffee Table edition, the Hardcover, and the Paperback are all gone from our online store. Thousands of longtime fans and supporters made that happen, and every dollar raised supports the work that matters most to us: mentoring young creatives, funding arts education, and serving our communities.
 
-This was never really about a book. It was always about the kids on the other side of it.
+But this was never just about ‘a book.’ It was also about the kids on the other side of it.
 
 ## What Your Support Is Building
 
@@ -27,7 +27,7 @@ That is what a sold-out book funds.
 
 ## A Sold-Out Milestone
 
-The Limited Edition was a labor of love — a comprehensive history of all seven seasons of the show, built on more than 62 on-the-record interviews with cast, crew, and former Disney Channel executives. It's the story behind the talent pipeline that launched Justin Timberlake, Ryan Gosling, Christina Aguilera, Britney Spears, Keri Russell, and so many others. That this many of you wanted to hold a piece of that history — and that your support now lives on as masterclasses, scholarships, and mentorship — means everything to us.
+The Limited Edition was a labor of love: a comprehensive history of all seven seasons of the show, built on more than 62 on-the-record interviews with cast, crew, and former Disney Channel executives. It's the story behind the talent pipeline that launched 35 extraordinary artists and global icons still making a difference today. That this many of you wanted to hold a piece of that history (and that your support now lives on as masterclasses, scholarships, and mentorship), means everything to us.
 
 <figure style="margin: 1.75rem auto; max-width: 460px;">
   <img src="/images/Books-mockup-2.png" alt="Always In The Club: The True Story of the All-New Mickey Mouse Club — Coffee Table, Hardcover, Paperback, and eBook editions" style="width: 100%; display: block;" />
