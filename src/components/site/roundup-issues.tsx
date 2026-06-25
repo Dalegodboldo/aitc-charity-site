@@ -41,7 +41,7 @@ const issues: Issue[] = [
     image: "/images/MR-june.jpg",
     alt: "The cast of the All-New Mickey Mouse Club, featured in the June Mouseketeer Roundup",
     featured:
-      "Featuring Christina Aguilera, Nikki DeLoach, Rhona Bennett, Jennifer McGill, Deedee Magno Hall, and Chasen Hampton.",
+      "Featuring Christina Aguilera, Rhona Bennett, Tasha Danner, Nikki DeLoach, Chasen Hampton, Jennifer McGill, Mylin Brooks-Stoddard, and Deedee Magno Hall.",
   },
   {
     month: "May",
