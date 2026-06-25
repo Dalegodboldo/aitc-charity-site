@@ -46,7 +46,7 @@ function imageStyle(
 const campaigns: Campaign[] = [
   {
     slug: "book-sold-out",
-    title: "Sold Out for the Kids: What Your Support Is Building",
+    title: "Sold Out for Youth: What Your Support Is Building",
     body: "The limited print editions of the Mickey Mouse Club history sold out — and every purchase supports youth mentorship and arts education. Here's the difference your support is making.",
     image: {
       src: "/images/deedee_jenn_student.png",

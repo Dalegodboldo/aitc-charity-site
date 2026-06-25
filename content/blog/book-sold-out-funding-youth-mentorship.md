@@ -1,5 +1,5 @@
 ---
-title: "Sold Out for the Kids: What Your Support Is Building"
+title: "Sold Out for Youth: What Your Support Is Building"
 date: "2026-06-24"
 excerpt: "The limited print editions of the Mickey Mouse Club history sold out — and every purchase supports youth mentorship and arts education. Here's the difference your support is making."
 coverImage: "/images/deedee_jenn_student.png"
@@ -48,7 +48,11 @@ You can find all of it on [the book page](https://www.mickeymouseclubreunion.com
 
 ## See You at House of Mouse Expo
 
-Cast members are reuniting at House of Mouse Expo in Orlando (July 31–August 2) for live panels, signings, and an after-party appearance. We'll post a full recap here on All Ears once the dust settles — so check back soon.
+Cast members are reuniting to join Joey Lawrence, Matthew Lawrence, Andrew Lawrence, Jenna von Oy, Kaitlyn Robrock (voice of Minnie Mouse), and more celebs under the Disney umbrella at House of Mouse Expo in Orlando (July 31–August 2) for live panels, signings, and an after-party appearance. We'll post a full recap here on All Ears once the dust settles — so check back soon!
+
+<figure style="margin: 1.75rem auto; max-width: 260px;">
+  <img src="/images/h.o.m.e.-logo.png" alt="House of Mouse Expo" style="width: 100%; display: block;" />
+</figure>
 
 ## Thank You
 
