@@ -29,6 +29,10 @@ That is what a sold-out book funds.
 
 The Limited Edition was a labor of love — a comprehensive history of all seven seasons of the show, built on more than 62 on-the-record interviews with cast, crew, and former Disney Channel executives. It's the story behind the talent pipeline that launched Justin Timberlake, Ryan Gosling, Christina Aguilera, Britney Spears, Keri Russell, and so many others. That this many of you wanted to hold a piece of that history — and that your support now lives on as masterclasses, scholarships, and mentorship — means everything to us.
 
+<figure style="margin: 1.75rem auto; max-width: 460px;">
+  <img src="/images/Books-mockup-2.png" alt="Always In The Club: The True Story of the All-New Mickey Mouse Club — Coffee Table, Hardcover, Paperback, and eBook editions" style="width: 100%; display: block;" />
+</figure>
+
 *Read the full announcement on [EIN Presswire](https://www.einpresswire.com/article/921773373/limited-edition-90s-mickey-mouse-club-history-sells-out-online-raising-support-for-youth-mentorship-and-arts-education).*
 
 ## Still Hoping for a Copy?
