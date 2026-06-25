@@ -18,10 +18,12 @@ type Campaign = {
     src: string;
     alt: string;
     objectPosition?: string;
-    /** Extra zoom on top of object-cover, anchored to the top of the
-     *  frame — enlarges the subject and crops more off the bottom.
-     *  e.g. 1.25 = zoom in 25%. */
+    /** Extra zoom on top of object-cover. e.g. 1.25 = zoom in 25%. */
     zoom?: number;
+    /** transform-origin for the zoom. Defaults to "center top" (keeps
+     *  the top, crops the bottom). Use e.g. "center 65%" to crop more
+     *  off the top instead. */
+    zoomOrigin?: string;
   };
   /** When set, "Read more" links to this internal route (e.g. an All Ears
    *  blog post) instead of opening the campaign modal. */
@@ -36,12 +38,26 @@ function imageStyle(
   if (image.objectPosition) s.objectPosition = image.objectPosition;
   if (image.zoom) {
     s.transform = `scale(${image.zoom})`;
-    s.transformOrigin = "center top";
+    s.transformOrigin = image.zoomOrigin ?? "center top";
   }
   return Object.keys(s).length ? s : undefined;
 }
 
 const campaigns: Campaign[] = [
+  {
+    slug: "book-sold-out",
+    title: "Sold Out for the Kids: What Your Support Is Building",
+    body: "Limited-edition ’90s Mickey Mouse Club history sells out online, raising support for youth mentorship and arts education. See the difference your support is making through coaching, mentoring, and experiential learning.",
+    image: {
+      src: "/images/deedee_jenn_student.png",
+      alt: "Deedee Magno Hall and Jennifer McGill with a student in our mentoring program",
+      // Zoom in (anchored low) to crop the Imagination Campus logo in
+      // the top-left out of the card frame while keeping the trio.
+      zoom: 1.35,
+      zoomOrigin: "center 70%",
+    },
+    href: "/blog/book-sold-out-funding-youth-mentorship",
+  },
   {
     slug: "chasen-hampton",
     title: "Leader of the Club, Builder of Leaders: Chasen Hampton",
