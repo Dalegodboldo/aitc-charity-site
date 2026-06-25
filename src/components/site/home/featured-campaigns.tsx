@@ -43,6 +43,16 @@ function imageStyle(
 
 const campaigns: Campaign[] = [
   {
+    slug: "book-sold-out",
+    title: "Sold Out for the Kids",
+    body: "Our limited-edition Mickey Mouse Club history sold out — and every dollar goes to youth mentorship and arts education. See the difference your support is making at Disney Imagination Campus and beyond.",
+    image: {
+      src: "/images/deedee_jenn_student.png",
+      alt: "Deedee Magno Hall and Jennifer McGill with a student at Disney Imagination Campus",
+    },
+    href: "/blog/book-sold-out-funding-youth-mentorship",
+  },
+  {
     slug: "chasen-hampton",
     title: "Leader of the Club, Builder of Leaders: Chasen Hampton",
     body: "Chasen Hampton co-hosted the “All New” Mickey Mouse Club. Today he leads Always In The Club and builds the next generation of leaders. Meet the mentor and working artist at the center of our program — and read about his band, Close Enemies, featuring Aerosmith’s Tom Hamilton.",
