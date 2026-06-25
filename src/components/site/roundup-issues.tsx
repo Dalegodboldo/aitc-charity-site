@@ -25,11 +25,27 @@ type Issue = {
   href: string;
   image: string;
   alt: string;
+  /** Optional object-position for the card image (e.g. "center top") when
+   *  a portrait image would otherwise center-crop badly in the 16:10 frame. */
+  objectPosition?: string;
   /** Short line naming the Mouseketeers featured in this issue. */
   featured: string;
 };
 
 const issues: Issue[] = [
+  {
+    month: "June",
+    year: "2026",
+    slug: "june",
+    href: "https://share.sender.net/campaigns/go3e/mouseketeer-roundup-june",
+    image: "/images/roundup-june-2026.png",
+    alt: "Featured in the June Mouseketeer Roundup",
+    // Portrait promo graphic — anchor to the top so the faces stay in
+    // the 16:10 card crop.
+    objectPosition: "center top",
+    featured:
+      "Featuring Christina Aguilera, Nikki DeLoach, Rhona Bennett, Jennifer McGill, Deedee Magno Hall, and Chasen Hampton.",
+  },
   {
     month: "May",
     year: "2026",
@@ -83,6 +99,11 @@ export function RoundupIssues() {
                   alt={iss.alt}
                   fill
                   sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                  style={
+                    iss.objectPosition
+                      ? { objectPosition: iss.objectPosition }
+                      : undefined
+                  }
                   className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04] motion-reduce:transition-none motion-reduce:group-hover:scale-100"
                 />
                 <span
