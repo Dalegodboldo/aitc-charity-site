@@ -11,6 +11,7 @@ import type { NextRequest } from "next/server";
  * new tab" escape hatch.
  */
 const campaignUrls: Record<string, string> = {
+  july: "https://share.sender.net/campaigns/gLgN/mouseketeer-roundup-july",
   june: "https://share.sender.net/campaigns/go3e/mouseketeer-roundup-june",
   may: "https://share.sender.net/campaigns/fXxG/mouseketeer-roundup-may",
   april: "https://share.sender.net/campaigns/fiqk/mouseketeer-roundup-april",
