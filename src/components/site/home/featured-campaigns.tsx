@@ -45,6 +45,16 @@ function imageStyle(
 
 const campaigns: Campaign[] = [
   {
+    slug: "tony-lucca-youtube",
+    title: "Still Writing, Still Touring, Still Building: Tony Lucca's New YouTube Series",
+    body: "Our board member and mentor Tony Lucca just launched a YouTube series for independent artists — an honest, weekly look at building a creative life that lasts. It's the same truth we teach young artists every day.",
+    image: {
+      src: "/images/tony-stage-card.jpg",
+      alt: "Tony Lucca performing on stage",
+    },
+    href: "/blog/tony-lucca-new-youtube-series-for-independent-artists",
+  },
+  {
     slug: "book-sold-out",
     title: "Sold Out for Youth: What Your Support Is Building",
     body: "The limited print editions of the Mickey Mouse Club history sold out — and every purchase supports youth mentorship and arts education. Here's the difference your support is making.",
