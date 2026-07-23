@@ -34,6 +34,16 @@ type Issue = {
 
 const issues: Issue[] = [
   {
+    month: "July",
+    year: "2026",
+    slug: "july",
+    href: "https://share.sender.net/campaigns/gLgN/mouseketeer-roundup-july",
+    image: "/images/MR-july.jpg",
+    alt: "Mouseketeers reuniting at House of Mouse Expo, featured in the July Mouseketeer Roundup",
+    featured:
+      "Featuring JC Chasez, Tony Lucca, Albert Fields, Chasen Hampton, Damon Pampolina, and Dale Godboldo.",
+  },
+  {
     month: "June",
     year: "2026",
     slug: "june",
