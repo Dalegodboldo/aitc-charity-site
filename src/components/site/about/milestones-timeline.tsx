@@ -131,7 +131,8 @@ export function MilestonesTimeline() {
           Milestones
         </p>
         <h3 className="mt-3 font-display text-2xl font-medium leading-snug tracking-tight text-ink sm:text-3xl">
-          From a small fan project to a community of thousands
+          From a small fan project to a community of thousands creating
+          impact
         </h3>
       </Reveal>
 
