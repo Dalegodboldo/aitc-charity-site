@@ -77,7 +77,7 @@ const milestones: Milestone[] = [
     body: "We kicked off 90s Con with its first ever reunion panel and co-produced the After Party featuring The Party and reunited Mouseketeers.",
     action: {
       kind: "external",
-      href: "https://www.mickeymouseclubreunion.com/events",
+      href: "https://legacy.mickeymouseclubreunion.com/post/inaugural-90s-con-2022",
       label: "Explore 90s Con",
     },
   },
@@ -87,7 +87,7 @@ const milestones: Milestone[] = [
     body: "Returned to 90s Con to celebrate MMC's 35th anniversary and produce After Party with O-Town and reunited Mouseketeers. Also celebrated at Christmas Con and Las Vegas.",
     action: {
       kind: "external",
-      href: "https://www.mickeymouseclubreunion.com/events/hashtags/MMC35",
+      href: "https://legacy.mickeymouseclubreunion.com/mmc35",
       label: "Explore #MMC35",
     },
   },
@@ -98,7 +98,7 @@ const milestones: Milestone[] = [
     action: {
       kind: "internal",
       href: "/mentorship-coaching",
-      label: "Explore the program",
+      label: "Explore our programs",
     },
   },
   {
@@ -206,6 +206,32 @@ export function MilestonesTimeline() {
           </Reveal>
         ))}
       </ol>
+
+      <Reveal className="mt-4">
+        <div className="flex flex-col items-start gap-5 rounded-2xl border border-border bg-warm-white px-7 py-7 shadow-soft-sm sm:flex-row sm:items-center sm:justify-between sm:gap-8">
+          <div>
+            <h4 className="font-display text-xl font-medium leading-snug text-ink sm:text-2xl">
+              There&rsquo;s more to the story
+            </h4>
+            <p className="mt-2 max-w-xl text-[15px] leading-relaxed text-warm-gray">
+              These milestones are the short version. The full history has the
+              photos and the people behind every one of them.
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => {
+              const p = getCampaign(ORIGIN_SLUG);
+              if (p) setPost(p);
+            }}
+            aria-haspopup="dialog"
+            className="inline-flex h-12 shrink-0 items-center justify-center gap-2 rounded-full bg-red px-7 text-base font-semibold text-cream no-underline transition-colors hover:bg-red-deep hover:text-cream"
+          >
+            Read the full origin story
+            <ArrowUpRight className="h-4 w-4" aria-hidden />
+          </button>
+        </div>
+      </Reveal>
 
       {mounted &&
         createPortal(
