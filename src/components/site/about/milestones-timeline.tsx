@@ -68,7 +68,7 @@ const milestones: Milestone[] = [
     action: {
       kind: "internal",
       href: "/annual-report-2024",
-      label: "Our annual report",
+      label: "Our Annual Report (FYE 2025)",
     },
   },
   {
