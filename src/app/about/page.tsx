@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowUpRight, BookOpen, Quote, Sparkles } from "lucide-react";
 import { OriginStoryTrigger } from "@/components/site/about/origin-story-trigger";
+import { MilestonesTimeline } from "@/components/site/about/milestones-timeline";
 import { BookModalTrigger } from "@/components/site/book-modal-trigger";
 import { ImageLightbox } from "@/components/site/image-lightbox";
 import { PageIntro } from "@/components/site/page-intro";
@@ -139,6 +140,8 @@ export default function AboutPage() {
               />
             </Link>
           </Reveal>
+
+          <MilestonesTimeline />
         </div>
       </section>
 
