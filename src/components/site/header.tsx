@@ -136,6 +136,64 @@ function NavDropdown({ item }: { item: NavItem }) {
   );
 }
 
+/** Mobile nav dropdown group (e.g. "Press") — collapsed by default,
+ *  tap the label to expand its links. */
+function MobileNavGroup({
+  item,
+  onNavigate,
+}: {
+  item: NavItem;
+  onNavigate: () => void;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  return (
+    <div>
+      <button
+        type="button"
+        onClick={() => setExpanded((e) => !e)}
+        aria-expanded={expanded}
+        className="flex w-full items-center justify-between rounded-xl px-3 py-3 font-display text-2xl font-medium text-ink transition-colors hover:bg-warm-white hover:text-red"
+      >
+        {item.label}
+        <ChevronDown
+          className={cn(
+            "h-6 w-6 shrink-0 transition-transform",
+            expanded && "rotate-180"
+          )}
+          aria-hidden
+        />
+      </button>
+      {expanded && (
+        <ul className="mb-2 ml-3 mt-1 space-y-1 border-l border-border pl-4">
+          {(item.children ?? []).map((child) => (
+            <li key={child.href}>
+              <a
+                href={child.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  if (child.href) trackOutbound(child.href);
+                  onNavigate();
+                }}
+                className="block rounded-lg px-2 py-2 no-underline transition-colors hover:bg-warm-white"
+              >
+                <span className="block text-[15px] font-medium leading-snug text-ink">
+                  {child.label}
+                </span>
+                {child.sublabel && (
+                  <span className="mt-0.5 block text-[11px] font-semibold uppercase tracking-[0.14em] text-gold">
+                    {child.sublabel}
+                  </span>
+                )}
+              </a>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -159,7 +217,7 @@ export function Header() {
         {/* Desktop nav */}
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-5 lg:flex xl:gap-7"
+          className="hidden items-center gap-4 lg:flex xl:gap-6"
         >
           {primaryNav
             .filter((item) => !item.mobileOnly)
@@ -262,36 +320,11 @@ export function Header() {
         >
           {primaryNav.map((item) =>
             item.children ? (
-              <div key={item.label} className="px-3 py-3">
-                <p className="font-display text-2xl font-medium text-ink">
-                  {item.label}
-                </p>
-                <ul className="mt-2 space-y-1 border-l border-border pl-4">
-                  {item.children.map((child) => (
-                    <li key={child.href}>
-                      <a
-                        href={child.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        onClick={() => {
-                          if (child.href) trackOutbound(child.href);
-                          setOpen(false);
-                        }}
-                        className="block rounded-lg px-2 py-2 no-underline transition-colors hover:bg-warm-white"
-                      >
-                        <span className="block text-[15px] font-medium leading-snug text-ink">
-                          {child.label}
-                        </span>
-                        {child.sublabel && (
-                          <span className="mt-0.5 block text-[11px] font-semibold uppercase tracking-[0.14em] text-gold">
-                            {child.sublabel}
-                          </span>
-                        )}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <MobileNavGroup
+                key={item.label}
+                item={item}
+                onNavigate={() => setOpen(false)}
+              />
             ) : item.external ? (
               <a
                 key={item.href}
