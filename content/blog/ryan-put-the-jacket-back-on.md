@@ -66,8 +66,6 @@ More than 3,500 students have worked with our mentors. Some have gone on to star
   <figcaption>An experiential learning trip, on stage.</figcaption>
 </figure>
 
-Somebody went looking for a kid in a small town in Ontario thirty years ago. That is the work.
-
 ## About the book
 
 The Limited Edition books sold out to this community. A waiting list is open for print overstock or a potential second edition, and a Trade Edition for general release is forthcoming.
