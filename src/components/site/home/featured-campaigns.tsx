@@ -45,6 +45,16 @@ function imageStyle(
 
 const campaigns: Campaign[] = [
   {
+    slug: "ryan-jacket",
+    title: "Ryan Put the Jacket Back On",
+    body: "Ryan Gosling wore a Mickey Mouse Club jacket onstage at D23 and told the room the show changed his life again. Here's the fuller story of the training behind it, and what it became.",
+    image: {
+      src: "/images/ryan-d23-mmc-jacket.webp",
+      alt: "Ryan Gosling in a Mickey Mouse Club jacket at D23",
+    },
+    href: "/blog/ryan-put-the-jacket-back-on",
+  },
+  {
     slug: "tony-lucca-youtube",
     title: "Still Writing, Still Touring, Still Building: Tony Lucca's New YouTube Series",
     body: "Our board member and mentor Tony Lucca just launched a YouTube series for independent artists — an honest, weekly look at building a creative life that lasts. It's the same truth we teach young artists every day.",
