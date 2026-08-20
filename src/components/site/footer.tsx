@@ -87,6 +87,11 @@ const externalLinkGroups: { label: string; links: FooterLink[] }[] = [
         external: true,
       },
       {
+        href: siteConfig.external.pressRoom,
+        label: "Press Room",
+        external: true,
+      },
+      {
         href: "/annual-report-2024",
         label: "Annual Report (FYE 2025)",
         external: false,
@@ -147,6 +152,7 @@ export function Footer() {
               {primaryNav
                 .filter(
                   (item) =>
+                    !item.children &&
                     item.href !== "/blog" &&
                     item.href !== "/mouseketeer-roundup",
                 )
@@ -157,18 +163,18 @@ export function Footer() {
                         href={item.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => trackOutbound(item.href)}
+                        onClick={() => trackOutbound(item.href!)}
                         className="text-warm-gray no-underline transition-colors hover:text-red"
                       >
                         {item.label}
                       </a>
                     ) : (
                       <Link
-                        href={item.href}
-                        aria-current={isActivePath(pathname, item.href) ? "page" : undefined}
+                        href={item.href!}
+                        aria-current={isActivePath(pathname, item.href!) ? "page" : undefined}
                         className={cn(
                           "no-underline transition-colors hover:text-red",
-                          isActivePath(pathname, item.href)
+                          isActivePath(pathname, item.href!)
                             ? "text-gold hover:text-gold"
                             : "text-warm-gray",
                         )}

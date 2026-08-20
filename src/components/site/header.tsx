@@ -3,12 +3,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { ArrowUpRight, ChevronDown, Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { DONATE_MODAL_OPEN_EVENT } from "@/components/site/donate-modal";
 import { trackOutbound } from "@/lib/analytics/track";
-import { primaryNav, siteConfig } from "@/lib/site-config";
+import { primaryNav, siteConfig, type NavItem } from "@/lib/site-config";
 
 /** True when the visitor is on `href` or any sub-route of it (so a
  *  blog post still highlights the "All Ears" link, etc.). */
@@ -43,6 +43,99 @@ function Wordmark({ className }: { className?: string }) {
   );
 }
 
+/** Desktop nav dropdown (e.g. "Press"). Opens on hover and on click,
+ *  closes on outside click, Escape, or route change. */
+function NavDropdown({ item }: { item: NavItem }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+
+  useEffect(() => setOpen(false), [pathname]);
+
+  useEffect(() => {
+    if (!open) return;
+    const onDoc = (e: MouseEvent) => {
+      if (ref.current && !ref.current.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("mousedown", onDoc);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("mousedown", onDoc);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  return (
+    <div
+      ref={ref}
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        type="button"
+        aria-haspopup="true"
+        aria-expanded={open}
+        onClick={() => setOpen((o) => !o)}
+        className="inline-flex items-center gap-1 whitespace-nowrap text-[15px] font-medium text-ink no-underline transition-colors hover:text-red"
+      >
+        {item.label}
+        <ChevronDown
+          className={cn("h-4 w-4 transition-transform", open && "rotate-180")}
+          aria-hidden
+        />
+      </button>
+      {open && (
+        <div className="absolute right-0 top-full z-50 pt-3">
+          <ul className="w-[24rem] max-w-[calc(100vw-2rem)] overflow-hidden rounded-2xl border border-border bg-cream p-2 shadow-soft">
+            {(item.children ?? []).map((child) => {
+              const isCta = !child.sublabel;
+              return (
+                <li
+                  key={child.href}
+                  className={
+                    isCta ? "mt-1 border-t border-border pt-1" : undefined
+                  }
+                >
+                  <a
+                    href={child.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => child.href && trackOutbound(child.href)}
+                    className={cn(
+                      "block rounded-xl px-3 py-2.5 no-underline transition-colors hover:bg-warm-white",
+                      isCta && "font-semibold text-red hover:text-red-deep"
+                    )}
+                  >
+                    {isCta ? (
+                      <span className="inline-flex items-center gap-1.5 text-sm">
+                        {child.label}
+                        <ArrowUpRight className="h-4 w-4" aria-hidden />
+                      </span>
+                    ) : (
+                      <>
+                        <span className="block text-[13.5px] font-medium leading-snug text-ink">
+                          {child.label}
+                        </span>
+                        <span className="mt-1 block text-[11px] font-semibold uppercase tracking-[0.14em] text-gold">
+                          {child.sublabel}
+                        </span>
+                      </>
+                    )}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+}
+
 export function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
@@ -66,30 +159,32 @@ export function Header() {
         {/* Desktop nav */}
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-7 lg:flex"
+          className="hidden items-center gap-5 lg:flex xl:gap-7"
         >
           {primaryNav
             .filter((item) => !item.mobileOnly)
             .map((item) =>
-              item.external ? (
+              item.children ? (
+                <NavDropdown key={item.label} item={item} />
+              ) : item.external ? (
                 <a
                   key={item.href}
                   href={item.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => trackOutbound(item.href)}
-                  className="text-[15px] font-medium text-ink no-underline transition-colors hover:text-red"
+                  onClick={() => trackOutbound(item.href!)}
+                  className="whitespace-nowrap text-[15px] font-medium text-ink no-underline transition-colors hover:text-red"
                 >
                   {item.label}
                 </a>
               ) : (
                 <Link
                   key={item.href}
-                  href={item.href}
-                  aria-current={isActivePath(pathname, item.href) ? "page" : undefined}
+                  href={item.href!}
+                  aria-current={isActivePath(pathname, item.href!) ? "page" : undefined}
                   className={cn(
-                    "text-[15px] font-medium no-underline transition-colors hover:text-red",
-                    isActivePath(pathname, item.href)
+                    "whitespace-nowrap text-[15px] font-medium no-underline transition-colors hover:text-red",
+                    isActivePath(pathname, item.href!)
                       ? "text-gold hover:text-gold"
                       : "text-ink",
                   )}
@@ -166,14 +261,45 @@ export function Header() {
           className="flex flex-1 flex-col gap-1 overflow-y-auto px-5 py-8 sm:px-8"
         >
           {primaryNav.map((item) =>
-            item.external ? (
+            item.children ? (
+              <div key={item.label} className="px-3 py-3">
+                <p className="font-display text-2xl font-medium text-ink">
+                  {item.label}
+                </p>
+                <ul className="mt-2 space-y-1 border-l border-border pl-4">
+                  {item.children.map((child) => (
+                    <li key={child.href}>
+                      <a
+                        href={child.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => {
+                          if (child.href) trackOutbound(child.href);
+                          setOpen(false);
+                        }}
+                        className="block rounded-lg px-2 py-2 no-underline transition-colors hover:bg-warm-white"
+                      >
+                        <span className="block text-[15px] font-medium leading-snug text-ink">
+                          {child.label}
+                        </span>
+                        {child.sublabel && (
+                          <span className="mt-0.5 block text-[11px] font-semibold uppercase tracking-[0.14em] text-gold">
+                            {child.sublabel}
+                          </span>
+                        )}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : item.external ? (
               <a
                 key={item.href}
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => {
-                  trackOutbound(item.href);
+                  trackOutbound(item.href!);
                   setOpen(false);
                 }}
                 className="block rounded-xl px-3 py-3 font-display text-2xl font-medium text-ink no-underline transition-colors hover:bg-warm-white hover:text-red"
@@ -183,12 +309,12 @@ export function Header() {
             ) : (
               <Link
                 key={item.href}
-                href={item.href}
+                href={item.href!}
                 onClick={() => setOpen(false)}
-                aria-current={isActivePath(pathname, item.href) ? "page" : undefined}
+                aria-current={isActivePath(pathname, item.href!) ? "page" : undefined}
                 className={cn(
                   "block rounded-xl px-3 py-3 font-display text-2xl font-medium no-underline transition-colors hover:bg-warm-white hover:text-red",
-                  isActivePath(pathname, item.href)
+                  isActivePath(pathname, item.href!)
                     ? "text-gold hover:text-gold"
                     : "text-ink",
                 )}
