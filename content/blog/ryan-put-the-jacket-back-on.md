@@ -59,7 +59,7 @@ More than 3,500 students have worked with our mentors. Some have gone on to star
 
 <figure>
   <img src="/images/disney-campus-stage.jpg" alt="Students and Mouseketeers on stage during an experiential learning trip" style="width: 100%; display: block; border-radius: 1rem;" />
-  <figcaption>An experiential learning trip, on stage.</figcaption>
+  <figcaption>An experiential learning trip. On stage at Disney Imagination Campus.</figcaption>
 </figure>
 
 ## About the book
