@@ -15,12 +15,8 @@ Ryan Gosling walked onto the Disney Entertainment Showcase stage at D23 in front
 
 Our inbox has not been quiet since.
 
-<figure style="margin: 2rem auto; max-width: 420px;">
-  <video controls preload="metadata" playsinline style="width: 100%; display: block; border-radius: 1rem;">
-    <source src="/videos/ryan-d23-jacket.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
-  <figcaption>Ryan Gosling's Mickey Mouse Club tribute at D23.</figcaption>
+<figure style="margin: 2rem auto; max-width: 400px;">
+  <iframe src="https://www.instagram.com/reel/DcEWHrOz-7U/embed" title="Ryan Gosling's Mickey Mouse Club tribute at D23 (Instagram)" style="display: block; width: 100%; height: 760px; border: 0; border-radius: 1rem; background: #000; overflow: hidden;" scrolling="no" allowtransparency="true" allowfullscreen loading="lazy"></iframe>
 </figure>
 
 ## Why that line landed the way it did
