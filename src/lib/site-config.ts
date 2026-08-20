@@ -43,6 +43,8 @@ export const siteConfig = {
       "https://aitc-annual-report-2024.my.canva.site/aitcf-2024-digital-annual-report",
     linktree: "https://linktr.ee/alwaysintheclub",
     clubMembership: "https://www.mickeymouseclubreunion.com/club-membership",
+    pressRoom:
+      "https://www.einpresswire.com/newsroom/mmc_89___always_in_the_club_foundation/",
   },
   social: {
     facebook: "https://www.facebook.com/766633633355366",
@@ -59,10 +61,15 @@ export const siteConfig = {
  *  desktop nav row but still appear in the mobile drawer (so we don't
  *  push the wide nav over its budget). */
 export type NavItem = {
-  href: string;
+  /** Optional so a dropdown parent (with `children`) can omit its own link. */
+  href?: string;
   label: string;
+  /** Small muted source tag under a dropdown link, e.g. "People", "Deadline". */
+  sublabel?: string;
   external?: boolean;
   mobileOnly?: boolean;
+  /** When present, this item renders as a dropdown of these links. */
+  children?: NavItem[];
 };
 
 export const primaryNav: readonly NavItem[] = [
@@ -72,7 +79,58 @@ export const primaryNav: readonly NavItem[] = [
   { href: "/our-why", label: "Our Why" },
   { href: "/team", label: "Team" },
   { href: siteConfig.external.store, label: "Store", external: true },
-  { href: "/blog", label: "All Ears" },
+  { href: "/blog", label: "Blog" },
+  {
+    label: "Press",
+    children: [
+      {
+        href: "https://www.societyartsandculture.com/article/935623106-after-ryan-gosling-s-mickey-mouse-club-tribute-at-d23-his-former-castmates-tell-the-full-story",
+        label:
+          "After Ryan Gosling's Mickey Mouse Club Tribute at D23, His Former Castmates Tell the Full Story",
+        sublabel: "Society, Arts, Culture",
+        external: true,
+      },
+      {
+        href: "https://people.com/all-new-mickey-mouse-club-stars-where-are-they-now-12021267",
+        label: "Stars of 'The All-New Mickey Mouse Club': Where Are They Now?",
+        sublabel: "People",
+        external: true,
+      },
+      {
+        href: "https://people.com/former-mickey-mouse-club-mouseketeers-attending-90s-con-florida-exclusive-8676789",
+        label:
+          "Former Mickey Mouse Club Mouseketeers Are Set to Bring the Magic to 90s Con Florida",
+        sublabel: "People Exclusive",
+        external: true,
+      },
+      {
+        href: "https://deadline.com/2026/07/the-mickey-mouse-club-disney-plus-pilot-1236983470/",
+        label:
+          "'The Mickey Mouse Club' Returns: Disney+ Orders Pilot For Reboot Of Kids Show That Made Britney Spears, Justin Timberlake & Ryan Gosling Famous",
+        sublabel: "Deadline",
+        external: true,
+      },
+      {
+        href: "https://www.einpresswire.com/article/930808381/same-weekend-two-stages-mouseketeer-reunion-and-teen-theater-collide-in-central-florida",
+        label:
+          "Same Weekend, Two Stages: Mouseketeer Reunion and Teen Theater Collide in Central Florida",
+        sublabel: "Press Release",
+        external: true,
+      },
+      {
+        href: "https://www.einpresswire.com/article/921773373/limited-edition-90s-mickey-mouse-club-history-sells-out-online-raising-support-for-youth-mentorship-and-arts-education",
+        label:
+          "Limited Edition '90s Mickey Mouse Club History Sells Out Online, Raising Support for Youth Mentorship and Arts Education",
+        sublabel: "Press Release",
+        external: true,
+      },
+      {
+        href: siteConfig.external.pressRoom,
+        label: "All press releases",
+        external: true,
+      },
+    ],
+  },
   { href: siteConfig.external.events, label: "Events", external: true, mobileOnly: true },
   {
     href: "/photo-gallery",
