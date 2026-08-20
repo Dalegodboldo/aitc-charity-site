@@ -45,14 +45,14 @@ Cast members who came up through that system reunited and built Always In The Cl
 
 <figure>
   <img src="/images/mouseketeer-mentors.jpg" alt="Reunited Mouseketeers who now mentor young performers through Always In The Club Foundation" style="width: 100%; display: block; border-radius: 1rem;" />
-  <figcaption>The 'Teers who came up through the Club, together again.</figcaption>
+  <figcaption>AITCF mentors Jennifer McGill, Tony Lucca, Chasen Hampton, Deedee Magno Hall, and Rhona Bennett. 'Teers who came up through the Club, together again.</figcaption>
 </figure>
 
 So AITCF runs mentorship, coaching, and experiential learning programs pairing young people with working professionals, with attention to mental health alongside craft.
 
 <figure>
   <img src="/images/dale-halifax-class.jpg" alt="A Mouseketeer leading a mentoring session with a room of young performers" style="width: 100%; display: block; border-radius: 1rem;" />
-  <figcaption>A mentoring session with the next generation.</figcaption>
+  <figcaption>An acting master class and mentoring session by Mouseketeer Dale Godboldo at Halifax Repertory Theatre in Ormond Beach, FL.</figcaption>
 </figure>
 
 More than 3,500 students have worked with our mentors. Some have gone on to star in feature films and television, sign with Disney, Capitol Records, and Universal Music Group, and have performed on stages from Coachella to Good Morning America.
