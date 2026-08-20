@@ -1,7 +1,7 @@
 ---
 title: "Ryan Put the Jacket Back On"
 date: "2026-08-20"
-excerpt: "Ryan Gosling wore a retro Mickey Mouse Club jacket onstage at D23 and told 14,000 people the show changed his life again. Here's the fuller story of what that training was, and what it became."
+excerpt: "Ryan Gosling wore a retro Mickey Mouse Club jacket onstage at D23 and told 14,000 people that Disney changed his life. Here's the fuller story of what that opportunity, training, and mentorship was like, and how Always In The Club carries it all forward for a new generation of young artists."
 coverImage: "/images/ryan-d23-mmc-jacket.webp"
 coverCaption: "Ryan Gosling at D23, back in a Mickey Mouse Club jacket."
 author: "Always In The Club Foundation"
