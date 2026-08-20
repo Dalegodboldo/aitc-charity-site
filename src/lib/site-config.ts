@@ -84,10 +84,10 @@ export const primaryNav: readonly NavItem[] = [
     label: "Press",
     children: [
       {
-        href: "https://www.einpresswire.com/article/935623106/after-ryan-gosling-s-mickey-mouse-club-tribute-at-d23-his-former-castmates-tell-the-full-story",
+        href: "https://www.societyartsandculture.com/article/935623106-after-ryan-gosling-s-mickey-mouse-club-tribute-at-d23-his-former-castmates-tell-the-full-story",
         label:
           "After Ryan Gosling's Mickey Mouse Club Tribute at D23, His Former Castmates Tell the Full Story",
-        sublabel: "Press Release",
+        sublabel: "Society, Arts, Culture",
         external: true,
       },
       {
