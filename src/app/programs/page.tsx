@@ -479,8 +479,8 @@ export default function ProgramsPage() {
             <figure className="my-12 rounded-2xl border border-border bg-cream p-8 sm:p-10">
               <Quote className="h-7 w-7 text-gold" aria-hidden />
               <blockquote className="mt-4 font-display text-2xl italic leading-snug text-ink sm:text-[28px]">
-                MMC was the most informative experience I&rsquo;ve ever had as
-                an entertainer.
+                MMC was the most formative experience I&rsquo;ve ever had as an
+                entertainer.
               </blockquote>
               <figcaption className="mt-5 text-sm font-semibold uppercase tracking-[0.16em] text-warm-gray">
                 Justin Timberlake <span className="text-gold">— Mouseketeer</span>
