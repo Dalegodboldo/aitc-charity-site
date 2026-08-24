@@ -328,7 +328,17 @@ export default function MentorshipCoachingPage() {
           {/* Mentorship vs. coaching video — from AITCF Mentor Tony Lucca */}
           <Reveal delay={120} className="mt-14">
             <div className="mx-auto max-w-4xl">
-              <p className="mx-auto max-w-3xl text-lg leading-relaxed text-warm-gray sm:text-xl">
+              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-border bg-ink/5 shadow-soft-sm">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/DOda5pzqP5c"
+                  title="Mentorship vs. coaching, by AITCF Mentor Tony Lucca"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full border-0"
+                />
+              </div>
+              <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-warm-gray sm:text-xl">
                 Learn the difference between mentorship and coaching to
                 accelerate your career growth. Stop mixing these two essential
                 development tools.
@@ -341,16 +351,6 @@ export default function MentorshipCoachingPage() {
                 This breakdown by AITCF Mentor Tony Lucca clarifies the unique
                 roles both play and how to leverage them effectively.
               </p>
-              <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl border border-border bg-ink/5 shadow-soft-sm">
-                <iframe
-                  src="https://www.youtube-nocookie.com/embed/DOda5pzqP5c"
-                  title="Mentorship vs. coaching, by AITCF Mentor Tony Lucca"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  loading="lazy"
-                  className="absolute inset-0 h-full w-full border-0"
-                />
-              </div>
             </div>
           </Reveal>
         </div>
