@@ -102,7 +102,7 @@ const programs: Program[] = [
   {
     title: "Workshops & Coaching",
     body: "Mouseketeers share their knowledge through workshops and one-on-one coaching — training young creatives on their craft while guiding them through emotional well-being and the business of entertainment.",
-    href: "/mentorship-coaching#coaches",
+    href: "/mentorship-coaching#need-a-coach",
     ctaLabel: "Book a Coach",
     ctaHideArrow: true,
     showSpeakersModal: true,
