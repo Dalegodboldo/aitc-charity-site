@@ -579,6 +579,41 @@ export default function ProgramsPage() {
               </Link>
             </div>
           </Reveal>
+
+          {/* Mentorship vs. coaching — video from AITCF Mentor Tony Lucca */}
+          <Reveal delay={380} className="mt-8">
+            <div className="rounded-2xl border border-border bg-cream p-6 shadow-soft-sm sm:p-8">
+              <p className="text-[12px] font-semibold uppercase tracking-[0.18em] text-gold">
+                Watch
+              </p>
+              <h3 className="mt-2 font-display text-2xl font-medium leading-snug text-ink sm:text-[26px]">
+                Mentorship vs. coaching
+              </h3>
+              <p className="mt-4 text-[15px] leading-relaxed text-warm-gray sm:text-[16px]">
+                Learn the difference between mentorship and coaching to
+                accelerate your career growth. Stop mixing these two essential
+                development tools.
+              </p>
+              <p className="mt-3 text-[15px] leading-relaxed text-warm-gray sm:text-[16px]">
+                Many professionals use these terms interchangeably, but
+                mentorship and coaching serve very different purposes in your
+                professional journey. Understanding how each approach functions
+                is a critical step in building a successful career strategy. This
+                breakdown by AITCF Mentor Tony Lucca clarifies the unique roles
+                both play and how to leverage them effectively.
+              </p>
+              <div className="relative mt-6 aspect-[16/9] overflow-hidden rounded-xl bg-ink/5">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/DOda5pzqP5c"
+                  title="Mentorship vs. coaching, by AITCF Mentor Tony Lucca"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full border-0"
+                />
+              </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 
