@@ -325,6 +325,40 @@ export default function MentorshipCoachingPage() {
             ))}
           </div>
 
+          {/* Mentorship vs. coaching video — from AITCF Mentor Tony Lucca */}
+          <Reveal delay={120} className="mt-14">
+            <div className="mx-auto max-w-4xl">
+              <p className="mx-auto max-w-3xl text-lg leading-relaxed text-warm-gray sm:text-xl">
+                Learn the difference between mentorship and coaching to
+                accelerate your career growth. Stop mixing these two essential
+                development tools.
+              </p>
+              <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-warm-gray">
+                Many professionals use these terms interchangeably, but
+                mentorship and coaching serve very different purposes in your
+                professional journey. Understanding how each approach functions
+                is a critical step in building a successful career strategy.
+                This breakdown by AITCF Mentor Tony Lucca clarifies the unique
+                roles both play and how to leverage them effectively.
+              </p>
+              <div className="relative mt-8 aspect-[16/9] overflow-hidden rounded-2xl border border-border bg-ink/5 shadow-soft-sm">
+                <iframe
+                  src="https://www.youtube-nocookie.com/embed/DOda5pzqP5c"
+                  title="Mentorship vs. coaching, by AITCF Mentor Tony Lucca"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full border-0"
+                />
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ============ OUR PROGRAMS — lead + CTA strip (light-grey) ============ */}
+      <section className="bg-cream pb-16 pt-4 sm:pb-24 sm:pt-8">
+        <div className="mx-auto max-w-6xl px-5 text-center sm:px-8">
           {/* 3D-cube icon solo above the "Our programs are designed…"
               lead — mirrors legacy placement between stats and CTAs. */}
           <Reveal delay={120} className="mt-14 flex justify-center">
