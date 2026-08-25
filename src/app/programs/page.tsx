@@ -450,6 +450,12 @@ export default function ProgramsPage() {
         eyebrow="Programs & Initiatives"
         title="Our Programs & Initiatives"
         subtitle="Using our E.A.R.S. to make a difference — Education, Arts, Resources… Social Impact"
+        backgroundImage="/images/disney-campus-stage.jpg"
+        backgroundPosition="center 40%"
+        cta={{
+          label: "Apply for a Mentor or Coach",
+          href: "/mentorship-coaching",
+        }}
       />
 
       {/* Mentoring & Youth Arts Education */}
