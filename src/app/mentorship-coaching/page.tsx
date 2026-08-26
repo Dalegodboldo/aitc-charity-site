@@ -334,8 +334,7 @@ export default function MentorshipCoachingPage() {
             </h3>
             <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-warm-gray">
               Learn the difference between mentorship and coaching to accelerate
-              your career growth. Stop mixing these two essential development
-              tools.
+              your career growth.
             </p>
             <div className="mx-auto mt-10 grid max-w-4xl gap-6 text-left sm:grid-cols-2">
               {/* Coaching — goal-driven, paid */}
