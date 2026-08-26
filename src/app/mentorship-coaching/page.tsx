@@ -622,7 +622,7 @@ export default function MentorshipCoachingPage() {
           {/* On mobile, book cover sits above the copy via order-first.
               On md+, the grid puts text-col on the left, cover on the
               right. */}
-          <Reveal className="md:col-span-6 md:order-none">
+          <Reveal className="md:col-span-7 md:order-none">
             <p className={eyebrow}>
               Connect authentically · Network powerfully
             </p>
@@ -657,19 +657,19 @@ export default function MentorshipCoachingPage() {
               </TrackedCta>
             </div>
           </Reveal>
-          {/* Transparent cutout of the book/tablet/phone (grey textured
-              square removed) sits directly on the section bg. The
-              drop-shadow supplies a clean, consistent lift. order-first
-              puts it above the copy on mobile. */}
-          <Reveal delay={120} className="order-first md:col-span-6 md:order-none">
-            <Image
-              src="/images/mentorship-coaching/Cards/connect-authentically-cutout.webp"
-              alt="How to Talk to People, shown in paperback, tablet, and phone"
-              width={683}
-              height={596}
-              sizes="(min-width: 768px) 540px, 88vw"
-              className="mx-auto h-auto w-full max-w-[340px] sm:max-w-[420px] md:max-w-none drop-shadow-[0_18px_24px_rgba(0,0,0,0.18)]"
-            />
+          {/* Cover sits directly on the bg — no card frame. drop-shadow
+              keeps the original "lift" feel. order-first puts the
+              cover above on mobile; md+ uses the natural grid order. */}
+          <Reveal delay={120} className="order-first md:col-span-5 md:order-none">
+            <div className="relative mx-auto aspect-[3/4] max-w-[280px] md:max-w-none">
+              <Image
+                src="/images/mentorship-coaching/Cards/connect-authentically.avif"
+                alt="How to Talk to People — book cover"
+                fill
+                sizes="(min-width: 768px) 420px, 100vw"
+                className="object-contain drop-shadow-[0_18px_24px_rgba(0,0,0,0.18)]"
+              />
+            </div>
           </Reveal>
         </div>
       </section>
