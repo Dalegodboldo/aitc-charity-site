@@ -332,6 +332,11 @@ export default function MentorshipCoachingPage() {
             <h3 className="mx-auto mt-3 max-w-2xl font-display text-2xl font-medium leading-snug text-ink sm:text-[28px]">
               Know the difference
             </h3>
+            <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-warm-gray">
+              Learn the difference between mentorship and coaching to accelerate
+              your career growth. Stop mixing these two essential development
+              tools.
+            </p>
             <div className="mx-auto mt-10 grid max-w-4xl gap-6 text-left sm:grid-cols-2">
               {/* Coaching — goal-driven, paid */}
               <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-cream p-7 shadow-soft-sm sm:p-8">
@@ -417,12 +422,7 @@ export default function MentorshipCoachingPage() {
                   className="absolute inset-0 h-full w-full border-0"
                 />
               </div>
-              <p className="mx-auto mt-8 max-w-3xl text-lg leading-relaxed text-warm-gray sm:text-xl">
-                Learn the difference between mentorship and coaching to
-                accelerate your career growth. Stop mixing these two essential
-                development tools.
-              </p>
-              <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-warm-gray">
+              <p className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-warm-gray">
                 Many professionals use these terms interchangeably, but
                 mentorship and coaching serve very different purposes in your
                 professional journey. Understanding how each approach functions
