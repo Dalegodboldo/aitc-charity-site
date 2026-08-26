@@ -10,7 +10,7 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
-import { ArrowUpRight, Mic2, X } from "lucide-react";
+import { ArrowRight, ArrowUpRight, Mic2, X } from "lucide-react";
 
 type Photo = { src: string; alt: string };
 
@@ -31,20 +31,48 @@ const RHONA_FEATURED_PHOTO: Photo = {
 const RHONA_URL = "https://www.mickeymouseclubreunion.com/rhona-bennett";
 const CONTACT_EMAIL = "Info@AlwaysInTheClub.org";
 
-export function SpeakersModalTrigger() {
+const TRIGGER_LINK =
+  "group inline-flex items-center gap-1.5 self-start text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red";
+
+// Brand-red filled pill — mirrors TrackedCta's "pill" variant so this
+// trigger can sit next to the other program-card CTAs and match them.
+const TRIGGER_PILL =
+  "inline-flex h-12 items-center justify-center gap-2 rounded-full bg-red px-7 text-sm font-semibold uppercase tracking-[0.04em] text-cream no-underline transition-all duration-200 hover:bg-red-deep hover:-translate-y-0.5 hover:shadow-soft focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+
+type TriggerProps = {
+  /** Button label. Defaults to "Speakers & Workshops". */
+  label?: string;
+  /** Render as a filled brand-red pill (like the other program-card
+   *  CTAs) instead of the default inline text link. */
+  pill?: boolean;
+};
+
+export function SpeakersModalTrigger({
+  label = "Speakers & Workshops",
+  pill = false,
+}: TriggerProps = {}) {
   const [open, setOpen] = useState(false);
   return (
     <>
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="group inline-flex items-center gap-1.5 self-start text-sm font-semibold text-red no-underline transition-colors hover:text-red-deep focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-red"
+        className={pill ? TRIGGER_PILL : TRIGGER_LINK}
       >
-        <Mic2
-          className="h-4 w-4 transition-transform duration-300 group-hover:scale-110 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
-          aria-hidden
-        />
-        Speakers &amp; Workshops
+        {pill ? (
+          <>
+            {label}
+            <ArrowRight className="h-4 w-4" aria-hidden />
+          </>
+        ) : (
+          <>
+            <Mic2
+              className="h-4 w-4 transition-transform duration-300 group-hover:scale-110 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+              aria-hidden
+            />
+            {label}
+          </>
+        )}
       </button>
       <SpeakersModal open={open} onClose={() => setOpen(false)} />
     </>

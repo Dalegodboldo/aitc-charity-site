@@ -592,7 +592,9 @@ export default function MentorshipCoachingPage() {
                           }}
                         />
                       )}
-                      {p.showSpeakersModal && <SpeakersModalTrigger />}
+                      {p.showSpeakersModal && (
+                        <SpeakersModalTrigger label="Learn More" pill />
+                      )}
                       {p.ctas.map((cta) => (
                         <TrackedCta
                           key={cta.ctaId}
