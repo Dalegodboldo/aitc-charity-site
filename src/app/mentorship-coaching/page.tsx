@@ -421,10 +421,7 @@ export default function MentorshipCoachingPage() {
                 />
               </div>
               <p className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-warm-gray">
-                <span className="font-semibold text-ink">
-                  AITCF Mentor and Coach
-                </span>
-                ,{" "}
+                AITCF Mentor and Coach,{" "}
                 <a
                   href="https://www.tonylucca.com/"
                   target="_blank"
