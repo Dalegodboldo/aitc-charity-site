@@ -426,8 +426,12 @@ export default function MentorshipCoachingPage() {
                 mentorship and coaching serve very different purposes in your
                 professional journey. Understanding how each approach functions
                 is a critical step in building a successful career strategy.
-                This breakdown by AITCF Mentor Tony Lucca clarifies the unique
-                roles both play and how to leverage them effectively.
+                This breakdown by{" "}
+                <span className="font-semibold text-ink">
+                  AITCF Mentor Tony Lucca
+                </span>{" "}
+                clarifies the unique roles both play and how to leverage them
+                effectively.
               </p>
             </div>
           </Reveal>
