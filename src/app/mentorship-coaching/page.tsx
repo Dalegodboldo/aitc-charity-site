@@ -6,6 +6,7 @@ import { Reveal } from "@/components/site/reveal";
 import { TrackedCta } from "@/components/mentorship/tracked-cta";
 import { TrackedOutboundLink } from "@/components/site/tracked-outbound-link";
 import { StudentSpotlightTrigger } from "@/components/site/student-spotlight";
+import { SpeakersModalTrigger } from "@/components/site/speakers-modal";
 import { COACHES } from "@/lib/mentorship/coaches";
 
 /**
@@ -95,6 +96,9 @@ type Program = {
   /** Render the "Student Spotlight: Yaffa Botier" trigger as the first
    *  button on the card. */
   spotlight?: boolean;
+  /** Render the Speakers & Workshops modal trigger (identical to the one
+   *  on the Programs page) as the card's CTA. */
+  showSpeakersModal?: boolean;
   ctas: ProgramCta[];
 };
 
@@ -156,15 +160,8 @@ const PROGRAMS: Program[] = [
     title: "Through Speaker Sessions & Workshops",
     body: "Our speakers have impacted 3,500+ students while sharing stages alongside icons like Jack Canfield, John Travolta, Halle Berry, Quincy Jones, Matthew McConaughey, Les Brown, Demi Moore, and Shark Tank's Robert Herjavec.",
     image: "/images/mentorship-coaching/Cards/equiping-youth.avif",
-    ctas: [
-      {
-        label: "Book a speaker",
-        href: FOOTER_CONTACT_ANCHOR,
-        event: { event: "book_speaker" },
-        ctaId: "program-card:book-speaker",
-        external: false,
-      },
-    ],
+    showSpeakersModal: true,
+    ctas: [],
   },
   {
     eyebrow: "Educating Youth",
@@ -333,8 +330,10 @@ export default function MentorshipCoachingPage() {
               Know the difference
             </h3>
             <p className="mx-auto mt-4 max-w-2xl text-lg leading-relaxed text-warm-gray">
-              Learn the difference between mentorship and coaching to accelerate
-              your career growth.
+              Many professionals use these terms interchangeably, but mentorship
+              and coaching serve very different purposes in your professional
+              journey. Understanding how each approach functions is a critical
+              step in building a successful career strategy.
             </p>
             <div className="mx-auto mt-10 grid max-w-4xl gap-6 text-left sm:grid-cols-2">
               {/* Coaching — goal-driven, paid */}
@@ -422,10 +421,6 @@ export default function MentorshipCoachingPage() {
                 />
               </div>
               <p className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-warm-gray">
-                Many professionals use these terms interchangeably, but
-                mentorship and coaching serve very different purposes in your
-                professional journey. Understanding how each approach functions
-                is a critical step in building a successful career strategy.
                 This breakdown by{" "}
                 <span className="font-semibold text-ink">
                   AITCF Mentor Tony Lucca
@@ -590,6 +585,7 @@ export default function MentorshipCoachingPage() {
                           }}
                         />
                       )}
+                      {p.showSpeakersModal && <SpeakersModalTrigger />}
                       {p.ctas.map((cta) => (
                         <TrackedCta
                           key={cta.ctaId}
