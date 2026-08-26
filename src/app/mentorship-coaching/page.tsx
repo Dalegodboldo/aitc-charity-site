@@ -434,9 +434,9 @@ export default function MentorshipCoachingPage() {
                   Tony Lucca
                 </a>
                 , counts Adam Levine, coaches on the All-New Mickey Mouse Club,
-                and even his uncle Terry as his mentors. He breaks down and
-                clarifies the unique roles that a coach and mentor play, and
-                breaks down how to leverage mentorship effectively.
+                and even his uncle Terry as his mentors. He clarifies the unique
+                roles that a coach and mentor play, and breaks down how to
+                leverage mentorship effectively.
               </p>
             </div>
           </Reveal>
