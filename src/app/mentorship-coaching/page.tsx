@@ -421,20 +421,22 @@ export default function MentorshipCoachingPage() {
                 />
               </div>
               <p className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-warm-gray">
-                This breakdown by{" "}
                 <span className="font-semibold text-ink">
-                  AITCF Mentor{" "}
-                  <a
-                    href="https://www.tonylucca.com/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-red underline underline-offset-2 transition-colors hover:text-red-deep"
-                  >
-                    Tony Lucca
-                  </a>
-                </span>{" "}
-                clarifies the unique roles both play and how to leverage them
-                effectively.
+                  AITCF Mentor and Coach
+                </span>
+                ,{" "}
+                <a
+                  href="https://www.tonylucca.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-red underline underline-offset-2 transition-colors hover:text-red-deep"
+                >
+                  Tony Lucca
+                </a>
+                , counts Adam Levine, coaches on the All-New Mickey Mouse Club,
+                and even his uncle Terry as his mentors. He breaks down and
+                clarifies the unique roles that a coach and mentor play, and
+                breaks down how to leverage mentorship effectively.
               </p>
             </div>
           </Reveal>
