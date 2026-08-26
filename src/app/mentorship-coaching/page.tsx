@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Sprout, Target } from "lucide-react";
 import { DonateTrigger } from "@/components/site/donate-trigger";
 import { Reveal } from "@/components/site/reveal";
 import { TrackedCta } from "@/components/mentorship/tracked-cta";
@@ -324,6 +325,84 @@ export default function MentorshipCoachingPage() {
               </Reveal>
             ))}
           </div>
+
+          {/* Coaching vs. mentoring — two call-out boxes */}
+          <Reveal delay={100} className="mt-16">
+            <p className={eyebrow}>Coaching or mentoring?</p>
+            <h3 className="mx-auto mt-3 max-w-2xl font-display text-2xl font-medium leading-snug text-ink sm:text-[28px]">
+              Know the difference
+            </h3>
+            <div className="mx-auto mt-10 grid max-w-4xl gap-6 text-left sm:grid-cols-2">
+              {/* Coaching — goal-driven, paid */}
+              <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-cream p-7 shadow-soft-sm sm:p-8">
+                <span aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-gold" />
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-gold/15 text-gold">
+                  <Target className="h-6 w-6" aria-hidden />
+                </span>
+                <h4 className="mt-5 font-display text-xl font-medium text-ink">
+                  Coaching
+                </h4>
+                <p className="mt-1 text-[12px] font-semibold uppercase tracking-[0.16em] text-gold">
+                  For a specific goal
+                </p>
+                <p className="mt-4 text-[15px] leading-relaxed text-warm-gray">
+                  Short-term, goal-driven sessions with a working professional
+                  to get you ready for a specific moment or milestone.
+                </p>
+                <ul className="mt-4 space-y-2.5 text-[15px] leading-relaxed text-warm-gray">
+                  <li className="flex gap-2.5">
+                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                    Prepare for a show or audition
+                  </li>
+                  <li className="flex gap-2.5">
+                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                    Land an interview or opportunity
+                  </li>
+                  <li className="flex gap-2.5">
+                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                    Focused craft or skill training
+                  </li>
+                </ul>
+                <p className="mt-6 self-start inline-flex items-center rounded-full border border-border px-4 py-1.5 text-[13px] font-semibold text-warm-gray">
+                  Hourly fee
+                </p>
+              </article>
+              {/* Mentoring — holistic, free */}
+              <article className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-cream p-7 shadow-soft-sm sm:p-8">
+                <span aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-red" />
+                <span className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-red/10 text-red">
+                  <Sprout className="h-6 w-6" aria-hidden />
+                </span>
+                <h4 className="mt-5 font-display text-xl font-medium text-ink">
+                  Mentoring
+                </h4>
+                <p className="mt-1 text-[12px] font-semibold uppercase tracking-[0.16em] text-red">
+                  Holistic development
+                </p>
+                <p className="mt-4 text-[15px] leading-relaxed text-warm-gray">
+                  A longer-term relationship focused on the whole person,
+                  guiding growth well beyond any single goal.
+                </p>
+                <ul className="mt-4 space-y-2.5 text-[15px] leading-relaxed text-warm-gray">
+                  <li className="flex gap-2.5">
+                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-red" />
+                    Social-emotional learning
+                  </li>
+                  <li className="flex gap-2.5">
+                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-red" />
+                    Long-term planning and direction
+                  </li>
+                  <li className="flex gap-2.5">
+                    <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-red" />
+                    Whole-person growth and well-being
+                  </li>
+                </ul>
+                <p className="mt-6 self-start inline-flex items-center rounded-full bg-red px-4 py-1.5 text-[13px] font-semibold text-cream">
+                  Always free
+                </p>
+              </article>
+            </div>
+          </Reveal>
 
           {/* Mentorship vs. coaching video — from AITCF Mentor Tony Lucca */}
           <Reveal delay={120} className="mt-14">
