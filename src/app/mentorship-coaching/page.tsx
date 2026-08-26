@@ -423,7 +423,15 @@ export default function MentorshipCoachingPage() {
               <p className="mx-auto mt-8 max-w-3xl text-base leading-relaxed text-warm-gray">
                 This breakdown by{" "}
                 <span className="font-semibold text-ink">
-                  AITCF Mentor Tony Lucca
+                  AITCF Mentor{" "}
+                  <a
+                    href="https://www.tonylucca.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-red underline underline-offset-2 transition-colors hover:text-red-deep"
+                  >
+                    Tony Lucca
+                  </a>
                 </span>{" "}
                 clarifies the unique roles both play and how to leverage them
                 effectively.
