@@ -84,6 +84,13 @@ export const primaryNav: readonly NavItem[] = [
     label: "Press",
     children: [
       {
+        href: "https://mickeyblog.com/2026/08/26/always-in-the-club-the-lasting-legacy-of-the-all-new-mickey-mouse-club/",
+        label:
+          "Always in the Club: The Lasting Legacy of 'The All-New Mickey Mouse Club'",
+        sublabel: "MickeyBlog.com",
+        external: true,
+      },
+      {
         href: "https://www.societyartsandculture.com/article/935623106-after-ryan-gosling-s-mickey-mouse-club-tribute-at-d23-his-former-castmates-tell-the-full-story",
         label:
           "After Ryan Gosling's Mickey Mouse Club Tribute at D23, His Former Castmates Tell the Full Story",
