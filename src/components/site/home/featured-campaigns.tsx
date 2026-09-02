@@ -45,6 +45,16 @@ function imageStyle(
 
 const campaigns: Campaign[] = [
   {
+    slug: "mickeyblog-legacy",
+    title: "The Lasting Legacy of the '90s Mickey Mouse Club",
+    body: "MickeyBlog took a close look at why the 'All New' Mickey Mouse Club still resonates 30 years on, and how that legacy lives on in our mentorship work. Read the feature.",
+    image: {
+      src: "/images/Season7Cast.webp",
+      alt: "The cast of the All-New Mickey Mouse Club",
+    },
+    href: "/blog/the-lasting-legacy-of-the-90s-mickey-mouse-club",
+  },
+  {
     slug: "ryan-jacket",
     title: "Ryan Put the Jacket Back On",
     body: "Ryan Gosling wore a Mickey Mouse Club jacket onstage at D23 and told the room that Disney changed his life. Here's the fuller story of the training behind it, and how Always In The Club carries it forward.",
