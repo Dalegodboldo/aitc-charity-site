@@ -34,6 +34,16 @@ type Issue = {
 
 const issues: Issue[] = [
   {
+    month: "August",
+    year: "2026",
+    slug: "august",
+    href: "https://share.sender.net/campaigns/hrOg/mouseketeer-roundup-august-special-edition",
+    image: "/images/Season7Cast.webp",
+    alt: "The cast of the All-New Mickey Mouse Club, featured in the August Special Edition Mouseketeer Roundup",
+    featured:
+      "Special Edition. Featuring JC Chasez, Nikki DeLoach, Ryan Gosling, Tony Lucca, Albert Fields, Chasen Hampton, Jennifer McGill, Damon Pampolina, and Dale Godboldo.",
+  },
+  {
     month: "July",
     year: "2026",
     slug: "july",
