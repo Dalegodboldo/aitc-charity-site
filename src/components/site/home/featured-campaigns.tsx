@@ -173,37 +173,18 @@ export function FeaturedCampaigns() {
               delay={(i % 3) * 80}
               className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-warm-white shadow-soft-sm transition-shadow duration-300 hover:shadow-soft"
             >
-              {/* Card itself isn't clickable — image only does the iris
-                  hover reveal; the modal opens only when "Read more" is
-                  pressed (button below). */}
-              <div className="iris-card relative aspect-[4/3] overflow-hidden bg-cream">
+              {/* Card itself isn't clickable — the modal opens only when
+                  "Read more" is pressed (button below). */}
+              <div className="relative aspect-[4/3] overflow-hidden bg-cream">
                 {c.image ? (
-                  <>
-                    <div className="absolute inset-0">
-                      <Image
-                        src={c.image.src}
-                        alt={c.image.alt}
-                        fill
-                        sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
-                        style={imageStyle(c.image)}
-                        className="object-cover"
-                      />
-                      <div
-                        aria-hidden
-                        className="pointer-events-none absolute inset-0 bg-red mix-blend-multiply opacity-55"
-                      />
-                    </div>
-                    <div className="iris-back absolute inset-0">
-                      <Image
-                        src={c.image.src}
-                        alt=""
-                        fill
-                        sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
-                        style={imageStyle(c.image)}
-                        className="object-cover"
-                      />
-                    </div>
-                  </>
+                  <Image
+                    src={c.image.src}
+                    alt={c.image.alt}
+                    fill
+                    sizes="(min-width: 1024px) 360px, (min-width: 640px) 50vw, 100vw"
+                    style={imageStyle(c.image)}
+                    className="object-cover"
+                  />
                 ) : (
                   <div className="flex h-full items-center justify-center bg-[radial-gradient(circle_at_30%_20%,rgba(171,7,7,0.08),rgba(255,255,255,0)_70%)]">
                     <span className="font-display text-5xl italic text-ink/15">

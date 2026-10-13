@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { RefreshCw } from "lucide-react";
 
 export type FlipImageData = {
   src: string;
@@ -12,13 +13,14 @@ export type FlipImageData = {
 };
 
 /**
- * Iris / spotlight reveal card. The front photo (red-tinted) is the
+ * Iris / spotlight reveal card. The front photo is the
  * always-visible base; the back photo is unmasked via an expanding
  * circular clip-path.
  *
  * Desktop reveals on hover (CSS `:hover`). Touch devices reveal on
  * tap: the click toggles a `revealed` state that adds `.is-revealed`
- * to the card (CSS opens the iris) and hides the "Hover" hint badge.
+ * to the card (CSS opens the iris). A flip icon badge tells visitors
+ * there is a second photo; it stays visible so they can flip back.
  * A click toggle is used rather than `:focus-within` because mobile
  * browsers — iOS Safari especially — don't reliably keep a <button>
  * focused after a tap, so a focus-driven reveal flickers or never
@@ -43,8 +45,7 @@ export function FlipImage({
         revealed ? "is-revealed" : ""
       }`}
     >
-      {/* Front (base, always visible) — tinted with a red film that the
-          iris reveal "uncovers" to show the back image in true colour */}
+      {/* Front (base, always visible) */}
       <div className="absolute inset-0">
         <Image
           src={front.src}
@@ -58,10 +59,6 @@ export function FlipImage({
             ...(front.imgStyle ?? {}),
           }}
           className="object-cover"
-        />
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-red mix-blend-multiply opacity-55"
         />
       </div>
       {/* Back (spotlight reveal — clip-path lives in globals.css, driven
@@ -81,15 +78,18 @@ export function FlipImage({
           className="object-cover"
         />
       </div>
-      {/* Subtle hint that there's a second image — fades out once the
-          back photo is revealed (hover on desktop, tap on touch). */}
+      {/* Flip badge — signals there's a back photo to see. Stays visible
+          and spins half a turn when the back is showing. */}
       <span
         aria-hidden
-        className={`pointer-events-none absolute bottom-3 right-3 rounded-full bg-ink/55 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-cream backdrop-blur-sm transition-opacity duration-500 group-hover:opacity-0 ${
-          revealed ? "opacity-0" : ""
-        }`}
+        className="pointer-events-none absolute bottom-3 right-3 inline-flex items-center gap-1.5 rounded-full bg-ink/65 py-1.5 pl-2 pr-3 text-[11px] font-semibold uppercase tracking-[0.14em] text-cream shadow-soft-sm backdrop-blur-sm"
       >
-        Hover
+        <RefreshCw
+          className={`h-4 w-4 transition-transform duration-500 motion-reduce:transition-none group-hover:rotate-180 ${
+            revealed ? "rotate-180" : ""
+          }`}
+        />
+        {revealed ? "Flip back" : "Flip"}
       </span>
     </button>
   );
