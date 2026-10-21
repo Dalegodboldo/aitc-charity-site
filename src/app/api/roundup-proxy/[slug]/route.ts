@@ -62,6 +62,20 @@ export async function GET(
   // them, but the iframe still gives us isolation either way.
   html = html.replace(/<script[\s\S]*?<\/script>/gi, "");
 
+  // Open every link in a new tab. Without this, links navigate the
+  // modal's iframe itself, and most destinations (Netflix, YouTube,
+  // Instagram, ...) refuse to be framed, so the click shows a blank
+  // or "refused to connect" page. A <base target> sets the default for
+  // all anchors; explicit _self/_parent/_top targets are rewritten too.
+  html = html.replace(
+    /\starget\s*=\s*(["'])_(?:self|parent|top)\1/gi,
+    ' target="_blank"',
+  );
+  const base = '<base target="_blank">';
+  html = /<head(\s[^>]*)?>/i.test(html)
+    ? html.replace(/<head(\s[^>]*)?>/i, (m) => m + base)
+    : base + html;
+
   return new Response(html, {
     status: 200,
     headers: {
