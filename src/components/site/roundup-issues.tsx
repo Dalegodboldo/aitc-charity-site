@@ -246,6 +246,26 @@ function RoundupModal({
             src={`/api/roundup-proxy/${open.slug}`}
             title={`Mouseketeer Roundup ${open.month} ${open.year}`}
             className="block h-full w-full border-0"
+            onLoad={(e) => {
+              // The proxy serves the issue from our own origin, so we can
+              // reach into the iframe and route every link click out to a
+              // new tab with an explicit window.open. The proxy's
+              // <base target="_blank"> already does this in most
+              // browsers; this covers in-app browsers (Instagram,
+              // Facebook, ...) that ignore target="_blank" in iframes.
+              const doc = e.currentTarget.contentDocument;
+              doc?.addEventListener("click", (ev) => {
+                if (ev.defaultPrevented || ev.button !== 0) return;
+                const a = (ev.target as Element | null)?.closest?.("a[href]");
+                const href = a?.getAttribute("href");
+                if (!href || !/^https?:\/\//i.test(href)) return;
+                const w = window.open(href, "_blank");
+                if (w) {
+                  w.opener = null;
+                  ev.preventDefault();
+                }
+              });
+            }}
           />
         </div>
         <footer className="flex shrink-0 items-center justify-center border-t border-border bg-cream px-5 py-3 sm:px-7">
