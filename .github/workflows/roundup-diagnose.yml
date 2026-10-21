@@ -1,0 +1,24 @@
+name: roundup-diagnose
+on:
+  push:
+    branches: [tmp/roundup-diagnose]
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -sSL -A "Mozilla/5.0 (AITCF roundup proxy)" -o page.html https://share.sender.net/campaigns/iktR/mouseketeer-roundup-october-edition
+          echo "SIZE $(wc -c < page.html)"
+          python3 - <<'PY'
+          import re
+          h=open('page.html',encoding='utf-8',errors='replace').read()
+          i=h.find('trailer here'); print('CONTEXT>>>', h[max(0,i-500):i+60])
+          for m in re.finditer(r'<a\b([^>]*)>(.*?)</a>',h,re.S):
+              txt=re.sub(r'<[^>]+>','',m.group(2)).strip()[:30]
+              print('A>>>', m.group(1)[:260].replace('\n',' '), '|', txt)
+          for m in re.finditer(r'<(script|style)\b[^>]*>(.*?)</\1>',h,re.S):
+              body=m.group(2)
+              if re.search(r'pointer-events|preventDefault|href|click',body): print('TAG>>>',m.group(1), body[:1500].replace('\n',' '))
+          for m in re.finditer(r'<(base|meta)[^>]*>',h): print('HEAD>>>',m.group(0)[:200])
+          PY
+          for u in $(grep -o 'https://[a-z.-]*\(campaign-statistics\|sender\)[^"]*link[^"]*' page.html | head -3); do echo "REDIRECT $u"; curl -sS -o /dev/null -w '%{http_code} -> %{redirect_url}\n' -A "Mozilla/5.0" "$u"; done
