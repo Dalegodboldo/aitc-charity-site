@@ -7,17 +7,38 @@ permissions:
   deployments: read
   statuses: read
 jobs:
-  status:
+  live:
     runs-on: ubuntu-latest
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
       - run: |
           R=${{ github.repository }}
-          for c in 375fd9f c477a47 39b3f93 4172e75 26ec2d7; do
-            echo "== $c"; gh api "repos/$R/commits/$c/status" --jq '.statuses[] | "\(.context) \(.state) \(.description) \(.target_url)"' || true
-            gh api "repos/$R/commits/$c/check-runs" --jq '.check_runs[] | "check \(.name) \(.status) \(.conclusion) \(.output.title)"' || true
+          for i in $(seq 1 40); do
+            s=$(gh api "repos/$R/commits/3a19781/status" --jq '[.statuses[]|select(.context=="Vercel")][0].state' 2>/dev/null)
+            echo "vercel status: $s"; [ "$s" = success ] && break; [ "$s" = failure ] && break; sleep 15
           done
-          echo "== deployments"; gh api "repos/$R/deployments?per_page=8" --jq '.[] | "\(.sha[0:7]) \(.environment) \(.created_at) id=\(.id)"' || true
-          for id in $(gh api "repos/$R/deployments?per_page=8" --jq '.[].id'); do echo "-- $id: $(gh api repos/$R/deployments/$id/statuses --jq '.[0] | "\(.state) \(.description)"')"; done
-          echo "== live asset check"; curl -s -o /dev/null -w "MR-october.jpg %{http_code}\n" https://alwaysintheclub.org/images/MR-october.jpg
+          sleep 20
+          curl -sSL "https://alwaysintheclub.org/api/roundup-proxy/october?x=$RANDOM" -o p.html
+          echo "BASE TAG: $(grep -c '<base target="_blank">' p.html)  _self: $(grep -o 'target="_self"' p.html | wc -l)"
+          mkdir t && cd t && npm init -y >/dev/null && npm i playwright@1.48.2 >/dev/null 2>&1 && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cat > t.mjs <<'JS'
+          import { chromium } from 'playwright';
+          const b = await chromium.launch();
+          const ctx = await b.newContext({viewport:{width:1280,height:900}});
+          const p = await ctx.newPage();
+          await p.goto('https://alwaysintheclub.org/mouseketeer-roundup?x='+Date.now(),{waitUntil:'networkidle'});
+          await p.getByRole('button',{name:/October 2026/}).click();
+          const fr = p.frameLocator('iframe[title*="October"]');
+          for (const t of ['trailer here','recap reel','our blog post here.','YouTube link here.','Super Dad contest','WATCH EPISODE ON YOUTUBE','Shop the Club']) {
+            const link = fr.getByText(t,{exact:true}).first();
+            try { await link.waitFor({timeout:20000}); } catch { console.log(t,'-> NOT FOUND'); continue; }
+            const pop = ctx.waitForEvent('page',{timeout:8000}).catch(()=>null);
+            await link.click(); const w = await pop; await p.waitForTimeout(1500);
+            const inFrame = p.frames()[1]?.url() || '';
+            console.log(`${t} -> new tab: ${w ? w.url() : 'NONE'} | popup frame: ${inFrame.includes('roundup-proxy') ? 'still newsletter' : inFrame}`);
+            if (w) await w.close();
+          }
+          await b.close();
+          JS
+          node t.mjs
