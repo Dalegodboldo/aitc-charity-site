@@ -34,6 +34,16 @@ type Issue = {
 
 const issues: Issue[] = [
   {
+    month: "October",
+    year: "2026",
+    slug: "october",
+    href: "https://share.sender.net/campaigns/iktR/mouseketeer-roundup-october-edition",
+    image: "/images/teers-90scon.jpg",
+    alt: "Mouseketeers reunited at 90s Con, featured in the October Mouseketeer Roundup",
+    featured:
+      "Featuring Keri Russell, Christina Aguilera, Justin Timberlake, JC Chasez, Tony Lucca, Britney Spears, Raquel Herring, and The Party (Damon Pampolina, Deedee Magno Hall, Chasen Hampton, and Albert Fields).",
+  },
+  {
     month: "August",
     year: "2026",
     slug: "august",
