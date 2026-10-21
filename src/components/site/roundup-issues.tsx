@@ -38,8 +38,8 @@ const issues: Issue[] = [
     year: "2026",
     slug: "october",
     href: "https://share.sender.net/campaigns/iktR/mouseketeer-roundup-october-edition",
-    image: "/images/teers-90scon.jpg",
-    alt: "Mouseketeers reunited at 90s Con, featured in the October Mouseketeer Roundup",
+    image: "/images/MR-october.jpg",
+    alt: "Collage of The Party, Keri Russell, a 90s Con meet-up, and Christina Aguilera, featured in the October Mouseketeer Roundup",
     featured:
       "Featuring Keri Russell, Christina Aguilera, Justin Timberlake, JC Chasez, Tony Lucca, Britney Spears, Raquel Herring, and The Party (Damon Pampolina, Deedee Magno Hall, Chasen Hampton, and Albert Fields).",
   },
