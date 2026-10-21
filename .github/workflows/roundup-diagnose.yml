@@ -3,22 +3,36 @@ on:
   push:
     branches: [tmp/roundup-diagnose]
 jobs:
-  fetch:
+  live:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          curl -sSL -A "Mozilla/5.0 (AITCF roundup proxy)" -o page.html https://share.sender.net/campaigns/iktR/mouseketeer-roundup-october-edition
-          echo "SIZE $(wc -c < page.html)"
-          python3 - <<'PY'
-          import re
-          h=open('page.html',encoding='utf-8',errors='replace').read()
-          i=h.find('trailer here'); print('CONTEXT>>>', h[max(0,i-500):i+60])
-          for m in re.finditer(r'<a\b([^>]*)>(.*?)</a>',h,re.S):
-              txt=re.sub(r'<[^>]+>','',m.group(2)).strip()[:30]
-              print('A>>>', m.group(1)[:260].replace('\n',' '), '|', txt)
-          for m in re.finditer(r'<(script|style)\b[^>]*>(.*?)</\1>',h,re.S):
-              body=m.group(2)
-              if re.search(r'pointer-events|preventDefault|href|click',body): print('TAG>>>',m.group(1), body[:1500].replace('\n',' '))
-          for m in re.finditer(r'<(base|meta)[^>]*>',h): print('HEAD>>>',m.group(0)[:200])
-          PY
-          for u in $(grep -o 'https://[a-z.-]*\(campaign-statistics\|sender\)[^"]*link[^"]*' page.html | head -3); do echo "REDIRECT $u"; curl -sS -o /dev/null -w '%{http_code} -> %{redirect_url}\n' -A "Mozilla/5.0" "$u"; done
+          echo "--- live proxy response (head + targets) ---"
+          curl -sSI https://alwaysintheclub.org/api/roundup-proxy/october | grep -iE "^HTTP|cache|age|x-vercel" || true
+          curl -sSL https://alwaysintheclub.org/api/roundup-proxy/october -o p.html
+          echo "BASE TAG: $(grep -c '<base target="_blank">' p.html)  _self: $(grep -o 'target="_self"' p.html | wc -l)  _blank: $(grep -o 'target="_blank"' p.html | wc -l)"
+          grep -o '<head[^>]*>.\{0,80\}' p.html | head -2
+          mkdir t && cd t && npm init -y >/dev/null && npm i playwright@1.48.2 >/dev/null 2>&1 && npx playwright install --with-deps chromium >/dev/null 2>&1
+          cat > t.mjs <<'JS'
+          import { chromium } from 'playwright';
+          const b = await chromium.launch();
+          const ctx = await b.newContext({viewport:{width:1280,height:900}});
+          const p = await ctx.newPage();
+          await p.goto('https://alwaysintheclub.org/mouseketeer-roundup',{waitUntil:'networkidle'});
+          await p.getByRole('button',{name:/October 2026/}).click();
+          const fr = p.frameLocator('iframe[title*="October"]');
+          const link = fr.getByText('trailer here').first();
+          await link.waitFor({timeout:20000});
+          console.log('link attrs:', await link.evaluate(a=>{const el=a.closest('a');return el.outerHTML.slice(0,200)+' | doc base: '+(el.ownerDocument.querySelector('base')?.outerHTML)}));
+          const popupP = ctx.waitForEvent('page',{timeout:8000}).catch(()=>null);
+          await link.click();
+          const pop = await popupP;
+          await p.waitForTimeout(2000);
+          console.log('POPUP:', pop ? pop.url() : 'none');
+          console.log('IFRAME URL NOW:', p.frames().map(f=>f.url()).join(' , '));
+          // what element is actually on top at the link position?
+          const box = await link.boundingBox(); console.log('box', JSON.stringify(box));
+          if (box) console.log('topmost at link:', await p.evaluate(([x,y])=>{const e=document.elementFromPoint(x,y);return e? e.tagName+'.'+e.className.toString().slice(0,80):'null'},[box.x+box.width/2, box.y+box.height/2]));
+          await b.close();
+          JS
+          node t.mjs
