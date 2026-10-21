@@ -2,37 +2,22 @@ name: roundup-diagnose
 on:
   push:
     branches: [tmp/roundup-diagnose]
+permissions:
+  contents: read
+  deployments: read
+  statuses: read
 jobs:
-  live:
+  status:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - run: |
-          echo "--- live proxy response (head + targets) ---"
-          curl -sSI https://alwaysintheclub.org/api/roundup-proxy/october | grep -iE "^HTTP|cache|age|x-vercel" || true
-          curl -sSL https://alwaysintheclub.org/api/roundup-proxy/october -o p.html
-          echo "BASE TAG: $(grep -c '<base target="_blank">' p.html)  _self: $(grep -o 'target="_self"' p.html | wc -l)  _blank: $(grep -o 'target="_blank"' p.html | wc -l)"
-          grep -o '<head[^>]*>.\{0,80\}' p.html | head -2
-          mkdir t && cd t && npm init -y >/dev/null && npm i playwright@1.48.2 >/dev/null 2>&1 && npx playwright install --with-deps chromium >/dev/null 2>&1
-          cat > t.mjs <<'JS'
-          import { chromium } from 'playwright';
-          const b = await chromium.launch();
-          const ctx = await b.newContext({viewport:{width:1280,height:900}});
-          const p = await ctx.newPage();
-          await p.goto('https://alwaysintheclub.org/mouseketeer-roundup',{waitUntil:'networkidle'});
-          await p.getByRole('button',{name:/October 2026/}).click();
-          const fr = p.frameLocator('iframe[title*="October"]');
-          const link = fr.getByText('trailer here').first();
-          await link.waitFor({timeout:20000});
-          console.log('link attrs:', await link.evaluate(a=>{const el=a.closest('a');return el.outerHTML.slice(0,200)+' | doc base: '+(el.ownerDocument.querySelector('base')?.outerHTML)}));
-          const popupP = ctx.waitForEvent('page',{timeout:8000}).catch(()=>null);
-          await link.click();
-          const pop = await popupP;
-          await p.waitForTimeout(2000);
-          console.log('POPUP:', pop ? pop.url() : 'none');
-          console.log('IFRAME URL NOW:', p.frames().map(f=>f.url()).join(' , '));
-          // what element is actually on top at the link position?
-          const box = await link.boundingBox(); console.log('box', JSON.stringify(box));
-          if (box) console.log('topmost at link:', await p.evaluate(([x,y])=>{const e=document.elementFromPoint(x,y);return e? e.tagName+'.'+e.className.toString().slice(0,80):'null'},[box.x+box.width/2, box.y+box.height/2]));
-          await b.close();
-          JS
-          node t.mjs
+          R=${{ github.repository }}
+          for c in 375fd9f c477a47 39b3f93 4172e75 26ec2d7; do
+            echo "== $c"; gh api "repos/$R/commits/$c/status" --jq '.statuses[] | "\(.context) \(.state) \(.description) \(.target_url)"' || true
+            gh api "repos/$R/commits/$c/check-runs" --jq '.check_runs[] | "check \(.name) \(.status) \(.conclusion) \(.output.title)"' || true
+          done
+          echo "== deployments"; gh api "repos/$R/deployments?per_page=8" --jq '.[] | "\(.sha[0:7]) \(.environment) \(.created_at) id=\(.id)"' || true
+          for id in $(gh api "repos/$R/deployments?per_page=8" --jq '.[].id'); do echo "-- $id: $(gh api repos/$R/deployments/$id/statuses --jq '.[0] | "\(.state) \(.description)"')"; done
+          echo "== live asset check"; curl -s -o /dev/null -w "MR-october.jpg %{http_code}\n" https://alwaysintheclub.org/images/MR-october.jpg
